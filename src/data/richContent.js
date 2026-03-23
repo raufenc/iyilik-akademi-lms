@@ -1469,4 +1469,175 @@ export const richContent = {
     haftaninGorevi: { baslik: 'Sorumluluk Görevi', aciklama: 'Bugün evde kendine ait bir görev seç (örneğin sofrayı kurmak, yatağını toplamak) ve bunu kimse sana hatırlatmadan kendin yap.' },
     kazanilanRozet: 'Mesuliyet Sahibi Rozeti',
   },
+
+  // === Lesson 26: Kötülüğe Karşı İyilik (video_27) ===
+  26: {
+    tema: 'Kötülüğe İyilikle Karşılık Vermek ve Affetmek',
+    kavramlar: [
+      { kavram: 'Affetmek', anlam: 'Bize karşı yapılan bir hatayı cezalandırmaktan vazgeçmek, kalpten silmek.' },
+      { kavram: 'İyilikle Savmak', anlam: 'Bize kötü davranan birine kızmak yerine ona tebessümle ve güzel ahlakla yaklaşmak.' },
+    ],
+    ayetHadis: { metin: 'İyilikle kötülük bir olmaz. Sen kötülüğü en güzel olan şeyle (iyilikle) sav. O zaman seninle arasında düşmanlık bulunan kimse, sanki sıcak bir dost oluverir.', kaynak: '(Fussilet Suresi, 34. Ayet)' },
+    girisKancasi: { soru: 'Biri senin oyununu bilerek bozduğunda ona bağırır mısın, yoksa gülümseyip onu da oyuna davet mi edersin?', ipucu: 'Bazen küçücük bir gülümseme, en büyük kavgaları başlamadan bitiren sihirli bir anahtardır.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: 'Parktaki çocuk misketleri dağıtınca Emir çok sinirlenmiş ve onunla hemen kavgaya tutuşmuştur.', dogruCevap: false, geriBildirimDogru: 'Harika! Emir sinirlense de kendini tuttu ve çocuğa bir misket verip oyuna davet etti.', geriBildirimYanlis: 'Dikkatli izlemedin sanırım. Emir öfkesini yendi ve ona iyilikle karşılık vererek onu şaşırttı.' },
+      { zamanDamgasi: 90, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) kendisine en kötü davranan insanlara bile hep şefkatle ve iyilikle yaklaşmış, sonunda birçoğu onun en yakın dostu olmuştur.' },
+      { zamanDamgasi: 135, tip: 'coktan_secmeli', soruMetni: 'Dedemize göre kötülüğe iyilikle cevap vermek ne işe yarar?', secenekler: [{ id: 'A', metin: 'Düşmanlıkları bitirir ve karşımızdakini bize dost yapar.', dogruMu: true }, { id: 'B', metin: 'İnsanların bizimle daha çok alay etmesini sağlar.', dogruMu: false }], geriBildirimDogru: 'Çok doğru! İyilik, kötülük ateşini söndüren serin bir su gibidir.', geriBildirimYanlis: 'Hayır, iyilik yapan insan asla kaybetmez. İyilik en sert kalpleri bile yumuşatır.' },
+    ],
+    tefekkurSorulari: ['Sence öfkelenmek mi daha kolaydır, yoksa öfkeni yutup karşındakine gülümsemek mi? Neden?', 'Birine kızdığında onun da hatasını anlayıp özür dilemesi için ona nasıl yaklaşmalısın?'],
+    haftaninGorevi: { baslik: 'İyilik Meleği Görevi', aciklama: 'Bugün sana kötü davranan veya seni üzen birisine kızmak yerine ona tebessüm et ve bir iyilik yap.' },
+    kazanilanRozet: 'İyilik Meleği Rozeti',
+  },
+
+  // === Lesson 27: İş Ahlakı (video_28) ===
+  27: {
+    tema: 'İşini Düzgün Yapmak ve Sorumluluk',
+    kavramlar: [
+      { kavram: 'İş Ahlakı', anlam: 'Üzerimize aldığımız bir işi hile yapmadan, eksiksiz ve en güzel şekilde tamamlamak.' },
+      { kavram: 'Emanet', anlam: 'Bize güvenilerek teslim edilen bir göreve veya eşyaya ihanet etmemek.' },
+    ],
+    ayetHadis: { metin: 'Allah, sizden birinizin bir iş yaptığı zaman onu en güzel şekilde yapmasını sever.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: 'Sana verilen bir ödevi hemen baştan savma bitirmek mi istersin, yoksa yorulsan da en mükemmelini mi yapmak istersin?', ipucu: 'Unutma, yarım bırakılan veya baştan savma yapılan her iş, gelecekte yıkılan bir köprüye dönüşebilir.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 45, tip: 'dogru_yanlis', soruMetni: 'Ayşe ve Emir çiçekleri sulamaktan yorulunca işi tamamen yarım bırakıp içeri kaçtılar.', dogruCevap: false, geriBildirimDogru: 'Doğru bildin. Yorulmuşlardı ama dedelerinin köprü hikayesinden sonra işlerini tam ve eksiksiz bitirdiler.', geriBildirimYanlis: 'Hayır, yorulsalar da pes etmediler ve iş ahlakının ne demek olduğunu anladılar.' },
+      { zamanDamgasi: 95, tip: 'bilgi_karti', metin: 'İslam dininde bir işçinin, mühendisin veya öğrencinin yaptığı işi en kaliteli şekilde yapması ibadet kadar değerli görülmüştür.' },
+      { zamanDamgasi: 140, tip: 'coktan_secmeli', soruMetni: 'Dedemizin gençliğinde mühendisken anlattığı köprü hikayesi bize neyi öğretiyor?', secenekler: [{ id: 'A', metin: 'İşimizi baştan savma değil, insanların can güvenliğini düşünerek eksiksiz yapmalıyız.', dogruMu: true }, { id: 'B', metin: 'Sadece patronumuz veya öğretmenimiz izlerken çalışmalıyız.', dogruMu: false }], geriBildirimDogru: 'Harika! Kimse görmese bile Allah her şeyi görür. İşimizi dürüstçe yapmalıyız.', geriBildirimYanlis: 'Müslüman sadece başkaları izlerken değil, yalnızken de işini en iyi yapan kişidir.' },
+    ],
+    tefekkurSorulari: ['Sence okul ödevlerini başkasından kopyalayarak yapan biri iş ahlakına uymuş olur mu?', 'İşini dürüst yapan birine insanların güveni nasıl artar?'],
+    haftaninGorevi: { baslik: 'Emeğin Bereketi Görevi', aciklama: 'Bugün başladığın hiçbir işi (ödev, oyun toplama, odanı düzenleme) yarım bırakma. En güzel şekilde bitir.' },
+    kazanilanRozet: 'Emeğin Bereketi Rozeti',
+  },
+
+  // === Lesson 28: İnsana Teşekkür (video_29) ===
+  28: {
+    tema: 'Teşekkür Etmek, Şükür ve Minnet',
+    kavramlar: [
+      { kavram: 'Teşekkür Etmek', anlam: 'Bize yapılan bir iyiliğe veya yardıma karşı sözlü olarak minnetimizi ve mutluluğumuzu belirtmek.' },
+      { kavram: 'Şükür', anlam: "Allah'ın bize verdiği sağlık, aile ve yiyecek gibi tüm nimetler için O'na hamd etmek." },
+    ],
+    ayetHadis: { metin: "İnsanlara teşekkür etmeyen, Allah'a da şükretmiş olmaz.", kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: "Biri sana yardım ettiğinde ona kocaman gülümseyerek 'Teşekkür ederim' demek sence o kişiyi nasıl hissettirir?", ipucu: 'Teşekkür etmek, kalpler arasında kurulan en tatlı sevgi köprüsüdür.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 35, tip: 'dogru_yanlis', soruMetni: "Ayşe kalemi düştüğünde ona yardım eden Zeynep'e hiçbir şey söylemeden arkasını döndü.", dogruCevap: false, geriBildirimDogru: 'Çok dikkatlisin! Ayşe hemen tebessüm edip arkadaşına teşekkür etti.', geriBildirimYanlis: "Yanlış cevap. Ayşe nazik bir çocuk olduğu için ona yardım eden Zeynep'e teşekkür etti." },
+      { zamanDamgasi: 85, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) kendisine yapılan en küçük bir iyiliği bile asla unutmaz, o kişiye mutlaka teşekkür eder ve ona dua ederdi.' },
+      { zamanDamgasi: 130, tip: 'coktan_secmeli', soruMetni: 'Emir neden annesine bir çiçek alıp sürpriz yaptı?', secenekler: [{ id: 'A', metin: 'Annesinin ona yemek yapmasını ve ona bakmasını sıradan bir görev olarak gördüğü için.', dogruMu: false }, { id: 'B', metin: 'Annesinin emeklerine karşı ona olan sevgisini ve teşekkürünü göstermek için.', dogruMu: true }], geriBildirimDogru: 'Mükemmel! Ailemizin bizim için yaptıklarına teşekkür etmek en güzel davranışlardandır.', geriBildirimYanlis: 'Ailemizin bizim için yaptıkları büyük bir fedakarlıktır, bunlara karşı hep teşekkür etmeliyiz.' },
+    ],
+    tefekkurSorulari: ["Sence sadece insanlara mı teşekkür ederiz? Allah'ın bize verdiği nimetlere nasıl şükrederiz?", "'Teşekkür ederim' demeyi unutan bir toplum sence nasıl bir yer olurdu?"],
+    haftaninGorevi: { baslik: 'Teşekkür Elçisi Görevi', aciklama: "Bugün sana en çok emeği geçen kişiye (annene, babana veya öğretmenine) kocaman sarıl ve 'İyi ki varsın, sana teşekkür ederim' de." },
+    kazanilanRozet: 'Teşekkür Elçisi Rozeti',
+  },
+
+  // === Lesson 29: Zararlı Alışkanlıklardan Kaçınmak (video_30) ===
+  29: {
+    tema: 'Sağlığı Korumak, İrade ve Gerçek Eğlence',
+    kavramlar: [
+      { kavram: 'Zararlı Alışkanlıklar', anlam: 'Vücudumuza, gözlerimize veya aklımıza zarar veren, bizi bağımlı yapan kötü alışkanlıklar.' },
+      { kavram: 'İrade', anlam: "Zararlı ve kötü olan bir şeye 'Hayır' diyebilme gücü ve kendini tutabilmek." },
+    ],
+    ayetHadis: { metin: 'İki nimet vardır ki insanların çoğu onun kıymetini bilmezler: Biri sağlık, diğeri ise boş vakittir.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: 'Bütün gün dışarı çıkmadan tabletin veya televizyonun başında oturmak sence bedenimizi güçlendirir mi, yoksa bizi hasta mı eder?', ipucu: 'Gerçek eğlence ekranlarda değil, doğada ve arkadaşlarımızla oynadığımız oyunlardadır.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: "İslam dinine göre bedenimiz bize Allah'ın emanetidir. Onu sağlıksız yiyeceklerden ve hareketsizlikten (sürekli ekrana bakmaktan) korumak zorundayız." },
+      { zamanDamgasi: 90, tip: 'dogru_yanlis', soruMetni: 'Komşunun oğlu Hasan, bütün gün tabletle oynadığı için gözleri çok sağlıklı ve yüzü çok enerjik görünüyordu.', dogruCevap: false, geriBildirimDogru: 'Doğru bildin. Aksine gözleri kızarmış, yüzü solmuştu ve çok yorgun görünüyordu.', geriBildirimYanlis: "Dikkatli izlemedin sanırım. Sürekli tablete baktığı için Hasan'ın gözleri yorulmuş ve yüzü solmuştu." },
+      { zamanDamgasi: 135, tip: 'coktan_secmeli', soruMetni: "Emir, Hasan'a gerçek oyunun ve eğlencenin nerede olduğunu söyledi?", secenekler: [{ id: 'A', metin: 'Televizyondaki çizgi filmlerde.', dogruMu: false }, { id: 'B', metin: 'Dışarıda, temiz havada arkadaşlarla koşup oynanan oyunlarda.', dogruMu: true }], geriBildirimDogru: 'Harika! Hareket etmek bedenimizi sağlıklı, zihnimizi dinç tutar.', geriBildirimYanlis: 'Gerçek mutluluk ekranlarda değil, doğada ve hareket etmektedir.' },
+    ],
+    tefekkurSorulari: ["Canın çok tablet oynamak istediğinde kendi kendine 'Şimdi dışarı çıkmalıyım' diyerek iradeni nasıl kullanırsın?", "Sence zararlı şeylere (kötü yiyecekler veya çok fazla ekran) 'Hayır' diyebilmek neden büyük bir kahramanlıktır?"],
+    haftaninGorevi: { baslik: 'Sağlıklı Yaşam Görevi', aciklama: 'Bugün ekran (TV, tablet, telefon) süreni yarıya indir. Onun yerine dışarıda oyna, ailenle sohbet et veya kitap oku.' },
+    kazanilanRozet: 'Sağlıklı Yaşam Rozeti',
+  },
+
+  // === Lesson 30: Adab-ı Muaşeret (video_32) ===
+  30: {
+    tema: 'Görgü Kuralları, Nezaket ve Saygı',
+    kavramlar: [
+      { kavram: 'Adab-ı Muaşeret', anlam: 'Toplum içinde insanların birbirine karşı nazik, görgülü ve saygılı davranmasını sağlayan nezaket kuralları.' },
+      { kavram: 'Edep', anlam: 'Güzel ahlaklı olmak, nerede nasıl davranacağını, nasıl konuşacağını bilmek.' },
+    ],
+    ayetHadis: { metin: 'Sizin en hayırlınız, ahlakı en güzel olanınızdır.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: 'Bir arkadaşının veya akrabanın evine misafirliğe gittiğinde içeri girince ilk olarak ne yaparsın?', ipucu: 'Müslümanın süsü, taktığı takılar değil, taşıdığı güzel edeptir.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: 'Ayşe misafirliğe gidince büyüklerine selam vermeden hemen koşarak boş bulduğu bir köşeye oturdu.', dogruCevap: false, geriBildirimDogru: 'Harika! Ayşe dedesinin öğrettiği gibi önce güzelce selam verdi, sonra edeplice oturdu.', geriBildirimYanlis: 'Yanlış cevap! Ayşe önce büyüklerine saygıyla selam vermiş, ardından yerine geçmişti.' },
+      { zamanDamgasi: 85, tip: 'bilgi_karti', metin: 'Sofraya oturulduğunda büyükler yemeğe başlamadan yemeğe saldırmamak ve yemeği sessizce beklemek çok önemli bir görgü (adab) kuralıdır.' },
+      { zamanDamgasi: 130, tip: 'coktan_secmeli', soruMetni: "Emir sofrada yemek yerken nasıl bir 'Adab-ı Muaşeret' kuralına uydu?", secenekler: [{ id: 'A', metin: 'Babası yemeğe başlamadan önce yemeğe saldırmadı ve ekmeği nazikçe istedi.', dogruMu: true }, { id: 'B', metin: 'Herkesi beklemeden kendi yemeğini hızlıca yemeye başladı.', dogruMu: false }], geriBildirimDogru: 'Çok doğru! Sofrada büyüklere saygı göstermek adab-ı muaşerettir.', geriBildirimYanlis: 'Müslümanlar sofrada sabırlı ve nazik olurlar, Emir de öyle davranmıştı.' },
+    ],
+    tefekkurSorulari: ['Edepli ve nazik insanların çok olduğu bir sınıfta veya mahallede sence kavgalar olur mu?', "Konuşurken 'Lütfen' ve 'Teşekkür ederim' demek bizi neden daha güzel bir insan yapar?"],
+    haftaninGorevi: { baslik: 'Görgü ve Nezaket Görevi', aciklama: "Bugün sofraya otururken büyüklere öncelik ver. Yemekten kalkarken de mutlaka annene veya yemeği yapana 'Ellerinize sağlık' demeyi unutma." },
+    kazanilanRozet: 'Görgü ve Nezaket Rozeti',
+  },
+
+  // === Lesson 31: Alçak Gönüllülük (video_33) ===
+  31: {
+    tema: 'Tevazu, Kibir ve Başarıyı Paylaşmak',
+    kavramlar: [
+      { kavram: 'Alçak Gönüllülük (Tevazu)', anlam: 'Başarılarından dolayı böbürlenmemek, kendini başkalarından üstün görmemek.' },
+      { kavram: 'Kibir', anlam: "Kendini büyük görmek, başkalarını küçümsemek. İslam'da en sevilmeyen huylardandır." },
+    ],
+    ayetHadis: { metin: 'Kim Allah için alçakgönüllü olursa, Allah onu yüceltir.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: "Bir yarışmada birinci olduğunda 'En iyi benim, kimse beni geçemez!' demek mi, yoksa arkadaşlarına teşekkür etmek mi daha güzeldir?", ipucu: 'Unutma; başak (buğday) büyüdükçe ve içi doldukça boynunu büker, boş başaklar ise hep dik durur.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) o kadar büyük bir lider olmasına rağmen, toplum içinde sıradan biri gibi oturur, hiçbir zaman kendini arkadaşlarından üstün görmezdi.' },
+      { zamanDamgasi: 90, tip: 'dogru_yanlis', soruMetni: "Emir futbolda iki gol atınca bütün başarıyı sadece kendisine almış ve arkadaşı Ahmet'e hiç teşekkür etmemiştir.", dogruCevap: false, geriBildirimDogru: "Harika! Emir 'Ahmet bana pas vermeseydi ben bu golleri atamazdım' diyerek başarısını arkadaşıyla paylaştı.", geriBildirimYanlis: "Yanlış! Emir kibirlenmedi, aksine alçakgönüllü davranarak Ahmet'e teşekkür etti." },
+      { zamanDamgasi: 135, tip: 'coktan_secmeli', soruMetni: 'Ayşe öğretmeni tarafından resmi beğenildiğinde nasıl bir tavır sergiledi?', secenekler: [{ id: 'A', metin: 'Arkadaşlarını küçümsedi ve sadece kendi resmiyle övündü.', dogruMu: false }, { id: 'B', metin: "Arkadaşı Fatma'nın da resminin çok güzel olduğunu söyleyerek tevazu gösterdi.", dogruMu: true }], geriBildirimDogru: 'Mükemmel! Kendi başarımıza sevinirken arkadaşlarımızın emeklerini de takdir etmeliyiz.', geriBildirimYanlis: 'Kibir insanı küçültür, alçakgönüllülük ise yüceltir. Ayşe alçakgönüllü davrandı.' },
+    ],
+    tefekkurSorulari: ['Başkalarının yeteneklerini ve başarılarını övmek sence bizim kendi yeteneğimizi küçültür mü?', "Dedemizin anlattığı 'Kibir insanı küçültür, alçak gönüllülük yüceltir' sözü sence ne anlama geliyor?"],
+    haftaninGorevi: { baslik: 'Tevazu Tacı Görevi', aciklama: 'Bugün kendi başarına veya eşyalarına sevinmek yerine, bir arkadaşının veya kardeşinin yaptığı güzel bir şeyi içtenlikle öv ve onu tebrik et.' },
+    kazanilanRozet: 'Tevazu Tacı Rozeti',
+  },
+
+  // === Lesson 32: Vatan Sevgisi (video_34) ===
+  32: {
+    tema: 'Vatanı Korumak, Özgürlük ve Fedakarlık',
+    kavramlar: [
+      { kavram: 'Vatan', anlam: 'Üzerinde doğup büyüdüğümüz, kültürümüzü ve inancımızı özgürce yaşadığımız kutsal topraklar.' },
+      { kavram: 'Bağımsızlık', anlam: 'Kendi ülkemizde başka hiçbir ülkenin emri altına girmeden, ezanlarımızla ve bayrağımızla hür yaşamak.' },
+    ],
+    ayetHadis: { metin: 'Vatan sevgisi imandandır.', kaynak: '(İslam Alimlerinin Hikmetli Sözü)' },
+    girisKancasi: { soru: 'Evimiz bizim için ailemizle güvende hissettiğimiz sıcak bir yuvadır. Peki ya ülkemiz bizim için nedir?', ipucu: 'Bayrağımızın rengi neden kırmızıdır biliyor musun? O, vatanı için fedakarlık yapan dedelerimizin kahramanlığını anlatır.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Vatan sadece bir toprak parçası değildir. Üzerinde camilerimizin, okullarımızın olduğu, dedelerimizin bize kanlarıyla emanet ettiği büyük evimizdir.' },
+      { zamanDamgasi: 85, tip: 'dogru_yanlis', soruMetni: 'Dedemize göre, bir insanın vatanı işgal edilirse o insan evinde huzurla oyun oynayıp hayatına devam edebilir.', dogruCevap: false, geriBildirimDogru: 'Doğru bildin! Vatan olmadan evde huzur olmaz. Vatanı korumak evimizi korumaktır.', geriBildirimYanlis: 'Hayır! Vatanımız güvende değilse, evimiz de güvende olamaz. Vatan bizim her şeyimizdir.' },
+      { zamanDamgasi: 130, tip: 'coktan_secmeli', soruMetni: "Dedemiz gençliğinde Kıbrıs'a neden savaşa gitmiştir?", secenekler: [{ id: 'A', metin: 'Gezmek ve yeni yerler görmek için.', dogruMu: false }, { id: 'B', metin: 'Oradaki kardeşlerimizi korumak ve vatan uğruna fedakarlık yapmak için.', dogruMu: true }], geriBildirimDogru: 'Çok güzel! Vatanı korumak büyük bir onurdur ve dedemiz de bir Kıbrıs Gazisidir.', geriBildirimYanlis: 'Dedemiz oraya vatan savunması ve oradaki insanlara yardım etmek için gitti.' },
+    ],
+    tefekkurSorulari: ['Gökyüzünde dalgalanan ay yıldızlı bayrağımızı gördüğünde kalbinde nasıl bir duygu hissediyorsun?', 'Bugün bir öğrenci olarak vatanına hizmet etmenin ve onu korumanın en güzel yolu nedir?'],
+    haftaninGorevi: { baslik: 'Vatan Sevdalısı Görevi', aciklama: 'Bugün İstiklal Marşımızı içinden hissederek oku ve vatanımız için canını feda eden tüm şehitlerimize bir dua et.' },
+    kazanilanRozet: 'Vatan Sevdalısı Rozeti',
+  },
+
+  // === Lesson 33: İnsanlarla İyi Geçinmek (video_35) ===
+  33: {
+    tema: 'Ülfet, Barış ve Anlayış',
+    kavramlar: [
+      { kavram: 'Ülfet (İyi Geçinmek)', anlam: 'İnsanlarla dostça, kavgadan uzak ve anlayışlı bir şekilde yaşamak.' },
+      { kavram: 'Uzlaşmak', anlam: 'Bir anlaşmazlık çıktığında kavgayı büyütmek yerine orta yolu bulup barışmak.' },
+    ],
+    ayetHadis: { metin: 'Mümin cana yakındır. (İnsanlarla) iyi geçinmeyen ve kendisiyle iyi geçinilmeyen kimsede hayır yoktur.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: 'Oyunda arkadaşınla hangi oyunu oynayacağınız konusunda anlaşamadığınızda hemen küser misin, yoksa orta yolu mu bulursun?', ipucu: 'En güzel oyunlar, herkesin gülümsediği ve birbirine saygı duyduğu oyunlardır.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: "Emir'in misketini bir arkadaşı yanlışlıkla aldığında, Emir hemen bağırarak kavga çıkarmıştır.", dogruCevap: false, geriBildirimDogru: 'Harika! Emir kavga etmek yerine durumu nazikçe anlattı ve sorun tatlılıkla çözüldü.', geriBildirimYanlis: 'Dikkatli izlemedin sanırım. Emir kavga etmek yerine nazikçe sordu ve arkadaşı misketi geri verdi.' },
+      { zamanDamgasi: 90, tip: 'bilgi_karti', metin: 'İslam dini bir barış dinidir. Müslümanların birbiriyle iyi geçinmesini, sorunları konuşarak ve birbirlerini kırıp dökmeden çözmesini emreder.' },
+      { zamanDamgasi: 135, tip: 'coktan_secmeli', soruMetni: 'Ayşe, top için tartışan çocukları görünce ne yaptı?', secenekler: [{ id: 'A', metin: 'Onların arasına girip onlara kızdı.', dogruMu: false }, { id: 'B', metin: 'Onlara sırayla oynamayı teklif ederek aralarını buldu ve iyi geçinmelerini sağladı.', dogruMu: true }], geriBildirimDogru: 'Çok doğru! İnsanların arasını düzeltmek ve barışı sağlamak çok sevaptır.', geriBildirimYanlis: 'Ayşe onlara kızmadı, tatlı bir dille onlara çözüm bulup barıştırdı.' },
+    ],
+    tefekkurSorulari: ['Sürekli kavga eden, her şeye sinirlenen biri sence etrafında arkadaş bulabilir mi?', "Bugün bir arkadaşınla anlaşmazlığa düşsen ona 'ülfet' (iyi geçinme) ile nasıl yaklaşırsın?"],
+    haftaninGorevi: { baslik: 'Barış ve Ülfet Görevi', aciklama: 'Bugün arkadaşlarınla veya kardeşinle oynarken sadece kendi istediğini yapmak yerine onların da fikrini sor ve uyumlu ol.' },
+    kazanilanRozet: 'Barış Elçisi Rozeti',
+  },
+
+  // === Lesson 34: İktisât ve Kanaatkârlık (video_36) ===
+  34: {
+    tema: 'Kanaat Etmek ve Dünya Malına Değer Vermemek',
+    kavramlar: [
+      { kavram: 'Kanaat', anlam: "Allah'ın verdiği nimetlere razı olmak, sahip olduklarıyla mutlu olup sürekli daha fazlası için hırslanmamak." },
+      { kavram: 'Dünya Malına Tamah Etmemek', anlam: 'Altın, para ve zenginliği kalbe sokmamak; asıl zenginliğin iyi bir kalp olduğuna inanmak.' },
+    ],
+    ayetHadis: { metin: 'Kanaat, bitmez tükenmez bir hazinedir.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: 'Sence çok fazla paraya ve altına sahip olmak mı insanı gerçekten zengin yapar, yoksa elindeki oyuncaklarla mutlu olmayı bilmek mi?', ipucu: 'Kalbi altınla değil kanaatle dolu olan insanlar, dünyadaki en zengin insanlardır.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 45, tip: 'bilgi_karti', metin: "Allah dostları (Evliyalar), dünya malını ellerinde tutsalar bile kalplerine asla sokmazlar. Onlar için Allah'ın rızası dünyadaki tüm altınlardan daha kıymetlidir." },
+      { zamanDamgasi: 100, tip: 'dogru_yanlis', soruMetni: "Yemen'deki büyük veli zat (derviş), Bağdatlı zenginin getirdiği bir torba altını görünce çok sevinip onu hemen evine almıştır.", dogruCevap: false, geriBildirimDogru: 'Harika! Tam aksine, o zat dünya malına değer vermediği için altınları reddetmiş ve adamı yanından uzaklaştırmıştır.', geriBildirimYanlis: 'Dikkatli izlemelisin. Evliya zat altınlara hiç sevinmedi, aksine dünya malıyla övünen o zengini yanından kovdu.' },
+      { zamanDamgasi: 150, tip: 'coktan_secmeli', soruMetni: 'Fakir görünümlü derviş neden zengin adamın verdiği altınları reddetti?', secenekler: [{ id: 'A', metin: 'Altınları az bulduğu ve daha fazlasını istediği için.', dogruMu: false }, { id: 'B', metin: "Çünkü Allah dostları için paranın bir değeri yoktur, onların kalbi 'Kanaat' hazinesiyle doludur.", dogruMu: true }], geriBildirimDogru: 'Mükemmel! Gerçek zenginlik cebimizde olan değil, kalbimizde olandır.', geriBildirimYanlis: 'Hayır, onlar daha fazla para istemezler. Onlar ellerindekiyle yetinmeyi (kanaati) bilirler.' },
+    ],
+    tefekkurSorulari: ['Kalbinde kanaat (yetinme duygusu) olmayan bir insan ne kadar çok oyuncağı olursa olsun neden hep daha fazlasını ister?', 'Sence yoksul görünümlü ama kalbi Allah sevgisiyle dolu olan o derviş, Bağdatlı zenginden daha mı mutludur?'],
+    haftaninGorevi: { baslik: 'Kanaat Hazinesi Görevi', aciklama: "Bugün yeni bir oyuncak veya abur cubur istemek yerine, sahip olduğun güzellikleri düşün ve Allah'a 'Elhamdülillah' diyerek şükret." },
+    kazanilanRozet: 'Kanaat Hazinesi Rozeti',
+  },
 };
