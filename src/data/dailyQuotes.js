@@ -1,0 +1,48 @@
+// Günlük hadis, ayet ve hikmetli sözler
+export const dailyQuotes = [
+  { metin: 'Kolaylaştırınız, zorlaştırmayınız. Müjdeleyiniz, nefret ettirmeyiniz.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'İnsanların en hayırlısı, insanlara en çok faydalı olandır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Güzel söz sadakadır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Kim Allah için alçakgönüllü olursa, Allah onu yüceltir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Gerçek zenginlik, mal çokluğu değil, gönül zenginliğidir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Şüphesiz Allah, sabredenlerle beraberdir.', kaynak: 'Bakara Suresi, 153' },
+  { metin: 'İyilikle kötülük bir olmaz. Sen kötülüğü en güzel şeyle sav.', kaynak: 'Fussilet Suresi, 34' },
+  { metin: 'Müminler ancak kardeştirler.', kaynak: 'Hucurat Suresi, 10' },
+  { metin: 'İnsanlara teşekkür etmeyen, Allah\'a da şükretmiş olmaz.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Yumuşak huydan mahrum olan, iyilikten de mahrum olur.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Gerçek pehlivan güreşte yenen değil, öfke anında nefsine hakim olandır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Kim affeder ve barışırsa onun mükafatı Allah\'a aittir.', kaynak: 'Şura Suresi, 40' },
+  { metin: 'Hediyeleşin ki birbirinize olan sevginiz artsın.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Temizlik imanın yarısıdır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Haya imandandır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Sizin en hayırlınız, ahlakı en güzel olanınızdır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'İyiliğin karşılığı, ancak iyilik değil midir?', kaynak: 'Rahman Suresi, 60' },
+  { metin: 'Kanaat, bitmez tükenmez bir hazinedir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Bir kere azmettin mi artık Allah\'a tevekkül et.', kaynak: 'Al-i İmran Suresi, 159' },
+  { metin: 'Bizi aldatan bizden değildir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Küçüklerimize merhamet etmeyen, büyüklerimize saygı göstermeyen bizden değildir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Siz yerdekilere merhamet edin ki göktekiler de size merhamet etsin.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Allah, sizden birinizin bir iş yaptığı zaman onu en güzel şekilde yapmasını sever.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Hepiniz çobansınız ve hepiniz güttüklerinizden sorumlusunuz.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Söz verdiğiniz zaman sözünüzü yerine getirin.', kaynak: 'İsra Suresi, 34' },
+  { metin: 'Ben güzel ahlakı tamamlamak için gönderildim.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Muhakkak ki Allah, adaleti ve iyiliği emreder.', kaynak: 'Nahl Suresi, 90' },
+  { metin: 'Kişi dostunun ahlakı üzeredir. Her biriniz kiminle dostluk kuracağına dikkat etsin.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'İyilik ve takva üzere yardımlaşın.', kaynak: 'Maide Suresi, 2' },
+  { metin: 'Hiçbir baba, çocuğuna güzel terbiyeden daha üstün bir hediye vermemiştir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'İki nimet vardır ki insanların çoğu kıymetini bilmez: Sağlık ve boş vakit.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Tebessümün kardeşinin yüzüne sadakadır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Komşusu açken tok yatan bizden değildir.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'İlim öğrenmek her Müslümana farzdır.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Sabır, acı olaylar karşısında güzel bir tutum sergilemektir.', kaynak: 'Hz. Ali (r.a.)' },
+  { metin: 'Doğruluk insanı iyiliğe, iyilik de Cennet\'e götürür.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Mümin cana yakındır. İyi geçinmeyen kimsede hayır yoktur.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Allah\'ın kullarına merhamet edin ki Allah da size merhamet etsin.', kaynak: 'Hz. Muhammed (s.a.v.)' },
+  { metin: 'Vatan sevgisi imandandır.', kaynak: 'Hikmetli Söz' },
+  { metin: 'Her zorlukla beraber bir kolaylık vardır.', kaynak: 'İnşirah Suresi, 6' },
+]
+
+export function getDailyQuote() {
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000)
+  return dailyQuotes[dayOfYear % dailyQuotes.length]
+}
