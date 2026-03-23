@@ -1640,4 +1640,42 @@ export const richContent = {
     haftaninGorevi: { baslik: 'Kanaat Hazinesi Görevi', aciklama: "Bugün yeni bir oyuncak veya abur cubur istemek yerine, sahip olduğun güzellikleri düşün ve Allah'a 'Elhamdülillah' diyerek şükret." },
     kazanilanRozet: 'Kanaat Hazinesi Rozeti',
   },
+
+  // === Lesson 35: Emanete Riayet Etmek (video_37) ===
+  35: {
+    tema: 'Emaneti Korumak ve Güvenilir Olmak',
+    kavramlar: [
+      { kavram: 'Emanet', anlam: 'Bize geçici olarak bırakılan, koruması bize ait olan her şey: eşya, sır, görev veya sorumluluk.' },
+      { kavram: 'Riayet', anlam: 'Bir kurala, söze veya göreve dikkat etmek, onu ciddiye alıp gereğini yapmak.' },
+    ],
+    ayetHadis: { metin: 'Allah size emanetleri ehline (hakkını verecek olana) teslim etmenizi emreder.', kaynak: '(Nisa Suresi, 58. Ayet)' },
+    girisKancasi: { soru: 'Bir arkadaşın sana en sevdiği oyuncağını emanet etse, onu kendi oyuncağın kadar dikkatli korur musun?', ipucu: 'Emanet sadece eşya değildir; bedenimiz, zamanımız, ailemiz — hepsi bize verilen emanetlerdir.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: "Peygamber Efendimiz (s.a.v) peygamberlikten önce bile 'Muhammed\'ül Emin' (Güvenilir Muhammed) diye anılırdı. Herkes en değerli eşyalarını ona emanet ederdi." },
+      { zamanDamgasi: 90, tip: 'dogru_yanlis', soruMetni: 'Emanet sadece bize bırakılan eşyaları korumak demektir, başka anlamı yoktur.', dogruCevap: false, geriBildirimDogru: 'Çok doğru! Emanet çok geniş bir kavramdır. Sağlığımız, gözlerimiz, zamanımız, ailemiz — hepsi bize Allah tarafından verilen emanetlerdir.', geriBildirimYanlis: 'Yanlış! Emanet sadece eşya değildir. Bedenimiz, sırlarımız, görevlerimiz ve hatta çevremiz de bize emanettir.' },
+      { zamanDamgasi: 130, tip: 'coktan_secmeli', soruMetni: 'Dedemiz emanete riayet etmenin en güzel yolunun ne olduğunu söyledi?', secenekler: [{ id: 'A', metin: 'Bize verilen her şeye — eşyaya, göreve, sırra — sanki bizim en değerli şeyimizmiş gibi bakmak.', dogruMu: true }, { id: 'B', metin: 'Sadece büyüklerimizin bize verdiklerini korumak, diğerlerini umursamamak.', dogruMu: false }], geriBildirimDogru: 'Harika! Emanete riayet, kime ait olursa olsun her şeye özen göstermektir.', geriBildirimYanlis: 'Emanet sadece büyüklerden gelen değildir. Bir arkadaşının emaneti de Allah katında sorumluluktur.' },
+    ],
+    tefekkurSorulari: ['Gözlerin, kulakların ve ellerin sana verilen birer emanet. Bunları nasıl en güzel şekilde korursun?', 'Bir arkadaşın sana emanet ettiği bir sırrı başkasına anlatsan, o sana bir daha güvenir mi?'],
+    haftaninGorevi: { baslik: 'Emanet Bekçisi Görevi', aciklama: 'Bugün bir arkadaşından veya ailenden bir eşyayı emanet olarak al. Onu gün sonuna kadar en güzel şekilde koru ve sapasağlam geri teslim et.' },
+    kazanilanRozet: 'Emanet Bekçisi Rozeti',
+  },
+
+  // === Lesson 40: Kapanış ===
+  40: {
+    tema: 'Bu Yolculukta Neler Öğrendik ve Bundan Sonra Ne Yapacağız',
+    kavramlar: [
+      { kavram: 'Güzel Ahlak', anlam: 'Dürüstlük, saygı, sabır, empati, adalet gibi değerleri hayatımızın her anında yaşamak.' },
+      { kavram: 'Sürekli Gelişim', anlam: "İyi bir insan olmak için her gün kendimizi biraz daha geliştirmek ve öğrendiklerimizi uygulamak." },
+    ],
+    ayetHadis: { metin: 'Ben güzel ahlakı tamamlamak için gönderildim.', kaynak: '(Hadis-i Şerif)' },
+    girisKancasi: { soru: 'Bu 40 derste çok şey öğrendin. Peki sence en çok hangi ders kalbine dokundu?', ipucu: 'Öğrenmek güzel, ama asıl güzellik öğrendiklerini hayata geçirmektir.' },
+    interaktifDuraklamalar: [
+      { zamanDamgasi: 30, tip: 'bilgi_karti', metin: '40 ders boyunca dürüstlük, saygı, ihlas, sabır, empati, adalet, vefa, kanaat ve daha birçok güzel ahlak değerini öğrendik. Şimdi sıra bunları her gün yaşamakta!' },
+      { zamanDamgasi: 80, tip: 'dogru_yanlis', soruMetni: 'Bu programı bitirdiğimize göre artık güzel ahlak konusunda öğrenecek bir şeyimiz kalmadı.', dogruCevap: false, geriBildirimDogru: 'Mükemmel! Güzel ahlak yolculuğu hiç bitmez. Her gün daha iyi bir insan olmak için çalışmalıyız.', geriBildirimYanlis: 'Öğrenmek hiç bitmez! Peygamber Efendimiz bile hayatı boyunca hep daha güzel ahlak için dua etmiştir.' },
+      { zamanDamgasi: 120, tip: 'coktan_secmeli', soruMetni: 'Bu programdan sonra en önemli görevimiz nedir?', secenekler: [{ id: 'A', metin: 'Öğrendiklerimizi unutup eski halimize dönmek.', dogruMu: false }, { id: 'B', metin: 'Öğrendiğimiz güzel ahlak değerlerini her gün yaşamak ve çevremize örnek olmak.', dogruMu: true }], geriBildirimDogru: 'Harika! Sen artık bir İyilik Elçisisin. Öğrendiklerini yaşa ve paylaş!', geriBildirimYanlis: 'Asla! Bu yolculuk burada bitmiyor, tam tersine şimdi başlıyor.' },
+    ],
+    tefekkurSorulari: ['40 ders boyunca öğrendiğin değerlerden hangisini en çok hayatına uygulamak istiyorsun?', 'Çevrende gördüğün bir haksızlığa karşı artık nasıl davranacaksın?', 'Bu derslerde öğrendiklerini ailene ve arkadaşlarına nasıl aktarabilirsin?'],
+    haftaninGorevi: { baslik: 'İyilik Elçisi Görevi', aciklama: 'Bu programda öğrendiğin en sevdiğin 3 değeri bir kağıda yaz ve odanın duvarına as. Her gün onlara bakarak o değerleri yaşamaya devam et.' },
+    kazanilanRozet: 'İyilik Akademisi Mezunu',
+  },
 };
