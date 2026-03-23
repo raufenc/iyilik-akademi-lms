@@ -13,6 +13,7 @@ import LessonPlayer from '../components/lesson/LessonPlayer'
 import InteractiveReview from '../components/lesson/InteractiveReview'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
+import Icon from '../components/ui/Icon'
 
 // Merge lessons with rich content
 const lessons = rawLessons.map(l => ({ ...l, ...(richContent[l.id] || {}) }))
@@ -166,7 +167,8 @@ export default function LessonPage() {
             <p className="text-text-muted mb-2">
               <span className="font-bold text-primary">{lesson.title}</span> dersini tamamladın!
             </p>
-            <p className="text-accent-dark font-bold text-lg">
+            <p className="text-accent-dark font-bold text-lg flex items-center justify-center gap-1.5">
+              <Icon name="lightning" size={20} className="text-accent" />
               +{lesson.id === 40 ? XP_FINAL_LESSON : XP_PER_LESSON} XP Kazandın!
             </p>
           </div>
@@ -184,7 +186,7 @@ export default function LessonPage() {
           {lesson.tefekkurSorulari && lesson.tefekkurSorulari.length > 0 && (
             <Card>
               <h3 className="font-semibold mb-3 flex items-center gap-2">
-                <span>💭</span> Tefekkür Soruları
+                <Icon name="heart" size={20} className="text-primary" /> Tefekkür Soruları
               </h3>
               <div className="space-y-3">
                 {lesson.tefekkurSorulari.map((soru, i) => (
@@ -203,7 +205,7 @@ export default function LessonPage() {
           {lesson.haftaninGorevi && (
             <Card className="border-secondary/30 bg-secondary/5">
               <h3 className="font-semibold mb-2 flex items-center gap-2">
-                <span>🎯</span> Haftanın Görevi: {lesson.haftaninGorevi.baslik}
+                <Icon name="target" size={20} className="text-secondary" /> Haftanın Görevi: {lesson.haftaninGorevi.baslik}
               </h3>
               <p className="text-sm text-text-light">{lesson.haftaninGorevi.aciklama}</p>
             </Card>

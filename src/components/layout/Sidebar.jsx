@@ -1,14 +1,52 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useProgress } from '../../contexts/ProgressContext'
+import Icon from '../ui/Icon'
 
 const NAV_ITEMS = [
-  { path: '/panel', icon: '📊', label: 'Dashboard', auth: true },
-  { path: '/dersler', icon: '📚', label: 'Dersler', auth: false },
-  { path: '/siralama', icon: '🏆', label: 'Sıralama', auth: false },
-  { path: '/forum', icon: '💬', label: 'Forum', auth: true },
-  { path: '/profil', icon: '👤', label: 'Profil', auth: true },
+  { path: '/panel', icon: 'dashboard', label: 'Dashboard', auth: true },
+  { path: '/dersler', icon: 'book', label: 'Dersler', auth: false },
+  { path: '/siralama', icon: 'trophy', label: 'Siralama', auth: false },
+  { path: '/forum', icon: 'chat', label: 'Forum', auth: true },
+  { path: '/profil', icon: 'user', label: 'Profil', auth: true },
 ]
+
+function ProgressRing({ progress, size = 56, strokeWidth = 4 }) {
+  const radius = (size - strokeWidth) / 2
+  const circumference = 2 * Math.PI * radius
+  const offset = circumference - (progress / 100) * circumference
+
+  return (
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="-rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          className="text-border"
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          className="text-primary transition-all duration-700"
+        />
+      </svg>
+      <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-primary">
+        {Math.round(progress)}%
+      </span>
+    </div>
+  )
+}
 
 export default function Sidebar({ open, onClose }) {
   const { user, isAdmin, isTeacher } = useAuth()
@@ -16,6 +54,7 @@ export default function Sidebar({ open, onClose }) {
   const location = useLocation()
 
   const items = NAV_ITEMS.filter(item => !item.auth || user)
+  const progress = (completedCount / 40) * 100
 
   return (
     <>
@@ -30,68 +69,87 @@ export default function Sidebar({ open, onClose }) {
       `}>
         <div className="p-4 flex flex-col h-full">
           {user && (
-            <div className="mb-4 p-3 bg-primary/5 rounded-xl">
-              <p className="text-xs text-text-muted">İlerleme</p>
-              <p className="font-bold text-lg text-primary">{completedCount}/40 Ders</p>
-              <div className="mt-2 h-2 bg-border rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full transition-all duration-500"
-                  style={{ width: `${(completedCount / 40) * 100}%` }}
-                />
+            <div className="mb-4 p-4 bg-primary/5 rounded-xl flex items-center gap-4">
+              <ProgressRing progress={progress} />
+              <div>
+                <p className="text-xs text-text-muted">Ilerleme</p>
+                <p className="font-bold text-lg text-primary leading-tight">{completedCount}/40</p>
+                <p className="text-xs text-text-muted">Ders</p>
               </div>
             </div>
           )}
 
           <nav className="flex-1 space-y-1">
-            {items.map(item => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={onClose}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-colors ${
-                  location.pathname === item.path
-                    ? 'bg-primary/10 text-primary font-medium'
-                    : 'text-text-light hover:bg-surface-alt'
-                }`}
-              >
-                <span>{item.icon}</span>
-                <span>{item.label}</span>
-              </Link>
-            ))}
+            {items.map(item => {
+              const isActive = location.pathname === item.path
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={onClose}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
+                    isActive
+                      ? 'bg-primary/10 text-primary font-medium'
+                      : 'text-text-light hover:bg-surface-alt hover:text-text'
+                  }`}
+                >
+                  {isActive && (
+                    <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
+                  )}
+                  <Icon name={item.icon} size={20} className={isActive ? 'text-primary' : ''} />
+                  <span>{item.label}</span>
+                </Link>
+              )
+            })}
 
             {isTeacher && (
               <div className="pt-4 mt-4 border-t border-border">
-                <p className="text-xs text-text-muted px-3 mb-2">Öğretmen</p>
+                <p className="text-[11px] text-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Ogretmen</p>
                 <Link
                   to="/odevler"
                   onClick={onClose}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-colors ${
-                    location.pathname === '/odevler' ? 'bg-primary/10 text-primary font-medium' : 'text-text-light hover:bg-surface-alt'
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
+                    location.pathname === '/odevler'
+                      ? 'bg-primary/10 text-primary font-medium'
+                      : 'text-text-light hover:bg-surface-alt hover:text-text'
                   }`}
                 >
-                  <span>📝</span><span>Ödevler</span>
+                  {location.pathname === '/odevler' && (
+                    <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
+                  )}
+                  <Icon name="clipboard" size={20} />
+                  <span>Odevler</span>
                 </Link>
               </div>
             )}
 
             {isAdmin && (
               <div className="pt-4 mt-4 border-t border-border">
-                <p className="text-xs text-text-muted px-3 mb-2">Admin</p>
+                <p className="text-[11px] text-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Admin</p>
                 <Link
                   to="/admin"
                   onClick={onClose}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-colors ${
-                    location.pathname.startsWith('/admin') ? 'bg-primary/10 text-primary font-medium' : 'text-text-light hover:bg-surface-alt'
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
+                    location.pathname.startsWith('/admin')
+                      ? 'bg-primary/10 text-primary font-medium'
+                      : 'text-text-light hover:bg-surface-alt hover:text-text'
                   }`}
                 >
-                  <span>⚙️</span><span>Yönetim</span>
+                  {location.pathname.startsWith('/admin') && (
+                    <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
+                  )}
+                  <Icon name="settings" size={20} />
+                  <span>Yonetim</span>
                 </Link>
               </div>
             )}
           </nav>
 
           <div className="mt-auto pt-4 border-t border-border">
-            <p className="text-xs text-text-muted text-center">İyilik Akademi v2.0</p>
+            <div className="flex items-center justify-center gap-1.5 text-text-muted">
+              <Icon name="heart" size={14} className="text-danger" />
+              <p className="text-xs">Iyilik Akademi</p>
+            </div>
           </div>
         </div>
       </aside>

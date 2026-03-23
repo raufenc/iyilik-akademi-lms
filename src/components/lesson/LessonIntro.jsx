@@ -1,5 +1,6 @@
 import Button from '../ui/Button'
 import Card from '../ui/Card'
+import Icon from '../ui/Icon'
 
 export default function LessonIntro({ lesson, onStart }) {
   const hasRichData = lesson.tema || lesson.kavramlar || lesson.ayetHadis
@@ -24,7 +25,7 @@ export default function LessonIntro({ lesson, onStart }) {
       {lesson.kavramlar && lesson.kavramlar.length > 0 && (
         <Card>
           <h3 className="font-semibold mb-3 flex items-center gap-2">
-            <span>📖</span> Öğrenilecek Kavramlar
+            <Icon name="book" size={20} className="text-primary" /> Ogrenilecek Kavramlar
           </h3>
           <div className="space-y-3">
             {lesson.kavramlar.map((k, i) => (
@@ -46,7 +47,9 @@ export default function LessonIntro({ lesson, onStart }) {
       {lesson.ayetHadis && (
         <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
           <div className="text-center">
-            <span className="text-2xl mb-2 block">📜</span>
+            <span className="mb-2 block">
+              <Icon name="scroll" size={28} className="text-primary mx-auto" />
+            </span>
             <p className="italic text-text font-medium text-sm leading-relaxed">
               "{lesson.ayetHadis.metin}"
             </p>
@@ -55,21 +58,21 @@ export default function LessonIntro({ lesson, onStart }) {
         </Card>
       )}
 
-      {/* Giriş Kancası */}
+      {/* Giris Kancasi */}
       {lesson.girisKancasi && (
         <Card className="border-accent/30 bg-accent/5">
           <h3 className="font-semibold mb-2 flex items-center gap-2">
-            <span>💭</span> Düşün
+            <Icon name="bulb" size={20} className="text-accent-dark" /> Dusun
           </h3>
           <p className="text-sm font-medium mb-2">{lesson.girisKancasi.soru}</p>
           <p className="text-xs text-text-muted italic">{lesson.girisKancasi.ipucu}</p>
         </Card>
       )}
 
-      {/* Başla Butonu */}
+      {/* Basla Butonu */}
       <div className="text-center pt-2">
         <Button onClick={onStart} size="lg">
-          Hazırım, Başlayalım!
+          Hazirim, Baslayalim!
         </Button>
       </div>
     </div>

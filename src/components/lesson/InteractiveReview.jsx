@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Button from '../ui/Button'
 import Card from '../ui/Card'
+import Icon from '../ui/Icon'
 
 /**
  * Interactive Review — shows interaktifDuraklamalar as a step between video and postQuiz.
@@ -59,8 +60,8 @@ export default function InteractiveReview({ items, onComplete }) {
   return (
     <div className="max-w-2xl mx-auto animate-fade-in">
       <div className="text-center mb-6">
-        <h2 className="text-xl font-bold">Video İçi Sorular</h2>
-        <p className="text-sm text-text-muted">Videodan öğrendiklerini pekiştir</p>
+        <h2 className="text-xl font-bold">Video Ici Sorular</h2>
+        <p className="text-sm text-text-muted">Videodan ogrendiklerini pekistir</p>
       </div>
 
       {/* Progress */}
@@ -80,7 +81,9 @@ export default function InteractiveReview({ items, onComplete }) {
       {item.tip === 'bilgi_karti' && (
         <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
           <div className="text-center">
-            <span className="text-3xl mb-3 block">💡</span>
+            <span className="mb-3 block">
+              <Icon name="bulb" size={32} className="text-amber-500 mx-auto" />
+            </span>
             <p className="text-xs text-text-muted mb-2 font-medium">Biliyor muydun?</p>
             <p className="text-sm leading-relaxed">{item.metin}</p>
           </div>
@@ -95,13 +98,15 @@ export default function InteractiveReview({ items, onComplete }) {
       {/* True/False Question */}
       {item.tip === 'dogru_yanlis' && (
         <div className="bg-white rounded-2xl border border-border p-6">
-          <p className="text-xs text-text-muted mb-2 flex items-center gap-1">
-            <span>✅❌</span> Doğru mu, Yanlış mı?
+          <p className="text-xs text-text-muted mb-2 flex items-center gap-1.5">
+            <Icon name="check" size={14} className="text-secondary" />
+            <Icon name="close" size={14} className="text-danger" />
+            Dogru mu, Yanlis mi?
           </p>
           <h3 className="font-semibold text-lg mb-5">{item.soruMetni}</h3>
 
           <div className="grid grid-cols-2 gap-3">
-            {['Doğru', 'Yanlış'].map((label, idx) => {
+            {['Dogru', 'Yanlis'].map((label, idx) => {
               let cls = 'border-border hover:border-primary/40 hover:bg-primary/5'
               const correctIdx = item.dogruCevap ? 0 : 1
 
@@ -120,7 +125,12 @@ export default function InteractiveReview({ items, onComplete }) {
                   disabled={showResult}
                   className={`px-4 py-4 rounded-xl border text-base font-medium transition-all ${cls}`}
                 >
-                  <span className="text-2xl mb-1 block">{idx === 0 ? '✅' : '❌'}</span>
+                  <span className="mb-1 block">
+                    {idx === 0
+                      ? <Icon name="check" size={28} className="text-secondary mx-auto" />
+                      : <Icon name="close" size={28} className="text-danger mx-auto" />
+                    }
+                  </span>
                   {label}
                 </button>
               )
@@ -152,8 +162,9 @@ export default function InteractiveReview({ items, onComplete }) {
       {/* Multiple Choice Question */}
       {item.tip === 'coktan_secmeli' && (
         <div className="bg-white rounded-2xl border border-border p-6">
-          <p className="text-xs text-text-muted mb-2 flex items-center gap-1">
-            <span>🤔</span> Çoktan seçmeli
+          <p className="text-xs text-text-muted mb-2 flex items-center gap-1.5">
+            <Icon name="sparkle" size={14} className="text-accent" />
+            Coktan secmeli
           </p>
           <h3 className="font-semibold text-lg mb-5">{item.soruMetni}</h3>
 
