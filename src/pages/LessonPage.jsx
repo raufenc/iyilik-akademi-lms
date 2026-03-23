@@ -1,14 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { useProgress } from '../contexts/ProgressContext'
-import { lessons } from '../data/lessons'
+import { lessons as rawLessons } from '../data/lessons'
+import { richContent } from '../data/richContent'
 import { XP_PER_LESSON, XP_FINAL_LESSON } from '../utils/xp'
 import { checkBadgeEligibility } from '../utils/badges'
 import LessonSteps from '../components/lesson/LessonSteps'
+import LessonIntro from '../components/lesson/LessonIntro'
 import QuizView from '../components/lesson/QuizView'
 import LessonPlayer from '../components/lesson/LessonPlayer'
+import InteractiveReview from '../components/lesson/InteractiveReview'
 import Button from '../components/ui/Button'
+import Card from '../components/ui/Card'
+
+// Merge lessons with rich content
+const lessons = rawLessons.map(l => ({ ...l, ...(richContent[l.id] || {}) }))
 
 export default function LessonPage() {
   const { id } = useParams()
@@ -16,8 +23,10 @@ export default function LessonPage() {
   const { user, userData } = useAuth()
   const { lessonProgress, updateLessonProgress, addXP, awardBadge, getLessonStatus, completedCount } = useProgress()
 
-  const lesson = lessons.find(l => l.id === Number(id))
-  const [step, setStep] = useState('preQuiz')
+  const lesson = useMemo(() => lessons.find(l => l.id === Number(id)), [id])
+  const hasIntro = !!(lesson?.tema || lesson?.kavramlar || lesson?.ayetHadis)
+  const hasInteractive = !!(lesson?.interaktifDuraklamalar && lesson.interaktifDuraklamalar.length > 0)
+  const [step, setStep] = useState(hasIntro ? 'intro' : 'preQuiz')
   const [newBadge, setNewBadge] = useState(null)
 
   useEffect(() => {
@@ -25,9 +34,11 @@ export default function LessonPage() {
     const status = getLessonStatus(lesson.id)
     if (status === 'completed') setStep('done')
     else if (status === 'post_quiz') setStep('postQuiz')
+    else if (status === 'interactive') setStep(hasInteractive ? 'interactive' : 'postQuiz')
     else if (status === 'video') setStep('video')
-    else setStep('preQuiz')
-  }, [lesson, getLessonStatus])
+    else if (status === 'pre_quiz') setStep('preQuiz')
+    else setStep(hasIntro ? 'intro' : 'preQuiz')
+  }, [lesson, getLessonStatus, hasIntro, hasInteractive])
 
   if (!user) {
     navigate('/giris')
@@ -43,6 +54,10 @@ export default function LessonPage() {
     )
   }
 
+  function handleIntroComplete() {
+    setStep('preQuiz')
+  }
+
   async function handlePreQuizComplete(score, total) {
     try { await updateLessonProgress(lesson.id, { preQuizDone: true, preQuizScore: score }) } catch (e) { console.error(e) }
     setStep('video')
@@ -50,6 +65,15 @@ export default function LessonPage() {
 
   async function handleVideoComplete() {
     try { await updateLessonProgress(lesson.id, { videoDone: true }) } catch (e) { console.error(e) }
+    if (hasInteractive) {
+      setStep('interactive')
+    } else {
+      setStep('postQuiz')
+    }
+  }
+
+  async function handleInteractiveComplete(score, total) {
+    try { await updateLessonProgress(lesson.id, { interactiveDone: true, interactiveScore: score }) } catch (e) { console.error(e) }
     setStep('postQuiz')
   }
 
@@ -92,9 +116,14 @@ export default function LessonPage() {
         </div>
       </div>
 
-      <LessonSteps currentStep={step} />
+      <LessonSteps currentStep={step} hasIntro={hasIntro} hasInteractive={hasInteractive} />
 
-      {/* Content */}
+      {/* Intro */}
+      {step === 'intro' && (
+        <LessonIntro lesson={lesson} onStart={handleIntroComplete} />
+      )}
+
+      {/* Pre Quiz */}
       {step === 'preQuiz' && (
         <QuizView
           questions={lesson.preQuiz}
@@ -104,10 +133,20 @@ export default function LessonPage() {
         />
       )}
 
+      {/* Video */}
       {step === 'video' && (
         <LessonPlayer driveId={lesson.driveId} onComplete={handleVideoComplete} />
       )}
 
+      {/* Interactive Review */}
+      {step === 'interactive' && (
+        <InteractiveReview
+          items={lesson.interaktifDuraklamalar}
+          onComplete={handleInteractiveComplete}
+        />
+      )}
+
+      {/* Post Quiz */}
       {step === 'postQuiz' && (
         <QuizView
           questions={lesson.postQuiz}
@@ -117,27 +156,61 @@ export default function LessonPage() {
         />
       )}
 
+      {/* Done */}
       {step === 'done' && (
-        <div className="text-center py-12 animate-slide-up">
-          <div className="text-6xl mb-4">🎉</div>
-          <h2 className="text-2xl font-bold mb-2">Tebrikler!</h2>
-          <p className="text-text-muted mb-2">
-            <span className="font-bold text-primary">{lesson.title}</span> dersini tamamladın!
-          </p>
-          <p className="text-accent-dark font-bold text-lg mb-6">
-            +{lesson.id === 40 ? XP_FINAL_LESSON : XP_PER_LESSON} XP Kazandın!
-          </p>
+        <div className="max-w-2xl mx-auto animate-slide-up space-y-6">
+          {/* Congrats */}
+          <div className="text-center">
+            <div className="text-6xl mb-4">🎉</div>
+            <h2 className="text-2xl font-bold mb-2">Tebrikler!</h2>
+            <p className="text-text-muted mb-2">
+              <span className="font-bold text-primary">{lesson.title}</span> dersini tamamladın!
+            </p>
+            <p className="text-accent-dark font-bold text-lg">
+              +{lesson.id === 40 ? XP_FINAL_LESSON : XP_PER_LESSON} XP Kazandın!
+            </p>
+          </div>
 
-          {newBadge && (
-            <div className="inline-block bg-accent/20 border border-accent px-6 py-4 rounded-2xl mb-6 animate-pulse-glow">
-              <p className="text-sm text-text-muted mb-1">Yeni Rozet Kazandın!</p>
-              <p className="text-2xl mb-1">{newBadge.icon}</p>
-              <p className="font-bold">{newBadge.name}</p>
-              <p className="text-sm text-text-muted">{newBadge.desc}</p>
-            </div>
+          {/* Badge */}
+          {(newBadge || lesson.kazanilanRozet) && (
+            <Card className="text-center bg-accent/10 border-accent/30 animate-pulse-glow">
+              <p className="text-sm text-text-muted mb-1">Rozet Kazandın!</p>
+              <p className="text-2xl mb-1">{newBadge?.icon || '🏅'}</p>
+              <p className="font-bold">{newBadge?.name || lesson.kazanilanRozet}</p>
+            </Card>
           )}
 
-          <div className="flex items-center justify-center gap-3">
+          {/* Tefekkür Soruları */}
+          {lesson.tefekkurSorulari && lesson.tefekkurSorulari.length > 0 && (
+            <Card>
+              <h3 className="font-semibold mb-3 flex items-center gap-2">
+                <span>💭</span> Tefekkür Soruları
+              </h3>
+              <div className="space-y-3">
+                {lesson.tefekkurSorulari.map((soru, i) => (
+                  <div key={i} className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold shrink-0">
+                      {i + 1}
+                    </span>
+                    <p className="text-sm text-text-light">{soru}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          )}
+
+          {/* Haftanın Görevi */}
+          {lesson.haftaninGorevi && (
+            <Card className="border-secondary/30 bg-secondary/5">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span>🎯</span> Haftanın Görevi: {lesson.haftaninGorevi.baslik}
+              </h3>
+              <p className="text-sm text-text-light">{lesson.haftaninGorevi.aciklama}</p>
+            </Card>
+          )}
+
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-3 pt-2">
             {nextLesson && (
               <Button onClick={() => navigate(`/ders/${nextLesson.id}`)}>
                 Sonraki Ders: {nextLesson.title}

@@ -6,9 +6,16 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
   const [selected, setSelected] = useState(null)
   const [showResult, setShowResult] = useState(false)
   const [score, setScore] = useState(0)
-  const [answers, setAnswers] = useState([])
 
   const q = questions[currentQ]
+  const isTrueFalse = q.tip === 'dogru_yanlis'
+  const options = isTrueFalse
+    ? ['Doğru', 'Yanlış']
+    : (q.options || q.secenekler?.map(s => s.metin) || [])
+
+  const correctIndex = isTrueFalse
+    ? (q.dogruCevap === true ? 0 : 1)
+    : (q.correct ?? q.secenekler?.findIndex(s => s.dogru_mu) ?? 0)
 
   function handleSelect(idx) {
     if (showResult) return
@@ -16,10 +23,8 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
   }
 
   function handleConfirm() {
-    const isCorrect = selected === q.correct
-    const newScore = isCorrect ? score + 1 : score
-    setScore(newScore)
-    setAnswers([...answers, { selected, correct: q.correct, isCorrect }])
+    const isCorrect = selected === correctIndex
+    if (isCorrect) setScore(score + 1)
     setShowResult(true)
   }
 
@@ -29,9 +34,17 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
       setSelected(null)
       setShowResult(false)
     } else {
-      onComplete(score + (selected === q.correct ? 1 : 0), questions.length)
+      const finalCorrect = selected === correctIndex ? score : score
+      onComplete(finalCorrect, questions.length)
     }
   }
+
+  const isCorrect = selected === correctIndex
+  const feedbackText = showResult
+    ? isCorrect
+      ? (q.geriDogruBildirim || q.geri_bildirim_dogru || 'Doğru! Harika!')
+      : (q.geriYanlisBildirim || q.geri_bildirim_yanlis || `Yanlış. Doğru cevap: ${options[correctIndex]}`)
+    : ''
 
   return (
     <div className="max-w-2xl mx-auto animate-fade-in">
@@ -56,14 +69,14 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
       {/* Question */}
       <div className="bg-white rounded-2xl border border-border p-6">
         <p className="text-xs text-text-muted mb-2">Soru {currentQ + 1} / {questions.length}</p>
-        <h3 className="font-semibold text-lg mb-5">{q.q}</h3>
+        <h3 className="font-semibold text-lg mb-5">{q.q || q.soru_metni || q.soru}</h3>
 
         <div className="space-y-3">
-          {q.options.map((opt, idx) => {
+          {options.map((opt, idx) => {
             let cls = 'border-border hover:border-primary/40 hover:bg-primary/5'
             if (showResult) {
-              if (idx === q.correct) cls = 'border-secondary bg-secondary/10'
-              else if (idx === selected && idx !== q.correct) cls = 'border-danger bg-danger/10'
+              if (idx === correctIndex) cls = 'border-secondary bg-secondary/10'
+              else if (idx === selected && idx !== correctIndex) cls = 'border-danger bg-danger/10'
               else cls = 'border-border opacity-50'
             } else if (selected === idx) {
               cls = 'border-primary bg-primary/5 ring-2 ring-primary/20'
@@ -79,11 +92,11 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
                 <span className="inline-flex items-center gap-3">
                   <span className={`w-7 h-7 rounded-full border flex items-center justify-center text-xs font-bold ${
                     selected === idx && !showResult ? 'bg-primary text-white border-primary' :
-                    showResult && idx === q.correct ? 'bg-secondary text-white border-secondary' :
+                    showResult && idx === correctIndex ? 'bg-secondary text-white border-secondary' :
                     showResult && idx === selected ? 'bg-danger text-white border-danger' :
                     'border-border text-text-muted'
                   }`}>
-                    {String.fromCharCode(65 + idx)}
+                    {isTrueFalse ? (idx === 0 ? '✓' : '✗') : String.fromCharCode(65 + idx)}
                   </span>
                   <span>{opt}</span>
                 </span>
@@ -94,9 +107,9 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
 
         {showResult && (
           <div className={`mt-4 p-3 rounded-lg text-sm ${
-            selected === q.correct ? 'bg-secondary/10 text-secondary' : 'bg-danger/10 text-danger'
+            isCorrect ? 'bg-secondary/10 text-secondary' : 'bg-danger/10 text-danger'
           }`}>
-            {selected === q.correct ? 'Doğru! Harika!' : `Yanlış. Doğru cevap: ${q.options[q.correct]}`}
+            {feedbackText}
           </div>
         )}
 
