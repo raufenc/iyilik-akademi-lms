@@ -8,8 +8,8 @@ import Button from './Button'
 const STEPS = [
   {
     icon: '🌟',
-    title: 'Hos geldin!',
-    text: 'Iyilik Akademi\'ye hos geldin! 40 ders, yuzlerce quiz seni bekliyor. Birlikte guzel ahlak ve degerleri ogrenecegiz.',
+    title: 'Hoş geldin!',
+    text: 'İyilik Akademi\'ye hoş geldin! 40 ders, yüzlerce quiz seni bekliyor. Birlikte güzel ahlak ve değerleri öğreneceğiz.',
     illustration: (
       <div className="flex items-center justify-center gap-3 text-5xl py-4">
         <span className="animate-float" style={{ animationDelay: '0s' }}>🌟</span>
@@ -22,7 +22,7 @@ const STEPS = [
   {
     icon: '📚',
     title: 'Dersler',
-    text: 'Her ders bir videodan ve quizlerden olusuyor. Sirayla ilerle! Her derste yeni bir deger ogreneceksin.',
+    text: 'Her ders bir videodan ve quizlerden oluşuyor. Sırayla ilerle! Her derste yeni bir değer öğreneceksin.',
     illustration: (
       <div className="flex items-center justify-center gap-3 text-5xl py-4">
         <span className="animate-float" style={{ animationDelay: '0s' }}>🎬</span>
@@ -35,7 +35,7 @@ const STEPS = [
   {
     icon: '🏆',
     title: 'XP ve Rozetler',
-    text: 'Her ders tamamladiginda XP kazanirsin. Rozetler ve sertifikalar seni bekliyor! Seviye atlayarak ilerle.',
+    text: 'Her ders tamamladığında XP kazanırsın. Rozetler ve sertifikalar seni bekliyor! Seviye atlayarak ilerle.',
     illustration: (
       <div className="flex items-center justify-center gap-3 text-5xl py-4">
         <span className="animate-float" style={{ animationDelay: '0s' }}>\u26A1</span>
@@ -47,8 +47,8 @@ const STEPS = [
   },
   {
     icon: '🚀',
-    title: 'Hazir misin?',
-    text: 'Haydi ilk dersine basla! Iyilik yolculugunda seni harika seyler bekliyor.',
+    title: 'Hazır mısın?',
+    text: 'Haydi ilk dersine başla! İyilik yolculuğunda seni harika şeyler bekliyor.',
     illustration: (
       <div className="flex items-center justify-center gap-3 text-5xl py-4">
         <span className="animate-float" style={{ animationDelay: '0s' }}>🚀</span>
@@ -186,7 +186,7 @@ export default function OnboardingTour() {
 
             {current.isFinal ? (
               <Button size="md" onClick={handleFinish}>
-                Ilk Dersime Git
+                İlk Dersime Git
               </Button>
             ) : (
               <Button size="md" onClick={goNext}>

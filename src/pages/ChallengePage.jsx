@@ -30,12 +30,12 @@ function shuffleArray(arr) {
 function getDailyTheme() {
   const themes = [
     { name: 'Ahlak ve Erdemler', filter: l => [1, 2, 3, 4, 5].includes(l.id) },
-    { name: 'Ibadet ve Kulluk', filter: l => [6, 7, 8, 9, 10].includes(l.id) },
-    { name: 'Toplum ve Iliskiler', filter: l => [11, 12, 13, 14, 15].includes(l.id) },
+    { name: 'İbadet ve Kulluk', filter: l => [6, 7, 8, 9, 10].includes(l.id) },
+    { name: 'Toplum ve İlişkiler', filter: l => [11, 12, 13, 14, 15].includes(l.id) },
     { name: 'Bilgi ve Hikmet', filter: l => [16, 17, 18, 19, 20].includes(l.id) },
     { name: 'Sabir ve Sükür', filter: l => [21, 22, 23, 24, 25].includes(l.id) },
-    { name: 'Iyilik ve Merhamet', filter: l => [26, 27, 28, 29, 30].includes(l.id) },
-    { name: 'Karakter ve Gelisim', filter: l => [31, 32, 33, 34, 35, 36, 37, 38, 39, 40].includes(l.id) },
+    { name: 'İyilik ve Merhamet', filter: l => [26, 27, 28, 29, 30].includes(l.id) },
+    { name: 'Karakter ve Gelişim', filter: l => [31, 32, 33, 34, 35, 36, 37, 38, 39, 40].includes(l.id) },
   ]
   const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000)
   return themes[dayOfYear % themes.length]
@@ -395,7 +395,7 @@ export default function ChallengePage() {
                         )}
                       </div>
                       <Button size="sm" onClick={() => startChallenge(ch)}>
-                        Basla
+                        Başla
                       </Button>
                     </div>
                   </div>
@@ -410,9 +410,9 @@ export default function ChallengePage() {
           <Card className="mt-6 text-center">
             <Icon name="lock" size={32} className="mx-auto mb-2 text-text-muted dark:text-dark-text-muted" />
             <p className="text-sm text-text-muted dark:text-dark-text-muted">
-              Meydan okuma oynayabilirsin ama puanlarin kaydedilmez. <br />
-              <Link to="/giris" className="text-primary font-semibold hover:underline">Giris yap</Link> veya{' '}
-              <Link to="/kayit" className="text-primary font-semibold hover:underline">kayit ol</Link> puanlarin kayit altina alinsin!
+              Meydan okuma oynayabilirsin ama puanların kaydedilmez. <br />
+              <Link to="/giris" className="text-primary font-semibold hover:underline">Giriş yap</Link> veya{' '}
+              <Link to="/kayit" className="text-primary font-semibold hover:underline">kayıt ol</Link> puanların kayıt altına alınsın!
             </p>
           </Card>
         )}

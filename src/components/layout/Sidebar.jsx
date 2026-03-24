@@ -7,13 +7,13 @@ const NAV_ITEMS = [
   { path: '/panel', icon: 'dashboard', label: 'Dashboard', auth: true },
   { path: '/dersler', icon: 'book', label: 'Dersler', auth: false },
   { path: '/harita', icon: 'map', label: 'Harita', auth: true },
-  { path: '/gunluk-quiz', icon: 'target', label: 'Gunluk Quiz', auth: true },
-  { path: '/siralama', icon: 'trophy', label: 'Siralama', auth: false },
+  { path: '/gunluk-quiz', icon: 'target', label: 'Günlük Quiz', auth: true },
+  { path: '/siralama', icon: 'trophy', label: 'Sıralama', auth: false },
   { path: '/meydan-okuma', icon: 'swords', label: 'Meydan Okuma', auth: false },
   { path: '/tekrar', icon: 'refresh', label: 'Tekrar', auth: true },
-  { path: '/notlarim', icon: 'clipboard', label: 'Notlarim', auth: true },
-  { path: '/basarilar', icon: 'award', label: 'Basarilar', auth: true },
-  { path: '/magaza', icon: 'shopping-bag', label: 'Magaza', auth: true },
+  { path: '/notlarim', icon: 'clipboard', label: 'Notlarım', auth: true },
+  { path: '/basarilar', icon: 'award', label: 'Başarılar', auth: true },
+  { path: '/magaza', icon: 'shopping-bag', label: 'Mağaza', auth: true },
   { path: '/forum', icon: 'chat', label: 'Forum', auth: true },
   { path: '/profil', icon: 'user', label: 'Profil', auth: true },
   { path: '/ebeveyn-raporu', icon: 'report', label: 'Ebeveyn Raporu', auth: true },
@@ -80,7 +80,7 @@ export default function Sidebar({ open, onClose }) {
             <div className="mb-4 p-4 bg-primary/5 dark:bg-primary/10 rounded-xl flex items-center gap-4">
               <ProgressRing progress={progress} />
               <div>
-                <p className="text-xs text-text-muted dark:text-dark-text-muted">Ilerleme</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted">İlerleme</p>
                 <p className="font-bold text-lg text-primary leading-tight">{completedCount}/40</p>
                 <p className="text-xs text-text-muted dark:text-dark-text-muted">Ders</p>
               </div>
@@ -126,7 +126,7 @@ export default function Sidebar({ open, onClose }) {
                     <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
                   )}
                   <Icon name="clipboard" size={20} />
-                  <span>Odevler</span>
+                  <span>Ödevler</span>
                 </Link>
               </div>
             )}
@@ -147,7 +147,7 @@ export default function Sidebar({ open, onClose }) {
                     <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
                   )}
                   <Icon name="settings" size={20} />
-                  <span>Yonetim</span>
+                  <span>Yönetim</span>
                 </Link>
               </div>
             )}
@@ -156,7 +156,7 @@ export default function Sidebar({ open, onClose }) {
           <div className="mt-auto pt-4 border-t border-border dark:border-dark-border">
             <div className="flex items-center justify-center gap-1.5 text-text-muted dark:text-dark-text-muted">
               <Icon name="heart" size={14} className="text-danger" />
-              <p className="text-xs">Iyilik Akademi</p>
+              <p className="text-xs">İyilik Akademi</p>
             </div>
           </div>
         </div>

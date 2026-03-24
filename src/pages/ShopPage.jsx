@@ -47,7 +47,7 @@ export default function ShopPage() {
                 <h1 className="font-heading text-2xl md:text-3xl font-bold mb-1 flex items-center gap-3">
                   <span className="text-3xl">🏪</span> Magaza
                 </h1>
-                <p className="text-white/70 text-sm">Altinlarini harca, profilini guzellestir!</p>
+                <p className="text-white/70 text-sm">Altinlarini harca, profilini güzelleştir!</p>
               </div>
 
               {/* Coin Balance */}
@@ -65,8 +65,8 @@ export default function ShopPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
                   { emoji: '📚', text: 'Ders Tamamla', coins: '+10' },
-                  { emoji: '🎯', text: 'Gunluk Quiz', coins: '+5' },
-                  { emoji: '🏆', text: 'Basari Kazan', coins: '+10-200' },
+                  { emoji: '🎯', text: 'Günlük Quiz', coins: '+5' },
+                  { emoji: '🏆', text: 'Başarı Kazan', coins: '+10-200' },
                   { emoji: '🔥', text: 'Seri Yap', coins: '+5/gun' },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-2 text-center">

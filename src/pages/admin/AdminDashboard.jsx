@@ -179,20 +179,20 @@ export default function AdminDashboard() {
           <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
             <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd" />
           </svg>
-          Detayli Raporlar
+          Detaylı Raporlar
         </Link>
       </div>
 
       {/* Row 1: Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
-          label="Toplam Ogrenci"
+          label="Toplam Öğrenci"
           value={stats.totalUsers}
           icon="users"
           gradient="blue"
         />
         <StatCard
-          label="Aktif Ogrenci"
+          label="Aktif Öğrenci"
           value={stats.activeUsers}
           icon="active"
           gradient="green"
@@ -228,7 +228,7 @@ export default function AdminDashboard() {
           <DonutChart
             segments={levelDistribution}
             size={200}
-            title="Seviye Dagilimi"
+            title="Seviye Dağılımı"
           />
         </div>
       </div>
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
           <LineChart
             data={weeklyRegistrations}
             height={260}
-            title="Haftalik Kayit Trendi (Son 8 Hafta)"
+            title="Haftalık Kayıt Trendi (Son 8 Hafta)"
             color="#6366f1"
           />
         </div>
@@ -247,7 +247,7 @@ export default function AdminDashboard() {
           <BarChart
             data={topStudents}
             height={260}
-            title="En Aktif Ogrenciler (XP)"
+            title="En Aktif Öğrenciler (XP)"
           />
         </div>
       </div>
@@ -262,7 +262,7 @@ export default function AdminDashboard() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-gray-50/80">
-                <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wider">Ogrenci</th>
+                <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wider">Öğrenci</th>
                 <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wider">Ders</th>
                 <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wider">Tarih</th>
                 <th className="text-right px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wider">XP</th>
@@ -356,7 +356,7 @@ export default function AdminDashboard() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-900">Detayli Raporlar</p>
+            <p className="text-sm font-semibold text-gray-900">Detaylı Raporlar</p>
             <p className="text-xs text-gray-400">CSV disari aktar</p>
           </div>
         </Link>

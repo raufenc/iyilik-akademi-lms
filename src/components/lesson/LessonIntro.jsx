@@ -58,7 +58,7 @@ export default function LessonIntro({ lesson, onStart }) {
         </Card>
       )}
 
-      {/* Giris Kancasi */}
+      {/* Giriş Kancası */}
       {lesson.girisKancasi && (
         <Card className="border-accent/30 bg-accent/5">
           <h3 className="font-semibold mb-2 flex items-center gap-2">
@@ -69,10 +69,10 @@ export default function LessonIntro({ lesson, onStart }) {
         </Card>
       )}
 
-      {/* Basla Butonu */}
+      {/* Başla Butonu */}
       <div className="text-center pt-2">
         <Button onClick={onStart} size="lg">
-          Hazirim, Baslayalim!
+          Hazırım, Başlayalım!
         </Button>
       </div>
     </div>

@@ -141,7 +141,7 @@ export default function ParentReportPage() {
 
       ctx.font = `${14 * s}px Inter, sans-serif`
       ctx.fillStyle = 'rgba(255,255,255,0.8)'
-      ctx.fillText('Ebeveyn Ilerleme Raporu', canvas.width / 2, 58 * s)
+      ctx.fillText('Ebeveyn İlerleme Raporu', canvas.width / 2, 58 * s)
 
       let y = 110 * s
 
@@ -149,7 +149,7 @@ export default function ParentReportPage() {
       ctx.textAlign = 'left'
       ctx.font = `bold ${16 * s}px Inter, sans-serif`
       ctx.fillStyle = '#2D3436'
-      ctx.fillText('Ogrenci Bilgileri', 40 * s, y)
+      ctx.fillText('Öğrenci Bilgileri', 40 * s, y)
       y += 30 * s
 
       ctx.font = `${13 * s}px Inter, sans-serif`
@@ -168,7 +168,7 @@ export default function ParentReportPage() {
       // Progress bar
       ctx.font = `bold ${16 * s}px Inter, sans-serif`
       ctx.fillStyle = '#2D3436'
-      ctx.fillText('Genel Ilerleme', 40 * s, y)
+      ctx.fillText('Genel İlerleme', 40 * s, y)
       y += 25 * s
 
       // Draw progress bar
@@ -198,7 +198,7 @@ export default function ParentReportPage() {
       // Weekly summary
       ctx.font = `bold ${16 * s}px Inter, sans-serif`
       ctx.fillStyle = '#2D3436'
-      ctx.fillText('Haftalik Ozet', 40 * s, y)
+      ctx.fillText('Haftalık Özet', 40 * s, y)
       y += 25 * s
 
       ctx.font = `${13 * s}px Inter, sans-serif`
@@ -246,7 +246,7 @@ export default function ParentReportPage() {
       ctx.font = `${11 * s}px Inter, sans-serif`
       ctx.textAlign = 'center'
       ctx.fillText(
-        `Rapor Tarihi: ${new Date().toLocaleDateString('tr-TR')} — Iyilik Akademi`,
+        `Rapor Tarihi: ${new Date().toLocaleDateString('tr-TR')} — İyilik Akademi`,
         canvas.width / 2,
         canvas.height - 30 * s
       )
@@ -258,7 +258,7 @@ export default function ParentReportPage() {
       link.href = dataUrl
       link.click()
     } catch (e) {
-      console.error('Rapor olusturulamadi', e)
+      console.error('Rapor oluşturulamadı', e)
     }
     setGenerating(false)
   }
@@ -326,7 +326,7 @@ export default function ParentReportPage() {
         <Card>
           <h2 className="font-heading text-lg font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-lg">👤</span>
-            Ogrenci Bilgileri
+            Öğrenci Bilgileri
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="flex items-center gap-3">
@@ -365,12 +365,12 @@ export default function ParentReportPage() {
         <Card>
           <h2 className="font-heading text-lg font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-lg">📊</span>
-            Haftalik Ozet
+            Haftalık Özet
           </h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-surface-alt rounded-xl p-4 text-center">
               <p className="font-heading text-3xl font-bold text-primary">{weeklySummary.weekLessons}</p>
-              <p className="text-sm text-text-muted mt-1">Ders Tamamlandi</p>
+              <p className="text-sm text-text-muted mt-1">Ders Tamamlandı</p>
             </div>
             <div className="bg-surface-alt rounded-xl p-4 text-center">
               <p className="font-heading text-3xl font-bold text-accent-dark">{weeklySummary.weekXP}</p>
@@ -388,7 +388,7 @@ export default function ParentReportPage() {
         <Card>
           <h2 className="font-heading text-lg font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center text-lg">📈</span>
-            Genel Ilerleme
+            Genel İlerleme
           </h2>
           <div className="space-y-4">
             {/* Big progress bar */}
@@ -423,7 +423,7 @@ export default function ParentReportPage() {
             <div className="flex items-center justify-between text-xs text-text-muted mt-2">
               <div className={`text-center ${completedCount >= 1 ? 'text-secondary' : ''}`}>
                 <span className="block text-lg">{completedCount >= 1 ? '✅' : '⬜'}</span>
-                <span>Baslangic</span>
+                <span>Başlangic</span>
               </div>
               <div className={`text-center ${completedCount >= 10 ? 'text-secondary' : ''}`}>
                 <span className="block text-lg">{completedCount >= 10 ? '✅' : '⬜'}</span>
@@ -472,7 +472,7 @@ export default function ParentReportPage() {
             </div>
           ) : (
             <p className="text-sm text-text-muted text-center py-4">
-              Henuz tamamlanan ders bulunmuyor. Ilk derse baslamak icin harika bir zaman!
+              Henuz tamamlanan ders bulunmuyor. İlk derse başlamak icin harika bir zaman!
             </p>
           )}
         </Card>
@@ -531,7 +531,7 @@ export default function ParentReportPage() {
                   <span className="text-2xl">{s.icon}</span>
                   <div className="flex-1">
                     <p className="font-medium text-sm text-emerald-800">{s.title}</p>
-                    <p className="text-xs text-emerald-600">Bu konuda cok basarili!</p>
+                    <p className="text-xs text-emerald-600">Bu konuda çok başarılı!</p>
                   </div>
                   <div className="text-right">
                     <p className="font-heading font-bold text-emerald-700">%{Math.round(s.score)}</p>
@@ -570,7 +570,7 @@ export default function ParentReportPage() {
           ) : (
             <p className="text-sm text-text-muted text-center py-4">
               {completedCount > 0
-                ? 'Tum konularda basarili ilerleme gosteriliyor!'
+                ? 'Tum konularda başarılı ilerleme gösteriliyor!'
                 : 'Quiz sonuclari yeterli oldugunda gelisim alanlari burada gosterilecektir.'}
             </p>
           )}
@@ -578,8 +578,8 @@ export default function ParentReportPage() {
 
         {/* Footer */}
         <div className="text-center py-4 text-xs text-text-muted">
-          <p>Bu rapor {new Date().toLocaleDateString('tr-TR')} tarihinde olusturulmustur.</p>
-          <p className="mt-1">Iyilik Akademi — Guzel Ahlak Egitim Platformu</p>
+          <p>Bu rapor {new Date().toLocaleDateString('tr-TR')} tarihinde oluşturulmuştur.</p>
+          <p className="mt-1">İyilik Akademi — Güzel Ahlak Eğitim Platformu</p>
         </div>
       </div>
     </>

@@ -367,7 +367,7 @@ export default function PracticeModePage() {
           <div className="text-5xl mb-4">
             {masteryPct >= 80 ? '🌟' : masteryPct >= 50 ? '💪' : '📚'}
           </div>
-          <h2 className="text-xl font-bold mb-2 dark:text-dark-text">Tekrar Tamamlandi!</h2>
+          <h2 className="text-xl font-bold mb-2 dark:text-dark-text">Tekrar Tamamlandı!</h2>
 
           {/* Mastery Ring */}
           <div className="relative w-28 h-28 mx-auto my-6">

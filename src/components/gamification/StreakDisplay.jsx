@@ -133,7 +133,7 @@ export function StreakCard() {
           to="/gunluk-quiz"
           className="mt-4 w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold text-sm no-underline shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
         >
-          {'\uD83C\uDFAF'} Gunluk Quiz Coz
+          {'\uD83C\uDFAF'} Günlük Quiz Coz
         </Link>
       )}
 

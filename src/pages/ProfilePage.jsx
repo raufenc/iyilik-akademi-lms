@@ -36,14 +36,14 @@ export default function ProfilePage() {
     setCertLoading(type)
     try {
       const dataUrl = await generateCertificate({
-        name: userData?.name || 'Ogrenci',
+        name: userData?.name || 'Öğrenci',
         completedLessons: completedCount,
         type,
         date: new Date().toLocaleDateString('tr-TR'),
       })
       setCertPreview({ type, dataUrl })
     } catch (e) {
-      console.error('Sertifika olusturulamadi', e)
+      console.error('Sertifika oluşturulamadı', e)
     }
     setCertLoading(null)
   }
@@ -62,7 +62,7 @@ export default function ProfilePage() {
     try {
       await shareCertificate(
         certPreview.dataUrl,
-        userData?.name || 'Ogrenci',
+        userData?.name || 'Öğrenci',
         certPreview.type
       )
     } catch (e) {
@@ -72,7 +72,7 @@ export default function ProfilePage() {
   }
 
   function handleWhatsAppShare() {
-    shareViaWhatsApp(userData?.name || 'Ogrenci', certPreview?.type || 'completion')
+    shareViaWhatsApp(userData?.name || 'Öğrenci', certPreview?.type || 'completion')
   }
 
   const levelColor = LEVEL_COLORS[level] || LEVEL_COLORS[1]

@@ -139,7 +139,7 @@ export default function StudyNotesPage() {
 
   // Export all notes as text
   function exportNotes() {
-    let text = 'Iyilik Akademi - Notlarim\n'
+    let text = 'İyilik Akademi - Notlarim\n'
     text += '='.repeat(40) + '\n\n'
 
     lessons.forEach(lesson => {

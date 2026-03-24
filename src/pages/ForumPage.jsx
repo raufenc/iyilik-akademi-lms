@@ -452,7 +452,7 @@ export default function ForumPage() {
               <div className="text-center py-16">
                 <p className="text-4xl mb-3">{'\uD83D\uDCAC'}</p>
                 <p className="text-text-muted dark:text-dark-text-muted font-medium">Henuz konu yok</p>
-                <p className="text-xs text-text-muted dark:text-dark-text-muted mt-1">Ilk konuyu sen olustur!</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted mt-1">İlk konuyu sen oluştur!</p>
               </div>
             ) : (
               filteredThreads.map(thread => {
@@ -623,7 +623,7 @@ export default function ForumPage() {
                   </div>
                 ) : replies.length === 0 ? (
                   <div className="text-center py-8">
-                    <p className="text-text-muted dark:text-dark-text-muted text-sm">Henuz yanit yok. Ilk yaniti sen ver!</p>
+                    <p className="text-text-muted dark:text-dark-text-muted text-sm">Henuz yanit yok. İlk yanıtı sen ver!</p>
                   </div>
                 ) : (
                   (() => {

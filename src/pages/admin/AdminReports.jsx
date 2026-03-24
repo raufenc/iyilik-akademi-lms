@@ -214,7 +214,7 @@ export default function AdminReports() {
 
   function exportCSV() {
     const headers = activeTab === 'progress'
-      ? ['Ad', 'E-posta', 'Seviye', 'XP', 'Tamamlanan Ders', 'Tamamlanma %', 'Kayit Tarihi']
+      ? ['Ad', 'E-posta', 'Seviye', 'XP', 'Tamamlanan Ders', 'Tamamlanma %', 'Kayıt Tarihi']
       : ['Ad', 'E-posta', 'Ort. On Quiz %', 'Ort. Son Quiz %', 'On Quiz Sayisi', 'Son Quiz Sayisi']
 
     const rows = filtered.map(u => {
@@ -275,7 +275,7 @@ export default function AdminReports() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Detayli Raporlar</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Detaylı Raporlar</h1>
           <p className="text-sm text-gray-500 mt-0.5">{filtered.length} ogrenci listeleniyor</p>
         </div>
         <button
@@ -299,7 +299,7 @@ export default function AdminReports() {
               : 'text-gray-500 hover:text-gray-700'
           }`}
         >
-          Ogrenci Ilerlemesi
+          Öğrenci İlerlemesi
         </button>
         <button
           onClick={() => setActiveTab('quiz')}
@@ -327,7 +327,7 @@ export default function AdminReports() {
             />
           </div>
           <div className="w-full sm:w-44">
-            <label className="block text-xs font-medium text-gray-500 mb-1">Baslangic Tarihi</label>
+            <label className="block text-xs font-medium text-gray-500 mb-1">Başlangıç Tarihi</label>
             <input
               type="date"
               value={dateFrom}
@@ -371,7 +371,7 @@ export default function AdminReports() {
             <DonutChart
               segments={completionDistribution}
               size={190}
-              title="Tamamlanma Dagilimi"
+              title="Tamamlanma Dağılımı"
             />
           </div>
         </div>
@@ -381,11 +381,11 @@ export default function AdminReports() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 bg-white dark:bg-dark-card rounded-2xl border border-gray-100 dark:border-dark-border p-6 shadow-soft">
             {/* Summary Stats */}
-            <h3 className="text-sm font-semibold text-gray-900 mb-4">Genel Ozet</h3>
+            <h3 className="text-sm font-semibold text-gray-900 mb-4">Genel Özet</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="text-center p-3 bg-blue-50 rounded-xl">
                 <p className="text-2xl font-bold text-blue-600">{enrichedUsers.length}</p>
-                <p className="text-xs text-blue-500 mt-0.5">Toplam Ogrenci</p>
+                <p className="text-xs text-blue-500 mt-0.5">Toplam Öğrenci</p>
               </div>
               <div className="text-center p-3 bg-emerald-50 rounded-xl">
                 <p className="text-2xl font-bold text-emerald-600">
@@ -411,7 +411,7 @@ export default function AdminReports() {
             <DonutChart
               segments={completionDistribution}
               size={190}
-              title="Tamamlanma Dagilimi"
+              title="Tamamlanma Dağılımı"
             />
           </div>
         </div>
@@ -428,7 +428,7 @@ export default function AdminReports() {
                     className="text-left px-5 py-3.5 font-medium text-gray-500 text-xs uppercase tracking-wider cursor-pointer hover:text-gray-700 select-none"
                     onClick={() => handleSort('name')}
                   >
-                    Ogrenci <SortIcon col="name" />
+                    Öğrenci <SortIcon col="name" />
                   </th>
                   <th
                     className="text-center px-5 py-3.5 font-medium text-gray-500 text-xs uppercase tracking-wider cursor-pointer hover:text-gray-700 select-none"
@@ -592,7 +592,7 @@ export default function AdminReports() {
           {/* Per-User Quiz Table */}
           <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-100 dark:border-dark-border shadow-soft overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100">
-              <h3 className="text-sm font-semibold text-gray-900">Ogrenci Bazli Quiz Performansi</h3>
+              <h3 className="text-sm font-semibold text-gray-900">Öğrenci Bazlı Quiz Performansı</h3>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -602,7 +602,7 @@ export default function AdminReports() {
                       className="text-left px-5 py-3.5 font-medium text-gray-500 text-xs uppercase tracking-wider cursor-pointer hover:text-gray-700 select-none"
                       onClick={() => handleSort('name')}
                     >
-                      Ogrenci <SortIcon col="name" />
+                      Öğrenci <SortIcon col="name" />
                     </th>
                     <th
                       className="text-center px-5 py-3.5 font-medium text-gray-500 text-xs uppercase tracking-wider cursor-pointer hover:text-gray-700 select-none"

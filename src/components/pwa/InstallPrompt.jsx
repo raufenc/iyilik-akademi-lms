@@ -63,7 +63,7 @@ export default function InstallPrompt() {
             <p className="text-xs text-text-muted mt-0.5">
               {isIOS
                 ? 'Paylas simgesine, sonra "Ana Ekrana Ekle"ye dokun.'
-                : 'Iyilik Akademi\'yi ana ekranina ekle, hizli erisim sagla!'}
+                : 'İyilik Akademi\'yi ana ekranina ekle, hizli erisim sagla!'}
             </p>
             <div className="flex gap-2 mt-3">
               {!isIOS && (

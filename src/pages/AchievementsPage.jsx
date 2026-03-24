@@ -29,9 +29,9 @@ export default function AchievementsPage() {
           <div className="absolute -bottom-4 -left-4 w-28 h-28 bg-white/10 rounded-full blur-xl" />
           <div className="relative">
             <h1 className="font-heading text-2xl md:text-3xl font-bold mb-1 flex items-center gap-3">
-              <span className="text-3xl">🏆</span> Basarilar
+              <span className="text-3xl">🏆</span> Başarılar
             </h1>
-            <p className="text-white/70 text-sm mb-4">Iyilik yolculugunda kazandigin basarilar</p>
+            <p className="text-white/70 text-sm mb-4">İyilik yolculuğunda kazandığın başarılar</p>
 
             {/* Progress Bar */}
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
@@ -172,7 +172,7 @@ export default function AchievementsPage() {
       <Modal
         open={!!selectedAchievement}
         onClose={() => setSelectedAchievement(null)}
-        title="Basari Detayi"
+        title="Başarı Detayı"
       >
         {selectedAchievement && (
           <AchievementDetail

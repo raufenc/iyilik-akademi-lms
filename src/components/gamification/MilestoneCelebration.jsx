@@ -14,8 +14,8 @@ const MILESTONES = {
     type: 'lessons',
     threshold: 10,
     emoji: '⭐',
-    title: '10 Ders Tamamlandi!',
-    subtitle: 'Harika gidiyorsun! Temelleri saglamca attin.',
+    title: '10 Ders Tamamlandı!',
+    subtitle: 'Harika gidiyorsun! Temelleri sağlamca attın.',
     gradient: 'from-amber-400 via-yellow-300 to-orange-400',
     particleType: 'stars',
   },
@@ -45,7 +45,7 @@ const MILESTONES = {
     threshold: 40,
     emoji: '🎓',
     title: 'MEZUNIYET!',
-    subtitle: 'Tum Dersleri Tamamladin! Muhtesem bir basari!',
+    subtitle: 'Tum Dersleri Tamamladın! Muhtesem bir basari!',
     gradient: 'from-yellow-400 via-amber-500 to-yellow-600',
     particleType: 'fireworks',
     isSpecial: true,
@@ -67,7 +67,7 @@ const MILESTONES = {
     threshold: 14,
     emoji: '💪',
     title: '14 Gun Serisi!',
-    subtitle: 'Iki haftadir durmadan devam ediyorsun!',
+    subtitle: 'İki haftadır durmadan devam ediyorsun!',
     gradient: 'from-emerald-400 via-teal-400 to-cyan-400',
     particleType: 'confetti',
   },
@@ -87,7 +87,7 @@ const MILESTONES = {
     type: 'quiz',
     emoji: '💯',
     title: 'Mukemmel!',
-    subtitle: 'Ilk Tam Puan! Harika bir basari!',
+    subtitle: 'İlk Tam Puan! Harika bir basari!',
     gradient: 'from-emerald-400 via-green-400 to-teal-400',
     particleType: 'stars',
   },
@@ -375,7 +375,7 @@ export default function MilestoneCelebration({ newLessonCount, newStreak, newLev
             <span className="text-3xl">🏅</span>
             <div className="text-left">
               <p className="text-white/70 text-xs">Basari</p>
-              <p className="text-white font-bold text-lg">40/40 Ders Tamamlandi</p>
+              <p className="text-white font-bold text-lg">40/40 Ders Tamamlandı</p>
             </div>
           </div>
         )}

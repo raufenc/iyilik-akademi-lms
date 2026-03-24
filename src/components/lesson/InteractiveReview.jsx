@@ -61,7 +61,7 @@ export default function InteractiveReview({ items, onComplete }) {
     <div className="max-w-2xl mx-auto animate-fade-in">
       <div className="text-center mb-6">
         <h2 className="text-xl font-bold">Video Ici Sorular</h2>
-        <p className="text-sm text-text-muted">Videodan ogrendiklerini pekistir</p>
+        <p className="text-sm text-text-muted">Videodan öğrendiklerini pekiştir</p>
       </div>
 
       {/* Progress */}

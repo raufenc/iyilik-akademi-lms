@@ -138,7 +138,7 @@ export function notifyRankUp(userId, rank) {
   return addNotification(userId, {
     type: 'rank_up',
     title: 'Siralama Yukseldi!',
-    message: `Siralamada ${rank}. siraya yukseldin!`,
+    message: `Sıralamada ${rank}. sıraya yükseldin!`,
     icon: '\uD83C\uDFC6',
     link: '/siralama',
   })

@@ -7,9 +7,9 @@ import { LEVEL_NAMES } from '../utils/xp'
 import Icon from '../components/ui/Icon'
 
 const SECTIONS = [
-  { start: 1, end: 10, label: 'Temel Degerler', emoji: '🌱', color: '#00B894' },
-  { start: 11, end: 20, label: 'Ileri Degerler', emoji: '⭐', color: '#6C5CE7' },
-  { start: 21, end: 30, label: 'Sosyal Degerler', emoji: '🤝', color: '#E17055' },
+  { start: 1, end: 10, label: 'Temel Değerler', emoji: '🌱', color: '#00B894' },
+  { start: 11, end: 20, label: 'İleri Değerler', emoji: '⭐', color: '#6C5CE7' },
+  { start: 21, end: 30, label: 'Sosyal Değerler', emoji: '🤝', color: '#E17055' },
   { start: 31, end: 40, label: 'Hayat Dersleri', emoji: '🎓', color: '#F9A825' },
 ]
 
@@ -305,7 +305,7 @@ function LessonTooltip({ lesson, state, position }) {
           state === 'available' ? 'bg-blue-50 text-blue-500 dark:bg-blue-900/30 dark:text-blue-300' :
           'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500'
         }`}>
-          {state === 'completed' ? 'Tamamlandi' : state === 'current' ? 'Devam Et' : state === 'available' ? 'Hazir' : 'Kitli'}
+          {state === 'completed' ? 'Tamamlandı' : state === 'current' ? 'Devam Et' : state === 'available' ? 'Hazır' : 'Kilitli'}
         </span>
       </div>
     </div>
@@ -350,8 +350,8 @@ export default function ProgressMapPage() {
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h1 className="font-heading text-3xl font-bold dark:text-dark-text-heading">Ilerleme Haritasi</h1>
-            <p className="text-text-muted dark:text-dark-text-muted mt-1">Iyilik yolculugundaki konumun</p>
+            <h1 className="font-heading text-3xl font-bold dark:text-dark-text-heading">İlerleme Haritası</h1>
+            <p className="text-text-muted dark:text-dark-text-muted mt-1">İyilik yolculuğundaki konumun</p>
           </div>
           <div className="hidden sm:flex items-center gap-3">
             <div className="flex items-center gap-2 px-3 py-1.5 bg-primary/10 dark:bg-primary/20 rounded-lg">
@@ -402,7 +402,7 @@ export default function ProgressMapPage() {
       <div className="flex flex-wrap gap-4 mb-6 text-xs">
         <div className="flex items-center gap-1.5">
           <div className="w-4 h-4 rounded-full bg-secondary" />
-          <span className="text-text-muted dark:text-dark-text-muted">Tamamlandi</span>
+          <span className="text-text-muted dark:text-dark-text-muted">Tamamlandı</span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="w-4 h-4 rounded-full bg-primary animate-pulse" />
@@ -410,11 +410,11 @@ export default function ProgressMapPage() {
         </div>
         <div className="flex items-center gap-1.5">
           <div className="w-4 h-4 rounded-full border-2 border-border dark:border-dark-border bg-white dark:bg-dark-card" />
-          <span className="text-text-muted dark:text-dark-text-muted">Hazir</span>
+          <span className="text-text-muted dark:text-dark-text-muted">Hazır</span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600" />
-          <span className="text-text-muted dark:text-dark-text-muted">Kitli</span>
+          <span className="text-text-muted dark:text-dark-text-muted">Kilitli</span>
         </div>
       </div>
 

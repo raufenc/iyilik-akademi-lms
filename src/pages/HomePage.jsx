@@ -64,34 +64,34 @@ export default function HomePage() {
     { label: 'Ders', target: 40, suffix: '+', icon: '📚' },
     { label: 'Quiz Sorusu', target: 240, suffix: '+', icon: '🧠' },
     { label: 'Rozet', target: 8, suffix: '', icon: '🏅' },
-    { label: 'Fiyat', target: 0, suffix: '', icon: '💎', display: 'Ucretsiz' },
+    { label: 'Fiyat', target: 0, suffix: '', icon: '💎', display: 'Ücretsiz' },
   ]
 
   const features = [
     {
       icon: '🎬',
-      title: 'Interaktif Video Dersler',
-      desc: 'Profesyonel animasyonlarla zenginlestirilmis, cocuklarin ilgisini ceken kisa ve etkili video icerikler.',
+      title: 'İnteraktif Video Dersler',
+      desc: 'Profesyonel animasyonlarla zenginleştirilmiş, çocukların ilgisini çeken kısa ve etkili video içerikler.',
       gradient: 'from-primary/10 to-primary-light/10',
     },
     {
       icon: '🧩',
-      title: 'Akilli Quiz Sistemi',
+      title: 'Akıllı Quiz Sistemi',
       desc: 'Her dersin oncesinde ve sonrasinda bilgiyi olcen, aninda geri bildirim veren quiz\'ler ile ogrenmeyi pekistirin.',
       gradient: 'from-secondary/10 to-secondary-light/10',
     },
     {
       icon: '🏆',
-      title: 'Oyunlastirma ve Rozetler',
-      desc: 'XP puanlari, ozel rozetler ve sertifikalar ile cocuklarinizi motive edin. Her ders bir basari hikayesi.',
+      title: 'Oyunlaştırma ve Rozetler',
+      desc: 'XP puanları, özel rozetler ve sertifikalar ile çocuklarınızı motive edin. Her ders bir başarı hikayesi.',
       gradient: 'from-accent-dark/10 to-accent/10',
     },
   ]
 
   const steps = [
-    { num: '01', icon: '✨', title: 'Kayit Ol', desc: 'Ucretsiz hesabinizi saniyeler icinde olusturun.' },
+    { num: '01', icon: '✨', title: 'Kayıt Ol', desc: 'Ücretsiz hesabinizi saniyeler içinde oluşturun.' },
     { num: '02', icon: '📖', title: 'Ders Sec', desc: '40 farkli degerler egitimi dersinden birini secin.' },
-    { num: '03', icon: '🎯', title: 'Izle & Ogren', desc: 'Video dersleri izleyin, quizlerle pekistirin.' },
+    { num: '03', icon: '🎯', title: 'İzle & Öğren', desc: 'Video dersleri izleyin, quizlerle pekistirin.' },
     { num: '04', icon: '🌟', title: 'XP Kazan', desc: 'Rozetler ve sertifikalar ile basarinizi taclandirin.' },
   ]
 
@@ -147,28 +147,28 @@ export default function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white/90 px-5 py-2 rounded-full text-sm font-medium mb-8 border border-white/20 animate-slide-up">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            Turkiye'nin Cocuklara Ozel Degerler Egitimi Platformu
+            Türkiye'nin Çocuklara Özel Değerler Eğitimi Platformu
           </div>
 
           {/* Title */}
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight animate-slide-up" style={{ animationDelay: '100ms' }}>
-            Iyilik ile Dolu Bir{' '}
+            İyilik ile Dolu Bir{' '}
             <br className="hidden sm:block" />
             <span className="relative inline-block">
               <span className="text-gradient-warm" style={{ WebkitTextFillColor: 'transparent', background: 'linear-gradient(135deg, #FDCB6E 0%, #F9A825 50%, #FDCB6E 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
-                Yolculuga
+                Yolculuğa
               </span>
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                 <path d="M2 8 Q50 2 100 6 Q150 10 198 4" stroke="rgba(253,203,110,0.6)" strokeWidth="3" strokeLinecap="round" fill="none" />
               </svg>
             </span>
-            {' '}Hazir misin?
+            {' '}Hazır mısın?
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: '200ms' }}>
-            Dogruluk, saygi, sabir, kardeslik ve daha bircok guzel degeri
-            interaktif derslerle ogrenin, quizlerle pekistirin, rozetlerle odullendirin.
+            Doğruluk, saygı, sabır, kardeşlik ve daha birçok güzel değeri
+            interaktif derslerle öğrenin, quizlerle pekiştirin, rozetlerle ödüllendirin.
           </p>
 
           {/* CTAs */}
@@ -189,7 +189,7 @@ export default function HomePage() {
                   className="!bg-white !text-primary-dark font-bold shadow-xl hover:shadow-2xl min-w-[200px]"
                   onClick={() => navigate('/kayit')}
                 >
-                  Hemen Basla &rarr;
+                  Hemen Başla &rarr;
                 </Button>
                 <Button
                   variant="outline"
@@ -197,7 +197,7 @@ export default function HomePage() {
                   className="!border-white/40 !text-white hover:!bg-white/10 min-w-[200px]"
                   onClick={() => navigate('/dersler')}
                 >
-                  Derslere Goz At
+                  Derslere Göz At
                 </Button>
               </>
             )}
@@ -206,11 +206,11 @@ export default function HomePage() {
           {/* Trust indicators */}
           <div className="flex items-center justify-center gap-6 mt-12 text-white/50 text-sm animate-slide-up" style={{ animationDelay: '400ms' }}>
             <span className="flex items-center gap-1.5">
-              <span className="text-base">&#10003;</span> Tamamen Ucretsiz
+              <span className="text-base">&#10003;</span> Tamamen Ücretsiz
             </span>
             <span className="hidden sm:inline text-white/20">|</span>
             <span className="flex items-center gap-1.5">
-              <span className="text-base">&#10003;</span> Kredi Karti Gerekmez
+              <span className="text-base">&#10003;</span> Kredi Kartı Gerekmez
             </span>
             <span className="hidden sm:inline text-white/20">|</span>
             <span className="flex items-center gap-1.5">
@@ -262,7 +262,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">Ozellikler</span>
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">Özellikler</span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-text mb-4">
               Ogrenmeyi <span className="text-gradient">Eglenceye</span> Donusturuyoruz
             </h2>
@@ -304,12 +304,12 @@ export default function HomePage() {
       <section className="px-4 sm:px-6 lg:px-8 py-20 md:py-28 bg-gradient-mesh">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block text-sm font-semibold text-secondary uppercase tracking-wider mb-3">Nasil Calisir?</span>
+            <span className="inline-block text-sm font-semibold text-secondary uppercase tracking-wider mb-3">Nasıl Çalışır?</span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-text mb-4">
-              4 Adimda <span className="text-gradient">Basla</span>
+              4 Adımda <span className="text-gradient">Başla</span>
             </h2>
             <p className="text-text-light text-lg max-w-xl mx-auto">
-              Baslamak cok kolay. Hemen kayit olun ve ogrenme yolculuguna baslayin.
+              Başlamak çok kolay. Hemen kayıt olun ve öğrenme yolculuğuna başlayın.
             </p>
           </div>
 
@@ -455,7 +455,7 @@ export default function HomePage() {
             <div className="relative z-10">
               <span className="text-5xl sm:text-6xl block mb-6">&#127775;</span>
               <blockquote className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-white leading-snug mb-4 max-w-2xl mx-auto">
-                &ldquo;Cocuklarimizi guzel ahlak ile yetistirmek, onlara birakabilecegimiz en buyuk mirastir.&rdquo;
+                &ldquo;Cocuklarimizi güzel ahlak ile yetiştirmek, onlara birakabilecegimiz en buyuk mirastir.&rdquo;
               </blockquote>
               <p className="text-white/60 text-sm sm:text-base mb-10">
                 &mdash; Hz. Muhammed (s.a.v.)
@@ -466,7 +466,7 @@ export default function HomePage() {
                 className="!bg-white !text-primary-dark font-bold shadow-xl hover:shadow-2xl"
                 onClick={() => navigate(user ? '/panel' : '/kayit')}
               >
-                {user ? 'Panele Git' : 'Ucretsiz Basla'} &rarr;
+                {user ? 'Panele Git' : 'Ücretsiz Başla'} &rarr;
               </Button>
 
               <p className="text-white/40 text-xs mt-4">
@@ -485,10 +485,10 @@ export default function HomePage() {
             <div>
               <h4 className="font-heading text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <span className="w-8 h-8 rounded-lg bg-gradient-hero flex items-center justify-center text-sm">&#10024;</span>
-                Iyilik Akademi
+                İyilik Akademi
               </h4>
               <p className="text-sm leading-relaxed text-white/50">
-                Cocuklara guzel ahlak ve degerler egitimi sunan, interaktif ve oyunlastirilmis online ogrenme platformu.
+                Çocuklara güzel ahlak ve değerler eğitimi sunan, interaktif ve oyunlaştırılmış online öğrenme platformu.
               </p>
             </div>
 
@@ -498,8 +498,8 @@ export default function HomePage() {
               <ul className="space-y-2.5 text-sm">
                 {[
                   { label: 'Dersler', path: '/dersler' },
-                  { label: 'Kayit Ol', path: '/kayit' },
-                  { label: 'Giris Yap', path: '/giris' },
+                  { label: 'Kayıt Ol', path: '/kayit' },
+                  { label: 'Giriş Yap', path: '/giris' },
                 ].map(link => (
                   <li key={link.path}>
                     <button
@@ -530,7 +530,7 @@ export default function HomePage() {
           {/* Copyright */}
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-white/30">
-              &copy; {new Date().getFullYear()} Iyilik Akademi. Tum haklari saklidir.
+              &copy; {new Date().getFullYear()} İyilik Akademi. Tüm hakları saklıdır.
             </p>
             <p className="text-xs text-white/30">
               Sevgiyle yapildi &#10084;&#65039;

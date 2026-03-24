@@ -142,7 +142,7 @@ export default function DashboardPage() {
               <Icon name="map" size={28} className="text-primary" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Ilerleme Haritasi</h3>
+              <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">İlerleme Haritası</h3>
               <p className="text-xs text-text-muted dark:text-dark-text-muted mt-0.5">Yolculugunu gorsel olarak takip et</p>
               {/* Mini progress dots */}
               <div className="flex gap-0.5 mt-2">

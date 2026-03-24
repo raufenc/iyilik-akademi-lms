@@ -15,8 +15,8 @@ function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="theme-toggle-btn w-9 h-9 rounded-xl flex items-center justify-center hover:bg-primary/10 dark:hover:bg-white/10 transition-colors"
-      aria-label={isDark ? 'Acik temaya gec' : 'Karanlik temaya gec'}
-      title={isDark ? 'Acik Tema' : 'Karanlik Tema'}
+      aria-label={isDark ? 'Açık temaya geç' : 'Karanlık temaya geç'}
+      title={isDark ? 'Açık Tema' : 'Karanlık Tema'}
     >
       {isDark ? (
         /* Sun icon */
@@ -61,14 +61,14 @@ export default function Navbar({ onMenuToggle }) {
           </button>
           <Link to="/" className="flex items-center gap-2.5 no-underline">
             <Icon name="star" size={26} className="text-accent" />
-            <span className="font-heading font-bold text-xl text-gradient hidden sm:block">Iyilik Akademi</span>
+            <span className="font-heading font-bold text-xl text-gradient hidden sm:block">İyilik Akademi</span>
           </Link>
         </div>
 
         <div className="hidden md:flex items-center gap-1">
           {[
             { to: '/dersler', label: 'Dersler' },
-            { to: '/siralama', label: 'Siralama' },
+            { to: '/siralama', label: 'Sıralama' },
             ...(user ? [{ to: '/forum', label: 'Forum' }] : []),
           ].map(link => (
             <Link
@@ -148,7 +148,7 @@ export default function Navbar({ onMenuToggle }) {
                       <div className="border-t border-border-light dark:border-dark-border mt-1 pt-1 mx-1">
                         <button onClick={handleLogout} className="w-full flex items-center gap-3 text-left px-4 py-2.5 text-sm text-danger hover:bg-danger/5 rounded-lg transition-colors">
                           <Icon name="logout" size={16} />
-                          Cikis Yap
+                          Çıkış Yap
                         </button>
                       </div>
                     </div>
@@ -159,13 +159,13 @@ export default function Navbar({ onMenuToggle }) {
           ) : (
             <div className="flex items-center gap-2">
               <Link to="/giris" className="text-sm font-medium text-text-light dark:text-dark-text-muted hover:text-primary no-underline px-3 py-2 rounded-xl hover:bg-primary/5 dark:hover:bg-white/10 transition-all">
-                Giris
+                Giriş
               </Link>
               <Link
                 to="/kayit"
                 className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-dark text-white px-5 py-2.5 rounded-xl hover:shadow-glow no-underline transition-all duration-200 hover:scale-[1.03]"
               >
-                Kayit Ol
+                Kayıt Ol
               </Link>
             </div>
           )}

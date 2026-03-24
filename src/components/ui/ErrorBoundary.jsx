@@ -99,7 +99,7 @@ export default class ErrorBoundary extends Component {
 
             {/* Footer text */}
             <p className="text-xs text-[#A0AEC0] mt-6">
-              Iyilik Akademi
+              İyilik Akademi
             </p>
           </div>
         </div>

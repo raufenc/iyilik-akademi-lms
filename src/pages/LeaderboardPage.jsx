@@ -100,7 +100,7 @@ export default function LeaderboardPage() {
       {/* Header */}
       <div className="text-center mb-6">
         <h1 className="font-heading text-3xl font-bold text-text dark:text-dark-text">
-          <span className="inline-block mr-2">{'\u{1F3C6}'}</span>Siralama Tablosu
+          <span className="inline-block mr-2">{'\u{1F3C6}'}</span>Sıralama Tablosu
         </h1>
         <p className="text-text-muted dark:text-dark-text-muted mt-2">En cok XP kazanan ogrenciler</p>
       </div>
@@ -139,7 +139,7 @@ export default function LeaderboardPage() {
         <Icon name="search" size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted dark:text-dark-text-muted" />
         <input
           type="text"
-          placeholder="Ogrenci ara..."
+          placeholder="Öğrenci ara..."
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
           className="w-full pl-10 pr-4 py-3 bg-white dark:bg-dark-card border border-border-light dark:border-dark-border rounded-xl text-sm text-text dark:text-dark-text placeholder-text-muted dark:placeholder-dark-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all"
@@ -271,7 +271,7 @@ export default function LeaderboardPage() {
             <>
               <span className="text-5xl block mb-4">{'\u{1F3C6}'}</span>
               <p className="font-heading font-semibold text-lg text-text dark:text-dark-text">Henuz kimse yok</p>
-              <p className="text-text-muted dark:text-dark-text-muted mt-1">Ilk sen basla ve zirveye cik!</p>
+              <p className="text-text-muted dark:text-dark-text-muted mt-1">İlk sen başla ve zirveye çık!</p>
             </>
           )}
         </div>

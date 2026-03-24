@@ -348,12 +348,12 @@ export async function generateCertificate({ name, completedLessons = 0, type = '
   const lessonCount = type === 'halfway' ? 20 : 40
   const actualCount = completedLessons || lessonCount
   ctx.fillText(
-    `adli ogrencinin Iyilik Akademi'de ${actualCount} dersi basariyla`,
+    `adli ogrencinin İyilik Akademi'de ${actualCount} dersi başarıyla`,
     CW / 2,
     470 * s
   )
   ctx.fillText(
-    type === 'halfway' ? 'tamamladigini onaylar.' : 'tamamlayarak mezun oldugunu onaylar.',
+    type === 'halfway' ? 'tamamladığını onaylar.' : 'tamamlayarak mezun oldugunu onaylar.',
     CW / 2,
     498 * s
   )
@@ -386,7 +386,7 @@ export async function generateCertificate({ name, completedLessons = 0, type = '
   // Footer
   ctx.font = `${13 * s}px Inter, sans-serif`
   ctx.fillStyle = '#B2BEC3'
-  ctx.fillText('Birlikte Iyilik Akademi — Guzel Ahlak Egitim Platformu', CW / 2, CH - 65 * s)
+  ctx.fillText('Birlikte İyilik Akademi — Güzel Ahlak Eğitim Platformu', CW / 2, CH - 65 * s)
 
   return canvas.toDataURL('image/png', 1.0)
 }
@@ -406,12 +406,12 @@ export function downloadCertificate(dataUrl, filename = 'iyilik-akademi-sertifik
  */
 export async function shareCertificate(dataUrl, name, type = 'completion') {
   const title = type === 'halfway'
-    ? `${name} - Iyilik Akademi Yari Yol Sertifikasi`
-    : `${name} - Iyilik Akademi Mezuniyet Sertifikasi`
+    ? `${name} - İyilik Akademi Yari Yol Sertifikasi`
+    : `${name} - İyilik Akademi Mezuniyet Sertifikasi`
 
   const text = type === 'halfway'
-    ? `${name}, Iyilik Akademi'de 20 dersi basariyla tamamladi! 🌟`
-    : `${name}, Iyilik Akademi'nin tum 40 dersini basariyla tamamlayarak mezun oldu! 🏆`
+    ? `${name}, İyilik Akademi'de 20 dersi başarıyla tamamladi! 🌟`
+    : `${name}, İyilik Akademi'nin tum 40 dersini basariyla tamamlayarak mezun oldu! 🏆`
 
   // Try Web Share API first (supports file sharing)
   if (navigator.share && navigator.canShare) {
@@ -446,8 +446,8 @@ export async function shareCertificate(dataUrl, name, type = 'completion') {
  */
 export function shareViaWhatsApp(name, type = 'completion') {
   const text = type === 'halfway'
-    ? `${name}, Iyilik Akademi'de 20 dersi basariyla tamamladi! 🌟\n\nSen de katil: https://iyilikakademi.com`
-    : `${name}, Iyilik Akademi'nin tum 40 dersini basariyla tamamlayarak mezun oldu! 🏆\n\nSen de katil: https://iyilikakademi.com`
+    ? `${name}, İyilik Akademi'de 20 dersi başarıyla tamamladi! 🌟\n\nSen de katil: https://iyilikakademi.com`
+    : `${name}, İyilik Akademi'nin tum 40 dersini basariyla tamamlayarak mezun oldu! 🏆\n\nSen de katil: https://iyilikakademi.com`
 
   const waText = encodeURIComponent(text)
   window.open(`https://wa.me/?text=${waText}`, '_blank')

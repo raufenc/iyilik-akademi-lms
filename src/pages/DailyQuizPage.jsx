@@ -162,7 +162,7 @@ export default function DailyQuizPage() {
           <div className="w-24 h-24 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-5xl shadow-soft daily-quiz-icon">
             {'\uD83C\uDFAF'}
           </div>
-          <h1 className="font-heading text-3xl font-bold mb-2">Gunluk Quiz</h1>
+          <h1 className="font-heading text-3xl font-bold mb-2">Günlük Quiz</h1>
           <p className="text-text-muted">Her gun 5 rastgele soru. Bilgini test et, seriyi koru!</p>
         </div>
 
@@ -193,7 +193,7 @@ export default function DailyQuizPage() {
 
         <div className="flex flex-col gap-3">
           <Button size="lg" className="w-full text-base" onClick={startQuiz}>
-            {'\uD83D\uDE80'} Quiz'e Basla
+            {'\uD83D\uDE80'} Quiz'e Başla
           </Button>
           <Button variant="ghost" size="md" className="w-full" onClick={() => navigate('/panel')}>
             {'\u2190'} Dashboard'a Don
@@ -311,7 +311,7 @@ export default function DailyQuizPage() {
       {/* Header */}
       <div className="text-center mb-4">
         <h2 className="font-heading text-xl font-bold flex items-center justify-center gap-2">
-          {'\uD83C\uDFAF'} Gunluk Quiz
+          {'\uD83C\uDFAF'} Günlük Quiz
         </h2>
         <p className="text-sm text-text-muted mt-0.5">
           Farkli derslerden {QUESTION_COUNT} soru
