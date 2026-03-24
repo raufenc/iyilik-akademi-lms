@@ -38,11 +38,11 @@ export default function LessonCard({ lesson, compact = false }) {
 
   return (
     <Link to={user ? `/ders/${lesson.id}` : '/giris'} className="no-underline group">
-      <div className={`relative bg-white rounded-2xl border ${
-        isCompleted ? 'border-secondary/30 bg-secondary/5' :
+      <div className={`relative bg-white dark:bg-dark-card rounded-2xl border ${
+        isCompleted ? 'border-secondary/30 bg-secondary/5 dark:bg-secondary/10' :
         isInProgress ? 'border-primary/30 shadow-glow/10' :
-        'border-border-light'
-      } p-5 hover:-translate-y-1 hover:shadow-medium transition-all duration-300 h-full flex flex-col overflow-hidden`}>
+        'border-border-light dark:border-dark-border'
+      } p-5 hover:-translate-y-1 hover:shadow-medium dark:hover:shadow-dark-medium transition-all duration-300 h-full flex flex-col overflow-hidden`}>
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl" style={{ background: `linear-gradient(90deg, ${lesson.color}, ${lesson.color}80)` }} />
 
@@ -69,13 +69,13 @@ export default function LessonCard({ lesson, compact = false }) {
           )}
         </div>
 
-        <h3 className="font-heading font-semibold text-text group-hover:text-primary transition-colors mb-1">
+        <h3 className="font-heading font-semibold text-text dark:text-dark-text-heading group-hover:text-primary transition-colors mb-1">
           {lesson.title}
         </h3>
-        <p className="text-sm text-text-muted flex-1 leading-relaxed">{lesson.subtitle}</p>
+        <p className="text-sm text-text-muted dark:text-dark-text-muted flex-1 leading-relaxed">{lesson.subtitle}</p>
 
-        <div className="mt-4 pt-3 border-t border-border-light flex items-center justify-between">
-          <span className="text-xs text-text-muted font-medium">Ders {lesson.id}</span>
+        <div className="mt-4 pt-3 border-t border-border-light dark:border-dark-border flex items-center justify-between">
+          <span className="text-xs text-text-muted dark:text-dark-text-muted font-medium">Ders {lesson.id}</span>
           <span className={`text-xs font-semibold ${color} flex items-center gap-1`}>
             {isCompleted && '✓ '}{label}
             {!isCompleted && <span className="group-hover:translate-x-0.5 transition-transform">→</span>}

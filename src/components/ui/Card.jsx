@@ -1,10 +1,10 @@
 export default function Card({ className = '', hover = false, glass = false, children, ...props }) {
   const base = glass
     ? 'glass rounded-2xl p-6'
-    : 'bg-white rounded-2xl border border-border-light p-6 shadow-soft'
+    : 'bg-white dark:bg-dark-card rounded-2xl border border-border-light dark:border-dark-border p-6 shadow-soft dark:shadow-dark-soft'
 
   const hoverClass = hover
-    ? 'transition-all duration-300 hover:-translate-y-1 hover:shadow-medium cursor-pointer'
+    ? 'card-hover-lift cursor-pointer'
     : ''
 
   return (

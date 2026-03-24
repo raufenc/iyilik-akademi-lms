@@ -4,7 +4,7 @@ export default function ProgressBar({ value = 0, max = 100, color = 'bg-primary'
 
   return (
     <div className="w-full">
-      <div className={`w-full bg-border rounded-full overflow-hidden ${heights[size]}`}>
+      <div className={`w-full bg-border dark:bg-dark-border rounded-full overflow-hidden ${heights[size]}`}>
         <div
           className={`${heights[size]} ${color} rounded-full transition-all duration-700 ease-out`}
           style={{ width: `${pct}%` }}

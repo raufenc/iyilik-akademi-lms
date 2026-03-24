@@ -2,10 +2,10 @@ const variants = {
   primary: 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.03] active:scale-[0.97]',
   secondary: 'bg-gradient-to-r from-secondary to-secondary-dark text-white shadow-lg shadow-secondary/25 hover:shadow-xl hover:shadow-secondary/30 hover:scale-[1.03] active:scale-[0.97]',
   accent: 'bg-gradient-to-r from-accent-dark to-accent text-white shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.03] active:scale-[0.97]',
-  outline: 'border-2 border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 hover:scale-[1.02] active:scale-[0.98]',
-  ghost: 'text-text-light hover:bg-surface-alt hover:text-primary',
+  outline: 'border-2 border-primary/30 text-primary dark:border-primary/40 dark:text-primary-light hover:bg-primary/5 dark:hover:bg-primary/10 hover:border-primary/50 hover:scale-[1.02] active:scale-[0.98]',
+  ghost: 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-primary',
   danger: 'bg-gradient-to-r from-danger to-danger-light text-white shadow-lg shadow-danger/25 hover:shadow-xl hover:shadow-danger/30 hover:scale-[1.03] active:scale-[0.97]',
-  glass: 'glass text-text hover:shadow-medium hover:scale-[1.02] active:scale-[0.98]',
+  glass: 'glass text-text dark:text-dark-text hover:shadow-medium dark:hover:shadow-dark-medium hover:scale-[1.02] active:scale-[0.98]',
 }
 
 const sizes = {
@@ -19,7 +19,7 @@ const sizes = {
 export default function Button({ variant = 'primary', size = 'md', loading = false, className = '', children, ...props }) {
   return (
     <button
-      className={`inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`btn-ripple inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${variants[variant]} ${sizes[size]} ${className}`}
       disabled={loading || props.disabled}
       {...props}
     >

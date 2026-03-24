@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#7C6CF7"/>
+      <stop offset="100%" stop-color="#4A3ABA"/>
+    </radialGradient>
+    <radialGradient id="star" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#FFB800"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="96" cy="96" r="96" fill="url(#bg)"/>
+  <circle cx="96" cy="96" r="80" fill="url(#glow)" opacity="0.3"/>
+  <!-- 8-point star -->
+  <polygon points="96,28 108,72 152,60 120,96 152,132 108,120 96,164 84,120 40,132 72,96 40,60 84,72" fill="url(#star)" opacity="0.95"/>
+  <!-- Inner glow circle -->
+  <circle cx="96" cy="96" r="20" fill="#FFFDE7" opacity="0.8"/>
+  <!-- Tiny sparkles -->
+  <circle cx="96" cy="96" r="6" fill="#FFFFFF"/>
+</svg>

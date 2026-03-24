@@ -4,6 +4,7 @@ import { db } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 import { LEVEL_NAMES, calculateLevel } from '../utils/xp'
 import Card from '../components/ui/Card'
+import { SkeletonLeaderboard } from '../components/ui/Skeleton'
 
 export default function LeaderboardPage() {
   const [users, setUsers] = useState([])
@@ -30,15 +31,11 @@ export default function LeaderboardPage() {
   ]
 
   if (loading) {
-    return (
-      <div className="max-w-2xl mx-auto py-12 space-y-4">
-        {[1,2,3].map(i => <div key={i} className="skeleton h-16 rounded-2xl" />)}
-      </div>
-    )
+    return <SkeletonLeaderboard />
   }
 
   return (
-    <div className="animate-fade-in max-w-2xl mx-auto">
+    <div className="page-enter max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="font-heading text-3xl font-bold">🏆 Sıralama Tablosu</h1>
         <p className="text-text-muted mt-2">En çok XP kazanan öğrenciler</p>
@@ -57,7 +54,7 @@ export default function LeaderboardPage() {
               <p className="font-heading font-semibold text-sm mt-2 truncate">{users[1].name}</p>
               <p className="text-accent-dark font-bold text-sm">{users[1].xp || 0} XP</p>
             </div>
-            <div className="bg-gray-200 h-16 rounded-b-xl" />
+            <div className="bg-gray-200 dark:bg-gray-700 h-16 rounded-b-xl" />
           </div>
 
           {/* 1st Place — Tallest */}
@@ -70,7 +67,7 @@ export default function LeaderboardPage() {
               <p className="font-heading font-bold text-base mt-2 truncate">{users[0].name}</p>
               <p className="text-accent-dark font-bold">{users[0].xp || 0} XP</p>
             </div>
-            <div className="bg-amber-200 h-24 rounded-b-xl" />
+            <div className="bg-amber-200 dark:bg-amber-800 h-24 rounded-b-xl" />
           </div>
 
           {/* 3rd Place */}
@@ -83,14 +80,14 @@ export default function LeaderboardPage() {
               <p className="font-heading font-semibold text-sm mt-2 truncate">{users[2].name}</p>
               <p className="text-accent-dark font-bold text-sm">{users[2].xp || 0} XP</p>
             </div>
-            <div className="bg-orange-200 h-10 rounded-b-xl" />
+            <div className="bg-orange-200 dark:bg-orange-800 h-10 rounded-b-xl" />
           </div>
         </div>
       )}
 
       {/* Full List */}
       <Card className="p-0 overflow-hidden">
-        <div className="divide-y divide-border-light">
+        <div className="divide-y divide-border-light dark:divide-dark-border">
           {users.map((u, i) => {
             const isMe = u.uid === user?.uid
             const lvl = calculateLevel(u.xp || 0)
@@ -98,7 +95,7 @@ export default function LeaderboardPage() {
               <div
                 key={u.uid}
                 className={`flex items-center gap-4 px-5 py-3.5 transition-colors ${
-                  isMe ? 'bg-primary/5 border-l-4 border-l-primary' : 'hover:bg-surface-alt'
+                  isMe ? 'bg-primary/5 border-l-4 border-l-primary' : 'hover:bg-surface-alt dark:hover:bg-dark-elevated'
                 }`}
               >
                 <span className={`w-8 text-center font-bold shrink-0 ${

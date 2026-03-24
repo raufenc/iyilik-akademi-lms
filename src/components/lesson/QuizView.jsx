@@ -98,7 +98,7 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
       </div>
 
       {/* Question Card */}
-      <div className={`relative bg-white rounded-3xl border border-border-light p-7 shadow-soft overflow-hidden ${
+      <div className={`relative bg-white dark:bg-dark-card rounded-3xl border border-border-light dark:border-dark-border p-7 shadow-soft dark:shadow-dark-soft overflow-hidden ${
         animateQuestion ? 'animate-fade-in' : 'opacity-0'
       }`}>
         {/* Confetti overlay */}

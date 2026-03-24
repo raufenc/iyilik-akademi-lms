@@ -10,12 +10,15 @@ import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import ProgressBar from '../components/ui/ProgressBar'
 import LessonCard from '../components/lesson/LessonCard'
+import OnboardingTour from '../components/ui/OnboardingTour'
+import { StreakCard } from '../components/gamification/StreakDisplay'
+import { SkeletonDashboard } from '../components/ui/Skeleton'
 
 const enrichedLessons = lessons.map(l => ({ ...l, ...(richContent[l.id] || {}) }))
 
 export default function DashboardPage() {
   const navigate = useNavigate()
-  const { userData } = useAuth()
+  const { userData, loading: authLoading } = useAuth()
   const { completedCount, totalXP, level, getLessonStatus } = useProgress()
   const { current, needed, progress } = xpToNextLevel(totalXP)
   const quote = getDailyQuote()
@@ -47,8 +50,16 @@ export default function DashboardPage() {
 
   const nextLesson = enrichedLessons.find(l => getLessonStatus(l.id) === 'not_started')
 
+  // Show skeleton while auth is loading
+  if (authLoading) {
+    return <SkeletonDashboard />
+  }
+
   return (
-    <div className="animate-fade-in space-y-6">
+    <div className="page-enter space-y-6">
+      {/* Onboarding Tour — first login only */}
+      <OnboardingTour />
+
       {/* Welcome + Daily Quote */}
       <div className="bg-gradient-hero rounded-3xl p-8 text-white relative overflow-hidden">
         {/* Decorative */}
@@ -74,12 +85,12 @@ export default function DashboardPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-children">
         <Card hover className="text-center">
           <div className="w-12 h-12 mx-auto mb-2 rounded-2xl bg-primary/10 flex items-center justify-center text-2xl">📚</div>
-          <p className="text-3xl font-heading font-bold text-primary">{animLessons}</p>
+          <p className="text-3xl font-heading font-bold text-primary animate-count-up">{animLessons}</p>
           <p className="text-xs text-text-muted mt-1">/ 40 Ders</p>
         </Card>
         <Card hover className="text-center">
           <div className="w-12 h-12 mx-auto mb-2 rounded-2xl bg-accent/20 flex items-center justify-center text-2xl">⚡</div>
-          <p className="text-3xl font-heading font-bold text-accent-dark">{animXP}</p>
+          <p className="text-3xl font-heading font-bold text-accent-dark animate-count-up">{animXP}</p>
           <p className="text-xs text-text-muted mt-1">Toplam XP</p>
         </Card>
         <Card hover className="text-center">
@@ -94,6 +105,9 @@ export default function DashboardPage() {
         </Card>
       </div>
 
+      {/* Streak Card */}
+      <StreakCard />
+
       {/* XP Progress */}
       <Card>
         <div className="flex items-center justify-between mb-3">
@@ -105,7 +119,7 @@ export default function DashboardPage() {
           </div>
           <span className="text-sm font-medium text-primary">{current} / {needed} XP</span>
         </div>
-        <div className="h-3 bg-surface-alt rounded-full overflow-hidden">
+        <div className="h-3 bg-surface-alt dark:bg-dark-elevated rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-primary to-primary-light rounded-full transition-all duration-1000 ease-out"
             style={{ width: `${Math.min(progress * 100, 100)}%` }}

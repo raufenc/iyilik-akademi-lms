@@ -61,7 +61,7 @@ export default function ForumPage() {
               <button
                 key={l.id}
                 onClick={() => setSelectedLesson(l.id)}
-                className="text-left p-4 bg-white rounded-xl border border-border hover:border-primary/40 hover:shadow-sm transition-all"
+                className="text-left p-4 bg-white dark:bg-dark-card rounded-xl border border-border dark:border-dark-border hover:border-primary/40 hover:shadow-sm transition-all dark:text-dark-text"
               >
                 <span className="text-xl mr-2">{l.icon}</span>
                 <span className="font-medium text-sm">{l.title}</span>
@@ -91,14 +91,14 @@ export default function ForumPage() {
                   placeholder="Konu başlığı"
                   value={title}
                   onChange={e => setTitle(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg border border-border focus:border-primary outline-none text-sm"
+                  className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text focus:border-primary outline-none text-sm"
                 />
                 <textarea
                   placeholder="Mesajınız..."
                   value={content}
                   onChange={e => setContent(e.target.value)}
                   rows={4}
-                  className="w-full px-4 py-2 rounded-lg border border-border focus:border-primary outline-none text-sm resize-none"
+                  className="w-full px-4 py-2 rounded-lg border border-border dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text focus:border-primary outline-none text-sm resize-none"
                 />
                 <Button type="submit" size="sm">Gönder</Button>
               </form>

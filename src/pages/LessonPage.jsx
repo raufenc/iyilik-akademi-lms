@@ -22,7 +22,7 @@ export default function LessonPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { user, userData } = useAuth()
-  const { lessonProgress, updateLessonProgress, addXP, awardBadge, getLessonStatus, completedCount } = useProgress()
+  const { lessonProgress, updateLessonProgress, addXP, recordActivity, awardBadge, getLessonStatus, completedCount } = useProgress()
 
   const lesson = useMemo(() => lessons.find(l => l.id === Number(id)), [id])
   const hasIntro = !!(lesson?.tema || lesson?.kavramlar || lesson?.ayetHadis)
@@ -88,6 +88,7 @@ export default function LessonPage() {
         xpEarned: xp,
       })
       await addXP(xp)
+      await recordActivity()
       const newCount = completedCount + 1
       const totalXP = (userData?.xp || 0) + xp
       const eligible = checkBadgeEligibility(newCount, totalXP, userData?.badges || [])

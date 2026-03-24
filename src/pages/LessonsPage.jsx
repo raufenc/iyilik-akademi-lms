@@ -4,10 +4,11 @@ import { useProgress } from '../contexts/ProgressContext'
 import { lessons } from '../data/lessons'
 import LessonCard from '../components/lesson/LessonCard'
 import ProgressBar from '../components/ui/ProgressBar'
+import { SkeletonLessons } from '../components/ui/Skeleton'
 
 export default function LessonsPage() {
   const [search, setSearch] = useState('')
-  const { user } = useAuth()
+  const { user, loading: authLoading } = useAuth()
   const { completedCount } = useProgress()
 
   const filtered = lessons.filter(l =>
@@ -17,8 +18,12 @@ export default function LessonsPage() {
 
   const progressPercent = Math.round((completedCount / lessons.length) * 100)
 
+  if (authLoading) {
+    return <SkeletonLessons />
+  }
+
   return (
-    <div className="animate-fade-in">
+    <div className="page-enter">
       {/* Header */}
       <div className="mb-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
@@ -33,7 +38,7 @@ export default function LessonsPage() {
               placeholder="Ders ara..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-border-light bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm shadow-soft transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-border-light dark:border-dark-border bg-white dark:bg-dark-surface dark:text-dark-text focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm shadow-soft dark:shadow-dark-soft transition-all"
             />
           </div>
         </div>
@@ -48,7 +53,7 @@ export default function LessonsPage() {
             </div>
             <div className="flex-1">
               <p className="text-sm font-semibold mb-1.5">Genel İlerleme</p>
-              <div className="h-2.5 bg-surface-alt rounded-full overflow-hidden">
+              <div className="h-2.5 bg-surface-alt dark:bg-dark-elevated rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000"
                   style={{ width: `${progressPercent}%` }}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import { useTheme } from '../contexts/ThemeContext'
 import { lessons } from '../data/lessons'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
@@ -56,6 +57,7 @@ function FloatingOrb({ className, style }) {
 /* ───────── Main Component ───────── */
 export default function HomePage() {
   const { user } = useAuth()
+  const { isDark } = useTheme()
   const navigate = useNavigate()
 
   const stats = [
@@ -220,7 +222,7 @@ export default function HomePage() {
         {/* Bottom wave */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 80" fill="none" className="w-full" preserveAspectRatio="none">
-            <path d="M0 40 C360 80 720 0 1080 40 C1260 60 1380 20 1440 40 L1440 80 L0 80Z" fill="#F0F2F5" />
+            <path d="M0 40 C360 80 720 0 1080 40 C1260 60 1380 20 1440 40 L1440 80 L0 80Z" fill={isDark ? '#0F0F1A' : '#F0F2F5'} />
           </svg>
         </div>
       </section>
@@ -236,7 +238,7 @@ export default function HomePage() {
                   <div
                     key={stat.label}
                     ref={ref}
-                    className="text-center py-4 sm:py-6 rounded-xl hover:bg-white/50 transition-colors"
+                    className="text-center py-4 sm:py-6 rounded-xl hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
                   >
                     <span className="text-2xl sm:text-3xl block mb-1">{stat.icon}</span>
                     <p className="text-2xl sm:text-3xl font-extrabold font-heading text-text">

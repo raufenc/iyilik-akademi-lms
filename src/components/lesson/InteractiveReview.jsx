@@ -97,7 +97,7 @@ export default function InteractiveReview({ items, onComplete }) {
 
       {/* True/False Question */}
       {item.tip === 'dogru_yanlis' && (
-        <div className="bg-white rounded-2xl border border-border p-6">
+        <div className="bg-white dark:bg-dark-card rounded-2xl border border-border dark:border-dark-border p-6">
           <p className="text-xs text-text-muted mb-2 flex items-center gap-1.5">
             <Icon name="check" size={14} className="text-secondary" />
             <Icon name="close" size={14} className="text-danger" />
@@ -161,7 +161,7 @@ export default function InteractiveReview({ items, onComplete }) {
 
       {/* Multiple Choice Question */}
       {item.tip === 'coktan_secmeli' && (
-        <div className="bg-white rounded-2xl border border-border p-6">
+        <div className="bg-white dark:bg-dark-card rounded-2xl border border-border dark:border-dark-border p-6">
           <p className="text-xs text-text-muted mb-2 flex items-center gap-1.5">
             <Icon name="sparkle" size={14} className="text-accent" />
             Coktan secmeli

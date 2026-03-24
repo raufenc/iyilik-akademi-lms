@@ -6,9 +6,11 @@ import Icon from '../ui/Icon'
 const NAV_ITEMS = [
   { path: '/panel', icon: 'dashboard', label: 'Dashboard', auth: true },
   { path: '/dersler', icon: 'book', label: 'Dersler', auth: false },
+  { path: '/gunluk-quiz', icon: 'target', label: 'Gunluk Quiz', auth: true },
   { path: '/siralama', icon: 'trophy', label: 'Siralama', auth: false },
   { path: '/forum', icon: 'chat', label: 'Forum', auth: true },
   { path: '/profil', icon: 'user', label: 'Profil', auth: true },
+  { path: '/ebeveyn-raporu', icon: 'report', label: 'Ebeveyn Raporu', auth: true },
 ]
 
 function ProgressRing({ progress, size = 56, strokeWidth = 4 }) {
@@ -26,7 +28,7 @@ function ProgressRing({ progress, size = 56, strokeWidth = 4 }) {
           fill="none"
           stroke="currentColor"
           strokeWidth={strokeWidth}
-          className="text-border"
+          className="text-border dark:text-dark-border"
         />
         <circle
           cx={size / 2}
@@ -59,22 +61,22 @@ export default function Sidebar({ open, onClose }) {
   return (
     <>
       {open && (
-        <div className="fixed inset-0 bg-black/30 z-40 lg:hidden" onClick={onClose} />
+        <div className="fixed inset-0 bg-black/30 dark:bg-black/50 z-40 lg:hidden" onClick={onClose} />
       )}
       <aside className={`
-        fixed top-16 left-0 bottom-0 w-64 bg-white border-r border-border z-40
+        fixed top-16 left-0 bottom-0 w-64 bg-white dark:bg-dark-surface border-r border-border dark:border-dark-border z-40
         transform transition-transform duration-200
         ${open ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0 lg:static lg:top-0
       `}>
         <div className="p-4 flex flex-col h-full">
           {user && (
-            <div className="mb-4 p-4 bg-primary/5 rounded-xl flex items-center gap-4">
+            <div className="mb-4 p-4 bg-primary/5 dark:bg-primary/10 rounded-xl flex items-center gap-4">
               <ProgressRing progress={progress} />
               <div>
-                <p className="text-xs text-text-muted">Ilerleme</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted">Ilerleme</p>
                 <p className="font-bold text-lg text-primary leading-tight">{completedCount}/40</p>
-                <p className="text-xs text-text-muted">Ders</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted">Ders</p>
               </div>
             </div>
           )}
@@ -90,7 +92,7 @@ export default function Sidebar({ open, onClose }) {
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
                     isActive
                       ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-text-light hover:bg-surface-alt hover:text-text'
+                      : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
                   }`}
                 >
                   {isActive && (
@@ -103,15 +105,15 @@ export default function Sidebar({ open, onClose }) {
             })}
 
             {isTeacher && (
-              <div className="pt-4 mt-4 border-t border-border">
-                <p className="text-[11px] text-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Ogretmen</p>
+              <div className="pt-4 mt-4 border-t border-border dark:border-dark-border">
+                <p className="text-[11px] text-text-muted dark:text-dark-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Ogretmen</p>
                 <Link
                   to="/odevler"
                   onClick={onClose}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
                     location.pathname === '/odevler'
                       ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-text-light hover:bg-surface-alt hover:text-text'
+                      : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
                   }`}
                 >
                   {location.pathname === '/odevler' && (
@@ -124,15 +126,15 @@ export default function Sidebar({ open, onClose }) {
             )}
 
             {isAdmin && (
-              <div className="pt-4 mt-4 border-t border-border">
-                <p className="text-[11px] text-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Admin</p>
+              <div className="pt-4 mt-4 border-t border-border dark:border-dark-border">
+                <p className="text-[11px] text-text-muted dark:text-dark-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Admin</p>
                 <Link
                   to="/admin"
                   onClick={onClose}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
                     location.pathname.startsWith('/admin')
                       ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-text-light hover:bg-surface-alt hover:text-text'
+                      : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
                   }`}
                 >
                   {location.pathname.startsWith('/admin') && (
@@ -145,8 +147,8 @@ export default function Sidebar({ open, onClose }) {
             )}
           </nav>
 
-          <div className="mt-auto pt-4 border-t border-border">
-            <div className="flex items-center justify-center gap-1.5 text-text-muted">
+          <div className="mt-auto pt-4 border-t border-border dark:border-dark-border">
+            <div className="flex items-center justify-center gap-1.5 text-text-muted dark:text-dark-text-muted">
               <Icon name="heart" size={14} className="text-danger" />
               <p className="text-xs">Iyilik Akademi</p>
             </div>

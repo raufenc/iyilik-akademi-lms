@@ -14,6 +14,9 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminLessons from './pages/admin/AdminLessons'
 import AdminReports from './pages/admin/AdminReports'
+import DailyQuizPage from './pages/DailyQuizPage'
+import ParentReportPage from './pages/ParentReportPage'
+import InstallPrompt from './components/pwa/InstallPrompt'
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
@@ -48,6 +51,8 @@ export default function App() {
           <Route path="/ders/:id" element={<ProtectedRoute><LessonPage /></ProtectedRoute>} />
           <Route path="/profil" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
           <Route path="/forum" element={<ProtectedRoute><ForumPage /></ProtectedRoute>} />
+          <Route path="/gunluk-quiz" element={<ProtectedRoute><DailyQuizPage /></ProtectedRoute>} />
+          <Route path="/ebeveyn-raporu" element={<ProtectedRoute><ParentReportPage /></ProtectedRoute>} />
 
           {/* Admin */}
           <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
@@ -64,6 +69,7 @@ export default function App() {
           } />
         </Route>
       </Routes>
+      <InstallPrompt />
     </ToastProvider>
   )
 }
