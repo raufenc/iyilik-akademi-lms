@@ -55,7 +55,13 @@ export default function LoginPage() {
       await loginWithGoogle()
       navigate('/panel')
     } catch (err) {
-      setError('Google ile giriş başarısız')
+      const messages = {
+        'auth/unauthorized-domain': 'Bu alan adı Firebase\'de yetkilendirilmemiş. Firebase Console > Authentication > Settings > Authorized domains bölümüne raufenc.com ekleyin.',
+        'auth/popup-blocked': 'Popup engellendi. Lütfen popup\'lara izin verin.',
+        'auth/popup-closed-by-user': 'Giriş penceresi kapatıldı.',
+        'auth/cancelled-popup-request': 'Giriş iptal edildi.',
+      }
+      setError(messages[err.code] || `Google ile giriş başarısız: ${err.code || err.message}`)
     }
   }
 

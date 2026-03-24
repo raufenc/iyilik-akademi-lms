@@ -126,6 +126,14 @@ export default function OnboardingTour() {
 
       {/* Card */}
       <div className="relative bg-white dark:bg-dark-surface rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+        {/* Close button */}
+        <button
+          onClick={handleSkip}
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 text-text-light dark:text-dark-text transition-colors"
+          aria-label="Kapat"
+        >
+          ✕
+        </button>
         {/* Illustration area */}
         <div className={`bg-gradient-to-br ${current.bg} px-8 pt-8 pb-6`}>
           {current.illustration}

@@ -247,9 +247,9 @@ export const achievements = [
   },
   {
     id: 'xp_canavari',
-    name: 'XP Canavarı',
+    name: 'İlim Hazinesi',
     description: '3000 XP topla',
-    icon: '🐉',
+    icon: '📿',
     category: 'ozel',
     rarity: 'epic',
     condition: 'totalXP >= 3000',
