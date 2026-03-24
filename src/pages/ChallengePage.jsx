@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { useProgress } from '../contexts/ProgressContext'
 import { lessons } from '../data/lessons'
@@ -410,8 +411,8 @@ export default function ChallengePage() {
             <Icon name="lock" size={32} className="mx-auto mb-2 text-text-muted dark:text-dark-text-muted" />
             <p className="text-sm text-text-muted dark:text-dark-text-muted">
               Meydan okuma oynayabilirsin ama puanlarin kaydedilmez. <br />
-              <a href="/giris" className="text-primary font-semibold hover:underline">Giris yap</a> veya{' '}
-              <a href="/kayit" className="text-primary font-semibold hover:underline">kayit ol</a> puanlarin kayit altina alinsin!
+              <Link to="/giris" className="text-primary font-semibold hover:underline">Giris yap</Link> veya{' '}
+              <Link to="/kayit" className="text-primary font-semibold hover:underline">kayit ol</Link> puanlarin kayit altina alinsin!
             </p>
           </Card>
         )}

@@ -12,7 +12,7 @@ import './index.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ErrorBoundary>
-      <BrowserRouter basename={import.meta.env.VITE_BASE || ''}>
+      <BrowserRouter basename="/iyilikakademi">
         <ThemeProvider>
           <AuthProvider>
             <ProgressProvider>

@@ -1,11 +1,10 @@
-const CACHE_NAME = 'iyilik-akademi-v1'
+const CACHE_NAME = 'iyilik-akademi-v2'
+const BASE = '/iyilikakademi/'
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.svg',
-  '/icon-192.png',
-  '/icon-512.png',
+  BASE,
+  BASE + 'index.html',
+  BASE + 'manifest.json',
+  BASE + 'favicon.svg',
 ]
 
 // Install: cache static assets
@@ -72,7 +71,7 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           // Offline fallback for navigation requests
           if (request.mode === 'navigate') {
-            return caches.match('/index.html')
+            return caches.match(BASE + 'index.html')
           }
           return new Response('Offline', { status: 503 })
         })
