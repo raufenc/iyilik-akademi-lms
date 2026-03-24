@@ -24,7 +24,20 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/iyilikakademi/sw.js', { scope: '/iyilikakademi/' }).catch(() => {})
+          navigator.serviceWorker.register('/iyilikakademi/sw.js', { scope: '/iyilikakademi/' })
+            .then((reg) => {
+              reg.addEventListener('updatefound', () => {
+                const newSW = reg.installing
+                if (newSW) {
+                  newSW.addEventListener('statechange', () => {
+                    if (newSW.state === 'activated' && navigator.serviceWorker.controller) {
+                      window.location.reload()
+                    }
+                  })
+                }
+              })
+            })
+            .catch(() => {})
         })
       }
     </script>

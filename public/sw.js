@@ -1,23 +1,12 @@
-const CACHE_NAME = 'iyilik-akademi-v2'
+const CACHE_NAME = 'iyilik-akademi-v3'
 const BASE = '/iyilikakademi/'
-const STATIC_ASSETS = [
-  BASE,
-  BASE + 'index.html',
-  BASE + 'manifest.json',
-  BASE + 'favicon.svg',
-]
 
-// Install: cache static assets
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS)
-    })
-  )
+// Install: skip waiting immediately
+self.addEventListener('install', () => {
   self.skipWaiting()
 })
 
-// Activate: clean old caches
+// Activate: delete ALL old caches, claim clients
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -26,55 +15,43 @@ self.addEventListener('activate', (event) => {
           .filter((key) => key !== CACHE_NAME)
           .map((key) => caches.delete(key))
       )
-    )
+    ).then(() => self.clients.claim())
   )
-  self.clients.claim()
 })
 
-// Fetch: network-first for API, cache-first for static
+// Fetch: network-first for everything (cache as fallback only)
 self.addEventListener('fetch', (event) => {
   const { request } = event
-  const url = new URL(request.url)
 
-  // Skip non-GET requests
   if (request.method !== 'GET') return
 
-  // Network-first for Firebase/API calls
-  if (
-    url.hostname.includes('firestore.googleapis.com') ||
-    url.hostname.includes('firebase') ||
-    url.hostname.includes('identitytoolkit') ||
-    url.hostname.includes('googleapis.com') ||
-    url.pathname.startsWith('/api')
-  ) {
-    event.respondWith(
-      fetch(request).catch(() => caches.match(request))
-    )
-    return
-  }
+  const url = new URL(request.url)
 
-  // Cache-first for static assets, fallback to network
+  // Skip external requests
+  if (!url.pathname.startsWith(BASE) && url.origin === self.location.origin) return
+  if (url.origin !== self.location.origin) return
+
   event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached
-      return fetch(request)
-        .then((response) => {
-          // Cache successful responses
-          if (response.ok && response.type === 'basic') {
-            const clone = response.clone()
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, clone)
-            })
-          }
-          return response
-        })
-        .catch(() => {
-          // Offline fallback for navigation requests
+    fetch(request)
+      .then((response) => {
+        // Cache successful responses for offline fallback
+        if (response.ok) {
+          const clone = response.clone()
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, clone)
+          })
+        }
+        return response
+      })
+      .catch(() => {
+        // Offline: try cache
+        return caches.match(request).then((cached) => {
+          if (cached) return cached
           if (request.mode === 'navigate') {
             return caches.match(BASE + 'index.html')
           }
           return new Response('Offline', { status: 503 })
         })
-    })
+      })
   )
 })
