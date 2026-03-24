@@ -4,8 +4,9 @@ import { useAuth } from '../contexts/AuthContext'
 import { useProgress } from '../contexts/ProgressContext'
 import { lessons as rawLessons } from '../data/lessons'
 import { richContent } from '../data/richContent'
-import { XP_PER_LESSON, XP_FINAL_LESSON } from '../utils/xp'
+import { XP_PER_LESSON, XP_FINAL_LESSON, calculateLevel } from '../utils/xp'
 import { checkBadgeEligibility } from '../utils/badges'
+import MilestoneCelebration from '../components/gamification/MilestoneCelebration'
 import LessonSteps from '../components/lesson/LessonSteps'
 import LessonIntro from '../components/lesson/LessonIntro'
 import QuizView from '../components/lesson/QuizView'
@@ -22,13 +23,15 @@ export default function LessonPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { user, userData } = useAuth()
-  const { lessonProgress, updateLessonProgress, addXP, recordActivity, awardBadge, getLessonStatus, completedCount } = useProgress()
+  const { lessonProgress, updateLessonProgress, addXP, recordActivity, awardBadge, getLessonStatus, completedCount, recordWrongAnswer } = useProgress()
 
   const lesson = useMemo(() => lessons.find(l => l.id === Number(id)), [id])
   const hasIntro = !!(lesson?.tema || lesson?.kavramlar || lesson?.ayetHadis)
   const hasInteractive = !!(lesson?.interaktifDuraklamalar && lesson.interaktifDuraklamalar.length > 0)
   const [step, setStep] = useState(hasIntro ? 'intro' : 'preQuiz')
   const [newBadge, setNewBadge] = useState(null)
+  const [milestoneData, setMilestoneData] = useState(null)
+  const [showMilestone, setShowMilestone] = useState(false)
 
   useEffect(() => {
     if (!lesson) return
@@ -80,6 +83,7 @@ export default function LessonPage() {
 
   async function handlePostQuizComplete(score, total) {
     const xp = lesson.id === 40 ? XP_FINAL_LESSON : XP_PER_LESSON
+    const oldLevel = calculateLevel(userData?.xp || 0)
     try {
       await updateLessonProgress(lesson.id, {
         postQuizDone: true,
@@ -88,14 +92,26 @@ export default function LessonPage() {
         xpEarned: xp,
       })
       await addXP(xp)
-      await recordActivity()
+      const newStreak = await recordActivity()
       const newCount = completedCount + 1
-      const totalXP = (userData?.xp || 0) + xp
-      const eligible = checkBadgeEligibility(newCount, totalXP, userData?.badges || [])
+      const newTotalXP = (userData?.xp || 0) + xp
+      const newLevel = calculateLevel(newTotalXP)
+      const eligible = checkBadgeEligibility(newCount, newTotalXP, userData?.badges || [])
       if (eligible.length > 0) {
         const awarded = await awardBadge(eligible[0].id)
         setNewBadge(awarded)
       }
+
+      // Set milestone data for celebration check
+      setMilestoneData({
+        newLessonCount: newCount,
+        newStreak: newStreak || 0,
+        newLevel,
+        oldLevel,
+        quizScore: score,
+        quizTotal: total,
+      })
+      setShowMilestone(true)
     } catch (e) { console.error(e) }
     setStep('done')
   }
@@ -104,6 +120,19 @@ export default function LessonPage() {
 
   return (
     <div className="animate-fade-in">
+      {/* Milestone Celebration Overlay */}
+      {showMilestone && milestoneData && (
+        <MilestoneCelebration
+          newLessonCount={milestoneData.newLessonCount}
+          newStreak={milestoneData.newStreak}
+          newLevel={milestoneData.newLevel}
+          oldLevel={milestoneData.oldLevel}
+          quizScore={milestoneData.quizScore}
+          quizTotal={milestoneData.quizTotal}
+          onDismiss={() => setShowMilestone(false)}
+        />
+      )}
+
       {/* Header */}
       <div className="mb-6">
         <Link to="/dersler" className="text-sm text-text-muted hover:text-primary no-underline mb-2 inline-block">← Derslere Dön</Link>
@@ -132,6 +161,7 @@ export default function LessonPage() {
           onComplete={handlePreQuizComplete}
           title="Ders Öncesi Değerlendirme"
           subtitle="Konuyu daha iyi öğrenmek için önce ne bildiğini görelim"
+          onWrongAnswer={(qIdx) => recordWrongAnswer(lesson.id, qIdx, 'pre')}
         />
       )}
 
@@ -155,6 +185,7 @@ export default function LessonPage() {
           onComplete={handlePostQuizComplete}
           title="Ders Sonu Değerlendirme"
           subtitle="Öğrendiklerini test et ve XP kazan!"
+          onWrongAnswer={(qIdx) => recordWrongAnswer(lesson.id, qIdx, 'post')}
         />
       )}
 

@@ -12,6 +12,7 @@ import ProgressBar from '../components/ui/ProgressBar'
 import LessonCard from '../components/lesson/LessonCard'
 import OnboardingTour from '../components/ui/OnboardingTour'
 import { StreakCard } from '../components/gamification/StreakDisplay'
+import Icon from '../components/ui/Icon'
 import { SkeletonDashboard } from '../components/ui/Skeleton'
 
 const enrichedLessons = lessons.map(l => ({ ...l, ...(richContent[l.id] || {}) }))
@@ -126,6 +127,87 @@ export default function DashboardPage() {
           />
         </div>
       </Card>
+
+      {/* Progress Map Preview + Milestone Progress */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Map Preview */}
+        <Card
+          hover
+          className="relative overflow-hidden cursor-pointer"
+          onClick={() => navigate('/harita')}
+        >
+          <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 dark:bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div className="relative flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 flex items-center justify-center shrink-0">
+              <Icon name="map" size={28} className="text-primary" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Ilerleme Haritasi</h3>
+              <p className="text-xs text-text-muted dark:text-dark-text-muted mt-0.5">Yolculugunu gorsel olarak takip et</p>
+              {/* Mini progress dots */}
+              <div className="flex gap-0.5 mt-2">
+                {Array.from({ length: 40 }, (_, i) => (
+                  <div
+                    key={i}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                      getLessonStatus(i + 1) === 'completed'
+                        ? 'bg-secondary'
+                        : i + 1 === completedCount + 1
+                        ? 'bg-primary animate-pulse'
+                        : 'bg-border-light dark:bg-dark-border'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            <Icon name="arrow-right" size={20} className="text-text-muted dark:text-dark-text-muted shrink-0" />
+          </div>
+        </Card>
+
+        {/* Milestone Progress */}
+        <Card className="relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 dark:bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div className="relative">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🏆</span>
+              <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Kilometre Taslari</h3>
+            </div>
+            <div className="space-y-2">
+              {[
+                { threshold: 10, label: '10 Ders', emoji: '⭐' },
+                { threshold: 20, label: 'Yari Yol', emoji: '🏆' },
+                { threshold: 30, label: '30 Ders', emoji: '🔥' },
+                { threshold: 40, label: 'Mezuniyet', emoji: '🎓' },
+              ].map(milestone => {
+                const isReached = completedCount >= milestone.threshold
+                const progressPct = Math.min((completedCount / milestone.threshold) * 100, 100)
+                return (
+                  <div key={milestone.threshold} className="flex items-center gap-2">
+                    <span className={`text-sm ${isReached ? '' : 'grayscale opacity-50'}`}>{milestone.emoji}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className={`text-xs font-medium ${isReached ? 'text-secondary dark:text-secondary-light' : 'text-text-muted dark:text-dark-text-muted'}`}>
+                          {milestone.label}
+                        </span>
+                        <span className="text-[10px] text-text-muted dark:text-dark-text-muted">
+                          {Math.min(completedCount, milestone.threshold)}/{milestone.threshold}
+                        </span>
+                      </div>
+                      <div className="h-1.5 bg-surface-alt dark:bg-dark-elevated rounded-full overflow-hidden">
+                        <div
+                          className={`h-full rounded-full transition-all duration-700 ${isReached ? 'bg-secondary' : 'bg-primary/40'}`}
+                          style={{ width: `${progressPct}%` }}
+                        />
+                      </div>
+                    </div>
+                    {isReached && <span className="text-secondary text-xs">✓</span>}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </Card>
+      </div>
 
       {/* Next Lesson — Big CTA */}
       {nextLesson && (

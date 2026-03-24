@@ -5,6 +5,7 @@ import { useProgress } from '../../contexts/ProgressContext'
 import { useTheme } from '../../contexts/ThemeContext'
 import { LEVEL_NAMES } from '../../utils/xp'
 import Icon from '../ui/Icon'
+import NotificationCenter from '../ui/NotificationCenter'
 import { StreakBadge } from '../gamification/StreakDisplay'
 
 function ThemeToggle() {
@@ -42,7 +43,7 @@ function ThemeToggle() {
 
 export default function Navbar({ onMenuToggle }) {
   const { user, userData, logout, isAdmin } = useAuth()
-  const { totalXP, level } = useProgress()
+  const { totalXP, level, coins } = useProgress()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const navigate = useNavigate()
 
@@ -90,6 +91,18 @@ export default function Navbar({ onMenuToggle }) {
               <div className="hidden sm:block">
                 <StreakBadge />
               </div>
+
+              {/* Notification Bell */}
+              <NotificationCenter />
+
+              {/* Coin Badge */}
+              <Link
+                to="/magaza"
+                className="hidden sm:flex items-center gap-1.5 bg-gradient-to-r from-amber-100 to-yellow-50 dark:from-amber-900/40 dark:to-yellow-900/20 px-3 py-2 rounded-full border border-amber-300/50 dark:border-amber-700/50 no-underline hover:shadow-md hover:scale-[1.03] transition-all"
+              >
+                <span className="text-base">🪙</span>
+                <span className="text-sm font-bold text-amber-700 dark:text-amber-300">{coins || 0}</span>
+              </Link>
 
               {/* XP Badge */}
               <div className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-accent/20 to-accent-dark/10 dark:from-accent/30 dark:to-accent-dark/20 px-4 py-2 rounded-full border border-accent/30">

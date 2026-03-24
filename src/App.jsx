@@ -14,8 +14,14 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminLessons from './pages/admin/AdminLessons'
 import AdminReports from './pages/admin/AdminReports'
+import ChallengePage from './pages/ChallengePage'
 import DailyQuizPage from './pages/DailyQuizPage'
 import ParentReportPage from './pages/ParentReportPage'
+import ProgressMapPage from './pages/ProgressMapPage'
+import PracticeModePage from './pages/PracticeModePage'
+import StudyNotesPage from './pages/StudyNotesPage'
+import AchievementsPage from './pages/AchievementsPage'
+import ShopPage from './pages/ShopPage'
 import InstallPrompt from './components/pwa/InstallPrompt'
 
 function ProtectedRoute({ children }) {
@@ -45,6 +51,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/dersler" element={<LessonsPage />} />
           <Route path="/siralama" element={<LeaderboardPage />} />
+          <Route path="/meydan-okuma" element={<ChallengePage />} />
 
           {/* Protected */}
           <Route path="/panel" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
@@ -53,6 +60,11 @@ export default function App() {
           <Route path="/forum" element={<ProtectedRoute><ForumPage /></ProtectedRoute>} />
           <Route path="/gunluk-quiz" element={<ProtectedRoute><DailyQuizPage /></ProtectedRoute>} />
           <Route path="/ebeveyn-raporu" element={<ProtectedRoute><ParentReportPage /></ProtectedRoute>} />
+          <Route path="/harita" element={<ProtectedRoute><ProgressMapPage /></ProtectedRoute>} />
+          <Route path="/tekrar" element={<ProtectedRoute><PracticeModePage /></ProtectedRoute>} />
+          <Route path="/notlarim" element={<ProtectedRoute><StudyNotesPage /></ProtectedRoute>} />
+          <Route path="/basarilar" element={<ProtectedRoute><AchievementsPage /></ProtectedRoute>} />
+          <Route path="/magaza" element={<ProtectedRoute><ShopPage /></ProtectedRoute>} />
 
           {/* Admin */}
           <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />

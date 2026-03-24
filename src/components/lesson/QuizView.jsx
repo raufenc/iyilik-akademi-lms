@@ -22,7 +22,7 @@ function ConfettiParticle({ delay, color }) {
 
 const CONFETTI_COLORS = ['#6C5CE7', '#A29BFE', '#00B894', '#55EFC4', '#FDCB6E', '#F9A825', '#E17055', '#FAB1A0']
 
-export default function QuizView({ questions, onComplete, title, subtitle }) {
+export default function QuizView({ questions, onComplete, title, subtitle, onWrongAnswer }) {
   const [currentQ, setCurrentQ] = useState(0)
   const [selected, setSelected] = useState(null)
   const [showResult, setShowResult] = useState(false)
@@ -51,6 +51,9 @@ export default function QuizView({ questions, onComplete, title, subtitle }) {
       setScore(score + 1)
       setShowConfetti(true)
       setTimeout(() => setShowConfetti(false), 1500)
+    } else {
+      // Track wrong answer for practice mode
+      onWrongAnswer?.(currentQ)
     }
     setShowResult(true)
   }

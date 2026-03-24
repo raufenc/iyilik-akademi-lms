@@ -160,6 +160,74 @@ const icons = {
       <path d="M16 13H8M16 17H8M10 9H8" />
     </>
   ),
+  swords: (
+    <>
+      <path d="M14.5 17.5L3 6V3h3l11.5 11.5" />
+      <path d="M13 19l6-6" />
+      <path d="M16 16l4 4" />
+      <path d="M9.5 6.5L21 18v3h-3L6.5 9.5" />
+      <path d="M11 5l-6 6" />
+      <path d="M8 8L4 4" />
+    </>
+  ),
+  timer: (
+    <>
+      <circle cx="12" cy="13" r="8" />
+      <path d="M12 9v4l2 2" />
+      <path d="M5 3l2 2" />
+      <path d="M19 3l-2 2" />
+      <path d="M12 5V3" />
+    </>
+  ),
+  zap: (
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+  ),
+  award: (
+    <>
+      <circle cx="12" cy="8" r="6" />
+      <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+    </>
+  ),
+  'map-pin': (
+    <>
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </>
+  ),
+  map: (
+    <>
+      <polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" />
+      <path d="M8 2v16M16 6v16" />
+    </>
+  ),
+  refresh: (
+    <>
+      <path d="M1 4v6h6" />
+      <path d="M23 20v-6h-6" />
+      <path d="M20.49 9A9 9 0 005.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 013.51 15" />
+    </>
+  ),
+  'notes': (
+    <>
+      <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
+      <rect x="8" y="2" width="8" height="4" rx="1" />
+      <path d="M9 12h6M9 16h6" />
+    </>
+  ),
+  coin: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M14.5 9a3.5 3.5 0 00-5 0M9.5 15a3.5 3.5 0 005 0" />
+      <path d="M12 6v2M12 16v2" />
+    </>
+  ),
+  'shopping-bag': (
+    <>
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+      <path d="M3 6h18" />
+      <path d="M16 10a4 4 0 01-8 0" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 24, className = '', strokeWidth = 1.5, ...props }) {
