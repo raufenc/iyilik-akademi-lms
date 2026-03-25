@@ -90,7 +90,7 @@ function getResultMessage(score, total) {
 export default function DailyQuizPage() {
   const navigate = useNavigate()
   const { user } = useAuth()
-  const { addXP, recordActivity, isActiveToday, streakData } = useProgress()
+  const { addXP, recordActivity, isActiveToday, streakData, incrementDailyTask } = useProgress()
 
   const [phase, setPhase] = useState('intro') // intro | quiz | result
   const [questions, setQuestions] = useState([])
@@ -151,6 +151,7 @@ export default function DailyQuizPage() {
       setXpAwarded(true)
       addXP(DAILY_QUIZ_XP)
       recordActivity()
+      incrementDailyTask('quizzesToday')
     }
   }, [phase, xpAwarded, user])
 

@@ -21,7 +21,7 @@ const enrichedLessons = lessons.map(l => ({ ...l, ...(richContent[l.id] || {}) }
 export default function DashboardPage() {
   const navigate = useNavigate()
   const { userData, loading: authLoading } = useAuth()
-  const { completedCount, totalXP, level, getLessonStatus, dailyProgress, coins } = useProgress()
+  const { completedCount, totalXP, level, getLessonStatus, dailyProgress, coins, lessonProgress } = useProgress()
   const { current, needed, progress } = xpToNextLevel(totalXP)
   const quote = getDailyQuote()
 
@@ -146,6 +146,53 @@ export default function DashboardPage() {
             </p>
           </div>
         )}
+      </Card>
+
+      {/* Weekly Goal */}
+      <Card className="relative overflow-hidden">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🎯</span>
+            <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Haftalık Hedef</h3>
+          </div>
+          <span className="text-xs text-text-muted dark:text-dark-text-muted">Bu hafta</span>
+        </div>
+        {(() => {
+          // Calculate lessons completed this week
+          const now = new Date()
+          const dayOfWeek = now.getDay()
+          const monday = new Date(now)
+          monday.setDate(now.getDate() - ((dayOfWeek + 6) % 7))
+          monday.setHours(0, 0, 0, 0)
+          const weeklyCompleted = Object.values(lessonProgress).filter(p => {
+            if (!p.completedAt) return false
+            return new Date(p.completedAt) >= monday
+          }).length
+          const weeklyGoal = 3 // default goal
+          const pct = Math.min((weeklyCompleted / weeklyGoal) * 100, 100)
+          const done = weeklyCompleted >= weeklyGoal
+          return (
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="flex-1 h-3 bg-surface-alt dark:bg-dark-elevated rounded-full overflow-hidden">
+                  <div
+                    className={`h-full rounded-full transition-all duration-700 ${done ? 'bg-secondary' : 'bg-primary'}`}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+                <span className={`text-sm font-bold ${done ? 'text-secondary' : 'text-primary'}`}>
+                  {weeklyCompleted}/{weeklyGoal}
+                </span>
+              </div>
+              <p className="text-xs text-text-muted dark:text-dark-text-muted">
+                {done
+                  ? '🎉 Tebrikler! Bu haftaki hedefini tamamladın!'
+                  : `Bu hafta ${weeklyGoal - weeklyCompleted} ders daha tamamla`
+                }
+              </p>
+            </div>
+          )
+        })()}
       </Card>
 
       {/* Streak Card */}

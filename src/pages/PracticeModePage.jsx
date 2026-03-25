@@ -27,6 +27,7 @@ export default function PracticeModePage() {
     addPracticeSession,
     recordPracticeWrong,
     removePracticeWrong,
+    incrementDailyTask,
   } = useProgress()
 
   const [mode, setMode] = useState(null) // null | 'quick' | 'weak' | 'topic'
@@ -181,6 +182,7 @@ export default function PracticeModePage() {
         await addXP(XP_PER_PRACTICE)
         await recordActivity()
         await addPracticeSession?.()
+        await incrementDailyTask?.('practiceToday')
       } catch (e) {
         console.error('Practice XP error:', e)
       }
