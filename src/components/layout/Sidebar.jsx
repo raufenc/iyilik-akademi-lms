@@ -13,6 +13,7 @@ const NAV_GROUPS = [
       { path: '/dersler', icon: 'book', label: 'Dersler', auth: false },
       { path: '/harita', icon: 'map', label: 'İlerleme Haritası', auth: true },
       { path: '/tekrar', icon: 'refresh', label: 'Tekrar Modu', auth: true },
+      { path: '/sozluk', icon: 'book', label: 'Kavram Sözlüğü', auth: false },
     ],
   },
   {

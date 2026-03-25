@@ -5,6 +5,11 @@ export const richContent = {
   1: {
     // Doğruluk ve Dürüstlük
     tema: 'Doğruluk ve Emaneti Koruma',
+    ogrenmeHedefleri: [
+      'Emanet kavramını anlayabilecek ve başkalarının eşyalarına neden saygı göstermemiz gerektiğini fark edebileceksin.',
+      'Dürüstlüğün günlük hayatta nasıl uygulanacağını öğrenebilecek ve doğru davranışı seçebileceksin.',
+      'Kimsenin görmediği anlarda bile doğru olanı yapmanın önemini kavrayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Emanet',
@@ -18,6 +23,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Bizi aldatan bizden değildir.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle bize hile yapmanın ve insanları kandırmanın çok kötü bir davranış olduğunu öğretiyor. Gerçek bir Müslüman dürüst olur ve kimseyi aldatmaz. Aldatmak, insanların bize olan güvenini yok eder.',
     },
     girisKancasi: {
       soru: "Yolda yürürken içi para dolu bir cüzdan bulsan ve kimse seni görmüyor olsa, ilk ne yapardın?",
@@ -58,11 +64,28 @@ export const richContent = {
       aciklama: 'Bugün bir arkadaşından veya ailenden bir eşyayı emanet olarak iste. Onu akşama kadar en güzel şekilde koru ve sapasağlam geri teslim et.',
     },
     kazanilanRozet: 'Güvenilir Kalp Rozeti',
+    senaryoSorulari: [
+      {
+        senaryo: 'Teneffüste arkadaşın masasının üzerinde unuttuğu çok güzel bir silgiyi görüyorsun. Etrafta kimse yok ve o silgiyi çok beğeniyorsun.',
+        soru: 'Sen olsan ne yapardın?',
+        secenekler: [
+          { metin: 'Silgiyi alıp çantama koyardım, nasılsa kimse görmedi.', geribildirim: 'Bu yaklaşım doğru değil çünkü başkasının eşyasını almak emanete ihanet etmektir. Kimse görmese de Allah her şeyi görür.' },
+          { metin: 'Silgiyi olduğu yerde bırakır, arkadaşıma söylerdim.', geribildirim: 'Bu da düşünülebilir ama arkadaşın gelmeden silgi kaybolabilir.' },
+          { metin: 'Silgiyi alıp arkadaşıma teslim ederdim veya öğretmenime verirdim.', geribildirim: 'Harika! Çünkü emaneti korumak ve sahibine ulaştırmak dürüst bir insanın en güzel özelliğidir.' },
+        ],
+        enIyiSecenek: 2,
+      },
+    ],
   },
 
   2: {
     // Saygı
     tema: "Peygamber Efendimizin (s.a.v) Soyuna ve Büyüklere Saygı",
+    ogrenmeHedefleri: [
+      'Büyüklere ve ilim sahiplerine neden saygı göstermemiz gerektiğini anlayabileceksin.',
+      'Peygamber Efendimizin (s.a.v) soyuna gösterilen hürmetin önemini fark edebileceksin.',
+      'Günlük hayatında saygıyı nasıl gösterebileceğini uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Seyyid',
@@ -76,6 +99,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Küçüklerimize merhamet etmeyen, büyüklerimize saygı göstermeyen bizden değildir.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Bu hadis-i şerif bize iki önemli şey öğretiyor: Bizden küçük olanlara şefkatli davranmalıyız, büyüklerimize de saygı göstermeliyiz. İkisini birden yapan insan gerçek bir Müslümandır.',
     },
     girisKancasi: {
       soru: 'Sınıfa öğretmenin girdiğinde veya eve deden geldiğinde onlara saygını nasıl gösterirsin?',
@@ -116,11 +140,28 @@ export const richContent = {
       aciklama: 'Bugün evdeki büyüklerinden birinin yanına gidip elini öp veya öğretmenini gördüğünde ona tebessüm ederek saygıyla selam ver.',
     },
     kazanilanRozet: 'Edep Tacı Rozeti',
+    senaryoSorulari: [
+      {
+        senaryo: 'Otobüste oturuyorsun ve yaşlı bir amca bindi. Etrafta boş koltuk yok. Arkadaşın sana "Otur, sen de yorgunsun" diyor.',
+        soru: 'Sen olsan ne yapardın?',
+        secenekler: [
+          { metin: 'Arkadaşımın dediğini yapıp oturmaya devam ederdim.', geribildirim: 'Bu yaklaşım rahat görünse de büyüklerimize saygı göstermek bizim görevimizdir.' },
+          { metin: 'Yerimden kalkıp amcaya "Buyurun oturun" derdim.', geribildirim: 'Harika! Çünkü büyüklere yer vermek saygının ve edepli olmanın en güzel göstergesidir.' },
+          { metin: 'Amcayı görmezden gelirdim, o da ayakta durabilir.', geribildirim: 'Bu da düşünülebilir ama büyüklerimize karşı kayıtsız kalmak edebe uygun değildir.' },
+        ],
+        enIyiSecenek: 1,
+      },
+    ],
   },
 
   3: {
     // İhlas
     tema: "İyilikleri Sadece Allah Rızası İçin Yapmak",
+    ogrenmeHedefleri: [
+      'İhlas kavramını anlayabilecek ve iyilikleri neden sadece Allah rızası için yapmamız gerektiğini öğrenebileceksin.',
+      'Gösteriş (riya) ile ihlas arasındaki farkı fark edebileceksin.',
+      'Gizli yapılan iyiliklerin neden daha değerli olduğunu kavrayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'İhlas',
@@ -134,6 +175,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Allah, sadece kendi rızası için ve ihlasla yapılan amelleri kabul eder.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Bu hadis-i şerif bize şunu öğretiyor: Bir iyilik yaptığımızda amacımız insanların bizi övmesi değil, Allahü teâlânın rızasını kazanmak olmalıdır. Sadece Allah için yapılan işler gerçekten değerlidir ve kabul edilir.',
     },
     girisKancasi: {
       soru: 'Bir iyilik yaptığında bunu herkese anlatmak mı istersin, yoksa sır olarak saklamak mı?',
@@ -174,11 +216,28 @@ export const richContent = {
       aciklama: "Bugün kimsenin görmediği bir anda, sadece Allah'ın bilmesi niyetiyle gizli bir iyilik yap. (Örn: Sokaktaki bir çöpü çöpe at veya evde kimse görmeden bir eşyayı düzelt.)",
     },
     kazanilanRozet: 'İhlas Kahramanı Rozeti',
+    senaryoSorulari: [
+      {
+        senaryo: 'Okulda yemek artan arkadaşlarına dağıtıyorsun. Öğretmenin seni görünce çok övdü. Ertesi gün arkadaşın "Yine yap, öğretmen yine seni övecek" diyor.',
+        soru: 'Sen olsan ne yapardın?',
+        secenekler: [
+          { metin: 'Öğretmenim görsün diye yine aynı şeyi yapardım.', geribildirim: 'Bu yaklaşım iyi bir başlangıç olsa da başkalarının övgüsü için iyilik yapmak ihlastan uzaklaşmaktır.' },
+          { metin: 'Bu sefer kimse görmeden sessizce dağıtırdım.', geribildirim: 'Harika! Çünkü iyiliği gizli yapmak ihlasın en güzel göstergesidir. Allah senin niyetini bilir.' },
+          { metin: 'Artık yapmam, herkes benden bunu beklemeye başladı.', geribildirim: 'Bu da düşünülebilir ama iyilik yapmaya devam etmek güzeldir, önemli olan niyetimizdir.' },
+        ],
+        enIyiSecenek: 1,
+      },
+    ],
   },
 
   4: {
     // İşbirliği
     tema: 'Birlikte Çalışmak ve Yardımlaşmak',
+    ogrenmeHedefleri: [
+      'İşbirliğinin gücünü anlayabilecek ve birlikte çalışmanın tek başına çalışmaktan daha verimli olduğunu fark edebileceksin.',
+      'Sadece iyi ve güzel işlerde yardımlaşmamız gerektiğini öğrenebileceksin.',
+      'Aile ve okul hayatında işbölümü yaparak görevleri paylaşmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'İşbirliği',
@@ -192,6 +251,7 @@ export const richContent = {
     ayetHadis: {
       metin: "İyilik ve takva (Allah'a karşı gelmekten sakınma) üzere yardımlaşın. Ama günah ve düşmanlık üzere yardımlaşmayın.",
       kaynak: '(Maide Suresi, 2. Ayet)',
+      aciklama: 'Allahü teâlâ bu ayet-i kerimede bize güzel ve doğru işlerde birbirimize yardım etmemizi emrediyor. Ama kötü ve zararlı şeylerde birbirimize destek olmamızı yasaklıyor. Yani arkadaşımız bizi kötü bir işe çağırsa ona yardım etmemeliyiz.',
     },
     girisKancasi: {
       soru: 'Tek başına kaldıramadığın ağır bir masayı taşımak için ne yaparsın?',
@@ -232,11 +292,28 @@ export const richContent = {
       aciklama: 'Evde annene, babana veya kardeşine zorlandığı bir işte yardım teklif et ve o işi beraber, işbirliği yaparak bitirin.',
     },
     kazanilanRozet: 'Birlik Madalyası',
+    senaryoSorulari: [
+      {
+        senaryo: 'Sınıfta büyük bir proje ödevi var. Grubundaki bir arkadaşın hiç çalışmıyor ve tüm iş sana kalıyor.',
+        soru: 'Sen olsan ne yapardın?',
+        secenekler: [
+          { metin: 'Arkadaşımı öğretmene şikayet ederdim.', geribildirim: 'Bu da düşünülebilir ama önce arkadaşınla konuşmak daha güzel bir adım olabilir.' },
+          { metin: 'Hepsini tek başıma yapardım, arkadaşıma hiç bir şey söylemezdim.', geribildirim: 'Bu yaklaşım seni yorar ve işbirliği ruhu oluşmaz. Sorunları konuşarak çözmek daha iyidir.' },
+          { metin: 'Arkadaşımla nazikçe konuşup ona yapabileceği bir görev verirdim.', geribildirim: 'Harika! Çünkü işbirliği herkesin güçlü yanlarını kullanarak birlikte çalışmaktır. Nazikçe iletişim kurmak en güzel yoldur.' },
+        ],
+        enIyiSecenek: 2,
+      },
+    ],
   },
 
   5: {
     // Empati
     tema: 'Empati ve Başkalarını Anlamak',
+    ogrenmeHedefleri: [
+      'Empati kavramını anlayabilecek ve kendini başkasının yerine koymanın ne demek olduğunu öğrenebileceksin.',
+      'Yardım ederken karşındaki insanı incitmeden nasıl davranman gerektiğini fark edebileceksin.',
+      'Günlük hayatında arkadaşlarının ve ailenin duygularına karşı daha duyarlı olabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Empati',
@@ -250,6 +327,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Hiçbiriniz, kendisi için istediğini din kardeşi için de istemedikçe gerçek anlamda iman etmiş olamaz.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle bize şunu anlatıyor: Kendin için ne istiyorsan arkadaşın için de aynısını istemelisin. Mesela kendin için güzel bir oyuncak istiyorsan arkadaşının da güzel bir oyuncağı olmasını dilemelisin. İşte bu gerçek imandır.',
     },
     girisKancasi: {
       soru: 'Bir arkadaşının üzgün veya zor durumda olduğunu gördüğünde ona nasıl yardım edebilirsin?',
@@ -290,11 +368,28 @@ export const richContent = {
       aciklama: 'Bugün bir arkadaşının veya kardeşinin yerine kendini koyarak, onun zorlandığı bir konuda ona yardımcı ol.',
     },
     kazanilanRozet: 'Empati Kahramanı',
+    senaryoSorulari: [
+      {
+        senaryo: 'Okulda yeni bir öğrenci geldi. Hiç arkadaşı yok ve teneffüslerde hep yalnız oturuyor. Arkadaşların "Bırak onu, biz kendi aramızda oynayalım" diyor.',
+        soru: 'Sen olsan ne yapardın?',
+        secenekler: [
+          { metin: 'Arkadaşlarımın dediğini yapıp kendi aramızda oynardım.', geribildirim: 'Bu yaklaşım kolay görünse de yalnız kalan arkadaşının ne hissettiğini düşün. O da senin yerinde olabilirdi.' },
+          { metin: 'Yeni arkadaşımın yanına gidip onu oyunumuza davet ederdim.', geribildirim: 'Harika! Çünkü kendini onun yerine koyduğunda ne kadar yalnız hissettiğini anlarsın. Onu oyuna dahil etmek empati kahramanlığıdır.' },
+          { metin: 'Öğretmenime söylerdim, o halleder.', geribildirim: 'Bu da düşünülebilir ama bazen en güzel yardım, senin kendi elinle yapacağın küçük bir iyiliktir.' },
+        ],
+        enIyiSecenek: 1,
+      },
+    ],
   },
 
   6: {
     // Adalet
     tema: 'Adaletli Olmak ve Haksızlıktan Kaçınmak',
+    ogrenmeHedefleri: [
+      'Adalet kavramını anlayabilecek ve herkese eşit davranmanın önemini öğrenebileceksin.',
+      'Kul hakkının ne demek olduğunu ve haksızlık yapmanın sonuçlarını fark edebileceksin.',
+      'Oyunlarda ve paylaşımlarda adaletli davranmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Adalet',
@@ -308,6 +403,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Muhakkak ki Allah, adaleti, iyiliği, akrabaya yardım etmeyi emreder.',
       kaynak: '(Nahl Suresi, 90. Ayet)',
+      aciklama: 'Allahü teâlâ bu ayet-i kerimede bizden üç şey istiyor: Adaletli olmak yani kimseye haksızlık yapmamak, iyilik yapmak ve akrabalarımıza yardım etmek. Bunların hepsi güzel ahlakın temelidir.',
     },
     girisKancasi: {
       soru: 'Bir oyunda arkadaşın haksızlığa uğradığında veya suçsuz yere suçlandığında ne yaparsın?',
@@ -353,6 +449,11 @@ export const richContent = {
   7: {
     // Sabır
     tema: 'Sabırlı Olmak ve Gayret Etmek',
+    ogrenmeHedefleri: [
+      'Sabır kavramını anlayabilecek ve zorluklar karşısında pes etmemenin önemini kavrayabileceksin.',
+      'Gayret göstermenin ve çalışmanın sabrın bir parçası olduğunu fark edebileceksin.',
+      'Günlük hayatında zorlandığın durumlarda sabırlı davranmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Sabır',
@@ -366,6 +467,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Şüphesiz Allah, sabredenlerle beraberdir.',
       kaynak: '(Bakara Suresi, 153. Ayet)',
+      aciklama: 'Bu ayet-i kerime bize çok güzel bir müjde veriyor: Sabrettiğimizde Allahü teâlâ bizimle beraberdir ve bize yardım eder. Zor anlarda sabretmek bizi yalnız bırakmaz, çünkü Allah sabredenleri çok sever.',
     },
     girisKancasi: {
       soru: 'Yeni bir oyun öğrenirken hemen başaramadığında pes mi edersin yoksa tekrar mı denersin?',
@@ -411,6 +513,11 @@ export const richContent = {
   8: {
     // Mahremiyet ve İffet
     tema: 'Özel Hayata Saygı ve İzin İsteme',
+    ogrenmeHedefleri: [
+      'Mahremiyet kavramını anlayabilecek ve herkesin özel alanına saygı göstermen gerektiğini öğrenebileceksin.',
+      'Bir odaya girmeden veya birinin eşyasını almadan önce izin istemenin önemini fark edebileceksin.',
+      'Günlük hayatında kapı çalmayı ve izin istemeyi bir alışkanlık haline getirebileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Mahremiyet',
@@ -424,6 +531,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Ey inananlar! Kendi evinizden başka evlere, geldiğinizi fark ettirip ev halkına selam vermeden girmeyin.',
       kaynak: '(Nur Suresi, 27. Ayet)',
+      aciklama: 'Allahü teâlâ bu ayet-i kerimede bize başkalarının evine veya odasına girerken önce haber vermemizi ve selam vermemizi emrediyor. Bu kural, insanların özel hayatına saygı göstermek içindir. Tıpkı senin odana izinsiz girilmesini istememen gibi.',
     },
     girisKancasi: {
       soru: 'Anne ve babanın odasının kapısı kapalıyken içeri girmek istediğinde ilk olarak ne yaparsın?',
@@ -469,6 +577,11 @@ export const richContent = {
   9: {
     // Tevekkül
     tema: "Elinden Geleni Yapıp Sonucu Allah'a Bırakmak",
+    ogrenmeHedefleri: [
+      'Tevekkül kavramını anlayabilecek ve tembellik ile tevekkül arasındaki farkı öğrenebileceksin.',
+      'Önce çalışıp sonra sonucu Allah\'a bırakmanın önemini fark edebileceksin.',
+      'Sınavlarda ve günlük işlerde gereksiz kaygıdan kurtulmak için tevekkülü uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Tevekkül',
@@ -482,6 +595,7 @@ export const richContent = {
     ayetHadis: {
       metin: "Bir kere azmettin mi artık Allah'a tevekkül et. Şüphesiz Allah, tevekkül edenleri sever.",
       kaynak: '(Al-i İmran Suresi, 159. Ayet)',
+      aciklama: 'Bu ayet-i kerime bize şunu öğretiyor: Bir işe karar verip elinden gelen çabayı gösterdikten sonra sonucu Allah\'a bırak ve O\'na güven. Yani önce çalış, sonra tevekkül et. Allah, kendisine güvenenleri çok sever ve onları yalnız bırakmaz.',
     },
     girisKancasi: {
       soru: 'Bir sınav için elinden gelen tüm gayretle çalıştın. Sonucu beklerken içini nasıl ferah tutarsın?',
@@ -527,6 +641,11 @@ export const richContent = {
   11: {
     // Bağışlamak
     tema: 'Hataları Affetmek ve Hoşgörü',
+    ogrenmeHedefleri: [
+      'Affetmenin kalbi nasıl hafiflettiğini ve insanı özgürleştirdiğini anlayabileceksin.',
+      'Kin tutmanın zararlı, affetmenin ise faydalı olduğunu fark edebileceksin.',
+      'Arkadaşlarınla veya kardeşinle yaşadığın küçük sorunlarda affetmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Bağışlamak (Af)',
@@ -540,6 +659,7 @@ export const richContent = {
     ayetHadis: {
       metin: "Kim affeder ve barışırsa onun mükafatı Allah'a aittir.",
       kaynak: '(Şura Suresi, 40. Ayet)',
+      aciklama: 'Allahü teâlâ bu ayet-i kerimede affeden ve barışan insanları müjdeliyor. Birini affettiğinde Allahü teâlâ seni ödüllendirir. Affetmek zayıflık değil, tam tersine çok büyük bir güçtür ve Allah katında çok değerlidir.',
     },
     girisKancasi: {
       soru: 'Bir arkadaşın yanlışlıkla oyununu bozduğunda ona hemen kızar mısın, yoksa onu affeder misin?',
@@ -585,6 +705,11 @@ export const richContent = {
   12: {
     // Yumuşak Huyluluk ve Nezaket
     tema: 'Nazik Konuşmak ve Öfkeyi Yenmek',
+    ogrenmeHedefleri: [
+      'Nezaket ve yumuşak huyluluk kavramlarını anlayabilecek ve neden önemli olduklarını öğrenebileceksin.',
+      'Sinirlendiğinde sakin kalmanın ve nazik konuşmanın yollarını fark edebileceksin.',
+      'Günlük konuşmalarında "lütfen" ve "teşekkür ederim" gibi nezaket ifadelerini kullanmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Nezaket',
@@ -598,6 +723,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Yumuşak huydan mahrum olan, iyilikten de mahrum olur.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle bize yumuşak huylu ve nazik olmanın ne kadar önemli olduğunu anlatıyor. Sert ve kaba davranan insan iyilikten de uzak kalır. Ama tatlı dilli ve nazik olan insan her kapıyı açar.',
     },
     girisKancasi: {
       soru: 'Birisi okulda yanlışlıkla eşyalarını düşürse ona nasıl bir tepki verirsin?',
@@ -643,6 +769,11 @@ export const richContent = {
   13: {
     // Güvenilirlik
     tema: 'Dürüst Olmak ve Emaneti Korumak',
+    ogrenmeHedefleri: [
+      'Güvenilir bir insan olmanın ne anlama geldiğini anlayabileceksin.',
+      'Sözünde durmanın ve dürüst olmanın arkadaşlıklardaki önemini fark edebileceksin.',
+      'Hata yaptığında bunu gizlemek yerine cesurca itiraf etmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Emin (Güvenilir) Olmak',
@@ -656,6 +787,7 @@ export const richContent = {
     ayetHadis: {
       metin: "Münafığın alameti üçtür: Konuştuğunda yalan söyler, söz verdiğinde durmaz, kendisine bir şey emanet edildiğinde hıyanet eder.",
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile iki yüzlü insanların üç özelliğini sayıyor: yalan söylemek, sözünden dönmek ve emanete ihanet etmek. Gerçek bir Müslüman ise tam tersidir: doğru söyler, sözünde durur ve emaneti korur.',
     },
     girisKancasi: {
       soru: 'Yanlışlıkla başkasına ait bir eşyaya zarar versen bunu saklar mısın, yoksa dürüstçe söyler misin?',
@@ -701,6 +833,11 @@ export const richContent = {
   14: {
     // Öfkeye Hâkim Olmak
     tema: 'Sakin Kalmak ve Sinire Yenilmemek',
+    ogrenmeHedefleri: [
+      'Öfke duygusunu tanıyabilecek ve onu kontrol etmenin yollarını öğrenebileceksin.',
+      'Sinirlendiğinde hemen tepki vermenin zararlarını fark edebileceksin.',
+      'Öfkelendiğinde derin nefes almak ve sakinleşmek gibi yöntemleri uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Öfke',
@@ -714,6 +851,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Gerçek pehlivan güreşte rakibini yenen değil, öfkelendiği zaman nefsine hakim olandır.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle bize gerçek güçlülüğün ne olduğunu öğretiyor: Asıl güçlü insan güreşte yenen değil, sinirlendiğinde kendini tutabilen insandır. Öfkeye hakim olmak en büyük kahramanlıktır.',
     },
     girisKancasi: {
       soru: 'Oyun oynarken işler istediğin gibi gitmediğinde sinirlenip oyunu bozar mısın, yoksa sakinleşmeyi mi denersin?',
@@ -759,6 +897,11 @@ export const richContent = {
   15: {
     // Kardeşlik
     tema: 'Dostluk ve Paylaşım',
+    ogrenmeHedefleri: [
+      'Kardeşlik kavramını anlayabilecek ve din kardeşliğinin kan bağından farklı olduğunu öğrenebileceksin.',
+      'Paylaşmanın dostluğu nasıl güçlendirdiğini fark edebileceksin.',
+      'Sahip olduğun güzellikleri arkadaşlarınla ve kardeşlerinle paylaşmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Kardeşlik',
@@ -772,6 +915,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Müminler ancak kardeştirler.',
       kaynak: '(Hucurat Suresi, 10. Ayet)',
+      aciklama: 'Allahü teâlâ bu kısa ama çok güçlü ayet-i kerimede tüm Müslümanların birbirinin kardeşi olduğunu bildiriyor. Aynı anneden doğmasak bile iman bağı bizi kardeş yapar. Bu yüzden birbirimize yardım etmeli ve birbirimizi sevmeliyiz.',
     },
     girisKancasi: {
       soru: 'Okulda kalemini veya silgisini evde unutmuş bir arkadaşını görsen ne yaparsın?',
@@ -817,6 +961,11 @@ export const richContent = {
   16: {
     // Kıskançlık
     tema: 'Kıskançlık (Haset) ve Kötülüğün Sonu',
+    ogrenmeHedefleri: [
+      'Haset (kıskançlık) kavramını anlayabilecek ve bunun kalbimize nasıl zarar verdiğini öğrenebileceksin.',
+      'Başkalarının başarısına sevinmenin kıskançlıktan çok daha güzel olduğunu fark edebileceksin.',
+      'Arkadaşlarının güzel şeylerini gördüğünde kıskanmak yerine onları tebrik etmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Haset (Kıskançlık)',
@@ -830,6 +979,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Ateşin odunu yakıp bitirdiği gibi, haset (kıskançlık) da iyilikleri yer bitirir.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle kıskançlığın ne kadar tehlikeli olduğunu anlatıyor. Nasıl ateş odunu yakıp kül ederse, kıskançlık da yaptığımız tüm iyilikleri yok eder. Bu yüzden kalbimizi kıskançlıktan temiz tutmalıyız.',
     },
     girisKancasi: {
       soru: "Bir arkadaşın çok güzel bir oyuncak veya başarı kazandığında onun adına sevinir misin, yoksa 'keşke benim olsa' diye üzülür müsün?",
@@ -875,6 +1025,11 @@ export const richContent = {
   17: {
     // Millî ve Dinî Değerler
     tema: 'Vatan Sevgisi, Şehitlik ve Fedakarlık',
+    ogrenmeHedefleri: [
+      'Vatan sevgisinin ve fedakarlığın ne demek olduğunu anlayabileceksin.',
+      'Şehitlerimizin vatanımız için yaptığı büyük fedakarlıkları fark edebileceksin.',
+      'Bugün bir öğrenci olarak vatanına nasıl hizmet edebileceğini kavrayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Vatan Sevgisi',
@@ -888,6 +1043,7 @@ export const richContent = {
     ayetHadis: {
       metin: "Allah yolunda öldürülenlere 'ölüler' demeyin. Hayır, onlar diridirler, ancak siz bunu bilemezsiniz.",
       kaynak: '(Bakara Suresi, 154. Ayet)',
+      aciklama: 'Allahü teâlâ bu ayet-i kerimede şehitlerin aslında ölmediğini, Allah katında diri olduklarını bildiriyor. Vatanı ve dini için canını veren kahramanlar Allah katında en yüksek mertebeye ulaşırlar. Bu, ne kadar büyük bir onur olduğunu gösteriyor.',
     },
     girisKancasi: {
       soru: 'Sahip olduğun en değerli şeyi başkalarının hayatını kurtarmak için feda edebilir miydin?',
@@ -933,6 +1089,11 @@ export const richContent = {
   18: {
     // Namuslu Olmak
     tema: 'Haya, İffet ve Özel Hayata Saygı',
+    ogrenmeHedefleri: [
+      'Haya ve iffet kavramlarını anlayabilecek ve bunların sadece giyimle sınırlı olmadığını öğrenebileceksin.',
+      'Gözümüzü, dilimizi ve kalbimizi kötüden korumanın önemini fark edebileceksin.',
+      'Yalnızken bile edepli davranmanın bir alışkanlık olması gerektiğini kavrayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Haya (Utanma Duygusu)',
@@ -946,6 +1107,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Haya imandandır.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu kısa sözüyle hayanın (utanma duygusunun) imanın bir parçası olduğunu bildiriyor. Haya sahibi insan kötü şeylerden utanır ve onları yapmaz. Haya olmadan iman eksik kalır.',
     },
     girisKancasi: {
       soru: 'Evde kendi odanda yalnızken bile neden davranışlarına ve giyimine dikkat etmelisin?',
@@ -991,6 +1153,11 @@ export const richContent = {
   19: {
     // Sevgi
     tema: 'Yaratılanı Sevmek ve Merhamet',
+    ogrenmeHedefleri: [
+      'Sevgi ve merhamet kavramlarını anlayabilecek ve tüm canlılara şefkat göstermenin önemini öğrenebileceksin.',
+      'Kırılanı tamir etmenin ve hata yapana şefkatle yaklaşmanın gerçek sevgi olduğunu fark edebileceksin.',
+      'Hayvanlara, doğaya ve çevrendeki insanlara sevgiyle davranmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Sevgi',
@@ -1004,6 +1171,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Siz yerdekilere merhamet edin ki göktekiler de size merhamet etsin.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerifte bize şunu müjdeliyor: Etrafımızdaki insanlara, hayvanlara ve tüm canlılara merhamet edersek, Allahü teâlâ ve melekler de bize merhamet eder. Merhamet eden merhamet görür.',
     },
     girisKancasi: {
       soru: 'Çok sevdiğin bir çiçeğin kazara kırıldığını görsen onu çöpe mi atarsın, yoksa toprağa dikip iyileştirmeye mi çalışırsın?',
@@ -1049,6 +1217,11 @@ export const richContent = {
   20: {
     // Ahde Vefa
     tema: 'Verilen Sözü Tutmak',
+    ogrenmeHedefleri: [
+      'Ahde vefa kavramını anlayabilecek ve verilen sözün ne kadar önemli olduğunu öğrenebileceksin.',
+      'Sözünden dönen insanlara güvenin nasıl azaldığını fark edebileceksin.',
+      'Verdiğin küçük büyük her sözü tutmayı bir alışkanlık haline getirmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Ahde Vefa',
@@ -1062,6 +1235,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Söz verdiğiniz zaman sözünüzü yerine getirin. Çünkü verilen sözde sorumluluk vardır.',
       kaynak: '(İsra Suresi, 34. Ayet)',
+      aciklama: 'Allahü teâlâ bu ayet-i kerimede verdiğimiz sözleri yerine getirmemizi emrediyor. Bir söz verdiğimizde bu bir sorumluluktur ve ahirette hesabını vereceğiz. Bu yüzden tutamayacağımız sözleri vermemeli, verdiğimiz sözleri ise mutlaka tutmalıyız.',
     },
     girisKancasi: {
       soru: "Bir arkadaşına 'Yarın seninle oyun oynayacağım' diye söz verdikten sonra başka eğlenceli bir iş çıksa ne yaparsın?",
@@ -1107,6 +1281,11 @@ export const richContent = {
   21: {
     // Arkadaşlık ve Dostluk
     tema: 'Gerçek Dostluk ve Paylaşım',
+    ogrenmeHedefleri: [
+      'Gerçek dostluğun ne demek olduğunu ve iyi arkadaş seçmenin önemini anlayabileceksin.',
+      'Dostluğun sadece iyi günlerde değil, zor günlerde de sürmesi gerektiğini fark edebileceksin.',
+      'Arkadaşlarınla paylaşarak ve onlara destek olarak dostluğunu güçlendirmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Dostluk',
@@ -1120,6 +1299,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Kişi dostunun dini (ahlakı) üzeredir. Öyleyse her biriniz kiminle dostluk kuracağına dikkat etsin.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile arkadaşlarımızın bizi çok etkilediğini söylüyor. İyi arkadaşlarla takılan insan iyi olur, kötü arkadaşlarla takılan kötü olur. Bu yüzden arkadaşlarımızı dikkatli seçmeliyiz.',
     },
     girisKancasi: {
       soru: 'Bir arkadaşının okulda silgisi veya kalemi kaybolsa kendi kalemini onunla paylaşır mısın?',
@@ -1165,6 +1345,11 @@ export const richContent = {
   22: {
     // Çevre Temizliği
     tema: 'Doğayı Korumak ve Temizlik',
+    ogrenmeHedefleri: [
+      'Çevre bilincinin ne demek olduğunu ve doğanın bize bir emanet olduğunu anlayabileceksin.',
+      'Çöp atmanın ve doğaya zarar vermenin canlıları nasıl tehlikeye attığını fark edebileceksin.',
+      'Çevreni temiz tutmayı ve doğayı korumayı günlük hayatında uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Çevre Bilinci',
@@ -1178,6 +1363,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Temizlik imanın yarısıdır.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle temizliğin İslam dininde ne kadar önemli olduğunu bildiriyor. Temizlik sadece bedenimizi yıkamak değil, çevremizi, odamızı ve doğayı da temiz tutmaktır. Temiz olan insan imanının yarısını tamamlamış gibidir.',
     },
     girisKancasi: {
       soru: 'Sokakta yürürken yerde bir çöp veya cam şişe gördüğünde onu görmezden mi gelirsin, yoksa alıp çöpe mi atarsın?',
@@ -1223,6 +1409,11 @@ export const richContent = {
   23: {
     // Hediyeleşmek
     tema: 'Sevgiyi Göstermek ve Cömertlik',
+    ogrenmeHedefleri: [
+      'Hediyeleşmenin insanlar arasındaki sevgiyi nasıl artırdığını anlayabileceksin.',
+      'Hediyenin değerinin fiyatında değil, içindeki sevgide olduğunu fark edebileceksin.',
+      'Kendi ellerin ile küçük hediyeler hazırlayıp sevdiklerine vermeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Hediyeleşmek',
@@ -1236,6 +1427,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Hediyeleşin ki birbirinize olan sevginiz artsın.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile hediyeleşmenin sevgiyi artırdığını bildiriyor. Birine hediye verdiğinde onun kalbinde sana karşı sıcaklık oluşur. Hediye pahalı olmak zorunda değil, bir çiçek veya çizdiğin bir resim bile olabilir.',
     },
     girisKancasi: {
       soru: 'Birisine hediye aldığında en çok ne hissetmeyi seversin: Hediyeyi verirken mi daha mutlusundur, yoksa hediye alırken mi?',
@@ -1281,6 +1473,11 @@ export const richContent = {
   24: {
     // Terbiye
     tema: 'Güzel Ahlak ve Saygı',
+    ogrenmeHedefleri: [
+      'Terbiye ve nezaket kurallarının toplum hayatında neden önemli olduğunu anlayabileceksin.',
+      'Sadece evde değil, sokakta ve toplum içinde de nazik davranmanın gerekliliğini fark edebileceksin.',
+      'Büyüklere yer vermek, selam vermek gibi görgü kurallarını günlük hayatında uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Terbiye',
@@ -1294,6 +1491,7 @@ export const richContent = {
     ayetHadis: {
       metin: 'Hiçbir baba, çocuğuna güzel terbiyeden daha üstün bir hediye vermemiştir.',
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle ailemizin bize verdiği en büyük hediyenin oyuncak veya para değil, güzel terbiye olduğunu söylüyor. Güzel ahlak ve terbiye hayat boyunca işimize yarar ve bizi sevilen bir insan yapar.',
     },
     girisKancasi: {
       soru: 'Otobüste giderken yaşlı bir teyzenin ayakta kaldığını görsen ne yaparsın?',
@@ -1339,6 +1537,11 @@ export const richContent = {
   25: {
     // Sır Saklamak
     tema: 'Güvenilirlik ve Emaneti Koruma',
+    ogrenmeHedefleri: [
+      'Sır saklamanın neden bir emanet olduğunu ve güvenilirlik ile ilişkisini anlayabileceksin.',
+      'Başkalarının sırlarını ifşa etmenin dostluğa ve güvene nasıl zarar verdiğini fark edebileceksin.',
+      'Sana anlatılan sırları korumayı ve güvenilir bir sırdaş olmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       {
         kavram: 'Sır',
@@ -1352,6 +1555,7 @@ export const richContent = {
     ayetHadis: {
       metin: "Bir kimse bir söz söyler de etrafına bakınırsa (kimse duydu mu diye), o söz dinleyen için bir emanettir.",
       kaynak: '(Hadis-i Şerif)',
+      aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile bize şunu öğretiyor: Birisi sana bir şey anlatırken etrafına bakınıyorsa, bu onun sana özel bir şey söylediği anlamına gelir ve bu bir emanettir. O sözü başkalarına söylememelisin.',
     },
     girisKancasi: {
       soru: "Bir arkadaşın sana 'bunu kimseye söyleme' diyerek bir sır verse, annene veya en yakın arkadaşına söyler misin?",
@@ -1397,11 +1601,16 @@ export const richContent = {
   // === Lesson 36: Vefâkârlık (video_38) ===
   36: {
     tema: 'Yapılan İyiliği Unutmamak ve Kadirşinaslık',
+    ogrenmeHedefleri: [
+      'Vefa ve kadirşinaslık kavramlarını anlayabilecek ve yapılan iyilikleri unutmamanın önemini öğrenebileceksin.',
+      'Vefalı insanların toplumda nasıl sevildiğini ve saygı gördüğünü fark edebileceksin.',
+      'Sana iyilik eden insanlara teşekkür etmeyi ve onları unutmamayı uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Vefa', anlam: 'Sevgide, dostlukta ve sözünde durmak. Yapılan bir iyiliği hiçbir zaman unutmamak.' },
       { kavram: 'Kadirşinaslık', anlam: 'Kıymet bilmek, emeği geçen insanlara karşı teşekkür borçlu olduğunu hissetmek.' },
     ],
-    ayetHadis: { metin: 'İyiliğin karşılığı, ancak iyilik değil midir?', kaynak: '(Rahman Suresi, 60. Ayet)' },
+    ayetHadis: { metin: 'İyiliğin karşılığı, ancak iyilik değil midir?', kaynak: '(Rahman Suresi, 60. Ayet)', aciklama: 'Allahü teâlâ bu ayet-i kerimede bize iyiliğe iyilikle karşılık vermemiz gerektiğini hatırlatıyor. Bize yapılan bir iyiliği unutmamalı ve mümkünse karşılığını vermeliyiz. İşte bu vefanın ve kadirşinaslığın temelidir.' },
     girisKancasi: { soru: 'Zor bir anında sana yardım eden bir arkadaşına daha sonra sen nasıl teşekkür edersin?', ipucu: 'Gerçek dostluklar zor zamanlarda edilen yardımların hiç unutulmamasıyla kurulur.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Biliyor muydun? Peygamber Efendimiz (s.a.v) kendisine yıllar önce süt annelik yapan Halime annemizi ne zaman görse cübbesini yere serer, onu saygıyla oturturdu. İşte bu vefanın en güzel örneğidir.' },
@@ -1416,11 +1625,16 @@ export const richContent = {
   // === Lesson 37: Cami Adabı (video_44) ===
   37: {
     tema: 'İbadet Yerlerine Saygı ve Edep',
+    ogrenmeHedefleri: [
+      'Cami adabını anlayabilecek ve ibadet yerlerinde nasıl davranılması gerektiğini öğrenebileceksin.',
+      'Camilerin sadece bir bina değil, huzur ve ibadet mekanı olduğunu fark edebileceksin.',
+      'Camiye gittiğinde sessiz olmak, sağ ayakla girmek gibi kuralları uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Cami Adabı', anlam: 'Müslümanların ibadet yeri olan camilerde nasıl davranılması, nasıl giyinilmesi ve nasıl konuşulması gerektiği kuralları.' },
       { kavram: 'Huşu', anlam: "Allah'ın huzurunda olmanın verdiği saygıyla sessiz, sakin ve boynu bükük bir şekilde durmak." },
     ],
-    ayetHadis: { metin: "Şüphesiz mescitler (camiler) Allah'ındır. O halde oralarda Allah ile beraber başka hiçbir şeye dua etmeyin.", kaynak: '(Cin Suresi, 18. Ayet)' },
+    ayetHadis: { metin: "Şüphesiz mescitler (camiler) Allah'ındır. O halde oralarda Allah ile beraber başka hiçbir şeye dua etmeyin.", kaynak: '(Cin Suresi, 18. Ayet)', aciklama: 'Allahü teâlâ bu ayet-i kerimede camilerin kendisine ait olduğunu bildiriyor. Camiler sadece Allah\'a ibadet etmek için yapılmış kutsal mekanlardır. Bu yüzden orada sessiz olmak, edepli davranmak ve saygılı olmak gerekir.' },
     girisKancasi: { soru: "Birisi evinde uyurken veya kitap okurken yanında yüksek sesle bağırsan ne hisseder? Peki ya Allah'ın evinde ibadet edenler ne hisseder?", ipucu: 'Camiler kalplerin dinlendiği yerlerdir, orada sessizlik en güzel saygıdır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 30, tip: 'dogru_yanlis', soruMetni: 'Çocuklar caminin içinde top oynamaya başladıklarında, imam onlara çok sert bir şekilde bağırarak camiden kovmuştur.', dogruCevap: false, geriBildirimDogru: 'Harika! İmam onlara kızıp bağırmamış, sadece cami içinde sessiz ve edepli olmaları gerektiğini sevgiyle anlatmıştır.', geriBildirimYanlis: 'Dikkatli izlemelisin. İmam onlara kızmadı, sadece buranın bir ibadet yeri olduğunu ve edepli olmaları gerektiğini nazikçe söyledi.' },
@@ -1435,11 +1649,16 @@ export const richContent = {
   // === Lesson 38: Kanaat (video_50) ===
   38: {
     tema: 'Kanaat, Tasarruf ve Allah Rızası İçin Biriktirmek',
+    ogrenmeHedefleri: [
+      'Kanaat ve tasarruf kavramlarını anlayabilecek ve gereksiz harcamalardan kaçınmanın önemini öğrenebileceksin.',
+      'Nefsimizin her istediğini yapmamamız gerektiğini ve iradenin gücünü fark edebileceksin.',
+      'Gereksiz bir şey almak yerine o parayı biriktirmeyi veya hayra harcamayı uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Kanaat', anlam: 'Elindekiyle yetinmeyi bilmek, gereksiz ve aşırı isteklere dur diyebilmek.' },
       { kavram: 'Tasarruf (İktisat)', anlam: 'Paramızı, eşyalarımızı veya zamanımızı boş yere harcamadan, israf etmeden kullanmak.' },
     ],
-    ayetHadis: { metin: 'Gerçek zenginlik, mal çokluğu değil, gönül zenginliğidir (kanaattir).', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Gerçek zenginlik, mal çokluğu değil, gönül zenginliğidir (kanaattir).', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile gerçek zenginliğin çok paraya sahip olmak değil, kalbin zengin olması yani kanaat etmek olduğunu söylüyor. Elindekiyle mutlu olmayı bilen insan dünyanın en zengin insanıdır.' },
     girisKancasi: { soru: 'Canının çok çektiği bir oyuncağı veya yiyeceği almayıp, o parayı daha güzel bir amaç için biriktirdiğin oldu mu?', ipucu: "İstanbul'da sadece 'Sanki Yedim' diyerek yapılmış kocaman bir cami olduğunu biliyor muydun?" },
     interaktifDuraklamalar: [
       { zamanDamgasi: 45, tip: 'bilgi_karti', metin: "Biliyor muydun? İstanbul'un Fatih semtinde, Keçeci Hayrettin Efendi'nin yıllarca nefsiyle mücadele edip biriktirdiği paralarla yaptırdığı 'Sanki Yedim Camii' gerçekten de vardır ve hala ibadete açıktır." },
@@ -1454,11 +1673,16 @@ export const richContent = {
   // === Lesson 39: Mesuliyet (video_59) ===
   39: {
     tema: 'Görev Bilinci ve Sorumluluk',
+    ogrenmeHedefleri: [
+      'Mesuliyet (sorumluluk) kavramını anlayabilecek ve üzerine düşen görevleri yapmanın önemini öğrenebileceksin.',
+      'Verilen görevleri severek ve zamanında yapmanın insanları nasıl güvenilir kıldığını fark edebileceksin.',
+      'Kimse hatırlatmadan kendi görevlerini yapmayı bir alışkanlık haline getirmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Mesuliyet', anlam: 'Sorumluluk demektir. İnsanın üzerine düşen görevleri zamanında ve en iyi şekilde yapmasıdır.' },
       { kavram: 'Emanet Bilinci', anlam: 'Bize verilen bir işe veya eşyaya, sanki bize aitmiş gibi gözümüz gibi bakmaktır.' },
     ],
-    ayetHadis: { metin: 'Hepiniz çobansınız ve hepiniz elinizin altındakilerden (görevlerinizden) sorumlusunuz.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Hepiniz çobansınız ve hepiniz elinizin altındakilerden (görevlerinizden) sorumlusunuz.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile herkesin bir sorumluluğu olduğunu bildiriyor. Anne baba evden, öğretmen sınıftan, sen de odandan ve ödevlerinden sorumlusun. Herkes kendi görevini iyi yaparsa dünya güzel bir yer olur.' },
     girisKancasi: { soru: 'Evde sadece senin yapman gereken bir görev var mı? O görevi kendi başına yapınca kendini nasıl hissedersin?', ipucu: 'Sorumluluk almak bizi büyütür ve başkalarının bize daha çok güvenmesini sağlar.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: 'Dedemiz bahçedeki işleri çok yorulduğu için tamamen bırakmış ve bütün işi çocuklara yıkmıştır.', dogruCevap: false, geriBildirimDogru: 'Doğru bildin! Dedemiz işleri tamamen bırakmadı, sadece iş bölümü yaptı ve herkese yapabileceği kadar bir sorumluluk verdi.', geriBildirimYanlis: "Hayır, dedemiz işleri bırakmadı. Sadece Ayşe'ye domatesleri, Emir'e gülleri vererek onlara 'mesuliyet' duygusunu öğretti." },
@@ -1473,11 +1697,16 @@ export const richContent = {
   // === Lesson 26: Kötülüğe Karşı İyilik (video_27) ===
   26: {
     tema: 'Kötülüğe İyilikle Karşılık Vermek ve Affetmek',
+    ogrenmeHedefleri: [
+      'Kötülüğe iyilikle karşılık vermenin ne demek olduğunu ve düşmanlıkları nasıl bitirdiğini anlayabileceksin.',
+      'Öfkeni yenip gülümsemenin kavgadan çok daha güçlü bir silah olduğunu fark edebileceksin.',
+      'Sana kötü davranan birine iyilikle yaklaşmayı günlük hayatında uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Affetmek', anlam: 'Bize karşı yapılan bir hatayı cezalandırmaktan vazgeçmek, kalpten silmek.' },
       { kavram: 'İyilikle Savmak', anlam: 'Bize kötü davranan birine kızmak yerine ona tebessümle ve güzel ahlakla yaklaşmak.' },
     ],
-    ayetHadis: { metin: 'İyilikle kötülük bir olmaz. Sen kötülüğü en güzel olan şeyle (iyilikle) sav. O zaman seninle arasında düşmanlık bulunan kimse, sanki sıcak bir dost oluverir.', kaynak: '(Fussilet Suresi, 34. Ayet)' },
+    ayetHadis: { metin: 'İyilikle kötülük bir olmaz. Sen kötülüğü en güzel olan şeyle (iyilikle) sav. O zaman seninle arasında düşmanlık bulunan kimse, sanki sıcak bir dost oluverir.', kaynak: '(Fussilet Suresi, 34. Ayet)', aciklama: 'Allahü teâlâ bu ayet-i kerimede bize kötülüğe kötülükle değil, iyilikle karşılık vermemizi emrediyor. Böyle yapınca sana düşman olan kişi bile senin dostun olabilir. İyilik, kötülük ateşini söndüren bir su gibidir.' },
     girisKancasi: { soru: 'Biri senin oyununu bilerek bozduğunda ona bağırır mısın, yoksa gülümseyip onu da oyuna davet mi edersin?', ipucu: 'Bazen küçücük bir gülümseme, en büyük kavgaları başlamadan bitiren sihirli bir anahtardır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: 'Parktaki çocuk misketleri dağıtınca Emir çok sinirlenmiş ve onunla hemen kavgaya tutuşmuştur.', dogruCevap: false, geriBildirimDogru: 'Harika! Emir sinirlense de kendini tuttu ve çocuğa bir misket verip oyuna davet etti.', geriBildirimYanlis: 'Dikkatli izlemedin sanırım. Emir öfkesini yendi ve ona iyilikle karşılık vererek onu şaşırttı.' },
@@ -1492,11 +1721,16 @@ export const richContent = {
   // === Lesson 27: İş Ahlakı (video_28) ===
   27: {
     tema: 'İşini Düzgün Yapmak ve Sorumluluk',
+    ogrenmeHedefleri: [
+      'İş ahlakı kavramını anlayabilecek ve üzerine aldığın bir işi en güzel şekilde yapmanın önemini öğrenebileceksin.',
+      'Baştan savma yapılan işlerin ileride büyük sorunlara yol açabileceğini fark edebileceksin.',
+      'Ödevlerini ve görevlerini yarım bırakmadan, en iyi şekilde bitirmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'İş Ahlakı', anlam: 'Üzerimize aldığımız bir işi hile yapmadan, eksiksiz ve en güzel şekilde tamamlamak.' },
       { kavram: 'Emanet', anlam: 'Bize güvenilerek teslim edilen bir göreve veya eşyaya ihanet etmemek.' },
     ],
-    ayetHadis: { metin: 'Allah, sizden birinizin bir iş yaptığı zaman onu en güzel şekilde yapmasını sever.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Allah, sizden birinizin bir iş yaptığı zaman onu en güzel şekilde yapmasını sever.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile bize bir iş yaptığımızda onu en güzel ve dikkatli şekilde yapmamız gerektiğini söylüyor. Allahü teâlâ yarım yamalak iş yapanları değil, işini özenle tamamlayanları sever.' },
     girisKancasi: { soru: 'Sana verilen bir ödevi hemen baştan savma bitirmek mi istersin, yoksa yorulsan da en mükemmelini mi yapmak istersin?', ipucu: 'Unutma, yarım bırakılan veya baştan savma yapılan her iş, gelecekte yıkılan bir köprüye dönüşebilir.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 45, tip: 'dogru_yanlis', soruMetni: 'Ayşe ve Emir çiçekleri sulamaktan yorulunca işi tamamen yarım bırakıp içeri kaçtılar.', dogruCevap: false, geriBildirimDogru: 'Doğru bildin. Yorulmuşlardı ama dedelerinin köprü hikayesinden sonra işlerini tam ve eksiksiz bitirdiler.', geriBildirimYanlis: 'Hayır, yorulsalar da pes etmediler ve iş ahlakının ne demek olduğunu anladılar.' },
@@ -1511,11 +1745,16 @@ export const richContent = {
   // === Lesson 28: İnsana Teşekkür (video_29) ===
   28: {
     tema: 'Teşekkür Etmek, Şükür ve Minnet',
+    ogrenmeHedefleri: [
+      'Teşekkür etmenin ve şükretmenin arasındaki farkı anlayabileceksin.',
+      'İnsanlara teşekkür etmenin onları ne kadar mutlu ettiğini fark edebileceksin.',
+      'Her gün ailene, öğretmenine ve sana iyilik edenlere teşekkür etmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Teşekkür Etmek', anlam: 'Bize yapılan bir iyiliğe veya yardıma karşı sözlü olarak minnetimizi ve mutluluğumuzu belirtmek.' },
       { kavram: 'Şükür', anlam: "Allah'ın bize verdiği sağlık, aile ve yiyecek gibi tüm nimetler için O'na hamd etmek." },
     ],
-    ayetHadis: { metin: "İnsanlara teşekkür etmeyen, Allah'a da şükretmiş olmaz.", kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: "İnsanlara teşekkür etmeyen, Allah'a da şükretmiş olmaz.", kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle bize şunu öğretiyor: Önce çevremizdeki insanlara teşekkür etmeyi bilmeliyiz. Bize yardım eden, yemek yapan, ders öğreten insanlara teşekkür edemeyen, Allah\'a da gerçek anlamda şükredemez.' },
     girisKancasi: { soru: "Biri sana yardım ettiğinde ona kocaman gülümseyerek 'Teşekkür ederim' demek sence o kişiyi nasıl hissettirir?", ipucu: 'Teşekkür etmek, kalpler arasında kurulan en tatlı sevgi köprüsüdür.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 35, tip: 'dogru_yanlis', soruMetni: "Ayşe kalemi düştüğünde ona yardım eden Zeynep'e hiçbir şey söylemeden arkasını döndü.", dogruCevap: false, geriBildirimDogru: 'Çok dikkatlisin! Ayşe hemen tebessüm edip arkadaşına teşekkür etti.', geriBildirimYanlis: "Yanlış cevap. Ayşe nazik bir çocuk olduğu için ona yardım eden Zeynep'e teşekkür etti." },
@@ -1530,11 +1769,16 @@ export const richContent = {
   // === Lesson 29: Zararlı Alışkanlıklardan Kaçınmak (video_30) ===
   29: {
     tema: 'Sağlığı Korumak, İrade ve Gerçek Eğlence',
+    ogrenmeHedefleri: [
+      'Zararlı alışkanlıkların bedenimize ve ruhumuza nasıl zarar verdiğini anlayabileceksin.',
+      'Bedenimizin bize Allah\'ın bir emaneti olduğunu ve onu korumanın görevimiz olduğunu fark edebileceksin.',
+      'Ekran süresini azaltıp dışarıda oynayarak sağlıklı yaşamayı uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Zararlı Alışkanlıklar', anlam: 'Vücudumuza, gözlerimize veya aklımıza zarar veren, bizi bağımlı yapan kötü alışkanlıklar.' },
       { kavram: 'İrade', anlam: "Zararlı ve kötü olan bir şeye 'Hayır' diyebilme gücü ve kendini tutabilmek." },
     ],
-    ayetHadis: { metin: 'İki nimet vardır ki insanların çoğu onun kıymetini bilmezler: Biri sağlık, diğeri ise boş vakittir.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'İki nimet vardır ki insanların çoğu onun kıymetini bilmezler: Biri sağlık, diğeri ise boş vakittir.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile sağlığın ve zamanın ne kadar değerli olduğunu hatırlatıyor. Çoğu insan sağlıklıyken bunun kıymetini bilmez, boş zamanını da faydasız şeylerle harcar. Sağlığımızı ve zamanımızı iyi kullanmalıyız.' },
     girisKancasi: { soru: 'Bütün gün dışarı çıkmadan tabletin veya televizyonun başında oturmak sence bedenimizi güçlendirir mi, yoksa bizi hasta mı eder?', ipucu: 'Gerçek eğlence ekranlarda değil, doğada ve arkadaşlarımızla oynadığımız oyunlardadır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'bilgi_karti', metin: "İslam dinine göre bedenimiz bize Allah'ın emanetidir. Onu sağlıksız yiyeceklerden ve hareketsizlikten (sürekli ekrana bakmaktan) korumak zorundayız." },
@@ -1549,11 +1793,16 @@ export const richContent = {
   // === Lesson 30: Adab-ı Muaşeret (video_32) ===
   30: {
     tema: 'Görgü Kuralları, Nezaket ve Saygı',
+    ogrenmeHedefleri: [
+      'Adab-ı muaşeret (görgü kuralları) kavramını anlayabilecek ve toplum içinde nasıl davranman gerektiğini öğrenebileceksin.',
+      'Sofra adabı, misafirlik kuralları ve selam vermenin önemini fark edebileceksin.',
+      'Büyüklere öncelik vermek ve nazik konuşmak gibi görgü kurallarını uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Adab-ı Muaşeret', anlam: 'Toplum içinde insanların birbirine karşı nazik, görgülü ve saygılı davranmasını sağlayan nezaket kuralları.' },
       { kavram: 'Edep', anlam: 'Güzel ahlaklı olmak, nerede nasıl davranacağını, nasıl konuşacağını bilmek.' },
     ],
-    ayetHadis: { metin: 'Sizin en hayırlınız, ahlakı en güzel olanınızdır.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Sizin en hayırlınız, ahlakı en güzel olanınızdır.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile bizim en iyi ve en değerli insanın zengin veya güçlü olan değil, ahlakı en güzel olan olduğunu söylüyor. Nazik, saygılı ve görgülü olmak bizi en hayırlı insan yapar.' },
     girisKancasi: { soru: 'Bir arkadaşının veya akrabanın evine misafirliğe gittiğinde içeri girince ilk olarak ne yaparsın?', ipucu: 'Müslümanın süsü, taktığı takılar değil, taşıdığı güzel edeptir.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: 'Ayşe misafirliğe gidince büyüklerine selam vermeden hemen koşarak boş bulduğu bir köşeye oturdu.', dogruCevap: false, geriBildirimDogru: 'Harika! Ayşe dedesinin öğrettiği gibi önce güzelce selam verdi, sonra edeplice oturdu.', geriBildirimYanlis: 'Yanlış cevap! Ayşe önce büyüklerine saygıyla selam vermiş, ardından yerine geçmişti.' },
@@ -1568,11 +1817,16 @@ export const richContent = {
   // === Lesson 31: Alçak Gönüllülük (video_33) ===
   31: {
     tema: 'Tevazu, Kibir ve Başarıyı Paylaşmak',
+    ogrenmeHedefleri: [
+      'Alçak gönüllülük (tevazu) ve kibir kavramlarını anlayabilecek ve aralarındaki farkı öğrenebileceksin.',
+      'Başarılarınla övünmenin seni küçülttüğünü, mütevazı olmanın ise yücelttiğini fark edebileceksin.',
+      'Başarılarını arkadaşlarınla paylaşmayı ve onları da takdir etmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Alçak Gönüllülük (Tevazu)', anlam: 'Başarılarından dolayı böbürlenmemek, kendini başkalarından üstün görmemek.' },
       { kavram: 'Kibir', anlam: "Kendini büyük görmek, başkalarını küçümsemek. İslam'da en sevilmeyen huylardandır." },
     ],
-    ayetHadis: { metin: 'Kim Allah için alçakgönüllü olursa, Allah onu yüceltir.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Kim Allah için alçakgönüllü olursa, Allah onu yüceltir.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile mütevazı olan insanı Allahü teâlânın yücelteceğini müjdeliyor. Kendini büyük gören kibirli insan ise küçülür. Tıpkı içi dolu başağın eğilmesi, boş başağın dik durması gibi.' },
     girisKancasi: { soru: "Bir yarışmada birinci olduğunda 'En iyi benim, kimse beni geçemez!' demek mi, yoksa arkadaşlarına teşekkür etmek mi daha güzeldir?", ipucu: 'Unutma; başak (buğday) büyüdükçe ve içi doldukça boynunu büker, boş başaklar ise hep dik durur.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) o kadar büyük bir lider olmasına rağmen, toplum içinde sıradan biri gibi oturur, hiçbir zaman kendini arkadaşlarından üstün görmezdi.' },
@@ -1587,11 +1841,16 @@ export const richContent = {
   // === Lesson 32: Vatan Sevgisi (video_34) ===
   32: {
     tema: 'Vatanı Korumak, Özgürlük ve Fedakarlık',
+    ogrenmeHedefleri: [
+      'Vatan kavramını anlayabilecek ve vatanın neden sadece bir toprak parçası olmadığını öğrenebileceksin.',
+      'Bağımsızlığın ve özgürlüğün kıymetini ve bunun için yapılan fedakarlıkları fark edebileceksin.',
+      'Bir öğrenci olarak vatanına nasıl hizmet edebileceğini kavrayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Vatan', anlam: 'Üzerinde doğup büyüdüğümüz, kültürümüzü ve inancımızı özgürce yaşadığımız kutsal topraklar.' },
       { kavram: 'Bağımsızlık', anlam: 'Kendi ülkemizde başka hiçbir ülkenin emri altına girmeden, ezanlarımızla ve bayrağımızla hür yaşamak.' },
     ],
-    ayetHadis: { metin: 'Vatan sevgisi imandandır.', kaynak: '(İslam Alimlerinin Hikmetli Sözü)' },
+    ayetHadis: { metin: 'Vatan sevgisi imandandır.', kaynak: '(İslam Alimlerinin Hikmetli Sözü)', aciklama: 'Bu hikmetli söz bize vatanımızı sevmenin imanımızın bir parçası olduğunu hatırlatıyor. Vatanımız, üzerinde ibadet ettiğimiz, ailelerimizle yaşadığımız ve özgürce büyüdüğümüz kutsal bir emanettir.' },
     girisKancasi: { soru: 'Evimiz bizim için ailemizle güvende hissettiğimiz sıcak bir yuvadır. Peki ya ülkemiz bizim için nedir?', ipucu: 'Bayrağımızın rengi neden kırmızıdır biliyor musun? O, vatanı için fedakarlık yapan dedelerimizin kahramanlığını anlatır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Vatan sadece bir toprak parçası değildir. Üzerinde camilerimizin, okullarımızın olduğu, dedelerimizin bize kanlarıyla emanet ettiği büyük evimizdir.' },
@@ -1606,11 +1865,16 @@ export const richContent = {
   // === Lesson 33: İnsanlarla İyi Geçinmek (video_35) ===
   33: {
     tema: 'Ülfet, Barış ve Anlayış',
+    ogrenmeHedefleri: [
+      'Ülfet (iyi geçinmek) kavramını anlayabilecek ve insanlarla barış içinde yaşamanın önemini öğrenebileceksin.',
+      'Kavga etmek yerine konuşarak ve anlayışla sorun çözmenin daha güzel olduğunu fark edebileceksin.',
+      'Arkadaşlarınla anlaşmazlık yaşadığında uzlaşma yolunu bulmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Ülfet (İyi Geçinmek)', anlam: 'İnsanlarla dostça, kavgadan uzak ve anlayışlı bir şekilde yaşamak.' },
       { kavram: 'Uzlaşmak', anlam: 'Bir anlaşmazlık çıktığında kavgayı büyütmek yerine orta yolu bulup barışmak.' },
     ],
-    ayetHadis: { metin: 'Mümin cana yakındır. (İnsanlarla) iyi geçinmeyen ve kendisiyle iyi geçinilmeyen kimsede hayır yoktur.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Mümin cana yakındır. (İnsanlarla) iyi geçinmeyen ve kendisiyle iyi geçinilmeyen kimsede hayır yoktur.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu hadis-i şerif ile gerçek mümin insanın cana yakın ve geçimli olduğunu bildiriyor. Sürekli kavga eden, kimseyle anlaşamayan insanda hayır yoktur. İnsanlarla güzel geçinmek imanın gereğidir.' },
     girisKancasi: { soru: 'Oyunda arkadaşınla hangi oyunu oynayacağınız konusunda anlaşamadığınızda hemen küser misin, yoksa orta yolu mu bulursun?', ipucu: 'En güzel oyunlar, herkesin gülümsediği ve birbirine saygı duyduğu oyunlardır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: "Emir'in misketini bir arkadaşı yanlışlıkla aldığında, Emir hemen bağırarak kavga çıkarmıştır.", dogruCevap: false, geriBildirimDogru: 'Harika! Emir kavga etmek yerine durumu nazikçe anlattı ve sorun tatlılıkla çözüldü.', geriBildirimYanlis: 'Dikkatli izlemedin sanırım. Emir kavga etmek yerine nazikçe sordu ve arkadaşı misketi geri verdi.' },
@@ -1625,11 +1889,16 @@ export const richContent = {
   // === Lesson 34: İktisât ve Kanaatkârlık (video_36) ===
   34: {
     tema: 'Kanaat Etmek ve Dünya Malına Değer Vermemek',
+    ogrenmeHedefleri: [
+      'Kanaat kavramını anlayabilecek ve gerçek zenginliğin para değil gönül zenginliği olduğunu öğrenebileceksin.',
+      'Sürekli daha fazlasını istemenin insanı mutsuz ettiğini fark edebileceksin.',
+      'Sahip olduğun güzellikler için şükretmeyi ve elindekiyle mutlu olmayı uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Kanaat', anlam: "Allah'ın verdiği nimetlere razı olmak, sahip olduklarıyla mutlu olup sürekli daha fazlası için hırslanmamak." },
       { kavram: 'Dünya Malına Tamah Etmemek', anlam: 'Altın, para ve zenginliği kalbe sokmamak; asıl zenginliğin iyi bir kalp olduğuna inanmak.' },
     ],
-    ayetHadis: { metin: 'Kanaat, bitmez tükenmez bir hazinedir.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Kanaat, bitmez tükenmez bir hazinedir.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle kanaatin hiç bitmeyen bir hazine olduğunu söylüyor. Elindekiyle yetinmeyi bilen insan her zaman mutlu olur. Ama sürekli daha fazla isteyen insan hiçbir zaman tatmin olmaz. Kanaat, kalbi zengin eden sihirli bir anahtardır.' },
     girisKancasi: { soru: 'Sence çok fazla paraya ve altına sahip olmak mı insanı gerçekten zengin yapar, yoksa elindeki oyuncaklarla mutlu olmayı bilmek mi?', ipucu: 'Kalbi altınla değil kanaatle dolu olan insanlar, dünyadaki en zengin insanlardır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 45, tip: 'bilgi_karti', metin: "Allah dostları (Evliyalar), dünya malını ellerinde tutsalar bile kalplerine asla sokmazlar. Onlar için Allah'ın rızası dünyadaki tüm altınlardan daha kıymetlidir." },
@@ -1644,11 +1913,16 @@ export const richContent = {
   // === Lesson 35: Emanete Riayet Etmek (video_37) ===
   35: {
     tema: 'Emaneti Korumak ve Güvenilir Olmak',
+    ogrenmeHedefleri: [
+      'Emanet kavramının sadece eşyalarla sınırlı olmadığını, sağlığımızın ve zamanımızın da emanet olduğunu anlayabileceksin.',
+      'Emanete riayet etmenin güvenilir bir insan olmanın temeli olduğunu fark edebileceksin.',
+      'Sana verilen her emaneti en güzel şekilde korumayı ve sahibine teslim etmeyi uygulayabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Emanet', anlam: 'Bize geçici olarak bırakılan, koruması bize ait olan her şey: eşya, sır, görev veya sorumluluk.' },
       { kavram: 'Riayet', anlam: 'Bir kurala, söze veya göreve dikkat etmek, onu ciddiye alıp gereğini yapmak.' },
     ],
-    ayetHadis: { metin: 'Allah size emanetleri ehline (hakkını verecek olana) teslim etmenizi emreder.', kaynak: '(Nisa Suresi, 58. Ayet)' },
+    ayetHadis: { metin: 'Allah size emanetleri ehline (hakkını verecek olana) teslim etmenizi emreder.', kaynak: '(Nisa Suresi, 58. Ayet)', aciklama: 'Allahü teâlâ bu ayet-i kerimede emanetleri hak eden ve koruyabilecek kişilere teslim etmemizi emrediyor. Emanet bize güvenilerek verilen her şeydir. Onu korumak ve sahibine sağlam teslim etmek Müslümanın görevidir.' },
     girisKancasi: { soru: 'Bir arkadaşın sana en sevdiği oyuncağını emanet etse, onu kendi oyuncağın kadar dikkatli korur musun?', ipucu: 'Emanet sadece eşya değildir; bedenimiz, zamanımız, ailemiz — hepsi bize verilen emanetlerdir.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'bilgi_karti', metin: "Peygamber Efendimiz (s.a.v) peygamberlikten önce bile 'Muhammed\'ül Emin' (Güvenilir Muhammed) diye anılırdı. Herkes en değerli eşyalarını ona emanet ederdi." },
@@ -1663,11 +1937,16 @@ export const richContent = {
   // === Lesson 40: Kapanış ===
   40: {
     tema: 'Bu Yolculukta Neler Öğrendik ve Bundan Sonra Ne Yapacağız',
+    ogrenmeHedefleri: [
+      '40 ders boyunca öğrendiğin güzel ahlak değerlerini bir bütün olarak kavrayabileceksin.',
+      'Öğrendiklerini sadece bilmekle kalmayıp hayata geçirmenin önemini fark edebileceksin.',
+      'Bundan sonra her gün güzel ahlakı yaşayan bir İyilik Elçisi olarak çevrene örnek olabileceksin.',
+    ],
     kavramlar: [
       { kavram: 'Güzel Ahlak', anlam: 'Dürüstlük, saygı, sabır, empati, adalet gibi değerleri hayatımızın her anında yaşamak.' },
       { kavram: 'Sürekli Gelişim', anlam: "İyi bir insan olmak için her gün kendimizi biraz daha geliştirmek ve öğrendiklerimizi uygulamak." },
     ],
-    ayetHadis: { metin: 'Ben güzel ahlakı tamamlamak için gönderildim.', kaynak: '(Hadis-i Şerif)' },
+    ayetHadis: { metin: 'Ben güzel ahlakı tamamlamak için gönderildim.', kaynak: '(Hadis-i Şerif)', aciklama: 'Peygamber Efendimiz (s.a.v) bu sözüyle dünyaya gönderilme amacının güzel ahlakı insanlara öğretmek olduğunu bildiriyor. Dürüstlük, saygı, sabır, empati, adalet gibi tüm güzel değerler güzel ahlakın parçalarıdır. Biz de bu yolda yürümeliyiz.' },
     girisKancasi: { soru: 'Bu 40 derste çok şey öğrendin. Peki sence en çok hangi ders kalbine dokundu?', ipucu: 'Öğrenmek güzel, ama asıl güzellik öğrendiklerini hayata geçirmektir.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 30, tip: 'bilgi_karti', metin: '40 ders boyunca dürüstlük, saygı, ihlas, sabır, empati, adalet, vefa, kanaat ve daha birçok güzel ahlak değerini öğrendik. Şimdi sıra bunları her gün yaşamakta!' },

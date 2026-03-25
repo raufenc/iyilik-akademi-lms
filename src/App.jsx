@@ -22,6 +22,7 @@ import PracticeModePage from './pages/PracticeModePage'
 import StudyNotesPage from './pages/StudyNotesPage'
 import AchievementsPage from './pages/AchievementsPage'
 import ShopPage from './pages/ShopPage'
+import GlossaryPage from './pages/GlossaryPage'
 import InstallPrompt from './components/pwa/InstallPrompt'
 
 function ProtectedRoute({ children }) {
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/harita" element={<ProtectedRoute><ProgressMapPage /></ProtectedRoute>} />
           <Route path="/tekrar" element={<ProtectedRoute><PracticeModePage /></ProtectedRoute>} />
           <Route path="/notlarim" element={<ProtectedRoute><StudyNotesPage /></ProtectedRoute>} />
+          <Route path="/sozluk" element={<GlossaryPage />} />
           <Route path="/basarilar" element={<ProtectedRoute><AchievementsPage /></ProtectedRoute>} />
           <Route path="/magaza" element={<ProtectedRoute><ShopPage /></ProtectedRoute>} />
 

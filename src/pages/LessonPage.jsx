@@ -12,6 +12,7 @@ import LessonIntro from '../components/lesson/LessonIntro'
 import QuizView from '../components/lesson/QuizView'
 import LessonPlayer from '../components/lesson/LessonPlayer'
 import InteractiveReview from '../components/lesson/InteractiveReview'
+import ScenarioQuiz from '../components/lesson/ScenarioQuiz'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
 import Icon from '../components/ui/Icon'
@@ -28,6 +29,7 @@ export default function LessonPage() {
   const lesson = useMemo(() => lessons.find(l => l.id === Number(id)), [id])
   const hasIntro = !!(lesson?.tema || lesson?.kavramlar || lesson?.ayetHadis)
   const hasInteractive = !!(lesson?.interaktifDuraklamalar && lesson.interaktifDuraklamalar.length > 0)
+  const hasScenario = !!(lesson?.senaryoSorulari && lesson.senaryoSorulari.length > 0)
   const [step, setStep] = useState(hasIntro ? 'intro' : 'preQuiz')
   const [newBadge, setNewBadge] = useState(null)
   const [milestoneData, setMilestoneData] = useState(null)
@@ -115,8 +117,22 @@ export default function LessonPage() {
       })
       setShowMilestone(true)
     } catch (e) { console.error(e) }
+    if (hasScenario) {
+      setStep('scenario')
+    } else {
+      setStep('done')
+    }
+  }
+
+  function handleScenarioComplete() {
     setStep('done')
   }
+
+  // Get quiz scores for summary
+  const preQuizScore = lessonProgress[String(lesson.id)]?.preQuizScore
+  const postQuizScore = lessonProgress[String(lesson.id)]?.postQuizScore
+  const preQuizTotal = lesson.preQuiz?.length || 3
+  const postQuizTotal = lesson.postQuiz?.length || 3
 
   const nextLesson = lessons.find(l => l.id === lesson.id + 1)
 
@@ -191,6 +207,14 @@ export default function LessonPage() {
         />
       )}
 
+      {/* Scenario Quiz */}
+      {step === 'scenario' && hasScenario && (
+        <ScenarioQuiz
+          scenarios={lesson.senaryoSorulari}
+          onComplete={handleScenarioComplete}
+        />
+      )}
+
       {/* Done */}
       {step === 'done' && (
         <div className="max-w-2xl mx-auto animate-slide-up space-y-6">
@@ -198,7 +222,7 @@ export default function LessonPage() {
           <div className="text-center">
             <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-2xl font-bold mb-2">Tebrikler!</h2>
-            <p className="text-text-muted mb-2">
+            <p className="text-text-muted dark:text-dark-text-muted mb-2">
               <span className="font-bold text-primary">{lesson.title}</span> dersini tamamladın!
             </p>
             <p className="text-accent-dark font-bold text-lg flex items-center justify-center gap-1.5">
@@ -206,6 +230,71 @@ export default function LessonPage() {
               +{lesson.id === 40 ? XP_FINAL_LESSON : XP_PER_LESSON} XP Kazandın!
             </p>
           </div>
+
+          {/* Quiz Score Summary */}
+          {(preQuizScore !== undefined || postQuizScore !== undefined) && (
+            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10">
+              <h3 className="font-semibold mb-3 flex items-center gap-2">
+                <span>📊</span> Ders Özeti
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {preQuizScore !== undefined && (
+                  <div className="text-center p-3 bg-white/60 dark:bg-dark-card/60 rounded-xl">
+                    <p className="text-xs text-text-muted dark:text-dark-text-muted">Ders Öncesi</p>
+                    <p className="text-2xl font-bold text-primary">{preQuizScore}/{preQuizTotal}</p>
+                    <div className="h-1.5 bg-surface-alt dark:bg-dark-elevated rounded-full mt-2 overflow-hidden">
+                      <div className="h-full bg-primary/50 rounded-full" style={{ width: `${(preQuizScore / preQuizTotal) * 100}%` }} />
+                    </div>
+                  </div>
+                )}
+                {postQuizScore !== undefined && (
+                  <div className="text-center p-3 bg-white/60 dark:bg-dark-card/60 rounded-xl">
+                    <p className="text-xs text-text-muted dark:text-dark-text-muted">Ders Sonrası</p>
+                    <p className="text-2xl font-bold text-secondary">{postQuizScore}/{postQuizTotal}</p>
+                    <div className="h-1.5 bg-surface-alt dark:bg-dark-elevated rounded-full mt-2 overflow-hidden">
+                      <div className="h-full bg-secondary rounded-full" style={{ width: `${(postQuizScore / postQuizTotal) * 100}%` }} />
+                    </div>
+                  </div>
+                )}
+              </div>
+              {preQuizScore !== undefined && postQuizScore !== undefined && postQuizScore > preQuizScore && (
+                <p className="text-center text-xs text-secondary font-medium mt-3">
+                  📈 Harika! Ders sonrası skorun %{Math.round(((postQuizScore - preQuizScore) / preQuizTotal) * 100)} arttı!
+                </p>
+              )}
+              {/* Adaptive suggestion */}
+              {postQuizScore !== undefined && postQuizScore === postQuizTotal && (
+                <div className="mt-3 p-2 bg-secondary/10 rounded-xl text-center">
+                  <p className="text-xs text-secondary font-medium">
+                    🌟 Mükemmel skor! <Link to="/meydan-okuma" className="underline font-bold">Meydan okuma quizi</Link> dene!
+                  </p>
+                </div>
+              )}
+              {postQuizScore !== undefined && postQuizScore < postQuizTotal * 0.67 && (
+                <div className="mt-3 p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-center">
+                  <p className="text-xs text-amber-700 dark:text-amber-300 font-medium">
+                    💡 Bu konuyu pekiştirmek ister misin? <Link to="/tekrar" className="underline font-bold">Tekrar modunu</Link> dene!
+                  </p>
+                </div>
+              )}
+            </Card>
+          )}
+
+          {/* Learned Concepts */}
+          {lesson.kavramlar && lesson.kavramlar.length > 0 && (
+            <Card>
+              <h3 className="font-semibold mb-3 flex items-center gap-2">
+                <span>📝</span> Öğrendiğin Kavramlar
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {lesson.kavramlar.map((k, i) => (
+                  <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-xs font-medium">
+                    ✓ {k.kavram}
+                  </span>
+                ))}
+              </div>
+            </Card>
+          )}
 
           {/* Badge */}
           {(newBadge || lesson.kazanilanRozet) && (

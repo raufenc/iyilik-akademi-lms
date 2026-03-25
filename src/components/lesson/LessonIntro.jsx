@@ -21,11 +21,30 @@ export default function LessonIntro({ lesson, onStart }) {
         </div>
       )}
 
+      {/* Öğrenme Hedefleri */}
+      {lesson.ogrenmeHedefleri && lesson.ogrenmeHedefleri.length > 0 && (
+        <Card className="border-secondary/20 bg-secondary/5 dark:bg-secondary/10">
+          <h3 className="font-semibold mb-3 flex items-center gap-2 text-secondary-dark dark:text-secondary-light">
+            <span className="text-lg">🎯</span> Bu Derste Öğreneceklerin
+          </h3>
+          <ul className="space-y-2">
+            {lesson.ogrenmeHedefleri.map((hedef, i) => (
+              <li key={i} className="flex items-start gap-2.5">
+                <span className="w-5 h-5 rounded-full bg-secondary/20 text-secondary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  ✓
+                </span>
+                <p className="text-sm text-text dark:text-dark-text">{hedef}</p>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      )}
+
       {/* Kavramlar */}
       {lesson.kavramlar && lesson.kavramlar.length > 0 && (
         <Card>
           <h3 className="font-semibold mb-3 flex items-center gap-2">
-            <Icon name="book" size={20} className="text-primary" /> Ogrenilecek Kavramlar
+            <Icon name="book" size={20} className="text-primary" /> Öğrenilecek Kavramlar
           </h3>
           <div className="space-y-3">
             {lesson.kavramlar.map((k, i) => (
@@ -35,7 +54,7 @@ export default function LessonIntro({ lesson, onStart }) {
                 </span>
                 <div>
                   <p className="font-medium text-sm">{k.kavram}</p>
-                  <p className="text-xs text-text-muted">{k.anlam}</p>
+                  <p className="text-xs text-text-muted dark:text-dark-text-muted">{k.anlam}</p>
                 </div>
               </div>
             ))}
@@ -50,22 +69,27 @@ export default function LessonIntro({ lesson, onStart }) {
             <span className="mb-2 block">
               <Icon name="scroll" size={28} className="text-primary mx-auto" />
             </span>
-            <p className="italic text-text font-medium text-sm leading-relaxed">
+            <p className="italic text-text dark:text-dark-text font-medium text-sm leading-relaxed">
               "{lesson.ayetHadis.metin}"
             </p>
-            <p className="text-xs text-text-muted mt-2">{lesson.ayetHadis.kaynak}</p>
+            <p className="text-xs text-text-muted dark:text-dark-text-muted mt-2">{lesson.ayetHadis.kaynak}</p>
+            {lesson.ayetHadis.aciklama && (
+              <p className="text-xs text-text-light dark:text-dark-text-muted mt-3 bg-white/50 dark:bg-dark-card/50 rounded-lg p-2.5 text-left leading-relaxed">
+                💡 {lesson.ayetHadis.aciklama}
+              </p>
+            )}
           </div>
         </Card>
       )}
 
       {/* Giriş Kancası */}
       {lesson.girisKancasi && (
-        <Card className="border-accent/30 bg-accent/5">
+        <Card className="border-accent/30 bg-accent/5 dark:bg-accent/10">
           <h3 className="font-semibold mb-2 flex items-center gap-2">
-            <Icon name="bulb" size={20} className="text-accent-dark" /> Dusun
+            <Icon name="bulb" size={20} className="text-accent-dark" /> Düşün
           </h3>
           <p className="text-sm font-medium mb-2">{lesson.girisKancasi.soru}</p>
-          <p className="text-xs text-text-muted italic">{lesson.girisKancasi.ipucu}</p>
+          <p className="text-xs text-text-muted dark:text-dark-text-muted italic">{lesson.girisKancasi.ipucu}</p>
         </Card>
       )}
 
