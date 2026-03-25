@@ -326,8 +326,8 @@ export const richContent = {
     ],
     guzelSoz: {
       metin: 'Kendine yapılmasını istemediğin şeyi başkasına yapma.',
-      kaynak: '— Konfüçyüs',
-      aciklama: 'Konfüçyüs bu sözüyle bize empatinin temelini öğretiyor: Kendin için ne istiyorsan başkaları için de aynısını istemelisin. Birinin yerine kendini koyduğunda onu çok daha iyi anlarsın.',
+      kaynak: '— İmam Gazali',
+      aciklama: 'İmam Gazali bu sözüyle bize empatinin temelini öğretiyor: Kendin için ne istiyorsan başkaları için de aynısını istemelisin. Birinin yerine kendini koyduğunda onu çok daha iyi anlarsın.',
     },
     girisKancasi: {
       soru: 'Bir arkadaşının üzgün veya zor durumda olduğunu gördüğünde ona nasıl yardım edebilirsin?',
@@ -1361,9 +1361,9 @@ export const richContent = {
       },
     ],
     guzelSoz: {
-      metin: 'Bir toplumun medeniyeti sokaklarının temizliğiyle ölçülür.',
-      kaynak: '— Konfüçyüs',
-      aciklama: 'Konfüçyüs bu sözüyle temizliğin ne kadar önemli olduğunu hatırlatıyor. Temizlik sadece bedenimizi yıkamak değil, çevremizi, odamızı ve doğayı da temiz tutmaktır. Çevresini temiz tutan insan medeni bir insandır.',
+      metin: 'Temizlik imandandır.',
+      kaynak: '— Hadîs-i şerîf',
+      aciklama: 'Bu hadîs-i şerîf temizliğin ne kadar önemli olduğunu hatırlatıyor. Temizlik sadece bedenimizi yıkamak değil, çevremizi, odamızı ve doğayı da temiz tutmaktır. Çevresini temiz tutan insan medeni bir insandır.',
     },
     girisKancasi: {
       soru: 'Sokakta yürürken yerde bir çöp veya cam şişe gördüğünde onu görmezden mi gelirsin, yoksa alıp çöpe mi atarsın?',
@@ -1730,7 +1730,7 @@ export const richContent = {
       { kavram: 'İş Ahlakı', anlam: 'Üzerimize aldığımız bir işi hile yapmadan, eksiksiz ve en güzel şekilde tamamlamak.' },
       { kavram: 'Emanet', anlam: 'Bize güvenilerek teslim edilen bir göreve veya eşyaya ihanet etmemek.' },
     ],
-    guzelSoz: { metin: 'İşini seversen, hayatında bir gün bile çalışmamış olursun.', kaynak: '— Konfüçyüs', aciklama: 'Konfüçyüs bu sözüyle işimizi severek ve özenle yapmamız gerektiğini anlatıyor. Bir iş yaptığımızda onu en güzel ve dikkatli şekilde yapmak gerekir. Yarım yamalak değil, işini özenle tamamlayan insan her zaman başarılı olur.' },
+    guzelSoz: { metin: 'Yapacağın işi en güzel şekilde yap; çünkü Allahü teâlâ güzel yapılan işi sever.', kaynak: '— Hadîs-i şerîf', aciklama: 'Bu hadîs-i şerîf işimizi severek ve özenle yapmamız gerektiğini anlatıyor. Bir iş yaptığımızda onu en güzel ve dikkatli şekilde yapmak gerekir. Yarım yamalak değil, işini özenle tamamlayan insan her zaman başarılı olur.' },
     girisKancasi: { soru: 'Sana verilen bir ödevi hemen baştan savma bitirmek mi istersin, yoksa yorulsan da en mükemmelini mi yapmak istersin?', ipucu: 'Unutma, yarım bırakılan veya baştan savma yapılan her iş, gelecekte yıkılan bir köprüye dönüşebilir.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 45, tip: 'dogru_yanlis', soruMetni: 'Ayşe ve Emir çiçekleri sulamaktan yorulunca işi tamamen yarım bırakıp içeri kaçtılar.', dogruCevap: false, geriBildirimDogru: 'Doğru bildin. Yorulmuşlardı ama dedelerinin köprü hikayesinden sonra işlerini tam ve eksiksiz bitirdiler.', geriBildirimYanlis: 'Hayır, yorulsalar da pes etmediler ve iş ahlakının ne demek olduğunu anladılar.' },
