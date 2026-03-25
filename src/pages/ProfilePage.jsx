@@ -67,7 +67,7 @@ export default function ProfilePage() {
         certPreview.type
       )
     } catch (e) {
-      console.error('Paylasim hatasi', e)
+      console.error('Paylaşım hatası', e)
     }
     setShareLoading(null)
   }
@@ -95,7 +95,7 @@ export default function ProfilePage() {
             <button
               onClick={() => setAvatarModalOpen(true)}
               className="group relative"
-              title="Avatarini degistir"
+              title="Avatarını değiştir"
             >
               <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${avatar?.bg || levelColor} text-white flex items-center justify-center text-4xl font-bold shadow-medium ${equippedFrame ? equippedFrame.cssClass : 'ring-4 ring-white dark:ring-dark-surface'} transition-transform group-hover:scale-105`}>
                 {avatar?.emoji || (userData?.name || 'O')[0].toUpperCase()}
@@ -222,7 +222,7 @@ export default function ProfilePage() {
             {completedCount >= 20 && <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-success" />}
             <div className="text-center py-2">
               <span className="text-5xl block mb-3">🎖️</span>
-              <p className="font-heading font-bold text-lg">Yari Yol Sertifikasi</p>
+              <p className="font-heading font-bold text-lg">Yarı Yol Sertifikası</p>
               <p className="text-sm text-text-muted mt-1">20 ders tamamla</p>
               {completedCount >= 20 ? (
                 <Button
@@ -232,10 +232,10 @@ export default function ProfilePage() {
                   loading={certLoading === 'halfway'}
                   onClick={() => handleGenerateCert('halfway')}
                 >
-                  🎨 Sertifika Olustur
+                  🎨 Sertifika Oluştur
                 </Button>
               ) : (
-                <p className="text-xs text-text-muted mt-3">{20 - completedCount} ders kaldi</p>
+                <p className="text-xs text-text-muted mt-3">{20 - completedCount} ders kaldı</p>
               )}
             </div>
           </Card>
@@ -245,7 +245,7 @@ export default function ProfilePage() {
             {completedCount >= 40 && <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-warm" />}
             <div className="text-center py-2">
               <span className="text-5xl block mb-3">🏆</span>
-              <p className="font-heading font-bold text-lg">Mezuniyet Sertifikasi</p>
+              <p className="font-heading font-bold text-lg">Mezuniyet Sertifikası</p>
               <p className="text-sm text-text-muted mt-1">Tum 40 dersi tamamla</p>
               {completedCount >= 40 ? (
                 <Button
@@ -255,10 +255,10 @@ export default function ProfilePage() {
                   loading={certLoading === 'completion'}
                   onClick={() => handleGenerateCert('completion')}
                 >
-                  🎨 Sertifika Olustur
+                  🎨 Sertifika Oluştur
                 </Button>
               ) : (
-                <p className="text-xs text-text-muted mt-3">{40 - completedCount} ders kaldi</p>
+                <p className="text-xs text-text-muted mt-3">{40 - completedCount} ders kaldı</p>
               )}
             </div>
           </Card>
@@ -271,7 +271,7 @@ export default function ProfilePage() {
               {/* Preview header */}
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <h3 className="font-heading font-bold text-lg">
-                  {certPreview.type === 'halfway' ? 'Yari Yol Sertifikasi' : 'Mezuniyet Sertifikasi'}
+                  {certPreview.type === 'halfway' ? 'Yarı Yol Sertifikası' : 'Mezuniyet Sertifikası'}
                 </h3>
                 <button
                   onClick={() => setCertPreview(null)}
@@ -301,7 +301,7 @@ export default function ProfilePage() {
                       <path d="M7 10l5 5 5-5" />
                       <path d="M12 15V3" />
                     </svg>
-                    Indir
+                    İndir
                   </span>
                 </Button>
 
@@ -313,7 +313,7 @@ export default function ProfilePage() {
                       <circle cx="18" cy="19" r="3" />
                       <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" />
                     </svg>
-                    Paylas
+                    Paylaş
                   </span>
                 </Button>
 
@@ -324,7 +324,7 @@ export default function ProfilePage() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
-                  WhatsApp'ta Paylas
+                  WhatsApp'ta Paylaş
                 </button>
               </div>
             </div>

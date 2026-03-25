@@ -276,7 +276,7 @@ export default function AdminReports() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Detaylı Raporlar</h1>
-          <p className="text-sm text-gray-500 mt-0.5">{filtered.length} ogrenci listeleniyor</p>
+          <p className="text-sm text-gray-500 mt-0.5">{filtered.length} öğrenci listeleniyor</p>
         </div>
         <button
           onClick={exportCSV}
@@ -285,7 +285,7 @@ export default function AdminReports() {
           <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
             <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
-          CSV Indir
+          CSV İndir
         </button>
       </div>
 
@@ -309,7 +309,7 @@ export default function AdminReports() {
               : 'text-gray-500 hover:text-gray-700'
           }`}
         >
-          Quiz Performansi
+          Quiz Performansı
         </button>
       </div>
 
@@ -364,7 +364,7 @@ export default function AdminReports() {
             <BarChart
               data={quizChartData}
               height={240}
-              title="Son Quiz Ortalama Basari (%)"
+              title="Son Quiz Ortalama Başarı (%)"
             />
           </div>
           <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-100 dark:border-dark-border p-6 shadow-soft">
@@ -460,7 +460,7 @@ export default function AdminReports() {
                 {filtered.length === 0 ? (
                   <tr>
                     <td colSpan={5} className="px-5 py-12 text-center text-gray-400">
-                      Sonuc bulunamadi
+                      Sonuç bulunamadı
                     </td>
                   </tr>
                 ) : (
@@ -523,8 +523,8 @@ export default function AdminReports() {
           {/* Per-Lesson Quiz Breakdown */}
           <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-100 dark:border-dark-border shadow-soft overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100">
-              <h3 className="text-sm font-semibold text-gray-900">Ders Bazli Quiz Performansi</h3>
-              <p className="text-xs text-gray-400 mt-0.5">Tum ogrencilerin ortalama puanlari</p>
+              <h3 className="text-sm font-semibold text-gray-900">Ders Bazlı Quiz Performansı</h3>
+              <p className="text-xs text-gray-400 mt-0.5">Tüm öğrencilerin ortalama puanları</p>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -541,7 +541,7 @@ export default function AdminReports() {
                   {quizPerformance.length === 0 ? (
                     <tr>
                       <td colSpan={5} className="px-5 py-12 text-center text-gray-400">
-                        Quiz verisi bulunamadi
+                        Quiz verisi bulunamadı
                       </td>
                     </tr>
                   ) : (
@@ -625,7 +625,7 @@ export default function AdminReports() {
                   {filtered.length === 0 ? (
                     <tr>
                       <td colSpan={4} className="px-5 py-12 text-center text-gray-400">
-                        Sonuc bulunamadi
+                        Sonuç bulunamadı
                       </td>
                     </tr>
                   ) : (

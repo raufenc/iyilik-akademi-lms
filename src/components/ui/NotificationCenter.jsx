@@ -136,7 +136,7 @@ export default function NotificationCenter() {
                   onClick={handleMarkAllRead}
                   className="text-xs text-primary dark:text-primary-light font-medium hover:underline transition-colors"
                 >
-                  Tumunu Okundu Isaretle
+                  Tümünü Okundu İşaretle
                 </button>
               )}
             </div>

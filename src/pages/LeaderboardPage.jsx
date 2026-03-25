@@ -111,7 +111,7 @@ export default function LeaderboardPage() {
         <h1 className="font-heading text-3xl font-bold text-text dark:text-dark-text">
           <span className="inline-block mr-2">{'\u{1F3C6}'}</span>Sıralama Tablosu
         </h1>
-        <p className="text-text-muted dark:text-dark-text-muted mt-2">En cok XP kazanan ogrenciler</p>
+        <p className="text-text-muted dark:text-dark-text-muted mt-2">En çok XP kazanan öğrenciler</p>
       </div>
 
       {/* My Rank Badge */}
@@ -277,13 +277,13 @@ export default function LeaderboardPage() {
           {searchQuery ? (
             <>
               <Icon name="search" size={48} className="mx-auto mb-4 text-text-muted dark:text-dark-text-muted" />
-              <p className="font-heading font-semibold text-lg text-text dark:text-dark-text">Sonuc bulunamadi</p>
-              <p className="text-text-muted dark:text-dark-text-muted mt-1">"{searchQuery}" ile eslesen ogrenci yok</p>
+              <p className="font-heading font-semibold text-lg text-text dark:text-dark-text">Sonuç bulunamadı</p>
+              <p className="text-text-muted dark:text-dark-text-muted mt-1">"{searchQuery}" ile eşleşen öğrenci yok</p>
             </>
           ) : (
             <>
               <span className="text-5xl block mb-4">{'\u{1F3C6}'}</span>
-              <p className="font-heading font-semibold text-lg text-text dark:text-dark-text">Henuz kimse yok</p>
+              <p className="font-heading font-semibold text-lg text-text dark:text-dark-text">Henüz kimse yok</p>
               <p className="text-text-muted dark:text-dark-text-muted mt-1">İlk sen başla ve zirveye çık!</p>
             </>
           )}

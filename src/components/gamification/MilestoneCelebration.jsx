@@ -35,7 +35,7 @@ const MILESTONES = {
     threshold: 30,
     emoji: '🔥',
     title: 'Son 10 Ders!',
-    subtitle: 'Bitise az kaldi, durmak yok!',
+    subtitle: 'Bitişe az kaldı, durmak yok!',
     gradient: 'from-orange-500 via-red-500 to-pink-500',
     particleType: 'confetti',
   },
@@ -374,7 +374,7 @@ export default function MilestoneCelebration({ newLessonCount, newStreak, newLev
           <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-2xl px-6 py-3 mb-6 border border-white/30 animate-milestone-badge">
             <span className="text-3xl">🏅</span>
             <div className="text-left">
-              <p className="text-white/70 text-xs">Basari</p>
+              <p className="text-white/70 text-xs">Başarı</p>
               <p className="text-white font-bold text-lg">40/40 Ders Tamamlandı</p>
             </div>
           </div>

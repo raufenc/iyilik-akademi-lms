@@ -1,22 +1,47 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useProgress } from '../../contexts/ProgressContext'
 import Icon from '../ui/Icon'
 
-const NAV_ITEMS = [
-  { path: '/panel', icon: 'dashboard', label: 'Dashboard', auth: true },
-  { path: '/dersler', icon: 'book', label: 'Dersler', auth: false },
-  { path: '/harita', icon: 'map', label: 'Harita', auth: true },
-  { path: '/gunluk-quiz', icon: 'target', label: 'Günlük Quiz', auth: true },
-  { path: '/siralama', icon: 'trophy', label: 'Sıralama', auth: false },
-  { path: '/meydan-okuma', icon: 'swords', label: 'Meydan Okuma', auth: false },
-  { path: '/tekrar', icon: 'refresh', label: 'Tekrar', auth: true },
-  { path: '/notlarim', icon: 'clipboard', label: 'Notlarım', auth: true },
-  { path: '/basarilar', icon: 'award', label: 'Başarılar', auth: true },
-  { path: '/magaza', icon: 'shopping-bag', label: 'Mağaza', auth: true },
-  { path: '/forum', icon: 'chat', label: 'Forum', auth: true },
-  { path: '/profil', icon: 'user', label: 'Profil', auth: true },
-  { path: '/ebeveyn-raporu', icon: 'report', label: 'Ebeveyn Raporu', auth: true },
+const NAV_GROUPS = [
+  {
+    label: 'Öğrenme',
+    icon: '📚',
+    items: [
+      { path: '/panel', icon: 'dashboard', label: 'Panel', auth: true },
+      { path: '/dersler', icon: 'book', label: 'Dersler', auth: false },
+      { path: '/harita', icon: 'map', label: 'İlerleme Haritası', auth: true },
+      { path: '/tekrar', icon: 'refresh', label: 'Tekrar Modu', auth: true },
+    ],
+  },
+  {
+    label: 'Aktiviteler',
+    icon: '⚡',
+    items: [
+      { path: '/gunluk-quiz', icon: 'target', label: 'Günlük Quiz', auth: true },
+      { path: '/meydan-okuma', icon: 'swords', label: 'Meydan Okuma', auth: false },
+    ],
+  },
+  {
+    label: 'Topluluk',
+    icon: '👥',
+    items: [
+      { path: '/forum', icon: 'chat', label: 'Forum', auth: true },
+      { path: '/siralama', icon: 'trophy', label: 'Sıralama', auth: false },
+    ],
+  },
+  {
+    label: 'Kişisel',
+    icon: '⭐',
+    items: [
+      { path: '/profil', icon: 'user', label: 'Profil', auth: true },
+      { path: '/basarilar', icon: 'award', label: 'Başarılar', auth: true },
+      { path: '/magaza', icon: 'shopping-bag', label: 'Mağaza', auth: true },
+      { path: '/notlarim', icon: 'clipboard', label: 'Notlarım', auth: true },
+      { path: '/ebeveyn-raporu', icon: 'report', label: 'Ebeveyn Raporu', auth: true },
+    ],
+  },
 ]
 
 function ProgressRing({ progress, size = 56, strokeWidth = 4 }) {
@@ -56,12 +81,73 @@ function ProgressRing({ progress, size = 56, strokeWidth = 4 }) {
   )
 }
 
+function NavGroup({ group, user, location, onClose, defaultOpen }) {
+  const [open, setOpen] = useState(defaultOpen)
+  const items = group.items.filter(item => !item.auth || user)
+  if (items.length === 0) return null
+
+  const hasActive = items.some(item => location.pathname === item.path)
+
+  return (
+    <div className="mb-1">
+      <button
+        onClick={() => setOpen(!open)}
+        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors ${
+          hasActive
+            ? 'text-primary bg-primary/5 dark:bg-primary/10'
+            : 'text-text-muted dark:text-dark-text-muted hover:text-text dark:hover:text-dark-text hover:bg-surface-alt dark:hover:bg-dark-elevated'
+        }`}
+      >
+        <span className="text-sm">{group.icon}</span>
+        <span className="flex-1 text-left">{group.label}</span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          className={`transition-transform duration-200 ${open ? 'rotate-90' : ''}`}
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="mt-0.5 ml-2 space-y-0.5">
+          {items.map(item => {
+            const isActive = location.pathname === item.path
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={onClose}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm no-underline transition-all duration-200 relative ${
+                  isActive
+                    ? 'bg-primary/10 text-primary font-medium'
+                    : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
+                }`}
+              >
+                {isActive && (
+                  <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
+                )}
+                <Icon name={item.icon} size={18} className={isActive ? 'text-primary' : ''} />
+                <span>{item.label}</span>
+              </Link>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Sidebar({ open, onClose }) {
   const { user, isAdmin, isTeacher } = useAuth()
   const { completedCount } = useProgress()
   const location = useLocation()
 
-  const items = NAV_ITEMS.filter(item => !item.auth || user)
   const progress = (completedCount / 40) * 100
 
   return (
@@ -71,7 +157,7 @@ export default function Sidebar({ open, onClose }) {
       )}
       <aside className={`
         fixed top-16 left-0 bottom-0 w-64 bg-white dark:bg-dark-surface border-r border-border dark:border-dark-border z-40
-        transform transition-transform duration-200
+        transform transition-transform duration-200 overflow-y-auto
         ${open ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0 lg:static lg:top-0
       `}>
@@ -88,66 +174,49 @@ export default function Sidebar({ open, onClose }) {
           )}
 
           <nav className="flex-1 space-y-1">
-            {items.map(item => {
-              const isActive = location.pathname === item.path
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={onClose}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
-                    isActive
-                      ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
-                  }`}
-                >
-                  {isActive && (
-                    <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
-                  )}
-                  <Icon name={item.icon} size={20} className={isActive ? 'text-primary' : ''} />
-                  <span>{item.label}</span>
-                </Link>
-              )
-            })}
+            {NAV_GROUPS.map((group, i) => (
+              <NavGroup
+                key={group.label}
+                group={group}
+                user={user}
+                location={location}
+                onClose={onClose}
+                defaultOpen={i === 0 || group.items.some(item => location.pathname === item.path)}
+              />
+            ))}
 
             {isTeacher && (
-              <div className="pt-4 mt-4 border-t border-border dark:border-dark-border">
-                <p className="text-[11px] text-text-muted dark:text-dark-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Ogretmen</p>
+              <div className="pt-3 mt-3 border-t border-border dark:border-dark-border">
+                <p className="text-[11px] text-text-muted dark:text-dark-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Öğretmen</p>
                 <Link
                   to="/odevler"
                   onClick={onClose}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
+                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm no-underline transition-all duration-200 relative ${
                     location.pathname === '/odevler'
                       ? 'bg-primary/10 text-primary font-medium'
                       : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
                   }`}
                 >
-                  {location.pathname === '/odevler' && (
-                    <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
-                  )}
-                  <Icon name="clipboard" size={20} />
+                  <Icon name="clipboard" size={18} />
                   <span>Ödevler</span>
                 </Link>
               </div>
             )}
 
             {isAdmin && (
-              <div className="pt-4 mt-4 border-t border-border dark:border-dark-border">
-                <p className="text-[11px] text-text-muted dark:text-dark-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Admin</p>
+              <div className="pt-3 mt-3 border-t border-border dark:border-dark-border">
+                <p className="text-[11px] text-text-muted dark:text-dark-text-muted px-3 mb-2 uppercase tracking-wider font-medium">Yönetim</p>
                 <Link
                   to="/admin"
                   onClick={onClose}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm no-underline transition-all duration-200 relative ${
+                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm no-underline transition-all duration-200 relative ${
                     location.pathname.startsWith('/admin')
                       ? 'bg-primary/10 text-primary font-medium'
                       : 'text-text-light dark:text-dark-text-muted hover:bg-surface-alt dark:hover:bg-dark-elevated hover:text-text dark:hover:text-dark-text'
                   }`}
                 >
-                  {location.pathname.startsWith('/admin') && (
-                    <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] bg-primary rounded-r-full" />
-                  )}
-                  <Icon name="settings" size={20} />
-                  <span>Yönetim</span>
+                  <Icon name="settings" size={18} />
+                  <span>Yönetim Paneli</span>
                 </Link>
               </div>
             )}

@@ -12,7 +12,7 @@ export default function DonutChart({ segments = [], size = 220, title = '' }) {
   if (!segments.length || segments.every(s => s.value === 0)) {
     return (
       <div className="flex items-center justify-center" style={{ height: size }}>
-        <p className="text-sm text-text-muted">Veri bulunamadi</p>
+        <p className="text-sm text-text-muted">Veri bulunamadı</p>
       </div>
     )
   }

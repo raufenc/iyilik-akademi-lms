@@ -221,7 +221,7 @@ export default function AdminDashboard() {
           <BarChart
             data={lessonCompletionData}
             height={280}
-            title="Ders Tamamlanma Oranlari (En Populer 10)"
+            title="Ders Tamamlanma Oranları (En Popüler 10)"
           />
         </div>
         <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-100 dark:border-dark-border p-6 shadow-soft">
@@ -272,7 +272,7 @@ export default function AdminDashboard() {
               {recentActivities.length === 0 ? (
                 <tr>
                   <td colSpan={4} className="px-6 py-8 text-center text-gray-400">
-                    Henuz aktivite bulunamadi
+                    Henüz aktivite bulunamadı
                   </td>
                 </tr>
               ) : (

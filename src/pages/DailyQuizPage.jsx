@@ -237,7 +237,7 @@ export default function DailyQuizPage() {
             <div className="flex items-center gap-8 px-4">
               <div className="text-center">
                 <p className="text-4xl font-heading font-bold text-primary">{score}</p>
-                <p className="text-xs text-text-muted mt-0.5">/ {questions.length} Dogru</p>
+                <p className="text-xs text-text-muted mt-0.5">/ {questions.length} Doğru</p>
               </div>
               <div className="w-px h-12 bg-border-light" />
               <div className="text-center">
@@ -302,8 +302,8 @@ export default function DailyQuizPage() {
 
   const feedbackText = showResult
     ? isCorrect
-      ? 'Dogru! Harika!'
-      : `Yanlis. Dogru cevap: ${options[correctIndex]}`
+      ? 'Doğru! Harika!'
+      : `Yanlış. Doğru cevap: ${options[correctIndex]}`
     : ''
 
   return (

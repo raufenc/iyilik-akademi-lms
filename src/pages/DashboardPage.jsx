@@ -14,13 +14,14 @@ import OnboardingTour from '../components/ui/OnboardingTour'
 import { StreakCard } from '../components/gamification/StreakDisplay'
 import Icon from '../components/ui/Icon'
 import { SkeletonDashboard } from '../components/ui/Skeleton'
+import { DAILY_TASKS, DAILY_BONUS_COINS } from '../data/dailyTasks'
 
 const enrichedLessons = lessons.map(l => ({ ...l, ...(richContent[l.id] || {}) }))
 
 export default function DashboardPage() {
   const navigate = useNavigate()
   const { userData, loading: authLoading } = useAuth()
-  const { completedCount, totalXP, level, getLessonStatus } = useProgress()
+  const { completedCount, totalXP, level, getLessonStatus, dailyProgress, coins } = useProgress()
   const { current, needed, progress } = xpToNextLevel(totalXP)
   const quote = getDailyQuote()
 
@@ -106,6 +107,47 @@ export default function DashboardPage() {
         </Card>
       </div>
 
+      {/* Daily Tasks */}
+      <Card className="relative overflow-hidden">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">📋</span>
+            <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Günlük Görevler</h3>
+          </div>
+          {dailyProgress?.bonusClaimed && (
+            <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded-full">
+              ✓ Bonus Alındı!
+            </span>
+          )}
+        </div>
+        <div className="space-y-3">
+          {DAILY_TASKS.map(task => {
+            const count = dailyProgress?.[task.checkKey] || 0
+            const done = count >= task.target
+            return (
+              <div key={task.id} className={`flex items-center gap-3 p-3 rounded-xl transition-all ${done ? 'bg-secondary/10 dark:bg-secondary/20' : 'bg-surface-alt dark:bg-dark-elevated'}`}>
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl ${done ? 'bg-secondary/20' : 'bg-white dark:bg-dark-card'}`}>
+                  {done ? '✅' : task.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className={`text-sm font-medium ${done ? 'text-secondary dark:text-secondary-light line-through' : 'dark:text-dark-text'}`}>{task.title}</p>
+                  <p className="text-xs text-text-muted dark:text-dark-text-muted">{task.description}</p>
+                </div>
+                <span className={`text-xs font-bold ${done ? 'text-secondary' : 'text-text-muted dark:text-dark-text-muted'}`}>+{task.xpReward} XP</span>
+              </div>
+            )
+          })}
+        </div>
+        {/* Bonus indicator */}
+        {!dailyProgress?.bonusClaimed && (
+          <div className="mt-3 p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-center">
+            <p className="text-xs text-amber-700 dark:text-amber-300">
+              3/3 tamamla → <span className="font-bold">🪙 {DAILY_BONUS_COINS} bonus altın</span> kazan!
+            </p>
+          </div>
+        )}
+      </Card>
+
       {/* Streak Card */}
       <StreakCard />
 
@@ -143,7 +185,7 @@ export default function DashboardPage() {
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">İlerleme Haritası</h3>
-              <p className="text-xs text-text-muted dark:text-dark-text-muted mt-0.5">Yolculugunu gorsel olarak takip et</p>
+              <p className="text-xs text-text-muted dark:text-dark-text-muted mt-0.5">Yolculuğunu görsel olarak takip et</p>
               {/* Mini progress dots */}
               <div className="flex gap-0.5 mt-2">
                 {Array.from({ length: 40 }, (_, i) => (
@@ -170,12 +212,12 @@ export default function DashboardPage() {
           <div className="relative">
             <div className="flex items-center gap-2 mb-3">
               <span className="text-lg">🏆</span>
-              <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Kilometre Taslari</h3>
+              <h3 className="font-heading font-bold text-sm dark:text-dark-text-heading">Kilometre Taşları</h3>
             </div>
             <div className="space-y-2">
               {[
                 { threshold: 10, label: '10 Ders', emoji: '⭐' },
-                { threshold: 20, label: 'Yari Yol', emoji: '🏆' },
+                { threshold: 20, label: 'Yarı Yol', emoji: '🏆' },
                 { threshold: 30, label: '30 Ders', emoji: '🔥' },
                 { threshold: 40, label: 'Mezuniyet', emoji: '🎓' },
               ].map(milestone => {

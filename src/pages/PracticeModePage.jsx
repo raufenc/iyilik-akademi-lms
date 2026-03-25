@@ -221,9 +221,9 @@ export default function PracticeModePage() {
         {completedLessons.length === 0 ? (
           <Card className="text-center py-12">
             <div className="text-5xl mb-4">📚</div>
-            <h2 className="text-lg font-bold mb-2 dark:text-dark-text">Henuz tamamlanmis ders yok</h2>
+            <h2 className="text-lg font-bold mb-2 dark:text-dark-text">Henüz tamamlanmış ders yok</h2>
             <p className="text-sm text-text-muted dark:text-dark-text-muted mb-4">
-              Tekrar modu icin once en az bir ders tamamla
+              Tekrar modu için önce en az bir ders tamamla
             </p>
             <Button onClick={() => navigate('/dersler')}>Derslere Git</Button>
           </Card>
@@ -257,9 +257,9 @@ export default function PracticeModePage() {
                   ⚡
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-base dark:text-dark-text">Hizli Tekrar</h3>
+                  <h3 className="font-bold text-base dark:text-dark-text">Hızlı Tekrar</h3>
                   <p className="text-sm text-text-muted dark:text-dark-text-muted">
-                    Tamamladigin derslerden rastgele 5 soru, kart cevirme stili
+                    Tamamladığın derslerden rastgele 5 soru, kart çevirme stili
                   </p>
                 </div>
                 <div className="text-text-muted dark:text-dark-text-muted group-hover:text-primary transition-colors">
@@ -279,11 +279,11 @@ export default function PracticeModePage() {
                   🎯
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-base dark:text-dark-text">Zayif Noktalar</h3>
+                  <h3 className="font-bold text-base dark:text-dark-text">Zayıf Noktalar</h3>
                   <p className="text-sm text-text-muted dark:text-dark-text-muted">
                     {weakQuestions.length > 0
                       ? `${weakQuestions.length} soru tekrar bekliyor`
-                      : 'Henuz yanlis cevaplanan soru yok. Harika!'}
+                      : 'Henüz yanlış cevaplanan soru yok. Harika!'}
                   </p>
                 </div>
                 {weakQuestions.length > 0 && (
@@ -306,9 +306,9 @@ export default function PracticeModePage() {
                   📖
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-base dark:text-dark-text">Konu Tekrari</h3>
+                  <h3 className="font-bold text-base dark:text-dark-text">Konu Tekrarı</h3>
                   <p className="text-sm text-text-muted dark:text-dark-text-muted">
-                    Belirli bir dersin sorularini tekrar et
+                    Belirli bir dersin sorularını tekrar et
                   </p>
                 </div>
               </div>
@@ -466,9 +466,9 @@ export default function PracticeModePage() {
           Geri
         </button>
         <h2 className="font-heading font-bold text-sm dark:text-dark-text">
-          {mode === 'quick' && 'Hizli Tekrar'}
-          {mode === 'weak' && 'Zayif Noktalar'}
-          {mode === 'topic' && (lessons.find(l => l.id === selectedLesson)?.title || 'Konu Tekrari')}
+          {mode === 'quick' && 'Hızlı Tekrar'}
+          {mode === 'weak' && 'Zayıf Noktalar'}
+          {mode === 'topic' && (lessons.find(l => l.id === selectedLesson)?.title || 'Konu Tekrarı')}
         </h2>
         <span className="text-xs text-text-muted dark:text-dark-text-muted">
           {answeredCount}/{totalCards}

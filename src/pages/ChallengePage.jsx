@@ -349,7 +349,7 @@ export default function ChallengePage() {
                 <p className="text-2xl font-heading font-bold text-accent-dark">
                   {challengeStats.played > 0 ? Math.round((challengeStats.won / challengeStats.played) * 100) : 0}%
                 </p>
-                <p className="text-xs text-text-muted dark:text-dark-text-muted">Basari</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted">Başarı</p>
               </div>
             </div>
           </Card>
@@ -444,7 +444,7 @@ export default function ChallengePage() {
           </div>
           <div className="text-right">
             <p className="font-heading font-bold text-sm text-primary">{score}/{questions.length}</p>
-            <p className="text-xs text-text-muted dark:text-dark-text-muted">Dogru</p>
+            <p className="text-xs text-text-muted dark:text-dark-text-muted">Doğru</p>
           </div>
         </div>
 
@@ -584,12 +584,12 @@ export default function ChallengePage() {
             <div className="flex items-center justify-center gap-8">
               <div>
                 <p className="text-4xl font-heading font-bold text-primary">{results.score}</p>
-                <p className="text-xs text-text-muted dark:text-dark-text-muted">/ {results.total} Dogru</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted">/ {results.total} Doğru</p>
               </div>
               <div className="w-px h-12 bg-border-light dark:bg-dark-border" />
               <div>
                 <p className="text-4xl font-heading font-bold text-accent-dark">{Math.round(results.percentage)}%</p>
-                <p className="text-xs text-text-muted dark:text-dark-text-muted">Basari</p>
+                <p className="text-xs text-text-muted dark:text-dark-text-muted">Başarı</p>
               </div>
             </div>
 

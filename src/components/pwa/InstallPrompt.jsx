@@ -62,7 +62,7 @@ export default function InstallPrompt() {
             <h3 className="font-heading font-bold text-sm">Ana Ekrana Ekle</h3>
             <p className="text-xs text-text-muted mt-0.5">
               {isIOS
-                ? 'Paylas simgesine, sonra "Ana Ekrana Ekle"ye dokun.'
+                ? 'Paylaş simgesine, sonra "Ana Ekrana Ekle"ye dokun.'
                 : 'İyilik Akademi\'yi ana ekranina ekle, hizli erisim sagla!'}
             </p>
             <div className="flex gap-2 mt-3">

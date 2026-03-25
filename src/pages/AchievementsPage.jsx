@@ -36,7 +36,7 @@ export default function AchievementsPage() {
             {/* Progress Bar */}
             <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium">{earnedCount} / {totalCount} Basari</span>
+                <span className="text-sm font-medium">{earnedCount} / {totalCount} Başarı</span>
                 <span className="text-sm font-bold">{progressPercent}%</span>
               </div>
               <div className="h-3 bg-white/20 rounded-full overflow-hidden">
@@ -254,7 +254,7 @@ function AchievementDetail({ achievement, earned, earnedData }) {
               <rect x="3" y="11" width="18" height="11" rx="2" />
               <path d="M7 11V7a5 5 0 0110 0v4" />
             </svg>
-            Henuz kazanilmadi
+            Henüz kazanılmadı
           </div>
           <p className="text-xs text-text-muted dark:text-dark-text-muted mt-1">Bu basariyi kazanmak icin gorevini tamamla!</p>
         </div>

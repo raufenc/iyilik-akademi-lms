@@ -348,7 +348,7 @@ export async function generateCertificate({ name, completedLessons = 0, type = '
   const lessonCount = type === 'halfway' ? 20 : 40
   const actualCount = completedLessons || lessonCount
   ctx.fillText(
-    `adli ogrencinin İyilik Akademi'de ${actualCount} dersi başarıyla`,
+    `adlı öğrencinin İyilik Akademi'de ${actualCount} dersi başarıyla`,
     CW / 2,
     470 * s
   )
@@ -406,12 +406,12 @@ export function downloadCertificate(dataUrl, filename = 'iyilik-akademi-sertifik
  */
 export async function shareCertificate(dataUrl, name, type = 'completion') {
   const title = type === 'halfway'
-    ? `${name} - İyilik Akademi Yari Yol Sertifikasi`
-    : `${name} - İyilik Akademi Mezuniyet Sertifikasi`
+    ? `${name} - İyilik Akademi Yarı Yol Sertifikası`
+    : `${name} - İyilik Akademi Mezuniyet Sertifikası`
 
   const text = type === 'halfway'
-    ? `${name}, İyilik Akademi'de 20 dersi başarıyla tamamladi! 🌟`
-    : `${name}, İyilik Akademi'nin tum 40 dersini basariyla tamamlayarak mezun oldu! 🏆`
+    ? `${name}, İyilik Akademi'de 20 dersi başarıyla tamamladı! 🌟`
+    : `${name}, İyilik Akademi'nin tüm 40 dersini başarıyla tamamlayarak mezun oldu! 🏆`
 
   // Try Web Share API first (supports file sharing)
   if (navigator.share && navigator.canShare) {

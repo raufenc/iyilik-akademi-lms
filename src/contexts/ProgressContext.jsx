@@ -8,6 +8,7 @@ import { badges as badgeDefs } from '../data/lessons'
 import { calculateLevel } from '../utils/xp'
 import { achievements as achievementDefs } from '../data/achievements'
 import { shopItems as shopItemDefs } from '../data/shopItems'
+import { DAILY_TASKS, DAILY_BONUS_COINS, DAILY_BONUS_XP } from '../data/dailyTasks'
 
 const ProgressContext = createContext(null)
 
@@ -66,7 +67,8 @@ export function ProgressProvider({ children }) {
   const [coins, setCoins] = useState(0)
   const [userAchievements, setUserAchievements] = useState([])
   const [purchasedItems, setPurchasedItems] = useState([])
-  const [equippedItems, setEquippedItems] = useState({}) // { nameColor: 'tema_altin', profileFrame: 'cerceve_altin', specialBadge: ['rozet_ilim'] }
+  const [equippedItems, setEquippedItems] = useState({})
+  const [dailyProgress, setDailyProgress] = useState({ date: '', lessonsToday: 0, quizzesToday: 0, practiceToday: 0, bonusClaimed: false })
   const [loading, setLoading] = useState(true)
 
   const fetchProgress = useCallback(async () => {
@@ -78,6 +80,7 @@ export function ProgressProvider({ children }) {
       setUserAchievements([])
       setPurchasedItems([])
       setEquippedItems({})
+      setDailyProgress({ date: '', lessonsToday: 0, quizzesToday: 0, practiceToday: 0, bonusClaimed: false })
       setLoading(false)
       return
     }
@@ -103,8 +106,15 @@ export function ProgressProvider({ children }) {
       setPurchasedItems(data.purchasedItems || [])
       setEquippedItems(data.equippedItems || {})
 
-      // Reset practice count if it's a new day
+      // Load daily progress (reset if new day)
       const today = getTodayStr()
+      if (data.dailyProgress?.date === today) {
+        setDailyProgress(data.dailyProgress)
+      } else {
+        setDailyProgress({ date: today, lessonsToday: 0, quizzesToday: 0, practiceToday: 0, bonusClaimed: false })
+      }
+
+      // Reset practice count if it's a new day
       if (data.practiceDate === today) {
         setPracticeCountToday(data.practiceCountToday || 0)
       } else {
@@ -263,6 +273,27 @@ export function ProgressProvider({ children }) {
     }
 
     return true
+  }
+
+  // ═══════ DAILY TASKS ═══════
+
+  async function incrementDailyTask(key) {
+    if (!user) return
+    const today = getTodayStr()
+    const current = dailyProgress.date === today ? dailyProgress : { date: today, lessonsToday: 0, quizzesToday: 0, practiceToday: 0, bonusClaimed: false }
+    const updated = { ...current, date: today, [key]: (current[key] || 0) + 1 }
+
+    // Check if all tasks completed and bonus not yet claimed
+    const allDone = DAILY_TASKS.every(t => (updated[t.checkKey] || 0) >= t.target)
+    if (allDone && !updated.bonusClaimed) {
+      updated.bonusClaimed = true
+      addCoins(DAILY_BONUS_COINS)
+      addXP(DAILY_BONUS_XP)
+    }
+
+    setDailyProgress(updated)
+    const userRef = doc(db, 'users', user.uid)
+    await updateDoc(userRef, { dailyProgress: updated })
   }
 
   // ═══════ EQUIP / UNEQUIP ═══════
@@ -454,8 +485,14 @@ export function ProgressProvider({ children }) {
     if (hour < 7 && completed > 0) unlockAchievement('erken_kus')
     if (hour >= 22 && completed > 0) unlockAchievement('gece_kusu')
 
+    // Practice-based
+    if (practiceCountToday >= 1 && completed >= 5) unlockAchievement('tekrar_ustasi')
+
+    // Purchase-based
+    if (purchasedItems.length >= 5) unlockAchievement('alisveris_gurusu')
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lessonProgress, userData?.xp, coins, user, loading])
+  }, [lessonProgress, userData?.xp, coins, user, loading, practiceCountToday, purchasedItems.length])
 
   const completedCount = Object.values(lessonProgress).filter(p => p.completedAt || p.postQuizDone).length
   const totalXP = userData?.xp || 0
@@ -495,6 +532,8 @@ export function ProgressProvider({ children }) {
     purchaseItem,
     equippedItems,
     equipItem,
+    dailyProgress,
+    incrementDailyTask,
   }
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>

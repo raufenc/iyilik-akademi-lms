@@ -254,7 +254,7 @@ export default function ParentReportPage() {
       // Download
       const dataUrl = canvas.toDataURL('image/png', 1.0)
       const link = document.createElement('a')
-      link.download = `iyilik-akademi-rapor-${userData?.name || 'ogrenci'}.png`
+      link.download = `iyilik-akademi-rapor-${userData?.name || 'öğrenci'}.png`
       link.href = dataUrl
       link.click()
     } catch (e) {
@@ -315,7 +315,7 @@ export default function ParentReportPage() {
                     <path d="M7 10l5 5 5-5" />
                     <path d="M12 15V3" />
                   </svg>
-                  PDF Indir
+                  PDF İndir
                 </span>
               </Button>
             </div>
@@ -431,7 +431,7 @@ export default function ParentReportPage() {
               </div>
               <div className={`text-center ${completedCount >= 20 ? 'text-secondary' : ''}`}>
                 <span className="block text-lg">{completedCount >= 20 ? '✅' : '⬜'}</span>
-                <span>Yari Yol</span>
+                <span>Yarı Yol</span>
               </div>
               <div className={`text-center ${completedCount >= 30 ? 'text-secondary' : ''}`}>
                 <span className="block text-lg">{completedCount >= 30 ? '✅' : '⬜'}</span>
@@ -472,7 +472,7 @@ export default function ParentReportPage() {
             </div>
           ) : (
             <p className="text-sm text-text-muted text-center py-4">
-              Henuz tamamlanan ders bulunmuyor. İlk derse başlamak icin harika bir zaman!
+              Henüz tamamlanan ders bulunmuyor. İlk derse başlamak için harika bir zaman!
             </p>
           )}
         </Card>
@@ -495,7 +495,7 @@ export default function ParentReportPage() {
             </div>
           ) : (
             <p className="text-sm text-text-muted text-center py-4">
-              Henuz rozet kazanilmadi. Dersleri tamamlayarak rozetler kazanilabilir.
+              Henüz rozet kazanılmadı. Dersleri tamamlayarak rozetler kazanılabilir.
             </p>
           )}
 

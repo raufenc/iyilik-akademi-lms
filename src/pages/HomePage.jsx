@@ -89,10 +89,10 @@ export default function HomePage() {
   ]
 
   const steps = [
-    { num: '01', icon: '✨', title: 'Kayıt Ol', desc: 'Ücretsiz hesabinizi saniyeler içinde oluşturun.' },
-    { num: '02', icon: '📖', title: 'Ders Sec', desc: '40 farkli degerler egitimi dersinden birini secin.' },
-    { num: '03', icon: '🎯', title: 'İzle & Öğren', desc: 'Video dersleri izleyin, quizlerle pekistirin.' },
-    { num: '04', icon: '🌟', title: 'XP Kazan', desc: 'Rozetler ve sertifikalar ile basarinizi taclandirin.' },
+    { num: '01', icon: '✨', title: 'Kayıt Ol', desc: 'Ücretsiz hesabınızı saniyeler içinde oluşturun.' },
+    { num: '02', icon: '📖', title: 'Ders Seç', desc: '40 farklı değerler eğitimi dersinden birini seçin.' },
+    { num: '03', icon: '🎯', title: 'İzle & Öğren', desc: 'Video dersleri izleyin, quizlerle pekiştirin.' },
+    { num: '04', icon: '🌟', title: 'XP Kazan', desc: 'Rozetler ve sertifikalar ile başarınızı taçlandırın.' },
   ]
 
   const sampleLessons = lessons.slice(0, 6)
@@ -264,10 +264,10 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">Özellikler</span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-text mb-4">
-              Ogrenmeyi <span className="text-gradient">Eglenceye</span> Donusturuyoruz
+              Öğrenmeyi <span className="text-gradient">Eğlenceye</span> Dönüştürüyoruz
             </h2>
             <p className="text-text-light text-lg max-w-2xl mx-auto">
-              Cocuklariniz icin ozel olarak tasarlanmis, modern ve interaktif egitim deneyimi.
+              Çocuklarınız için özel olarak tasarlanmış, modern ve interaktif eğitim deneyimi.
             </p>
           </div>
 
@@ -356,9 +356,9 @@ export default function HomePage() {
         <div className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <span className="inline-block text-sm font-semibold text-accent-dark uppercase tracking-wider mb-3">Ders Kutuphanesi</span>
+              <span className="inline-block text-sm font-semibold text-accent-dark uppercase tracking-wider mb-3">Ders Kütüphanesi</span>
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-text">
-                Populer <span className="text-gradient-warm">Dersler</span>
+                Popüler <span className="text-gradient-warm">Dersler</span>
               </h2>
             </div>
             <Button
@@ -367,7 +367,7 @@ export default function HomePage() {
               className="hidden sm:inline-flex"
               onClick={() => navigate('/dersler')}
             >
-              Tumunu Gor &rarr;
+              Tümünü Gör &rarr;
             </Button>
           </div>
         </div>

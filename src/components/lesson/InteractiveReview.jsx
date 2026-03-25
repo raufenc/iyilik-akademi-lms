@@ -101,12 +101,12 @@ export default function InteractiveReview({ items, onComplete }) {
           <p className="text-xs text-text-muted mb-2 flex items-center gap-1.5">
             <Icon name="check" size={14} className="text-secondary" />
             <Icon name="close" size={14} className="text-danger" />
-            Dogru mu, Yanlis mi?
+            Doğru mu, Yanlış mı?
           </p>
           <h3 className="font-semibold text-lg mb-5">{item.soruMetni}</h3>
 
           <div className="grid grid-cols-2 gap-3">
-            {['Dogru', 'Yanlis'].map((label, idx) => {
+            {['Doğru', 'Yanlış'].map((label, idx) => {
               let cls = 'border-border hover:border-primary/40 hover:bg-primary/5'
               const correctIdx = item.dogruCevap ? 0 : 1
 

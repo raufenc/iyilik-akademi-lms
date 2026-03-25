@@ -13,7 +13,7 @@ export default function BarChart({ data = [], height = 260, title = '', horizont
   if (!data.length) {
     return (
       <div className="flex items-center justify-center" style={{ height }}>
-        <p className="text-sm text-text-muted">Veri bulunamadi</p>
+        <p className="text-sm text-text-muted">Veri bulunamadı</p>
       </div>
     )
   }

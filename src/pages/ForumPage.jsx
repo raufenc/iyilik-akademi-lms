@@ -14,17 +14,17 @@ import Icon from '../components/ui/Icon'
 
 // ── Constants ──────────────────────────────────────────────
 const CATEGORIES = [
-  { id: 'all', label: 'Tumunu Goster', icon: '\uD83D\uDCCB', color: 'bg-gray-100 text-gray-700 dark:bg-gray-700/40 dark:text-gray-300' },
+  { id: 'all', label: 'Tümünü Göster', icon: '\uD83D\uDCCB', color: 'bg-gray-100 text-gray-700 dark:bg-gray-700/40 dark:text-gray-300' },
   { id: 'genel', label: 'Genel', icon: '\uD83D\uDCAC', color: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300' },
-  { id: 'ders', label: 'Ders Tartismalari', icon: '\uD83D\uDCDA', color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' },
+  { id: 'ders', label: 'Ders Tartışmaları', icon: '\uD83D\uDCDA', color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' },
   { id: 'soru', label: 'Soru-Cevap', icon: '\u2753', color: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300' },
-  { id: 'paylasim', label: 'Paylasim', icon: '\uD83C\uDF1F', color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300' },
+  { id: 'paylasim', label: 'Paylaşım', icon: '\uD83C\uDF1F', color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300' },
 ]
 
 const SORT_OPTIONS = [
   { id: 'newest', label: 'En Yeni' },
-  { id: 'popular', label: 'En Populer' },
-  { id: 'most_replies', label: 'En Cok Cevaplanan' },
+  { id: 'popular', label: 'En Popüler' },
+  { id: 'most_replies', label: 'En Çok Cevaplanan' },
 ]
 
 // ── Helpers ────────────────────────────────────────────────
@@ -323,23 +323,23 @@ export default function ForumPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold dark:text-dark-text-heading">Tartisma Forumu</h1>
-          <p className="text-sm text-text-muted dark:text-dark-text-muted mt-1">Toplulukla birlikte ogrenin, paylasin, tartisin</p>
+          <h1 className="text-2xl font-bold dark:text-dark-text-heading">Tartışma Forumu</h1>
+          <p className="text-sm text-text-muted dark:text-dark-text-muted mt-1">Toplulukla birlikte öğrenin, paylaşın, tartışın</p>
         </div>
         <Button onClick={() => setShowNewThread(!showNewThread)} size="sm" className="hidden md:inline-flex">
-          {showNewThread ? 'Iptal' : '+ Yeni Konu'}
+          {showNewThread ? 'İptal' : '+ Yeni Konu'}
         </Button>
       </div>
 
       {/* New Thread Form */}
       {showNewThread && (
         <Card className="mb-6 animate-fade-in">
-          <h3 className="font-heading font-semibold text-lg mb-4 dark:text-dark-text-heading">Yeni Konu Olustur</h3>
+          <h3 className="font-heading font-semibold text-lg mb-4 dark:text-dark-text-heading">Yeni Konu Oluştur</h3>
           <form onSubmit={handleCreateThread} className="space-y-4">
             <div>
               <input
                 type="text"
-                placeholder="Konu basligi..."
+                placeholder="Konu başlığı..."
                 value={newTitle}
                 onChange={e => setNewTitle(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-elevated text-text dark:text-dark-text focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm transition-all"
@@ -367,7 +367,7 @@ export default function ForumPage() {
             </div>
             <div>
               <textarea
-                placeholder="Mesajinizi yazin..."
+                placeholder="Mesajınızı yazın..."
                 value={newContent}
                 onChange={e => setNewContent(e.target.value)}
                 rows={5}
@@ -375,8 +375,8 @@ export default function ForumPage() {
               />
             </div>
             <div className="flex items-center gap-3 justify-end">
-              <Button variant="ghost" size="sm" type="button" onClick={() => setShowNewThread(false)}>Iptal</Button>
-              <Button type="submit" size="sm" loading={submitting} disabled={!newTitle.trim() || !newContent.trim()}>Konuyu Olustur</Button>
+              <Button variant="ghost" size="sm" type="button" onClick={() => setShowNewThread(false)}>İptal</Button>
+              <Button type="submit" size="sm" loading={submitting} disabled={!newTitle.trim() || !newContent.trim()}>Konuyu Oluştur</Button>
             </div>
           </form>
         </Card>
@@ -385,7 +385,7 @@ export default function ForumPage() {
       {/* Mobile New Thread Button */}
       <div className="md:hidden mb-4">
         <Button onClick={() => setShowNewThread(!showNewThread)} size="sm" className="w-full">
-          {showNewThread ? 'Iptal' : '+ Yeni Konu Olustur'}
+          {showNewThread ? 'İptal' : '+ Yeni Konu Oluştur'}
         </Button>
       </div>
 
@@ -451,7 +451,7 @@ export default function ForumPage() {
             ) : filteredThreads.length === 0 ? (
               <div className="text-center py-16">
                 <p className="text-4xl mb-3">{'\uD83D\uDCAC'}</p>
-                <p className="text-text-muted dark:text-dark-text-muted font-medium">Henuz konu yok</p>
+                <p className="text-text-muted dark:text-dark-text-muted font-medium">Henüz konu yok</p>
                 <p className="text-xs text-text-muted dark:text-dark-text-muted mt-1">İlk konuyu sen oluştur!</p>
               </div>
             ) : (
@@ -623,7 +623,7 @@ export default function ForumPage() {
                   </div>
                 ) : replies.length === 0 ? (
                   <div className="text-center py-8">
-                    <p className="text-text-muted dark:text-dark-text-muted text-sm">Henuz yanit yok. İlk yanıtı sen ver!</p>
+                    <p className="text-text-muted dark:text-dark-text-muted text-sm">Henüz yanıt yok. İlk yanıtı sen ver!</p>
                   </div>
                 ) : (
                   (() => {
