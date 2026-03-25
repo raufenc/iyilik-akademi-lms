@@ -70,8 +70,8 @@ export default function StudyNotesPage() {
           })
           template += '\n'
         }
-        if (lesson.ayetHadis) {
-          template += `"${lesson.ayetHadis.metin}" ${lesson.ayetHadis.kaynak}\n\n`
+        if (lesson.guzelSoz) {
+          template += `"${lesson.guzelSoz.metin}" ${lesson.guzelSoz.kaynak}\n\n`
         }
         template += '--- Notlarim ---\n\n'
       }

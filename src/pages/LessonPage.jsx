@@ -27,7 +27,7 @@ export default function LessonPage() {
   const { lessonProgress, updateLessonProgress, addXP, recordActivity, awardBadge, getLessonStatus, completedCount, recordWrongAnswer, incrementDailyTask } = useProgress()
 
   const lesson = useMemo(() => lessons.find(l => l.id === Number(id)), [id])
-  const hasIntro = !!(lesson?.tema || lesson?.kavramlar || lesson?.ayetHadis)
+  const hasIntro = !!(lesson?.tema || lesson?.kavramlar || lesson?.guzelSoz)
   const hasInteractive = !!(lesson?.interaktifDuraklamalar && lesson.interaktifDuraklamalar.length > 0)
   const hasScenario = !!(lesson?.senaryoSorulari && lesson.senaryoSorulari.length > 0)
   const [step, setStep] = useState(hasIntro ? 'intro' : 'preQuiz')

@@ -6,10 +6,9 @@ import Icon from '../components/ui/Icon'
 
 const CATEGORIES = [
   { id: 'all', label: 'Tümü', icon: '📖' },
-  { id: 'ahlak', label: 'Ahlak', icon: '💎' },
-  { id: 'iman', label: 'İman', icon: '🕌' },
+  { id: 'ahlak', label: 'Ahlâk', icon: '💎' },
+  { id: 'deger', label: 'Değer', icon: '🌟' },
   { id: 'sosyal', label: 'Sosyal', icon: '🤝' },
-  { id: 'ibadet', label: 'İbadet', icon: '📿' },
 ]
 
 export default function GlossaryPage() {
@@ -26,8 +25,7 @@ export default function GlossaryPage() {
       const q = search.toLowerCase().trim()
       items = items.filter(g =>
         g.kavram.toLowerCase().includes(q) ||
-        g.tanim.toLowerCase().includes(q) ||
-        g.arapca?.includes(q)
+        g.tanim.toLowerCase().includes(q)
       )
     }
     return items.sort((a, b) => a.kavram.localeCompare(b.kavram, 'tr'))
@@ -41,7 +39,7 @@ export default function GlossaryPage() {
           <span>📖</span> Kavram Sözlüğü
         </h1>
         <p className="text-text-muted dark:text-dark-text-muted mt-2">
-          İslami kavramları öğren, anlamlarını keşfet
+          Kavramları öğren, anlamlarını keşfet
         </p>
       </div>
 
@@ -92,9 +90,9 @@ export default function GlossaryPage() {
               onClick={() => setExpandedId(isExpanded ? null : item.id)}
             >
               <div className="flex items-start gap-4">
-                {/* Arabic */}
+                {/* Icon */}
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center shrink-0">
-                  <span className="text-lg font-bold text-primary" dir="rtl">{item.arapca}</span>
+                  <span className="text-2xl">💡</span>
                 </div>
 
                 <div className="flex-1 min-w-0">
@@ -109,21 +107,21 @@ export default function GlossaryPage() {
                   {/* Expanded content */}
                   {isExpanded && (
                     <div className="mt-4 space-y-3 animate-fade-in">
-                      {item.kuranReferans && (
+                      {item.kaynakSoz && (
                         <div className="flex items-start gap-2 p-2.5 bg-primary/5 dark:bg-primary/10 rounded-lg">
-                          <span className="text-sm shrink-0">📖</span>
+                          <span className="text-sm shrink-0">💬</span>
                           <div>
-                            <p className="text-xs font-medium text-primary">Kur'an Referansı</p>
-                            <p className="text-xs text-text-light dark:text-dark-text-muted">{item.kuranReferans}</p>
+                            <p className="text-xs font-medium text-primary">Hikmetli Söz</p>
+                            <p className="text-xs text-text-light dark:text-dark-text-muted">{item.kaynakSoz}</p>
                           </div>
                         </div>
                       )}
-                      {item.hadisReferans && (
+                      {item.atasoz && (
                         <div className="flex items-start gap-2 p-2.5 bg-secondary/5 dark:bg-secondary/10 rounded-lg">
-                          <span className="text-sm shrink-0">📿</span>
+                          <span className="text-sm shrink-0">🌿</span>
                           <div>
-                            <p className="text-xs font-medium text-secondary">Hadis Referansı</p>
-                            <p className="text-xs text-text-light dark:text-dark-text-muted">{item.hadisReferans}</p>
+                            <p className="text-xs font-medium text-secondary">Atasözü</p>
+                            <p className="text-xs text-text-light dark:text-dark-text-muted">{item.atasoz}</p>
                           </div>
                         </div>
                       )}

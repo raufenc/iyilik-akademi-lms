@@ -3,7 +3,7 @@ import Card from '../ui/Card'
 import Icon from '../ui/Icon'
 
 export default function LessonIntro({ lesson, onStart }) {
-  const hasRichData = lesson.tema || lesson.kavramlar || lesson.ayetHadis
+  const hasRichData = lesson.tema || lesson.kavramlar || lesson.guzelSoz
 
   if (!hasRichData) {
     onStart()
@@ -62,20 +62,20 @@ export default function LessonIntro({ lesson, onStart }) {
         </Card>
       )}
 
-      {/* Ayet / Hadis */}
-      {lesson.ayetHadis && (
+      {/* Güzel Söz */}
+      {lesson.guzelSoz && (
         <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
           <div className="text-center">
             <span className="mb-2 block">
               <Icon name="scroll" size={28} className="text-primary mx-auto" />
             </span>
             <p className="italic text-text dark:text-dark-text font-medium text-sm leading-relaxed">
-              "{lesson.ayetHadis.metin}"
+              "{lesson.guzelSoz.metin}"
             </p>
-            <p className="text-xs text-text-muted dark:text-dark-text-muted mt-2">{lesson.ayetHadis.kaynak}</p>
-            {lesson.ayetHadis.aciklama && (
+            <p className="text-xs text-text-muted dark:text-dark-text-muted mt-2">{lesson.guzelSoz.kaynak}</p>
+            {lesson.guzelSoz.aciklama && (
               <p className="text-xs text-text-light dark:text-dark-text-muted mt-3 bg-white/50 dark:bg-dark-card/50 rounded-lg p-2.5 text-left leading-relaxed">
-                💡 {lesson.ayetHadis.aciklama}
+                💡 {lesson.guzelSoz.aciklama}
               </p>
             )}
           </div>
