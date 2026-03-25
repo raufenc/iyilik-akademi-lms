@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useProgress } from '../contexts/ProgressContext'
-import { shopItems, SHOP_CATEGORIES, getShopItemsByCategory, RARITY_COLORS } from '../data/shopItems'
+import { shopItems, SHOP_CATEGORIES, getShopItemsByCategory, RARITY_COLORS, getShopItem } from '../data/shopItems'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import Modal from '../components/ui/Modal'
@@ -13,7 +13,7 @@ const RARITY_LABELS = {
 }
 
 export default function ShopPage() {
-  const { coins, purchasedItems, purchaseItem } = useProgress()
+  const { coins, purchasedItems, purchaseItem, equippedItems, equipItem } = useProgress()
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedItem, setSelectedItem] = useState(null)
   const [purchasing, setPurchasing] = useState(false)
@@ -21,6 +21,13 @@ export default function ShopPage() {
 
   const ownedIds = purchasedItems?.map(i => i.id) || []
   const filteredItems = getShopItemsByCategory(activeCategory)
+
+  function isEquipped(item) {
+    if (item.type === 'specialBadge') {
+      return (equippedItems?.specialBadge || []).includes(item.id)
+    }
+    return equippedItems?.[item.type] === item.id
+  }
 
   async function handlePurchase() {
     if (!selectedItem) return
@@ -34,6 +41,10 @@ export default function ShopPage() {
     }
   }
 
+  async function handleEquip(item) {
+    await equipItem(item.id)
+  }
+
   return (
     <div className="animate-fade-in space-y-6 max-w-4xl mx-auto">
       {/* Header */}
@@ -45,29 +56,29 @@ export default function ShopPage() {
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="font-heading text-2xl md:text-3xl font-bold mb-1 flex items-center gap-3">
-                  <span className="text-3xl">🏪</span> Magaza
+                  <span className="text-3xl">🏪</span> Mağaza
                 </h1>
-                <p className="text-white/70 text-sm">Altinlarini harca, profilini güzelleştir!</p>
+                <p className="text-white/70 text-sm">Altınlarını harca, profilini güzelleştir!</p>
               </div>
 
               {/* Coin Balance */}
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-5 py-3 border border-white/30 text-center">
                 <p className="text-3xl font-heading font-bold">{coins || 0}</p>
                 <p className="text-xs text-white/70 flex items-center justify-center gap-1">
-                  <span>🪙</span> Altin
+                  <span>🪙</span> Altın
                 </p>
               </div>
             </div>
 
             {/* How to earn coins */}
             <div className="mt-4 bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-              <p className="text-xs text-white/60 mb-2 font-medium">Altin Nasil Kazanilir?</p>
+              <p className="text-xs text-white/60 mb-2 font-medium">Altın Nasıl Kazanılır?</p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
                   { emoji: '📚', text: 'Ders Tamamla', coins: '+10' },
                   { emoji: '🎯', text: 'Günlük Quiz', coins: '+5' },
                   { emoji: '🏆', text: 'Başarı Kazan', coins: '+10-200' },
-                  { emoji: '🔥', text: 'Seri Yap', coins: '+5/gun' },
+                  { emoji: '🔥', text: 'Seri Yap', coins: '+5/gün' },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-2 text-center">
                     <span className="text-lg block">{item.emoji}</span>
@@ -105,12 +116,15 @@ export default function ShopPage() {
           const owned = ownedIds.includes(item.id)
           const canAfford = (coins || 0) >= item.price
           const wasJustPurchased = justPurchased === item.id
+          const equipped = isEquipped(item)
 
           return (
             <Card
               key={item.id}
               className={`relative overflow-hidden transition-all duration-300 ${
-                owned
+                equipped
+                  ? 'border-2 border-amber-400 dark:border-amber-500 shadow-lg shadow-amber-400/20'
+                  : owned
                   ? 'border-2 border-green-300 dark:border-green-700'
                   : wasJustPurchased
                   ? 'border-2 border-green-400 animate-bounce-in'
@@ -122,28 +136,52 @@ export default function ShopPage() {
                 {RARITY_LABELS[item.rarity]}
               </div>
 
+              {/* Equipped indicator */}
+              {equipped && (
+                <div className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-600">
+                  Aktif
+                </div>
+              )}
+
               <div className="text-center pt-2">
                 {/* Item Icon */}
                 <div className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-4xl mb-3 ${
+                  equipped ? 'bg-amber-50 dark:bg-amber-900/30 ring-2 ring-amber-300' :
                   owned ? 'bg-green-50 dark:bg-green-900/30' : 'bg-surface-alt dark:bg-dark-elevated'
                 }`}>
                   {item.icon}
                 </div>
 
-                {/* Name */}
-                <h3 className="font-heading font-bold text-sm">{item.name}</h3>
+                {/* Name — show with color if it's a nameColor item */}
+                <h3 className={`font-heading font-bold text-sm ${item.type === 'nameColor' ? item.cssClass : ''}`}>
+                  {item.name}
+                </h3>
                 <p className="text-xs text-text-muted dark:text-dark-text-muted mt-0.5">{item.description}</p>
 
                 {/* Price & Action */}
-                <div className="mt-4">
+                <div className="mt-4 space-y-2">
                   {owned ? (
-                    <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-xl text-sm font-semibold">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15" />
-                        <path d="M8 12l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      Satin Alindi
-                    </div>
+                    <>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-xl text-xs font-semibold">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15" />
+                          <path d="M8 12l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        Sahipsin
+                      </div>
+                      <div>
+                        <button
+                          onClick={() => handleEquip(item)}
+                          className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                            equipped
+                              ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-amber-900/50'
+                              : 'bg-primary/10 dark:bg-primary/20 text-primary hover:bg-primary/20 dark:hover:bg-primary/30'
+                          }`}
+                        >
+                          {equipped ? '✓ Aktif — Çıkar' : 'Kullan'}
+                        </button>
+                      </div>
+                    </>
                   ) : (
                     <div className="flex items-center justify-center gap-3">
                       {/* Price tag */}
@@ -157,7 +195,7 @@ export default function ShopPage() {
                         disabled={!canAfford}
                         onClick={() => setSelectedItem(item)}
                       >
-                        {canAfford ? 'Satin Al' : 'Yetersiz'}
+                        {canAfford ? 'Satın Al' : 'Yetersiz'}
                       </Button>
                     </div>
                   )}
@@ -172,7 +210,7 @@ export default function ShopPage() {
       {filteredItems.length === 0 && (
         <Card className="text-center py-12">
           <span className="text-5xl block mb-3">🏪</span>
-          <p className="text-text-muted dark:text-dark-text-muted">Bu kategoride urun bulunamadi.</p>
+          <p className="text-text-muted dark:text-dark-text-muted">Bu kategoride ürün bulunamadı.</p>
         </Card>
       )}
 
@@ -180,7 +218,7 @@ export default function ShopPage() {
       <Modal
         open={!!selectedItem}
         onClose={() => setSelectedItem(null)}
-        title="Satin Alma Onayi"
+        title="Satın Alma Onayı"
       >
         {selectedItem && (
           <div className="text-center">
@@ -220,7 +258,7 @@ export default function ShopPage() {
                 className="flex-1"
                 onClick={() => setSelectedItem(null)}
               >
-                Vazgec
+                Vazgeç
               </Button>
               <Button
                 variant="accent"
@@ -230,7 +268,7 @@ export default function ShopPage() {
                 onClick={handlePurchase}
               >
                 <span className="flex items-center gap-1.5">
-                  🪙 Satin Al
+                  🪙 Satın Al
                 </span>
               </Button>
             </div>

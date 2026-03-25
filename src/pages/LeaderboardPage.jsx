@@ -3,6 +3,7 @@ import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
 import { db } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 import { LEVEL_NAMES, calculateLevel } from '../utils/xp'
+import { getShopItem } from '../data/shopItems'
 import Card from '../components/ui/Card'
 import Icon from '../components/ui/Icon'
 import { SkeletonLeaderboard } from '../components/ui/Skeleton'
@@ -79,6 +80,14 @@ export default function LeaderboardPage() {
       setActiveTab(key)
       setTabTransition(false)
     }, 150)
+  }
+
+  // Helper to get equipped cosmetics for a user
+  function getUserCosmetics(u) {
+    const eq = u.equippedItems || {}
+    const nameColorItem = eq.nameColor ? getShopItem(eq.nameColor) : null
+    const frameItem = eq.profileFrame ? getShopItem(eq.profileFrame) : null
+    return { nameColorClass: nameColorItem?.cssClass || '', frameClass: frameItem?.cssClass || '' }
   }
 
   const medals = ['\u{1F947}', '\u{1F948}', '\u{1F949}']
@@ -161,10 +170,10 @@ export default function LeaderboardPage() {
           <div className="flex-1 max-w-[140px] animate-slide-up" style={{ animationDelay: '100ms' }}>
             <div className={`bg-gradient-to-b ${podiumColors[1]} border rounded-t-2xl rounded-b-xl p-4 text-center`}>
               <span className="text-3xl">{medals[1]}</span>
-              <div className="w-14 h-14 rounded-full mx-auto mt-2 bg-gradient-to-br from-gray-400 to-gray-500 text-white flex items-center justify-center font-bold text-lg shadow-soft">
+              <div className={`w-14 h-14 rounded-full mx-auto mt-2 bg-gradient-to-br from-gray-400 to-gray-500 text-white flex items-center justify-center font-bold text-lg shadow-soft ${getUserCosmetics(top3[1]).frameClass}`}>
                 {(top3[1].name || '?')[0].toUpperCase()}
               </div>
-              <p className="font-heading font-semibold text-sm mt-2 truncate text-text dark:text-dark-text">{top3[1].name}</p>
+              <p className={`font-heading font-semibold text-sm mt-2 truncate ${getUserCosmetics(top3[1]).nameColorClass || 'text-text dark:text-dark-text'}`}>{top3[1].name}</p>
               <p className="text-accent-dark font-bold text-sm">
                 <AnimatedNumber value={top3[1][activeField] || 0} /> XP
               </p>
@@ -176,10 +185,10 @@ export default function LeaderboardPage() {
           <div className="flex-1 max-w-[160px] animate-slide-up -mt-4">
             <div className={`bg-gradient-to-b ${podiumColors[0]} border rounded-t-2xl rounded-b-xl p-5 text-center shadow-glow-gold`}>
               <span className="text-4xl">{medals[0]}</span>
-              <div className="w-16 h-16 rounded-full mx-auto mt-2 bg-gradient-to-br from-amber-400 to-yellow-500 text-white flex items-center justify-center font-bold text-xl shadow-medium ring-4 ring-amber-300/30 dark:ring-amber-500/20">
+              <div className={`w-16 h-16 rounded-full mx-auto mt-2 bg-gradient-to-br from-amber-400 to-yellow-500 text-white flex items-center justify-center font-bold text-xl shadow-medium ${getUserCosmetics(top3[0]).frameClass || 'ring-4 ring-amber-300/30 dark:ring-amber-500/20'}`}>
                 {(top3[0].name || '?')[0].toUpperCase()}
               </div>
-              <p className="font-heading font-bold text-base mt-2 truncate text-text dark:text-dark-text">{top3[0].name}</p>
+              <p className={`font-heading font-bold text-base mt-2 truncate ${getUserCosmetics(top3[0]).nameColorClass || 'text-text dark:text-dark-text'}`}>{top3[0].name}</p>
               <p className="text-accent-dark font-bold">
                 <AnimatedNumber value={top3[0][activeField] || 0} /> XP
               </p>
@@ -191,10 +200,10 @@ export default function LeaderboardPage() {
           <div className="flex-1 max-w-[140px] animate-slide-up" style={{ animationDelay: '200ms' }}>
             <div className={`bg-gradient-to-b ${podiumColors[2]} border rounded-t-2xl rounded-b-xl p-4 text-center`}>
               <span className="text-3xl">{medals[2]}</span>
-              <div className="w-14 h-14 rounded-full mx-auto mt-2 bg-gradient-to-br from-orange-400 to-amber-600 text-white flex items-center justify-center font-bold text-lg shadow-soft">
+              <div className={`w-14 h-14 rounded-full mx-auto mt-2 bg-gradient-to-br from-orange-400 to-amber-600 text-white flex items-center justify-center font-bold text-lg shadow-soft ${getUserCosmetics(top3[2]).frameClass}`}>
                 {(top3[2].name || '?')[0].toUpperCase()}
               </div>
-              <p className="font-heading font-semibold text-sm mt-2 truncate text-text dark:text-dark-text">{top3[2].name}</p>
+              <p className={`font-heading font-semibold text-sm mt-2 truncate ${getUserCosmetics(top3[2]).nameColorClass || 'text-text dark:text-dark-text'}`}>{top3[2].name}</p>
               <p className="text-accent-dark font-bold text-sm">
                 <AnimatedNumber value={top3[2][activeField] || 0} /> XP
               </p>
@@ -210,6 +219,7 @@ export default function LeaderboardPage() {
           {restUsers.map((u, i) => {
             const isMe = u.uid === user?.uid
             const lvl = calculateLevel(u[activeField] || u.xp || 0)
+            const cosmetics = getUserCosmetics(u)
             // Find actual rank (accounting for search filtering)
             const allSorted = [...users].sort((a, b) => (b[activeField] || 0) - (a[activeField] || 0))
             const actualRank = allSorted.findIndex(x => x.uid === u.uid) + 1
@@ -230,6 +240,8 @@ export default function LeaderboardPage() {
                   {displayRank <= 3 ? medals[displayRank - 1] : displayRank}
                 </span>
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${
+                  cosmetics.frameClass ? cosmetics.frameClass + ' ' : ''
+                }${
                   displayRank === 1 ? 'bg-gradient-to-br from-amber-400 to-yellow-500 text-white' :
                   displayRank === 2 ? 'bg-gradient-to-br from-gray-400 to-gray-500 text-white' :
                   displayRank === 3 ? 'bg-gradient-to-br from-orange-400 to-amber-600 text-white' :
@@ -239,6 +251,7 @@ export default function LeaderboardPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className={`font-medium text-sm truncate ${
+                    cosmetics.nameColorClass ? cosmetics.nameColorClass + (isMe ? ' font-semibold' : '') :
                     isMe
                       ? 'text-primary font-semibold'
                       : 'text-text dark:text-dark-text'

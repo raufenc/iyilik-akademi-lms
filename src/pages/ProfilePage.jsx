@@ -5,6 +5,7 @@ import { useProgress } from '../contexts/ProgressContext'
 import { badges as badgeDefs } from '../data/lessons'
 import { LEVEL_NAMES, xpToNextLevel } from '../utils/xp'
 import { generateCertificate, downloadCertificate, shareCertificate, shareViaWhatsApp } from '../utils/certificate'
+import { getShopItem } from '../data/shopItems'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import Modal from '../components/ui/Modal'
@@ -23,7 +24,7 @@ const LEVEL_COLORS = {
 
 export default function ProfilePage() {
   const { userData } = useAuth()
-  const { completedCount, totalXP, level } = useProgress()
+  const { completedCount, totalXP, level, equippedItems } = useProgress()
   const userBadges = userData?.badges || []
   const { current, needed, progress } = xpToNextLevel(totalXP)
   const [certLoading, setCertLoading] = useState(null)
@@ -78,6 +79,11 @@ export default function ProfilePage() {
   const levelColor = LEVEL_COLORS[level] || LEVEL_COLORS[1]
   const avatar = userData?.avatar
 
+  // Get equipped cosmetics
+  const equippedNameColor = equippedItems?.nameColor ? getShopItem(equippedItems.nameColor) : null
+  const equippedFrame = equippedItems?.profileFrame ? getShopItem(equippedItems.profileFrame) : null
+  const equippedBadges = (equippedItems?.specialBadge || []).map(id => getShopItem(id)).filter(Boolean)
+
   return (
     <div className="animate-fade-in space-y-6 max-w-3xl mx-auto">
       {/* Profile Header — Gradient Banner */}
@@ -91,7 +97,7 @@ export default function ProfilePage() {
               className="group relative"
               title="Avatarini degistir"
             >
-              <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${avatar?.bg || levelColor} text-white flex items-center justify-center text-4xl font-bold shadow-medium ring-4 ring-white dark:ring-dark-surface transition-transform group-hover:scale-105`}>
+              <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${avatar?.bg || levelColor} text-white flex items-center justify-center text-4xl font-bold shadow-medium ${equippedFrame ? equippedFrame.cssClass : 'ring-4 ring-white dark:ring-dark-surface'} transition-transform group-hover:scale-105`}>
                 {avatar?.emoji || (userData?.name || 'O')[0].toUpperCase()}
               </div>
               <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-sm border border-border-light group-hover:bg-primary/5 transition-colors">
@@ -100,7 +106,7 @@ export default function ProfilePage() {
             </button>
           </div>
 
-          <h1 className="font-heading text-2xl font-bold">{userData?.name}</h1>
+          <h1 className={`font-heading text-2xl font-bold ${equippedNameColor ? equippedNameColor.cssClass : ''}`}>{userData?.name}</h1>
           <p className="text-sm text-text-muted">{userData?.email}</p>
 
           {/* Stats Row */}
@@ -151,6 +157,26 @@ export default function ProfilePage() {
       <Modal open={avatarModalOpen} onClose={() => setAvatarModalOpen(false)} title="Avatarini Sec">
         <AvatarPicker onSelect={() => setAvatarModalOpen(false)} />
       </Modal>
+
+      {/* Equipped Special Badges */}
+      {equippedBadges.length > 0 && (
+        <div>
+          <h2 className="font-heading text-xl font-bold mb-4 flex items-center gap-2">
+            <span>✨</span> Özel Rozetlerim
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {equippedBadges.map(badge => (
+              <div
+                key={badge.id}
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200 dark:border-amber-700 rounded-2xl shadow-sm"
+              >
+                <span className="text-2xl">{badge.icon}</span>
+                <span className="font-heading font-semibold text-sm text-amber-800 dark:text-amber-300">{badge.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Badges */}
       <div>

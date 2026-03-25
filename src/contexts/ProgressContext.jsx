@@ -66,6 +66,7 @@ export function ProgressProvider({ children }) {
   const [coins, setCoins] = useState(0)
   const [userAchievements, setUserAchievements] = useState([])
   const [purchasedItems, setPurchasedItems] = useState([])
+  const [equippedItems, setEquippedItems] = useState({}) // { nameColor: 'tema_altin', profileFrame: 'cerceve_altin', specialBadge: ['rozet_ilim'] }
   const [loading, setLoading] = useState(true)
 
   const fetchProgress = useCallback(async () => {
@@ -76,6 +77,7 @@ export function ProgressProvider({ children }) {
       setCoins(0)
       setUserAchievements([])
       setPurchasedItems([])
+      setEquippedItems({})
       setLoading(false)
       return
     }
@@ -99,6 +101,7 @@ export function ProgressProvider({ children }) {
       setCoins(data.coins || 0)
       setUserAchievements(data.achievements || [])
       setPurchasedItems(data.purchasedItems || [])
+      setEquippedItems(data.equippedItems || {})
 
       // Reset practice count if it's a new day
       const today = getTodayStr()
@@ -259,6 +262,41 @@ export function ProgressProvider({ children }) {
       unlockAchievement('ilk_alisveris')
     }
 
+    return true
+  }
+
+  // ═══════ EQUIP / UNEQUIP ═══════
+
+  async function equipItem(itemId) {
+    if (!user) return false
+    // Must own the item
+    if (!purchasedItems.some(i => i.id === itemId)) return false
+
+    const itemDef = shopItemDefs.find(i => i.id === itemId)
+    if (!itemDef) return false
+
+    const newEquipped = { ...equippedItems }
+
+    if (itemDef.type === 'specialBadge') {
+      // Badges are an array — toggle
+      const badges = newEquipped.specialBadge || []
+      if (badges.includes(itemId)) {
+        newEquipped.specialBadge = badges.filter(b => b !== itemId)
+      } else {
+        newEquipped.specialBadge = [...badges, itemId]
+      }
+    } else {
+      // nameColor, profileFrame — only one active at a time (toggle off if same)
+      if (newEquipped[itemDef.type] === itemId) {
+        delete newEquipped[itemDef.type]
+      } else {
+        newEquipped[itemDef.type] = itemId
+      }
+    }
+
+    const userRef = doc(db, 'users', user.uid)
+    await updateDoc(userRef, { equippedItems: newEquipped })
+    setEquippedItems(newEquipped)
     return true
   }
 
@@ -455,6 +493,8 @@ export function ProgressProvider({ children }) {
     unlockAchievement,
     purchasedItems,
     purchaseItem,
+    equippedItems,
+    equipItem,
   }
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>

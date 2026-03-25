@@ -12,6 +12,12 @@
       "runtimeExecutable": "/Users/raufenc/pinokio/bin/miniconda/bin/node",
       "runtimeArgs": ["node_modules/.bin/vite", "preview", "--port", "4173", "--host"],
       "port": 4173
+    },
+    {
+      "name": "raufenc",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8084", "--directory", "/tmp/raufenc-site"],
+      "port": 8084
     }
   ]
 }
