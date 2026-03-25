@@ -26,7 +26,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber (s.a.v.) dürüstlüğü nasıl tanımlamıştır?',
+        q: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) dürüstlüğü nasıl tanımlamıştır?',
         options: ['Cennet yoluna götürür', 'Dünyevi çıkar sağlar', 'Sadece sözde olmalıdır', 'Güçlüler için geçerlidir'],
         correct: 0,
       },
@@ -71,7 +71,7 @@ export const lessons = [
       },
       {
         q: 'Seyyid kimdir?',
-        options: ['Hz. Peygamber\'in soyundan gelen', 'Dini lider', 'Köy muhtar', 'Sıradan bir kişi'],
+        options: ['Peygamber Efendimiz\'in soyundan gelen', 'Dini lider', 'Köy muhtar', 'Sıradan bir kişi'],
         correct: 0,
       },
     ],
@@ -82,7 +82,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber\'in soyuna saygı göstermenin anlamı nedir?',
+        q: 'Peygamber Efendimiz\'in soyuna saygı göstermenin anlamı nedir?',
         options: ['Peygamberimize olan sevgi ve bağlılığı ifade etmek', 'Dini bir zorunluluk', 'Sosyal statü kazanmak', 'Gelenek haline geldiği için'],
         correct: 0,
       },
@@ -158,7 +158,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber işbirliğini nasıl değerlendirmiştir?',
+        q: 'Peygamber Efendimiz işbirliğini nasıl değerlendirmiştir?',
         options: ['Müminler birbirinin eline geçen tuğlalar gibidir demiştir', 'Herkes kendi başına çalışmalıdır demiştir', 'Lider her şeyi bilmelidir demiştir', 'Rekabet daha iyisini doğurur demiştir'],
         correct: 0,
       },
@@ -258,7 +258,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Ömer adalet konusunda nasıl bir örnek sergilemiştir?',
+        q: 'Hazret-i Ömer adalet konusunda nasıl bir örnek sergilemiştir?',
         options: ['Kendi oğluna bile hak ettiği cezayı vermiştir', 'Devlet yönetimini sert tutmuştur', 'Yoksullara daha fazla hak tanımıştır', 'Adaleti erteleyebilmiştir'],
         correct: 0,
       },
@@ -395,7 +395,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber tevekkülü nasıl uygulamıştır?',
+        q: 'Peygamber Efendimiz tevekkülü nasıl uygulamıştır?',
         options: ['Her türlü tedbiri alıp Allah\'a güvenerek', 'Yalnızca duayla', 'Sadece zor anlarda', 'Tedbire gerek duymadan'],
         correct: 0,
       },
@@ -473,7 +473,7 @@ export const lessons = [
     ],
     postQuiz: [
       {
-        q: 'Hz. Peygamber Mekke\'yi fethedince ne yaptı?',
+        q: 'Peygamber Efendimiz Mekke\'yi fethedince ne yaptı?',
         options: ['Düşmanlarını bağışladı', 'İntikam aldı', 'Onları sürgün etti', 'Ceza verdi'],
         correct: 0,
       },
@@ -510,7 +510,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber\'in yumuşak huyluluk hakkındaki görüşü nedir?',
+        q: 'Peygamber Efendimiz\'in yumuşak huyluluk hakkındaki görüşü nedir?',
         options: ['Rifk (yumuşaklık) her işi güzelleştirir', 'Sertlik daha etkilidir', 'Yumuşaklık zayıflıktır', 'Yalnızca çocuklara karşı gereklidir'],
         correct: 0,
       },
@@ -549,7 +549,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber\'in güvenilirliği nasıl tescillenmiştir?',
+        q: 'Peygamber Efendimiz\'in güvenilirliği nasıl tescillenmiştir?',
         options: ['\'El-Emin\' lakabı ile', 'Ticaret başarısı ile', 'Siyasi başarı ile', 'Savaş zaferleri ile'],
         correct: 0,
       },
@@ -593,7 +593,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber öfke kontrolü için ne önermiştir?',
+        q: 'Peygamber Efendimiz öfke kontrolü için ne önermiştir?',
         options: ['Oturmak, abdest almak ve su içmek', 'Bağırmak', 'Hemen cevap vermek', 'Uzaklaşmak ve unutmak'],
         correct: 0,
       },
@@ -686,7 +686,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber kıskançlık hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz kıskançlık hakkında ne buyurmuştur?',
         options: ['Ateşin odunu yakması gibi haset iyilikleri yer bitirir', 'Kıskançlık insanı motive eder', 'Kıskançlık kaçınılmazdır', 'Hafif kıskançlık zararsızdır'],
         correct: 0,
       },
@@ -818,7 +818,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber\'i sevmek ne gerektirir?',
+        q: 'Peygamber Efendimiz\'i sevmek ne gerektirir?',
         options: ['Sünnetine uymak', 'Doğum gününü kutlamak', 'Adını zikretmek', 'Kitabını okumak'],
         correct: 0,
       },
@@ -874,7 +874,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber ahde vefayı nasıl sergiledi?',
+        q: 'Peygamber Efendimiz ahde vefayı nasıl sergiledi?',
         options: ['Hudeybiye Antlaşması\'nda her şartta uyguladı', 'Yalnızca müminlerle yaptığı anlaşmalara sadık kaldı', 'Savaş döneminde anlaşmaları geçersiz saydı', 'Münafıkların hilesiyle karşılaştığında erteledi'],
         correct: 0,
       },
@@ -901,7 +901,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber arkadaşlık hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz arkadaşlık hakkında ne buyurmuştur?',
         options: ['\'Kişi arkadaşının dini üzeredir\'', '\'Arkadaş seçimi önemli değildir\'', '\'Yalnız yaşamak daha iyidir\'', '\'Çok arkadaş edin\''],
         correct: 0,
       },
@@ -950,7 +950,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber doğayı korumak için ne yapmıştır?',
+        q: 'Peygamber Efendimiz doğayı korumak için ne yapmıştır?',
         options: ['Ağaç dikimini teşvik etmiş ve israfı yasaklamıştır', 'Doğaya müdahale etmemiştir', 'Sadece suyun temizliğine önem vermiştir', 'Çevre koruma konusunda özel bir direktif vermemiştir'],
         correct: 0,
       },
@@ -989,7 +989,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber hediyeleşme konusunda ne buyurmuştur?',
+        q: 'Peygamber Efendimiz hediyeleşme konusunda ne buyurmuştur?',
         options: ['\'Birbirinize hediye verin, sevginiz artar\'', '\'Hediye vermekten kaçının\'', '\'Yalnızca ihtiyaç sahiplerine verin\'', '\'Pahalı hediyeler tercih edin\''],
         correct: 0,
       },
@@ -1033,7 +1033,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber terbiye hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz terbiye hakkında ne buyurmuştur?',
         options: ['\'Ben güzel ahlakı tamamlamak için gönderildim\'', '\'Terbiye sonradan öğrenilmez\'', '\'Büyüklere itaat terbiyedir\'', '\'Terbiye yalnızca aile içinde öğrenilir\''],
         correct: 0,
       },
@@ -1143,7 +1143,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber\'in bu konudaki en çarpıcı örneği hangisidir?',
+        q: 'Peygamber Efendimiz\'in bu konudaki en çarpıcı örneği hangisidir?',
         options: ['Taif\'te taşlansa da Melek\'in teklifini reddetmesi', 'Mekkelilerin mallarını geri vermesi', 'Uhud\'da intikam almaması', 'Bedir\'de esirlere yumuşak davranması'],
         correct: 0,
       },
@@ -1165,7 +1165,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber çalışmak hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz çalışmak hakkında ne buyurmuştur?',
         options: ['\'Hiç kimse kendi elinin kazancından daha hayırlı yemek yememiştir\'', '\'İbadet çalışmaktan üstündür\'', '\'Çalışmak zorunlu değildir\'', '\'Ticaretten kaçının\''],
         correct: 0,
       },
@@ -1209,7 +1209,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber teşekkür hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz teşekkür hakkında ne buyurmuştur?',
         options: ['\'İnsanlara şükretmeyen Allah\'a da şükretmez\'', '\'Teşekkür mecburidir\'', '\'Teşekkür kalp meselesidir, söze gerek yok\'', '\'Teşekkür zayıflık göstergesidir\''],
         correct: 0,
       },
@@ -1341,7 +1341,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber alçak gönüllülüğü nasıl sergilemiştir?',
+        q: 'Peygamber Efendimiz alçak gönüllülüğü nasıl sergilemiştir?',
         options: ['Yerde yemek yer, kendi işini kendisi yapardı', 'Hâkimiyet kurmakla', 'Başkalarını yönetmekle', 'Sessiz kalmakla'],
         correct: 0,
       },
@@ -1429,7 +1429,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber toplumsal uyum hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz toplumsal uyum hakkında ne buyurmuştur?',
         options: ['\'Mümin hem sevilen hem seven biridir\'', '\'Toplumdan uzak dur\'', '\'Yalnız yaşamak daha güvenlidir\'', '\'İnsanlardan gelebilecek zarara hazırlıklı ol\''],
         correct: 0,
       },
@@ -1561,8 +1561,8 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber vefayı nasıl sergilemiştir?',
-        options: ['Hz. Hatice\'ye ölümünden sonra da vefa göstermiştir', 'Bütün ashabına eşit davranarak', 'Her anlaşmayı yerine getirerek', 'Kadim dostlarını hiç ziyaret etmeyerek'],
+        q: 'Peygamber Efendimiz vefayı nasıl sergilemiştir?',
+        options: ['Hazret-i Hatice\'ye ölümünden sonra da vefa göstermiştir', 'Bütün ashabına eşit davranarak', 'Her anlaşmayı yerine getirerek', 'Kadim dostlarını hiç ziyaret etmeyerek'],
         correct: 0,
       },
       {
@@ -1649,7 +1649,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber kanaat için ne buyurmuştur?',
+        q: 'Peygamber Efendimiz kanaat için ne buyurmuştur?',
         options: ['\'Gerçek zenginlik kalp zenginliğidir\'', '\'Çok kazanmak kanaati sağlar\'', '\'Kanaat tembelliğin göstergesidir\'', '\'Az kazanmak daha iyidir\''],
         correct: 0,
       },
@@ -1693,7 +1693,7 @@ export const lessons = [
         correct: 0,
       },
       {
-        q: 'Hz. Peygamber mesuliyet hakkında ne buyurmuştur?',
+        q: 'Peygamber Efendimiz mesuliyet hakkında ne buyurmuştur?',
         options: ['\'Hepiniz çobansınız ve hepiniz güttüklerinizden sorumlusunuz\'', '\'Sorumluluk güçlülerin işidir\'', '\'Mesuliyet paylaşılmalıdır\'', '\'Gençler sorumlu değildir\''],
         correct: 0,
       },

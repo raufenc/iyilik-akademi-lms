@@ -80,16 +80,16 @@ export const richContent = {
 
   2: {
     // Saygı
-    tema: "Peygamber Efendimizin (s.a.v) Soyuna ve Büyüklere Saygı",
+    tema: "Peygamber Efendimizin (sallallahü aleyhi ve sellem) Soyuna ve Büyüklere Saygı",
     ogrenmeHedefleri: [
       'Büyüklere ve ilim sahiplerine neden saygı göstermemiz gerektiğini anlayabileceksin.',
-      'Peygamber Efendimizin (s.a.v) soyuna gösterilen hürmetin önemini fark edebileceksin.',
+      'Peygamber Efendimizin (sallallahü aleyhi ve sellem) soyuna gösterilen hürmetin önemini fark edebileceksin.',
       'Günlük hayatında saygıyı nasıl gösterebileceğini uygulayabileceksin.',
     ],
     kavramlar: [
       {
         kavram: 'Seyyid',
-        anlam: "Peygamber Efendimiz Hz. Muhammed'in (s.a.v) soyundan gelen, onun torunları olan kıymetli kimseler.",
+        anlam: "Peygamber Efendimizin (sallallahü aleyhi ve sellem) soyundan gelen, onun torunları olan kıymetli kimseler.",
       },
       {
         kavram: 'Hürmet / Edep',
@@ -109,7 +109,7 @@ export const richContent = {
       {
         zamanDamgasi: 30,
         tip: 'bilgi_karti',
-        metin: "İmam Şafii hazretleri, İslam dünyasının en büyük âlimlerinden biridir ve hayatı boyunca Peygamberimize (s.a.v) büyük bir sevgi duymuştur.",
+        metin: "İmam Şafii hazretleri, İslam dünyasının en büyük âlimlerinden biridir ve hayatı boyunca Peygamberimize (sallallahü aleyhi ve sellem) büyük bir sevgi duymuştur.",
       },
       {
         zamanDamgasi: 85,
@@ -132,7 +132,7 @@ export const richContent = {
       },
     ],
     tefekkurSorulari: [
-      "Peygamber Efendimizin (s.a.v) soyundan gelen birini görsen ona nasıl davranırdın?",
+      "Peygamber Efendimizin (sallallahü aleyhi ve sellem) soyundan gelen birini görsen ona nasıl davranırdın?",
       'Evde anne ve babana saygını göstermek için yapabileceğin 3 güzel davranış nedir?',
     ],
     haftaninGorevi: {
@@ -345,7 +345,7 @@ export const richContent = {
       {
         zamanDamgasi: 80,
         tip: 'bilgi_karti',
-        metin: "Peygamber Efendimiz (s.a.v) her zaman ashabının (arkadaşlarının) dertleriyle dertlenir, onların hislerini paylaşırdı.",
+        metin: "Peygamber Efendimiz (sallallahü aleyhi ve sellem) her zaman ashabının (arkadaşlarının) dertleriyle dertlenir, onların hislerini paylaşırdı.",
       },
       {
         zamanDamgasi: 125,
@@ -624,7 +624,7 @@ export const richContent = {
       {
         zamanDamgasi: 135,
         tip: 'bilgi_karti',
-        metin: "Peygamber Efendimiz (s.a.v), devesini bağlamadan 'Allah'a tevekkül ettim' diyen birine 'Önce deveni bağla, sonra tevekkül et' diyerek sorumluluğun önemini hatırlatmıştır.",
+        metin: "Peygamber Efendimiz (sallallahü aleyhi ve sellem), devesini bağlamadan 'Allah'a tevekkül ettim' diyen birine 'Önce deveni bağla, sonra tevekkül et' diyerek sorumluluğun önemini hatırlatmıştır.",
       },
     ],
     tefekkurSorulari: [
@@ -733,7 +733,7 @@ export const richContent = {
       {
         zamanDamgasi: 40,
         tip: 'bilgi_karti',
-        metin: 'Peygamber Efendimiz (s.a.v) her zaman güleryüzlü ve nazikti. Hiçbir zaman kötü söz söylemez, kırıcı davranmazdı.',
+        metin: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) her zaman güleryüzlü ve nazikti. Hiçbir zaman kötü söz söylemez, kırıcı davranmazdı.',
       },
       {
         zamanDamgasi: 85,
@@ -808,7 +808,7 @@ export const richContent = {
       {
         zamanDamgasi: 85,
         tip: 'bilgi_karti',
-        metin: "Peygamber Efendimiz Hz. Muhammed (s.a.v) peygamber olmadan önce bile o kadar dürüsttü ki, herkes ona 'Muhammed'ül Emin' (Güvenilir Muhammed) derdi.",
+        metin: "Peygamber Efendimiz (sallallahü aleyhi ve sellem) peygamber olmadan önce bile o kadar dürüsttü ki, herkes ona 'Muhammed'ül Emin' (Güvenilir Muhammed) derdi.",
       },
       {
         zamanDamgasi: 125,
@@ -880,7 +880,7 @@ export const richContent = {
       {
         zamanDamgasi: 125,
         tip: 'bilgi_karti',
-        metin: "Peygamber Efendimiz (s.a.v) öfkelenen birine 'Ayaktaysan otur, oturuyorsan uzan veya git abdest al' tavsiyesinde bulunmuştur.",
+        metin: "Peygamber Efendimiz (sallallahü aleyhi ve sellem) öfkelenen birine 'Ayaktaysan otur, oturuyorsan uzan veya git abdest al' tavsiyesinde bulunmuştur.",
       },
     ],
     tefekkurSorulari: [
@@ -978,8 +978,8 @@ export const richContent = {
     ],
     guzelSoz: {
       metin: 'Kıskançlık insanı yer bitirir, nasıl ki güve elbiseyi yer bitirir.',
-      kaynak: '— Hz. Ali (Hikmetli Söz)',
-      aciklama: 'Hz. Ali bu sözüyle kıskançlığın ne kadar tehlikeli olduğunu anlatıyor. Nasıl güve elbiseyi yavaş yavaş yok ederse, kıskançlık da insanın içini yavaş yavaş çürütür. Başkalarının başarısına sevinmek kalbimizi temiz tutar.',
+      kaynak: '— Hazret-i Ali (Hikmetli Söz)',
+      aciklama: 'Hazret-i Ali bu sözüyle kıskançlığın ne kadar tehlikeli olduğunu anlatıyor. Nasıl güve elbiseyi yavaş yavaş yok ederse, kıskançlık da insanın içini yavaş yavaş çürütür. Başkalarının başarısına sevinmek kalbimizi temiz tutar.',
     },
     girisKancasi: {
       soru: "Bir arkadaşın çok güzel bir oyuncak veya başarı kazandığında onun adına sevinir misin, yoksa 'keşke benim olsa' diye üzülür müsün?",
@@ -1234,8 +1234,8 @@ export const richContent = {
     ],
     guzelSoz: {
       metin: 'Sözünü tutmayan insanın ne haysiyeti kalır ne dostluğu.',
-      kaynak: '— Hz. Ali (Hikmetli Söz)',
-      aciklama: 'Hz. Ali bu sözüyle verilen sözün ne kadar önemli olduğunu anlatıyor. Bir söz verdiğimizde bu bir sorumluluktur. Sözünden dönen insana kimse güvenemez ve dostlukları bozulur. Bu yüzden tutamayacağımız sözleri vermemeli, verdiğimiz sözleri ise mutlaka tutmalıyız.',
+      kaynak: '— Hazret-i Ali (Hikmetli Söz)',
+      aciklama: 'Hazret-i Ali bu sözüyle verilen sözün ne kadar önemli olduğunu anlatıyor. Bir söz verdiğimizde bu bir sorumluluktur. Sözünden dönen insana kimse güvenemez ve dostlukları bozulur. Bu yüzden tutamayacağımız sözleri vermemeli, verdiğimiz sözleri ise mutlaka tutmalıyız.',
     },
     girisKancasi: {
       soru: "Bir arkadaşına 'Yarın seninle oyun oynayacağım' diye söz verdikten sonra başka eğlenceli bir iş çıksa ne yaparsın?",
@@ -1309,7 +1309,7 @@ export const richContent = {
       {
         zamanDamgasi: 35,
         tip: 'bilgi_karti',
-        metin: 'Peygamber Efendimiz (s.a.v) ve Hz. Ebubekir arasındaki bağ, tarihteki en güzel dostluk örneğidir. Zor zamanlarda hep birbirlerine destek olmuşlardır.',
+        metin: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) ve Hazret-i Ebu Bekir arasındaki bağ, tarihteki en güzel dostluk örneğidir. Zor zamanlarda hep birbirlerine destek olmuşlardır.',
       },
       {
         zamanDamgasi: 90,
@@ -1445,7 +1445,7 @@ export const richContent = {
       {
         zamanDamgasi: 80,
         tip: 'bilgi_karti',
-        metin: 'Peygamber Efendimiz (s.a.v) hediyeleşmeyi çok sever, kendisine verilen bir bardak sütü bile geri çevirmez, mutlaka karşılığını vermeye çalışırdı.',
+        metin: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) hediyeleşmeyi çok sever, kendisine verilen bir bardak sütü bile geri çevirmez, mutlaka karşılığını vermeye çalışırdı.',
       },
       {
         zamanDamgasi: 120,
@@ -1554,8 +1554,8 @@ export const richContent = {
     ],
     guzelSoz: {
       metin: 'Sır saklayan güç sahibi olur, sır veren güçsüz düşer.',
-      kaynak: '— Hz. Ali (Hikmetli Söz)',
-      aciklama: 'Hz. Ali bu sözüyle sır saklamanın bir güç ve güvenilirlik işareti olduğunu anlatıyor. Birisi sana bir sır söylüyorsa, bu sana güvendiği anlamına gelir ve bu bir emanettir. O sırrı başkalarına söylememelisin.',
+      kaynak: '— Hazret-i Ali (Hikmetli Söz)',
+      aciklama: 'Hazret-i Ali bu sözüyle sır saklamanın bir güç ve güvenilirlik işareti olduğunu anlatıyor. Birisi sana bir sır söylüyorsa, bu sana güvendiği anlamına gelir ve bu bir emanettir. O sırrı başkalarına söylememelisin.',
     },
     girisKancasi: {
       soru: "Bir arkadaşın sana 'bunu kimseye söyleme' diyerek bir sır verse, annene veya en yakın arkadaşına söyler misin?",
@@ -1613,7 +1613,7 @@ export const richContent = {
     guzelSoz: { metin: 'İyiliğe iyilik her kişinin kârı, kötülüğe iyilik er kişinin kârı.', kaynak: '— Yunus Emre', aciklama: 'Yunus Emre bu sözüyle bize iyiliğe iyilikle karşılık vermenin herkesin yapabileceği bir şey olduğunu ama asıl yiğitliğin kötülüğe bile iyilikle karşılık vermek olduğunu anlatıyor. Bize yapılan bir iyiliği unutmamalı ve mümkünse karşılığını vermeliyiz.' },
     girisKancasi: { soru: 'Zor bir anında sana yardım eden bir arkadaşına daha sonra sen nasıl teşekkür edersin?', ipucu: 'Gerçek dostluklar zor zamanlarda edilen yardımların hiç unutulmamasıyla kurulur.' },
     interaktifDuraklamalar: [
-      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Biliyor muydun? Peygamber Efendimiz (s.a.v) kendisine yıllar önce süt annelik yapan Halime annemizi ne zaman görse cübbesini yere serer, onu saygıyla oturturdu. İşte bu vefanın en güzel örneğidir.' },
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Biliyor muydun? Peygamber Efendimiz (sallallahü aleyhi ve sellem) kendisine yıllar önce süt annelik yapan Halime annemizi ne zaman görse cübbesini yere serer, onu saygıyla oturturdu. İşte bu vefanın en güzel örneğidir.' },
       { zamanDamgasi: 95, tip: 'dogru_yanlis', soruMetni: 'Vefalı bir insan, sadece kendi işi düştüğünde başkalarına iyi davranan kişidir.', dogruCevap: false, geriBildirimDogru: 'Harika! Vefalı insan, aradan yıllar geçse bile kendisine yapılan iyiliği unutmayan kişidir.', geriBildirimYanlis: 'Yanlış! Sadece işi düştüğünde arayan kişiye menfaatçi denir. Vefa ise karşılıksız sevgidir ve unutmamaktır.' },
       { zamanDamgasi: 140, tip: 'coktan_secmeli', soruMetni: 'Mühendis olan genç, yaşlı ustayı neden kendi yanına işe almıştır?', secenekler: [{ id: 'A', metin: 'Yaşlı adam ucuza çalışacağı için.', dogruMu: false }, { id: 'B', metin: 'Gençliğinde ustasının ona yaptığı iyilikleri unutmadığı ve vefalı olduğu için.', dogruMu: true }], geriBildirimDogru: 'Çok doğru! Vefa, üzerinden ne kadar zaman geçerse geçsin iyiliği hatırlamaktır.', geriBildirimYanlis: 'Hayır. Genç mühendis bunu bir menfaat için değil, vefa borcunu ödemek için yapmıştır.' },
     ],
@@ -1639,7 +1639,7 @@ export const richContent = {
     interaktifDuraklamalar: [
       { zamanDamgasi: 30, tip: 'dogru_yanlis', soruMetni: 'Çocuklar caminin içinde top oynamaya başladıklarında, imam onlara çok sert bir şekilde bağırarak camiden kovmuştur.', dogruCevap: false, geriBildirimDogru: 'Harika! İmam onlara kızıp bağırmamış, sadece cami içinde sessiz ve edepli olmaları gerektiğini sevgiyle anlatmıştır.', geriBildirimYanlis: 'Dikkatli izlemelisin. İmam onlara kızmadı, sadece buranın bir ibadet yeri olduğunu ve edepli olmaları gerektiğini nazikçe söyledi.' },
       { zamanDamgasi: 80, tip: 'bilgi_karti', metin: 'Camiler, yeryüzündeki en kıymetli mekanlardır. Oraya sağ ayakla ve dua ederek girmek, içeride koşmamak ve dünya işlerini konuşmamak cami adabındandır.' },
-      { zamanDamgasi: 125, tip: 'coktan_secmeli', soruMetni: 'Hocanın uyarısından sonra çocuklar nasıl bir davranış sergilediler?', secenekler: [{ id: 'A', metin: "Topu bırakıp hocanın dizinin dibinde edeplice Kur'an dinlemeye başladılar.", dogruMu: true }, { id: 'B', metin: 'Hocayı dinlemeyip caminin bahçesinde bağırmaya devam ettiler.', dogruMu: false }], geriBildirimDogru: 'Çok güzel! Hatalarını anladılar ve camiye yakışan edebi gösterdiler.', geriBildirimYanlis: 'Hocanın tatlı uyarısı çocukların kalbine dokundu ve hemen saygıyla dinlemeye geçtiler.' },
+      { zamanDamgasi: 125, tip: 'coktan_secmeli', soruMetni: 'Hocanın uyarısından sonra çocuklar nasıl bir davranış sergilediler?', secenekler: [{ id: 'A', metin: "Topu bırakıp hocanın dizinin dibinde edeplice Kur'ân-ı Kerîm dinlemeye başladılar.", dogruMu: true }, { id: 'B', metin: 'Hocayı dinlemeyip caminin bahçesinde bağırmaya devam ettiler.', dogruMu: false }], geriBildirimDogru: 'Çok güzel! Hatalarını anladılar ve camiye yakışan edebi gösterdiler.', geriBildirimYanlis: 'Hocanın tatlı uyarısı çocukların kalbine dokundu ve hemen saygıyla dinlemeye geçtiler.' },
     ],
     tefekkurSorulari: ['Caminin içinde sessizce oturup gözlerini kapattığında sence neden kendini bu kadar huzurlu hissedersin?', 'Okulun bahçesi ile caminin içi arasındaki fark nedir? İkisinde de aynı oyunlar oynanır mı?'],
     haftaninGorevi: { baslik: 'Cami Bülbülü Görevi', aciklama: "Büyüklerinle birlikte ilk fırsatta bir camiye git. İçeri girince sağ ayağınla gir, sessizce bir köşeye otur ve içinden Allah'a güzel bir dua et." },
@@ -1710,7 +1710,7 @@ export const richContent = {
     girisKancasi: { soru: 'Biri senin oyununu bilerek bozduğunda ona bağırır mısın, yoksa gülümseyip onu da oyuna davet mi edersin?', ipucu: 'Bazen küçücük bir gülümseme, en büyük kavgaları başlamadan bitiren sihirli bir anahtardır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 40, tip: 'dogru_yanlis', soruMetni: 'Parktaki çocuk misketleri dağıtınca Emir çok sinirlenmiş ve onunla hemen kavgaya tutuşmuştur.', dogruCevap: false, geriBildirimDogru: 'Harika! Emir sinirlense de kendini tuttu ve çocuğa bir misket verip oyuna davet etti.', geriBildirimYanlis: 'Dikkatli izlemedin sanırım. Emir öfkesini yendi ve ona iyilikle karşılık vererek onu şaşırttı.' },
-      { zamanDamgasi: 90, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) kendisine en kötü davranan insanlara bile hep şefkatle ve iyilikle yaklaşmış, sonunda birçoğu onun en yakın dostu olmuştur.' },
+      { zamanDamgasi: 90, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) kendisine en kötü davranan insanlara bile hep şefkatle ve iyilikle yaklaşmış, sonunda birçoğu onun en yakın dostu olmuştur.' },
       { zamanDamgasi: 135, tip: 'coktan_secmeli', soruMetni: 'Dedemize göre kötülüğe iyilikle cevap vermek ne işe yarar?', secenekler: [{ id: 'A', metin: 'Düşmanlıkları bitirir ve karşımızdakini bize dost yapar.', dogruMu: true }, { id: 'B', metin: 'İnsanların bizimle daha çok alay etmesini sağlar.', dogruMu: false }], geriBildirimDogru: 'Çok doğru! İyilik, kötülük ateşini söndüren serin bir su gibidir.', geriBildirimYanlis: 'Hayır, iyilik yapan insan asla kaybetmez. İyilik en sert kalpleri bile yumuşatır.' },
     ],
     tefekkurSorulari: ['Sence öfkelenmek mi daha kolaydır, yoksa öfkeni yutup karşındakine gülümsemek mi? Neden?', 'Birine kızdığında onun da hatasını anlayıp özür dilemesi için ona nasıl yaklaşmalısın?'],
@@ -1758,7 +1758,7 @@ export const richContent = {
     girisKancasi: { soru: "Biri sana yardım ettiğinde ona kocaman gülümseyerek 'Teşekkür ederim' demek sence o kişiyi nasıl hissettirir?", ipucu: 'Teşekkür etmek, kalpler arasında kurulan en tatlı sevgi köprüsüdür.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 35, tip: 'dogru_yanlis', soruMetni: "Ayşe kalemi düştüğünde ona yardım eden Zeynep'e hiçbir şey söylemeden arkasını döndü.", dogruCevap: false, geriBildirimDogru: 'Çok dikkatlisin! Ayşe hemen tebessüm edip arkadaşına teşekkür etti.', geriBildirimYanlis: "Yanlış cevap. Ayşe nazik bir çocuk olduğu için ona yardım eden Zeynep'e teşekkür etti." },
-      { zamanDamgasi: 85, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) kendisine yapılan en küçük bir iyiliği bile asla unutmaz, o kişiye mutlaka teşekkür eder ve ona dua ederdi.' },
+      { zamanDamgasi: 85, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) kendisine yapılan en küçük bir iyiliği bile asla unutmaz, o kişiye mutlaka teşekkür eder ve ona dua ederdi.' },
       { zamanDamgasi: 130, tip: 'coktan_secmeli', soruMetni: 'Emir neden annesine bir çiçek alıp sürpriz yaptı?', secenekler: [{ id: 'A', metin: 'Annesinin ona yemek yapmasını ve ona bakmasını sıradan bir görev olarak gördüğü için.', dogruMu: false }, { id: 'B', metin: 'Annesinin emeklerine karşı ona olan sevgisini ve teşekkürünü göstermek için.', dogruMu: true }], geriBildirimDogru: 'Mükemmel! Ailemizin bizim için yaptıklarına teşekkür etmek en güzel davranışlardandır.', geriBildirimYanlis: 'Ailemizin bizim için yaptıkları büyük bir fedakarlıktır, bunlara karşı hep teşekkür etmeliyiz.' },
     ],
     tefekkurSorulari: ["Sence sadece insanlara mı teşekkür ederiz? Allah'ın bize verdiği nimetlere nasıl şükrederiz?", "'Teşekkür ederim' demeyi unutan bir toplum sence nasıl bir yer olurdu?"],
@@ -1829,7 +1829,7 @@ export const richContent = {
     guzelSoz: { metin: 'Dolmayan başak dik durur, dolan başak eğilir.', kaynak: '— Türk Atasözü', aciklama: 'Bu atasözü mütevazı olmanın önemini anlatıyor. Tıpkı içi dolu başağın eğilmesi ve boş başağın dik durması gibi, gerçekten bilgili ve olgun insan alçak gönüllüdür. Kendini büyük gören kibirli insan ise aslında içi boş demektir.' },
     girisKancasi: { soru: "Bir yarışmada birinci olduğunda 'En iyi benim, kimse beni geçemez!' demek mi, yoksa arkadaşlarına teşekkür etmek mi daha güzeldir?", ipucu: 'Unutma; başak (buğday) büyüdükçe ve içi doldukça boynunu büker, boş başaklar ise hep dik durur.' },
     interaktifDuraklamalar: [
-      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (s.a.v) o kadar büyük bir lider olmasına rağmen, toplum içinde sıradan biri gibi oturur, hiçbir zaman kendini arkadaşlarından üstün görmezdi.' },
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: 'Peygamber Efendimiz (sallallahü aleyhi ve sellem) o kadar büyük bir lider olmasına rağmen, toplum içinde sıradan biri gibi oturur, hiçbir zaman kendini arkadaşlarından üstün görmezdi.' },
       { zamanDamgasi: 90, tip: 'dogru_yanlis', soruMetni: "Emir futbolda iki gol atınca bütün başarıyı sadece kendisine almış ve arkadaşı Ahmet'e hiç teşekkür etmemiştir.", dogruCevap: false, geriBildirimDogru: "Harika! Emir 'Ahmet bana pas vermeseydi ben bu golleri atamazdım' diyerek başarısını arkadaşıyla paylaştı.", geriBildirimYanlis: "Yanlış! Emir kibirlenmedi, aksine alçakgönüllü davranarak Ahmet'e teşekkür etti." },
       { zamanDamgasi: 135, tip: 'coktan_secmeli', soruMetni: 'Ayşe öğretmeni tarafından resmi beğenildiğinde nasıl bir tavır sergiledi?', secenekler: [{ id: 'A', metin: 'Arkadaşlarını küçümsedi ve sadece kendi resmiyle övündü.', dogruMu: false }, { id: 'B', metin: "Arkadaşı Fatma'nın da resminin çok güzel olduğunu söyleyerek tevazu gösterdi.", dogruMu: true }], geriBildirimDogru: 'Mükemmel! Kendi başarımıza sevinirken arkadaşlarımızın emeklerini de takdir etmeliyiz.', geriBildirimYanlis: 'Kibir insanı küçültür, alçakgönüllülük ise yüceltir. Ayşe alçakgönüllü davrandı.' },
     ],
@@ -1898,7 +1898,7 @@ export const richContent = {
       { kavram: 'Kanaat', anlam: "Allah'ın verdiği nimetlere razı olmak, sahip olduklarıyla mutlu olup sürekli daha fazlası için hırslanmamak." },
       { kavram: 'Dünya Malına Tamah Etmemek', anlam: 'Altın, para ve zenginliği kalbe sokmamak; asıl zenginliğin iyi bir kalp olduğuna inanmak.' },
     ],
-    guzelSoz: { metin: 'Kanaat gibi zenginlik, açgözlülük gibi fakirlik yoktur.', kaynak: '— Hz. Ali (Hikmetli Söz)', aciklama: 'Hz. Ali bu sözüyle kanaatin hiç bitmeyen bir hazine olduğunu söylüyor. Elindekiyle yetinmeyi bilen insan her zaman zengindir. Ama sürekli daha fazla isteyen insan hiçbir zaman tatmin olmaz. Kanaat, kalbi zengin eden sihirli bir anahtardır.' },
+    guzelSoz: { metin: 'Kanaat gibi zenginlik, açgözlülük gibi fakirlik yoktur.', kaynak: '— Hazret-i Ali (Hikmetli Söz)', aciklama: 'Hazret-i Ali bu sözüyle kanaatin hiç bitmeyen bir hazine olduğunu söylüyor. Elindekiyle yetinmeyi bilen insan her zaman zengindir. Ama sürekli daha fazla isteyen insan hiçbir zaman tatmin olmaz. Kanaat, kalbi zengin eden sihirli bir anahtardır.' },
     girisKancasi: { soru: 'Sence çok fazla paraya ve altına sahip olmak mı insanı gerçekten zengin yapar, yoksa elindeki oyuncaklarla mutlu olmayı bilmek mi?', ipucu: 'Kalbi altınla değil kanaatle dolu olan insanlar, dünyadaki en zengin insanlardır.' },
     interaktifDuraklamalar: [
       { zamanDamgasi: 45, tip: 'bilgi_karti', metin: "Allah dostları (Evliyalar), dünya malını ellerinde tutsalar bile kalplerine asla sokmazlar. Onlar için Allah'ın rızası dünyadaki tüm altınlardan daha kıymetlidir." },
@@ -1925,7 +1925,7 @@ export const richContent = {
     guzelSoz: { metin: 'Emanete hıyanet eden, insanlığa hıyanet etmiş olur.', kaynak: '— Türk Atasözü', aciklama: 'Bu atasözü emanetlerin ne kadar değerli olduğunu anlatıyor. Emanet bize güvenilerek verilen her şeydir. Onu korumak ve sahibine sağlam teslim etmek güvenilir bir insanın en önemli görevidir.' },
     girisKancasi: { soru: 'Bir arkadaşın sana en sevdiği oyuncağını emanet etse, onu kendi oyuncağın kadar dikkatli korur musun?', ipucu: 'Emanet sadece eşya değildir; bedenimiz, zamanımız, ailemiz — hepsi bize verilen emanetlerdir.' },
     interaktifDuraklamalar: [
-      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: "Peygamber Efendimiz (s.a.v) peygamberlikten önce bile 'Muhammed\'ül Emin' (Güvenilir Muhammed) diye anılırdı. Herkes en değerli eşyalarını ona emanet ederdi." },
+      { zamanDamgasi: 40, tip: 'bilgi_karti', metin: "Peygamber Efendimiz (sallallahü aleyhi ve sellem) peygamberlikten önce bile 'Muhammed\'ül Emin' (Güvenilir Muhammed) diye anılırdı. Herkes en değerli eşyalarını ona emanet ederdi." },
       { zamanDamgasi: 90, tip: 'dogru_yanlis', soruMetni: 'Emanet sadece bize bırakılan eşyaları korumak demektir, başka anlamı yoktur.', dogruCevap: false, geriBildirimDogru: 'Çok doğru! Emanet çok geniş bir kavramdır. Sağlığımız, gözlerimiz, zamanımız, ailemiz — hepsi bize Allah tarafından verilen emanetlerdir.', geriBildirimYanlis: 'Yanlış! Emanet sadece eşya değildir. Bedenimiz, sırlarımız, görevlerimiz ve hatta çevremiz de bize emanettir.' },
       { zamanDamgasi: 130, tip: 'coktan_secmeli', soruMetni: 'Dedemiz emanete riayet etmenin en güzel yolunun ne olduğunu söyledi?', secenekler: [{ id: 'A', metin: 'Bize verilen her şeye — eşyaya, göreve, sırra — sanki bizim en değerli şeyimizmiş gibi bakmak.', dogruMu: true }, { id: 'B', metin: 'Sadece büyüklerimizin bize verdiklerini korumak, diğerlerini umursamamak.', dogruMu: false }], geriBildirimDogru: 'Harika! Emanete riayet, kime ait olursa olsun her şeye özen göstermektir.', geriBildirimYanlis: 'Emanet sadece büyüklerden gelen değildir. Bir arkadaşının emaneti de Allah katında sorumluluktur.' },
     ],
