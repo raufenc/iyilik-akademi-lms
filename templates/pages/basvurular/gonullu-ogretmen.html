@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Başvurular", "url": "/basvurular"}, {"label": "Gönüllü Öğretmen Başvurusu", "url": "/basvurular/gonullu-ogretmen"}] %}
+{% block title %}Gönüllü Öğretmen Başvurusu | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi gönüllü öğretmen başvurusu — değerler eğitiminde fark yaratın.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Gönüllü Öğretmen Başvurusu</h1><p>Değerler eğitiminde gönüllü öğretmen olarak fark yaratın.</p></div></section>
+<section class="section"><div class="container container-narrow"><div class="content-body">
+  <h2>Neden Gönüllü Öğretmen Olmalısınız?</h2>
+  <div class="feature-list">
+    <div class="feature-item">Çocukların değer gelişimine doğrudan katkı</div>
+    <div class="feature-item">Kişisel ve mesleki gelişim fırsatı</div>
+    <div class="feature-item">Kapsamlı oryantasyon eğitimi</div>
+    <div class="feature-item">Esnek zaman yönetimi</div>
+    <div class="feature-item">Güçlü bir topluluk ve destek ağı</div>
+    <div class="feature-item">Anlamlı bir gönüllülük deneyimi</div>
+  </div>
+
+  <h2>Başvuru Süreci</h2>
+  <div class="timeline mt-6">
+    <div class="timeline-step"><span class="timeline-dot">1</span><p>Online başvuru formunu doldurun.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">2</span><p>Ön değerlendirme yapılır.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">3</span><p>Online görüşme gerçekleştirilir.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">4</span><p>Oryantasyon eğitimine katılırsınız.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">5</span><p>Öğrencilerle eşleştirilir ve eğitime başlarsınız.</p></div>
+  </div>
+
+  <h2>Beklenen Yetkinlikler</h2>
+  <div class="feature-list">
+    <div class="feature-item">18 yaşından büyük olmak</div>
+    <div class="feature-item">Kur'an-ı Kerim okuma bilgisi (tecvid tercih sebebi)</div>
+    <div class="feature-item">Çocuklarla iletişime açıklık</div>
+    <div class="feature-item">Haftalık 2-4 saat zaman ayırabilmek</div>
+  </div>
+
+  <div class="text-center mt-12">
+    <a href="{{ site.forms.gonullu }}" class="btn btn-primary btn-lg" data-track="click_volunteer" target="_blank" rel="noopener">Gönüllü Başvuru Formunu Aç</a>
+  </div>
+</div></div></section>
+{% endblock %}

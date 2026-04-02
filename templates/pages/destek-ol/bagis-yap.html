@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Destek Ol", "url": "/destek-ol"}, {"label": "Bağış Yap", "url": "/destek-ol/bagis-yap"}] %}
+{% block title %}Bağış Yap | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi eğitim faaliyetlerine bağış ile destek olun.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Bağış Yap</h1><p>Eğitim faaliyetlerine maddi destek verin.</p></div></section>
+<section class="section"><div class="container container-narrow content-body">
+  <div class="featured-banner">
+    <h3>Bağış Modülü Hazırlanıyor</h3>
+    <p>Yasal altyapı ve ödeme sistemi hazırlandığında bağış modülümüz aktif olacaktır. Şimdilik gönüllülük veya kurumsal iş birliği ile destek olabilirsiniz.</p>
+  </div>
+  <div class="text-center mt-8">
+    <a href="/destek-ol/gonullu-ol" class="btn btn-primary">Gönüllü Ol</a>
+    <a href="/iletisim" class="btn btn-secondary" style="margin-left:var(--s-3);">İletişime Geçin</a>
+  </div>
+</div></section>
+{% endblock %}

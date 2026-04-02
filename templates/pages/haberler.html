@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Haberler & Duyurular", "url": "/haberler"}] %}
+{% block title %}Haberler & Duyurular | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi haberleri, duyuruları ve etkinlik özetleri.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Haberler & Duyurular</h1><p>Akademimizden son gelişmeler, duyurular ve etkinlik özetleri.</p></div></section>
+<section class="section"><div class="container">
+  <div class="d-flex gap-2 flex-wrap mb-8">
+    <button class="btn btn-sm btn-primary" data-filter="all">Tümü</button>
+    <button class="btn btn-sm btn-secondary" data-filter="haber">Haberler</button>
+    <button class="btn btn-sm btn-secondary" data-filter="duyuru">Duyurular</button>
+    <button class="btn btn-sm btn-secondary" data-filter="etkinlik">Etkinlikler</button>
+  </div>
+  <div class="grid grid-3">
+    {% for item in news %}
+    <div class="card news-card" data-category="{{ item.category }}">
+      <div class="card-image">📰</div>
+      <div class="card-body">
+        <span class="card-category">{{ item.category }}</span>
+        <p class="card-date">{{ item.date | tr_date }}</p>
+        <h3><a href="/haberler/{{ item.slug }}">{{ item.title }}</a></h3>
+        <p>{{ item.excerpt | truncate_words(20) }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div></section>
+{% endblock %}

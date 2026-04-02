@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ site.title }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+  <link rel="canonical" href="{{ site_url }}{{ current_path }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ site.description }}{% endblock %}">
+  <meta property="og:image" content="{{ site_url }}/images/og-image.png">
+  <meta property="og:url" content="{{ site_url }}{{ current_path }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/utilities.css">
+  {% block head_extra %}{% endblock %}
+
+  <!-- Schema.org -->
+  {% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Birlikte İyilik Akademi",
+    "url": "{{ site_url }}",
+    "logo": "{{ site_url }}/images/logo.png",
+    "description": "{{ site.description }}",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.phone }}"
+  }
+  </script>
+  {% endblock %}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+
+  {% include 'partials/header.html' %}
+
+  <main id="main-content">
+    {% block breadcrumb %}{% endblock %}
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials/footer.html' %}
+
+  <!-- Mobile Sticky CTA -->
+  <div class="mobile-cta">
+    <a href="{{ site.forms.online }}" class="btn btn-primary btn-block btn-sm" data-track="click_apply_online" target="_blank" rel="noopener">Online Basvuru</a>
+    <a href="{{ site.whatsapp }}" class="btn btn-secondary btn-sm" data-track="click_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/main.js" defer></script>
+  <script src="/js/counter.js" defer></script>
+  <script src="/js/filter.js" defer></script>
+  {% block scripts %}{% endblock %}
+
+  {% if site.ga_id %}
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga_id }}');
+  </script>
+  {% endif %}
+</body>
+</html>

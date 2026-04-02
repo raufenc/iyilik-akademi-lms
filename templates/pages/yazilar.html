@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Değer Odaklı Yazılar", "url": "/yazilar"}] %}
+{% block title %}Değer Odaklı Yazılar | {{ site.title }}{% endblock %}
+{% block description %}Güzel ahlak, tarih bilinci ve eğitim üzerine değer odaklı yazılar.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Değer Odaklı Yazılar</h1><p>Güzel ahlak, tarih bilinci ve eğitim üzerine derinlikli içerikler.</p></div></section>
+<section class="section"><div class="container">
+  {% if articles %}
+  <div class="grid grid-3">
+    {% for art in articles %}
+    <div class="card news-card" data-category="{{ art.tags[0] if art.tags else 'genel' }}">
+      <div class="card-image">✍️</div>
+      <div class="card-body">
+        {% if art.tags %}<span class="card-category">{{ art.tags[0] }}</span>{% endif %}
+        <p class="card-date">{{ art.date | tr_date }}</p>
+        <h3><a href="/yazilar/{{ art.slug }}">{{ art.title }}</a></h3>
+        <p>{{ art.excerpt | truncate_words(20) }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="text-center py-16">
+    <p class="text-muted">Yazılar yakında eklenecektir.</p>
+  </div>
+  {% endif %}
+</div></section>
+{% endblock %}

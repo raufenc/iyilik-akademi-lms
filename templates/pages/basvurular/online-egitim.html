@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Başvurular", "url": "/basvurular"}, {"label": "Online Eğitim Başvurusu", "url": "/basvurular/online-egitim"}] %}
+{% block title %}Online Eğitim Başvurusu | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi online eğitim programına başvuru sayfası.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Online Eğitim Başvurusu</h1><p>Çevrim içi değerler eğitimi programımıza başvurun.</p></div></section>
+<section class="section"><div class="container container-narrow"><div class="content-body">
+  <p>Online eğitim programımız, coğrafi engel tanımadan her ailenin çocuğuna Kur'an-ı Kerim eğitimi, güzel ahlak programı ve bireysel takip hizmeti sunmaktadır.</p>
+  <h2>Başvuru Süreci</h2>
+  <div class="timeline mt-6">
+    <div class="timeline-step"><span class="timeline-dot">1</span><p>Aşağıdaki butona tıklayarak başvuru formunu doldurun.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">2</span><p>Başvurunuz 1 hafta içinde değerlendirilir.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">3</span><p>Sizinle iletişime geçilir ve uygun program belirlenir.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">4</span><p>Öğretmen eşleşmesi yapılır ve eğitim başlar.</p></div>
+  </div>
+  <div class="text-center mt-12">
+    <a href="{{ site.forms.online }}" class="btn btn-primary btn-lg" data-track="click_apply_online" target="_blank" rel="noopener">Başvuru Formunu Aç</a>
+    <p class="text-sm text-muted mt-4">Form harici bir sayfada açılacaktır.</p>
+  </div>
+  <div class="mt-12"><a href="/egitimler/online-egitim" class="btn btn-secondary">Program Detaylarını İncele</a></div>
+</div></div></section>
+{% endblock %}

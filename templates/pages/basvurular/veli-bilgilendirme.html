@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Başvurular", "url": "/basvurular"}, {"label": "Veli Bilgilendirme", "url": "/basvurular/veli-bilgilendirme"}] %}
+{% block title %}Veli Bilgilendirme | {{ site.title }}{% endblock %}
+{% block description %}Veliler için eğitim süreci, beklentiler ve sık sorulan sorular.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Veli Bilgilendirme</h1><p>Eğitim sürecimiz hakkında velilerimiz için kapsamlı bilgi.</p></div></section>
+<section class="section"><div class="container container-narrow"><div class="content-body">
+  <p>Birlikte İyilik Akademi olarak eğitim sürecinde veli katılımını temel bir ilke olarak benimsiyoruz. Bu sayfada sürecimiz hakkında merak ettiğiniz her şeyi bulabilirsiniz.</p>
+
+  <h2>Eğitim Sürecinde Velinin Rolü</h2>
+  <div class="feature-list">
+    <div class="feature-item">Mobil uygulama ile çocuğunuzun gelişimini takip edin</div>
+    <div class="feature-item">Öğretmenle anlık mesajlaşma imkanı</div>
+    <div class="feature-item">Dönemsel gelişim raporlarına erişim</div>
+    <div class="feature-item">Devam durumu ve ders bilgileri</div>
+  </div>
+
+  <h2>Sık Sorulan Sorular</h2>
+  <div class="accordion mt-6">
+    {% for cat in faq if cat.category in ['Başvuru', 'Eğitim', 'Uygulama'] %}
+    {% for item in cat.questions[:2] %}
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">{{ item.q }}</button>
+      <div class="accordion-panel"><div class="accordion-panel-inner">{{ item.a }}</div></div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-12">
+    <p class="mb-4">Daha fazla sorunuz mu var?</p>
+    <a href="/iletisim" class="btn btn-primary">İletişime Geçin</a>
+    <a href="/sss" class="btn btn-secondary" style="margin-left:var(--s-3);">Tüm SSS</a>
+  </div>
+</div></div></section>
+{% endblock %}

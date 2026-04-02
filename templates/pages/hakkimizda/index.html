@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Hakkımızda", "url": "/hakkimizda"}] %}
+{% block title %}Hakkımızda | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi'nin hikayesi, misyonu ve değer odaklı eğitim yaklaşımı.{% endblock %}
+
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <h1>Hakkımızda</h1>
+    <p>Birlikte İyilik Akademi; değerlerle büyüyen nesiller için eğitim, takip ve aile iş birliğini bir araya getiren kurumsal bir öğrenme yapısıdır.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="content-body">
+      <p>Birlikte İyilik Akademi, çocuklarımıza ve gençlerimize güzel ahlak, Kur'an-ı Kerim eğitimi ve değer odaklı bir gelişim ortamı sunmak amacıyla kurulmuştur.</p>
+      <p>Kurumumuz; online ve yüz yüze eğitim modelleriyle coğrafi engel tanımadan her aileye ulaşmayı, gönüllü öğretmen ağıyla topluluk bilinci oluşturmayı ve mobil uygulama destekli takip sistemiyle şeffaf bir eğitim süreci sunmayı hedefler.</p>
+
+      <h2>Ne Yapıyoruz?</h2>
+      <p>Akademimiz; Kur'an-ı Kerim eğitimi, güzel ahlak programları, öğrenci koçluğu ve bireysel takip hizmetlerini tek çatı altında sunar. Her öğrencinin gelişimi bireysel olarak izlenir, veliler düzenli olarak bilgilendirilir.</p>
+
+      <h2>Nasıl Farklıyız?</h2>
+      <div class="feature-list">
+        <div class="feature-item">Birebir öğrenci-öğretmen eşleşmesi</div>
+        <div class="feature-item">Mobil uygulama ile 7/24 takip</div>
+        <div class="feature-item">Gönüllü öğretmen ağı</div>
+        <div class="feature-item">Veli-öğretmen iş birliği</div>
+        <div class="feature-item">Online ve yüz yüze esneklik</div>
+        <div class="feature-item">Dönemsel gelişim raporları</div>
+      </div>
+    </div>
+
+    <div class="grid grid-3 mt-12">
+      <a href="/hakkimizda/misyon-vizyon" class="card quick-card">
+        <span class="card-icon" aria-hidden="true">🎯</span>
+        <h3>Misyon & Vizyon</h3>
+      </a>
+      <a href="/hakkimizda/egitim-yaklasimimiz" class="card quick-card">
+        <span class="card-icon" aria-hidden="true">📚</span>
+        <h3>Eğitim Yaklaşımımız</h3>
+      </a>
+      <a href="/hakkimizda/ekibimiz" class="card quick-card">
+        <span class="card-icon" aria-hidden="true">👥</span>
+        <h3>Ekibimiz</h3>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

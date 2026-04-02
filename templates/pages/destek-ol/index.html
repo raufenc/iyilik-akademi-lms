@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Destek Ol", "url": "/destek-ol"}] %}
+{% block title %}Destek Ol | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi'ye gönüllü, bağış veya kurumsal iş birliği ile destek olun.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>İyiliğin Bir Parçası Olun</h1><p>Gönüllü olmak, iş birliği kurmak veya bağışla destek vermek isteyenler için.</p></div></section>
+<section class="section"><div class="container">
+  <div class="grid grid-3">
+    {% for s in homepage.support.cards %}
+    <div class="card support-card"><span class="card-icon" aria-hidden="true">{{ s.icon }}</span><h3>{{ s.title }}</h3><p>{{ s.desc }}</p><a href="{{ s.url }}" class="btn btn-primary btn-sm mt-4">{{ s.cta }}</a></div>
+    {% endfor %}
+  </div>
+</div></section>
+{% endblock %}

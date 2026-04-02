@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% set prog = programs | selectattr('id', 'equalto', 'guzel-ahlak') | first %}
+{% set crumbs = [{"label": "Eğitimler", "url": "/egitimler"}, {"label": prog.title, "url": "/egitimler/guzel-ahlak"}] %}
+{% block title %}{{ prog.title }} | {{ site.title }}{% endblock %}
+{% block description %}{{ prog.short }}{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+{% block schema %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"{{ prog.title }}","description":"{{ prog.short }}","provider":{"@type":"EducationalOrganization","name":"Birlikte İyilik Akademi","url":"{{ site_url }}"}}</script>{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><span class="badge badge-primary mb-4">{{ prog.model }}</span><h1>{{ prog.title }}</h1><p>{{ prog.target }} &middot; {{ prog.duration }}</p></div></section>
+<section class="section"><div class="container container-narrow"><div class="content-body">
+  <p>{{ prog.description }}</p>
+  <h2>Program Özellikleri</h2>
+  <div class="feature-list">{% for f in prog.features %}<div class="feature-item">{{ f }}</div>{% endfor %}</div>
+  <h2>Başvuru Süreci</h2>
+  <div class="timeline mt-6">{% for step in prog.process %}<div class="timeline-step"><span class="timeline-dot">{{ loop.index }}</span><p>{{ step }}</p></div>{% endfor %}</div>
+  <div class="text-center mt-12"><a href="{{ prog.cta_url }}" class="btn btn-primary btn-lg" data-track="click_apply_online" target="_blank" rel="noopener">{{ prog.cta_label }}</a></div>
+</div></div></section>
+{% endblock %}

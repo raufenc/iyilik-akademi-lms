@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Başvurular", "url": "/basvurular"}, {"label": "Yüz Yüze Eğitim Başvurusu", "url": "/basvurular/yuz-yuze-egitim"}] %}
+{% block title %}Yüz Yüze Eğitim Başvurusu | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi yüz yüze eğitim programına başvuru sayfası.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Yüz Yüze Eğitim Başvurusu</h1><p>Merkezlerimizde yüz yüze değerler eğitimi programına başvurun.</p></div></section>
+<section class="section"><div class="container container-narrow"><div class="content-body">
+  <p>Yüz yüze eğitim programımız, merkezlerimizde küçük gruplar halinde gerçekleştirilen kapsamlı bir değerler eğitimi sunar.</p>
+  <h2>Başvuru Süreci</h2>
+  <div class="timeline mt-6">
+    <div class="timeline-step"><span class="timeline-dot">1</span><p>Başvuru formunu doldurun.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">2</span><p>Size en yakın merkez belirlenir.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">3</span><p>Yüz yüze ön görüşme yapılır.</p></div>
+    <div class="timeline-step"><span class="timeline-dot">4</span><p>Uygun gruba yerleştirilir ve eğitim başlar.</p></div>
+  </div>
+  <div class="text-center mt-12">
+    <a href="{{ site.forms.yuz_yuze }}" class="btn btn-primary btn-lg" data-track="click_apply_inperson" target="_blank" rel="noopener">Başvuru Formunu Aç</a>
+    <p class="text-sm text-muted mt-4">Form harici bir sayfada açılacaktır.</p>
+  </div>
+</div></div></section>
+{% endblock %}

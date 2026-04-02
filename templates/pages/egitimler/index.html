@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Eğitimler", "url": "/egitimler"}] %}
+{% block title %}Eğitimler | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi eğitim programları — online, yüz yüze, Kur'an-ı Kerim ve güzel ahlak.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <h1>Eğitim Programlarımız</h1>
+    <p>Her aile için uygun bir yol var. Online ve yüz yüze seçeneklerle değer odaklı eğitim.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      {% for prog in programs %}
+      <div class="card program-card">
+        <span class="card-icon" aria-hidden="true">{{ prog.icon }}</span>
+        <h3>{{ prog.title }}</h3>
+        <p class="card-meta">{{ prog.model }} &middot; {{ prog.target }}</p>
+        <p>{{ prog.short }}</p>
+        <div class="card-footer">
+          <a href="/egitimler/{{ prog.id }}" class="btn btn-primary btn-sm">Detayları İncele</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

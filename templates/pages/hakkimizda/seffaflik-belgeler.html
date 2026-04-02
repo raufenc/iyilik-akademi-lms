@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Hakkımızda", "url": "/hakkimizda"}, {"label": "Şeffaflık & Belgeler", "url": "/hakkimizda/seffaflik-belgeler"}] %}
+{% block title %}Şeffaflık & Belgeler | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi kurumsal belgeleri, politikalar ve şeffaflık merkezi.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container"><h1>Şeffaflık & Belgeler</h1><p>Güven şeffaflıkla güçlenir</p></div>
+</section>
+<section class="section">
+  <div class="container container-narrow">
+    <div class="content-body">
+      <p>Birlikte İyilik Akademi olarak kurumsal şeffaflığı temel bir değer olarak benimsiyoruz. Bu sayfada kurumsal belgelerimize, politikalarımıza ve raporlarımıza ulaşabilirsiniz.</p>
+    </div>
+
+    <div class="card mt-8">
+      <div class="doc-list">
+        <div class="doc-item">
+          <span class="doc-icon" aria-hidden="true">📋</span>
+          <div class="doc-info">
+            <h4>Kişisel Verilerin Korunması (KVKK) Aydınlatma Metni</h4>
+            <p class="text-muted">Kişisel verilerinizin işlenmesine ilişkin bilgilendirme</p>
+          </div>
+        </div>
+        <div class="doc-item">
+          <span class="doc-icon" aria-hidden="true">🍪</span>
+          <div class="doc-info">
+            <h4>Çerez Politikası</h4>
+            <p class="text-muted">Web sitemizde kullanılan çerezler hakkında bilgi</p>
+          </div>
+        </div>
+        <div class="doc-item">
+          <span class="doc-icon" aria-hidden="true">📄</span>
+          <div class="doc-info">
+            <h4>Kullanım Koşulları</h4>
+            <p class="text-muted">Web sitesi ve uygulama kullanım şartları</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-muted">Ek belge ve rapor talepleri için iletişime geçebilirsiniz.</p>
+      <a href="/iletisim" class="btn btn-secondary mt-4">İletişime Geçin</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

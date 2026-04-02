@@ -1,0 +1,349 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site.title }} | {{ site.tagline }}{% endblock %}
+{% block description %}{{ site.description }}{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+[{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Birlikte İyilik Akademi",
+  "url": "{{ site_url }}",
+  "logo": "{{ site_url }}/images/logo.png",
+  "description": "{{ site.description }}",
+  "email": "{{ site.email }}",
+  "telephone": "{{ site.phone }}",
+  "sameAs": [
+    "{{ site.social.instagram }}",
+    "{{ site.social.youtube }}"
+  ]
+},
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Birlikte İyilik Akademi",
+  "url": "{{ site_url }}"
+}]
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <img src="/images/logo_hero.png" alt="" class="hero-logo" aria-hidden="true">
+    <img src="/images/slogan.png" alt="Degerler Egitimi" class="hero-slogan">
+    <h1>{{ homepage.hero.title }}</h1>
+    <p>{{ homepage.hero.subtitle }}</p>
+    <div class="hero-cta">
+      <a href="{{ homepage.hero.cta1.url }}" class="btn btn-white btn-lg" data-track="click_apply_online" target="_blank" rel="noopener">{{ homepage.hero.cta1.label }}</a>
+      <a href="{{ homepage.hero.cta2.url }}" class="btn btn-ghost btn-lg" data-track="click_apply_inperson" target="_blank" rel="noopener">{{ homepage.hero.cta2.label }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. HIZLI ERISIM KARTLARI -->
+<section class="section" id="hizli-erisim">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.quick_cards.title }}</h2>
+    </div>
+    <div class="grid grid-4">
+      {% for card in homepage.quick_cards.cards %}
+      <a href="{{ card.url }}" class="card quick-card"
+         {% if card.url.startswith('http') %}target="_blank" rel="noopener"{% endif %}
+         data-track="{% if 'Online' in card.label %}click_apply_online{% elif 'Yuz' in card.label %}click_apply_inperson{% elif 'Gonullu' in card.label %}click_volunteer{% endif %}">
+        <span class="card-icon" aria-hidden="true">{{ card.icon }}</span>
+        <h3>{{ card.label }}</h3>
+        <p>{{ card.desc }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 3. KURUM TANITIMI -->
+<section class="section bg-white" id="hakkinda">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center;">
+      <div>
+        <h2>{{ homepage.about.title }}</h2>
+        <p>{{ homepage.about.text }}</p>
+        <div class="d-flex gap-4 flex-wrap mt-6">
+          <a href="{{ homepage.about.cta1.url }}" class="btn btn-primary">{{ homepage.about.cta1.label }}</a>
+          <a href="{{ homepage.about.cta2.url }}" class="btn btn-secondary">{{ homepage.about.cta2.label }}</a>
+        </div>
+      </div>
+      <div class="text-center">
+        <img src="/images/app_home.png" alt="Birlikte Iyilik Akademi mobil uygulama" style="max-width:260px;margin:0 auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROGRAMLAR -->
+<section class="section" id="programlar">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.programs.title }}</h2>
+      <p>{{ homepage.programs.subtitle }}</p>
+    </div>
+    <div class="grid grid-3">
+      {% for prog in programs[:5] %}
+      <div class="card program-card">
+        <span class="card-icon" aria-hidden="true">{{ prog.icon }}</span>
+        <h3>{{ prog.title }}</h3>
+        <p class="card-meta">{{ prog.model }} &middot; {{ prog.target }}</p>
+        <p>{{ prog.short }}</p>
+        <div class="card-footer">
+          <a href="#basvur" class="btn btn-secondary btn-sm">Başvur</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 5. NASIL ISLIYOR? -->
+<section class="section bg-white" id="nasil-isliyor">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <h2>{{ homepage.process.title }}</h2>
+      <p>{{ homepage.process.subtitle }}</p>
+    </div>
+    <div class="timeline">
+      {% for step in homepage.process.steps %}
+      <div class="timeline-step">
+        <span class="timeline-dot">{{ step.step }}</span>
+        <h4>{{ step.title }}</h4>
+        <p>{{ step.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-8">
+      <a href="{{ site.forms.online }}" class="btn btn-primary" data-track="click_apply_online" target="_blank" rel="noopener">Simdi Basvur</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ETKI SAYACLARI -->
+<section class="section bg-soft" id="etki">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.impact.title }}</h2>
+      <p>{{ homepage.impact.subtitle }}</p>
+    </div>
+    <div class="counter-grid">
+      {% for c in homepage.impact.counters %}
+      <div class="counter-item">
+        <div class="counter-value" data-counter="{{ c.value }}" data-suffix="{{ c.suffix }}">0</div>
+        <div class="counter-label">{{ c.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 7. HABERLER -->
+<section class="section" id="haberler">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.news_section.title }}</h2>
+      <p>{{ homepage.news_section.subtitle }}</p>
+    </div>
+    <div class="grid grid-3" id="newsGrid">
+      {% for item in news %}
+      <div class="card news-card{% if loop.index > 6 %} news-hidden{% endif %}">
+        {% if item.image %}
+        <img src="{{ item.image }}" alt="{{ item.title }}" class="news-card-img" loading="lazy">
+        {% else %}
+        <div class="card-image-placeholder cat-{{ item.category or 'haber' }}"></div>
+        {% endif %}
+        <div class="card-body">
+          <div class="card-meta-row">
+            <span class="card-category cat-badge-{{ item.category or 'haber' }}">{{ item.category | upper if item.category else 'HABER' }}</span>
+            <p class="card-date">{{ item.date | tr_date }}</p>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.excerpt | truncate_words(18) }}</p>
+          <a href="/haberler/{{ item.slug }}" class="btn btn-secondary btn-sm mt-4">Devamını Oku</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if news | length > 6 %}
+    <div class="text-center mt-8">
+      <button class="btn btn-secondary" id="showMoreNews" onclick="toggleMoreNews()">
+        Daha Fazla Göster ({{ news | length - 6 }} haber daha)
+      </button>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- 8. ETKINLIKLER -->
+<section class="section bg-white" id="etkinlikler">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.events_section.title }}</h2>
+      <p>{{ homepage.events_section.subtitle }}</p>
+    </div>
+    <div class="grid grid-3">
+      {% for ev in events[:3] %}
+      <div class="card event-card">
+        <div class="event-date-badge">
+          <div class="day">{{ ev.date[8:10] }}</div>
+          <div class="month">{{ ev.date | tr_date }}</div>
+        </div>
+        <div>
+          <h4 style="margin-bottom:var(--s-1);">{{ ev.title }}</h4>
+          <p class="text-sm text-muted mb-0">{{ ev.time }} &middot; {{ ev.location }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 9. İÇERİK -->
+<section class="section" id="icerik">
+  <div class="container">
+    <div class="section-header">
+      <h2>Değer Odaklı İçerikler</h2>
+      <p>Güzel ahlak, eğitim ve manevi gelişim üzerine yazılar</p>
+    </div>
+    <div class="grid grid-3">
+      {% for item in news if item.category == 'icerik' %}
+      {% if loop.index <= 6 %}
+      <div class="card news-card">
+        {% if item.image %}
+        <img src="{{ item.image }}" alt="{{ item.title }}" class="news-card-img" loading="lazy">
+        {% else %}
+        <div class="card-image-placeholder cat-icerik"></div>
+        {% endif %}
+        <div class="card-body">
+          <div class="card-meta-row">
+            <span class="card-category cat-badge-icerik">İÇERİK</span>
+            <p class="card-date">{{ item.date | tr_date }}</p>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.excerpt | truncate_words(18) }}</p>
+          <a href="/haberler/{{ item.slug }}" class="btn btn-secondary btn-sm mt-4">Devamını Oku</a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 10. VIDEO -->
+<section class="section bg-white" id="videolar">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.video_section.title }}</h2>
+      <p>{{ homepage.video_section.subtitle }}</p>
+    </div>
+    <div class="grid grid-3">
+      {% for vid in videos[:3] %}
+      <div class="card">
+        <h4>{{ vid.title }}</h4>
+        <p class="text-sm">{{ vid.description | truncate_words(20) }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 11. UYGULAMA -->
+<section class="section" id="uygulama">
+  <div class="container">
+    <div class="app-section">
+      <div class="app-mockup">
+        <img src="/images/app_home.png" alt="Birlikte Iyilik Akademi mobil uygulama" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);">
+      </div>
+      <div>
+        <h2>{{ homepage.app.title }}</h2>
+        <p>{{ homepage.app.subtitle }}</p>
+        <ul class="app-features">
+          {% for feat in homepage.app.features %}
+          <li>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+        <div class="store-badges">
+          <a href="{{ site.apps.android }}" class="store-badge" data-track="click_googleplay" target="_blank" rel="noopener">
+            <span class="store-badge-icon" aria-hidden="true">&#9654;</span> Google Play
+          </a>
+          <a href="{{ site.apps.ios }}" class="store-badge" data-track="click_appstore" target="_blank" rel="noopener">
+            <span class="store-badge-icon" aria-hidden="true">&#63743;</span> App Store
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. DESTEK OL -->
+<section class="section bg-soft" id="destek">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ homepage.support.title }}</h2>
+      <p>{{ homepage.support.subtitle }}</p>
+    </div>
+    <div class="grid grid-3">
+      {% for s in homepage.support.cards %}
+      <div class="card support-card">
+        <span class="card-icon" aria-hidden="true">{{ s.icon }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
+        <a href="{{ s.url }}" class="btn btn-primary btn-sm mt-4">{{ s.cta }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="section bg-white" id="iletisim">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <h2>İletişim</h2>
+      <p>Sorularınız için bize ulaşın</p>
+    </div>
+    <div class="grid grid-3" style="text-align:center;">
+      <a href="{{ site.whatsapp }}" class="card quick-card" target="_blank" rel="noopener" data-track="click_whatsapp">
+        <span class="card-icon" aria-hidden="true">💬</span>
+        <h3>WhatsApp</h3>
+        <p>{{ site.phone }}</p>
+      </a>
+      <a href="tel:{{ site.phone_href }}" class="card quick-card" data-track="click_call">
+        <span class="card-icon" aria-hidden="true">📞</span>
+        <h3>Telefon</h3>
+        <p>{{ site.phone }}</p>
+      </a>
+      <a href="mailto:{{ site.email }}" class="card quick-card">
+        <span class="card-icon" aria-hidden="true">✉️</span>
+        <h3>E-posta</h3>
+        <p>{{ site.email }}</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleMoreNews() {
+  const hidden = document.querySelectorAll('.news-hidden');
+  const btn = document.getElementById('showMoreNews');
+  if (hidden.length && hidden[0].style.display !== 'flex') {
+    hidden.forEach(el => { el.style.display = 'flex'; el.style.flexDirection = 'column'; });
+    btn.textContent = 'Daha Az Göster';
+  } else {
+    hidden.forEach(el => { el.style.display = ''; });
+    btn.textContent = btn.dataset.originalText || btn.textContent;
+  }
+}
+</script>
+
+{% endblock %}

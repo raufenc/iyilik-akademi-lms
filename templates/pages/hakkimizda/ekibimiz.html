@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Hakkımızda", "url": "/hakkimizda"}, {"label": "Ekibimiz", "url": "/hakkimizda/ekibimiz"}] %}
+{% block title %}Ekibimiz | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi ekibi — eğitimciler, gönüllüler ve koordinasyon kadrosu.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container"><h1>Ekibimiz</h1><p>Değer odaklı eğitimde yeni nesillere rehberlik eden ekibimiz</p></div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="content-body container-narrow mx-auto">
+      <p>Birlikte İyilik Akademi; kurucu ekip, eğitim koordinatörleri, gönüllü öğretmenler ve destek ekibinden oluşan geniş bir aile yapısına sahiptir.</p>
+      <p>Gönüllü öğretmenlerimiz, kapsamlı bir oryantasyon programından geçerek eğitim sürecine dahil olur. Her öğretmen, alanında yetkin ve çocuklarla iletişime açık bireylerden seçilir.</p>
+    </div>
+
+    <div class="grid grid-3 mt-12">
+      {% for member in team %}
+      <div class="card text-center" style="padding:var(--s-8);">
+        <div style="width:80px;height:80px;border-radius:var(--radius-full);background:var(--color-primary-light);display:flex;align-items:center;justify-content:center;margin:0 auto var(--s-4);font-size:2rem;">👤</div>
+        <h3 style="font-family:var(--font-sans);font-size:16px;">{{ member.name }}</h3>
+        <p class="text-sm text-muted">{{ member.role }}</p>
+        <p class="text-sm">{{ member.bio }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="mb-4">Siz de gönüllü öğretmen ailemize katılmak ister misiniz?</p>
+      <a href="{{ site.forms.gonullu }}" class="btn btn-primary" data-track="click_volunteer" target="_blank" rel="noopener">Gönüllü Öğretmen Başvurusu</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

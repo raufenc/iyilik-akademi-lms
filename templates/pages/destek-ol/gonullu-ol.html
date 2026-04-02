@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Destek Ol", "url": "/destek-ol"}, {"label": "Gönüllü Ol", "url": "/destek-ol/gonullu-ol"}] %}
+{% block title %}Gönüllü Ol | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi gönüllü öğretmen ve destekçi başvurusu.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Gönüllü Ol</h1><p>Değerler eğitiminde gönüllü olarak fark yaratın.</p></div></section>
+<section class="section"><div class="container container-narrow content-body">
+  <p>Gönüllü öğretmen veya destekçi olarak Birlikte İyilik Akademi ailesine katılabilirsiniz. Haftada sadece 2-4 saat ayırarak çocukların değer gelişimine doğrudan katkıda bulunabilirsiniz.</p>
+  <div class="feature-list">
+    <div class="feature-item">Kapsamlı oryantasyon eğitimi</div>
+    <div class="feature-item">Esnek zaman yönetimi</div>
+    <div class="feature-item">Güçlü topluluk ve destek ağı</div>
+    <div class="feature-item">Kişisel ve mesleki gelişim</div>
+  </div>
+  <div class="text-center mt-12"><a href="{{ site.forms.gonullu }}" class="btn btn-primary btn-lg" data-track="click_volunteer" target="_blank" rel="noopener">Gönüllü Başvuru Formu</a></div>
+</div></section>
+{% endblock %}

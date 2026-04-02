@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Hakkımızda", "url": "/hakkimizda"}, {"label": "Misyon & Vizyon", "url": "/hakkimizda/misyon-vizyon"}] %}
+{% block title %}Misyon & Vizyon | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi'nin kurumsal yönelimi, misyonu ve vizyonu.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container"><h1>Misyon & Vizyon</h1></div>
+</section>
+<section class="section">
+  <div class="container container-narrow content-body">
+    <h2>Misyonumuz</h2>
+    <p>Çocuklarımıza ve gençlerimize değer odaklı eğitim sunarak güzel ahlak sahibi, bilinçli ve topluma faydalı bireyler yetiştirmek. Bu süreçte aileyi, öğretmeni ve öğrenciyi aynı sistem içinde buluşturarak düzenli, ölçülebilir ve güven veren bir eğitim ortamı oluşturmak.</p>
+
+    <h2>Vizyonumuz</h2>
+    <p>Değerler eğitiminde Türkiye'nin en güvenilir ve erişilebilir kurumsal yapısı olmak. Her çocuğun coğrafi, ekonomik veya sosyal engel tanımadan kaliteli bir değerler eğitimine ulaşabildiği bir gelecek inşa etmek.</p>
+
+    <h2>Değerlerimiz</h2>
+    <div class="feature-list">
+      <div class="feature-item">Doğruluk ve şeffaflık</div>
+      <div class="feature-item">Merhamet ve empati</div>
+      <div class="feature-item">Sabır ve azim</div>
+      <div class="feature-item">Gönüllülük ve paylaşım</div>
+      <div class="feature-item">Sürekli gelişim</div>
+      <div class="feature-item">Aile iş birliği</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Hakkımızda", "url": "/hakkimizda"}, {"label": "Eğitim Yaklaşımımız", "url": "/hakkimizda/egitim-yaklasimimiz"}] %}
+{% block title %}Eğitim Yaklaşımımız | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi'nin değer odaklı eğitim metodolojisi ve pedagojik yaklaşımı.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container"><h1>Eğitim Yaklaşımımız</h1><p>Değer odaklı eğitim metodolojisi</p></div>
+</section>
+<section class="section">
+  <div class="container container-narrow content-body">
+    <p>Birlikte İyilik Akademi'de eğitim; yalnızca bilgi aktarımı değil, değerlerin hayata geçirildiği bir yaşantısal öğrenme sürecidir.</p>
+
+    <h2>Temel İlkelerimiz</h2>
+    <div class="feature-list">
+      <div class="feature-item">Bireysel ilgi ve birebir takip</div>
+      <div class="feature-item">Yaşa uygun müfredat ve yöntemler</div>
+      <div class="feature-item">Hikaye ve örnek olay temelli öğrenme</div>
+      <div class="feature-item">Aile katılımlı eğitim süreci</div>
+      <div class="feature-item">Düzenli ölçme ve değerlendirme</div>
+      <div class="feature-item">Dijital araçlarla desteklenen süreç</div>
+    </div>
+
+    <h2>Müfredat Yapısı</h2>
+    <p>Müfredatımız üç ana eksende şekillenir: Kur'an-ı Kerim okuma ve anlama, güzel ahlak ve değerler eğitimi, siyer ve İslam tarihi bilinci. Her eksen, öğrencinin yaş grubuna ve seviyesine uygun olarak kademelendirilerek sunulur.</p>
+
+    <h2>Takip ve Değerlendirme</h2>
+    <p>Her öğrencinin gelişimi mobil uygulama üzerinden izlenir. Devam durumu, ders performansı, davranış gelişimi ve hedef ilerlemesi düzenli olarak raporlanır. Veliler bu raporlara anlık erişim sağlar.</p>
+
+    <div class="text-center mt-8">
+      <a href="/egitimler" class="btn btn-primary">Programlarımızı İnceleyin</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

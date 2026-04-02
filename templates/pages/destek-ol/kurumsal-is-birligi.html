@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% set crumbs = [{"label": "Destek Ol", "url": "/destek-ol"}, {"label": "Kurumsal İş Birliği", "url": "/destek-ol/kurumsal-is-birligi"}] %}
+{% block title %}Kurumsal İş Birliği | {{ site.title }}{% endblock %}
+{% block description %}Birlikte İyilik Akademi ile kurumsal iş birliği olanakları.{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.html' %}{% endblock %}
+
+{% block content %}
+<section class="page-hero"><div class="container"><h1>Kurumsal İş Birliği</h1><p>Kurumunuzla iş birliği olanaklarını keşfedin.</p></div></section>
+<section class="section"><div class="container container-narrow content-body">
+  <p>Birlikte İyilik Akademi olarak eğitim kurumları, sivil toplum kuruluşları ve özel sektör ile iş birliği yaparak değerler eğitimini daha geniş kitlelere ulaştırmayı hedefliyoruz.</p>
+  <h2>İş Birliği Alanları</h2>
+  <div class="feature-list">
+    <div class="feature-item">Eğitim programı sponsorluğu</div>
+    <div class="feature-item">Ortak etkinlik ve seminerler</div>
+    <div class="feature-item">Mekan ve altyapı desteği</div>
+    <div class="feature-item">İçerik ve müfredat iş birliği</div>
+  </div>
+  <div class="text-center mt-12"><a href="/iletisim" class="btn btn-primary btn-lg">İletişime Geçin</a></div>
+</div></section>
+{% endblock %}
